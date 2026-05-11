@@ -1,11 +1,9 @@
-<main style="padding: 24px; max-width: 640px; margin: 0 auto; font-family: Roboto, system-ui, sans-serif;">
-  <h1>Glotix</h1>
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Welcome</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>A language-learning app. Static data will live under <code>web/public/</code> and load from there.</p>
-    </mat-card-content>
-  </mat-card>
+<mat-toolbar color="primary" class="app-toolbar">
+  <span class="app-title">Glotix</span>
+  <nav class="app-nav">
+    <a mat-button routerLink="/vocabulary" routerLinkActive="active">Vocabulary</a>
+  </nav>
+</mat-toolbar>
+<main class="app-shell">
+  <router-outlet />
 </main>

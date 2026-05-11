@@ -4,9 +4,10 @@
 
 ## Current state
 
-- **Frontend** — Angular 21 standalone + Angular Material 21 (azure-blue theme) + Signals, running on port 4200.
+- **Frontend** — Angular 21 standalone + Angular Material 21 (azure-blue theme, light color scheme) + Signals, running on port 4200.
 - **Backend** — NestJS 11 + TypeORM + better-sqlite3 + pg scaffolded in [`api/`](../api) but **paused**. Nothing in the Angular app calls it.
-- **Static data pattern** — Files dropped under [`web/public/`](../web/public) are served at the URL root (e.g. `public/words.json` → `http://localhost:4200/words.json`).
+- **Static data pattern** — Files dropped under [`web/public/`](../web/public) are served at the URL root (e.g. `public/assets/vocabulary-italian-a2.json` → `http://localhost:4200/assets/vocabulary-italian-a2.json`).
+- **Features** — [Vocabulary viewer](vocabulary-viewer.md) (Italian A2 summary + per-category tables).
 
 ## Local dev
 
@@ -27,7 +28,6 @@ Postgres swap (when ready): set `DB_DRIVER=postgres` plus `DB_HOST`/`DB_PORT`/`D
 
 ## Suggestions — not in scope, want any of these added?
 
-- Wire the German A2 CSVs at [`docs/words/a2/`](words/a2) into JSON under [`web/public/`](../web/public) + an Angular service that loads them
 - Docker Compose for Postgres (for when API resumes)
 - i18n setup on the frontend
 - State management library (NgRx Signals Store)

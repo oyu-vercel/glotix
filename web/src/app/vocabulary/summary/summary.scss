@@ -1,0 +1,59 @@
+:host {
+  display: block;
+}
+
+.summary-header {
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0;
+    font: var(--mat-sys-headline-medium);
+  }
+}
+
+.table-wrap {
+  background: var(--mat-sys-surface);
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.summary-table {
+  width: 100%;
+  background: transparent;
+}
+
+.count-col {
+  width: 120px;
+  text-align: right;
+  padding-right: 24px;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--mat-sys-surface-container-highest);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--mat-sys-primary);
+    outline-offset: -2px;
+  }
+}
+
+.totals-row {
+  background: var(--mat-sys-secondary-container);
+
+  .footer-label,
+  .footer-total {
+    font-weight: 600;
+    color: var(--mat-sys-on-secondary-container);
+    border-top: 1px solid var(--mat-sys-outline-variant);
+  }
+}
+
+.loading {
+  color: var(--mat-sys-on-surface-variant);
+}

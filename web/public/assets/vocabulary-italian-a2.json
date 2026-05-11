@@ -1,0 +1,2153 @@
+{
+  "language": "italian",
+  "level": "a2",
+  "categories": [
+    {
+      "key": "noun",
+      "label": "Nouns",
+      "words": [
+        {
+          "n": 1,
+          "italian": "acqua",
+          "pronunciation": "[ákква]",
+          "translation": "вода",
+          "examples": "L’acqua è fredda. L’acqua è buona. L’acqua è poca."
+        },
+        {
+          "n": 2,
+          "italian": "albergo",
+          "pronunciation": "[альбэрго]",
+          "translation": "гостиница",
+          "examples": "L’albergo è grande. L’albergo è nuovo. Un albergo è accogliente. L’albergo è a Roma."
+        },
+        {
+          "n": 3,
+          "italian": "amica",
+          "pronunciation": "[амíка]",
+          "translation": "подруга",
+          "examples": "L’amica è brava. L’amica è russa. L’amica legge. Le amiche sono italiane."
+        },
+        {
+          "n": 4,
+          "italian": "amico",
+          "pronunciation": "[амíко]",
+          "translation": "друг",
+          "examples": "L’amico è bravo. L’amico legge. Il mio amico è russo. Gli amici sono italiani."
+        },
+        {
+          "n": 5,
+          "italian": "anno",
+          "pronunciation": "[áнно]",
+          "translation": "год",
+          "examples": "L’anno è nuovo. L’anno è bello. Ho trenta anni."
+        },
+        {
+          "n": 6,
+          "italian": "appartamento",
+          "pronunciation": "[аппартамэнто]",
+          "translation": "квартира",
+          "examples": "L’appartamento è grande. L’appartamento è nuovo. L’appartamento è accogliente."
+        },
+        {
+          "n": 7,
+          "italian": "autobus",
+          "pronunciation": "[аутóбус]",
+          "translation": "автобус",
+          "examples": "L’autobus è grande. L’autobus arriva."
+        },
+        {
+          "n": 8,
+          "italian": "avvocato",
+          "pronunciation": "[аввокáто]",
+          "translation": "адвокат",
+          "examples": "L’avvocato è bravo. L’avvocato lavora."
+        },
+        {
+          "n": 9,
+          "italian": "bagno",
+          "pronunciation": "[бáньо]",
+          "translation": "ванна",
+          "examples": "Il bagno è grande. Il bagno è nuovo."
+        },
+        {
+          "n": 10,
+          "italian": "bambino",
+          "pronunciation": "[бамбúно]",
+          "translation": "ребёнок (м)",
+          "examples": "Il bambino è piccolo. Il bambino dorme. Un bambino è bravo. Il bambino ha paura."
+        },
+        {
+          "n": 11,
+          "italian": "bar",
+          "pronunciation": "[бар]",
+          "translation": "бар",
+          "examples": "Il bar è vicino. Il bar è buono. Il bar è aperto."
+        },
+        {
+          "n": 12,
+          "italian": "bicchiere",
+          "pronunciation": "[биккьéре]",
+          "translation": "стакан",
+          "examples": "Il bicchiere è grande. Il bicchiere è pieno."
+        },
+        {
+          "n": 13,
+          "italian": "biglietto",
+          "pronunciation": "[бильéтто]",
+          "translation": "билет",
+          "examples": "Il biglietto è nuovo. Il biglietto è importante."
+        },
+        {
+          "n": 14,
+          "italian": "bottiglia",
+          "pronunciation": "[боттíлья]",
+          "translation": "бутылка",
+          "examples": "La bottiglia è grande. La bottiglia è piena."
+        },
+        {
+          "n": 15,
+          "italian": "burocrazia",
+          "pronunciation": "[бyрокрáция]",
+          "translation": "бюрократия",
+          "examples": "La burocrazia è grande. La burocrazia è italiana."
+        },
+        {
+          "n": 16,
+          "italian": "caffè",
+          "pronunciation": "[каффэ]",
+          "translation": "кофе",
+          "examples": "Il caffè è buono. Un caffè per favore. Il caffè è caldo. Il caffè è poco."
+        },
+        {
+          "n": 17,
+          "italian": "calendario",
+          "pronunciation": "[календáрио]",
+          "translation": "календарь",
+          "examples": "Il calendario è nuovo. Il calendario è utile."
+        },
+        {
+          "n": 18,
+          "italian": "camera",
+          "pronunciation": "[кáмера]",
+          "translation": "комната",
+          "examples": "La camera è accogliente. La camera è piccola. La camera è grande."
+        },
+        {
+          "n": 19,
+          "italian": "casa",
+          "pronunciation": "[кáза]",
+          "translation": "дом",
+          "examples": "La casa è grande. La casa è bella. La mia casa è a Mosca. La casa è accogliente."
+        },
+        {
+          "n": 20,
+          "italian": "cellulare",
+          "pronunciation": "[челлюлáре]",
+          "translation": "мобильный телефон",
+          "examples": "Il cellulare è nuovo. Il cellulare è piccolo. Il cellulare è utile."
+        },
+        {
+          "n": 21,
+          "italian": "chiave",
+          "pronunciation": "[кьáве]",
+          "translation": "ключ",
+          "examples": "La chiave è nuova. La chiave è piccola."
+        },
+        {
+          "n": 22,
+          "italian": "cinema",
+          "pronunciation": "[чíнема]",
+          "translation": "кино",
+          "examples": "Il cinema è grande. Il cinema è vicino."
+        },
+        {
+          "n": 23,
+          "italian": "città",
+          "pronunciation": "[читтá]",
+          "translation": "город",
+          "examples": "La città è grande. La città è bella. La città è italiana."
+        },
+        {
+          "n": 24,
+          "italian": "civiltà",
+          "pronunciation": "[чивильтá]",
+          "translation": "цивилизация",
+          "examples": "La civiltà è italiana. La civiltà è grande."
+        },
+        {
+          "n": 25,
+          "italian": "clima",
+          "pronunciation": "[клúма]",
+          "translation": "климат",
+          "examples": "Il clima è buono. Il clima è caldo."
+        },
+        {
+          "n": 26,
+          "italian": "colazione",
+          "pronunciation": "[колатцьóне]",
+          "translation": "завтрак",
+          "examples": "La colazione è buona. La colazione è a casa."
+        },
+        {
+          "n": 27,
+          "italian": "colloquio",
+          "pronunciation": "[коллóквио]",
+          "translation": "собеседование",
+          "examples": "Il colloquio è importante. Il colloquio è domani."
+        },
+        {
+          "n": 28,
+          "italian": "compagno",
+          "pronunciation": "[компáньо]",
+          "translation": "товарищ",
+          "examples": "Il compagno è bravo. Il compagno studia."
+        },
+        {
+          "n": 29,
+          "italian": "coperta",
+          "pronunciation": "[копэрта]",
+          "translation": "одеяло",
+          "examples": "La coperta è nuova. La coperta è calda. La coperta è grande."
+        },
+        {
+          "n": 30,
+          "italian": "cosa",
+          "pronunciation": "[кóза]",
+          "translation": "вещь",
+          "examples": "La cosa è interessante. La cosa è nuova. La cosa è grande."
+        },
+        {
+          "n": 31,
+          "italian": "cugina",
+          "pronunciation": "[кудзúна]",
+          "translation": "двоюродная сестра",
+          "examples": "La cugina è brava. La cugina legge. La cugina è russa."
+        },
+        {
+          "n": 32,
+          "italian": "cugino",
+          "pronunciation": "[кудзúно]",
+          "translation": "двоюродный брат",
+          "examples": "Il cugino è bravo. Il cugino legge."
+        },
+        {
+          "n": 33,
+          "italian": "dicembre",
+          "pronunciation": "[дичémбре]",
+          "translation": "декабрь",
+          "examples": "Dicembre è freddo. Dicembre è buono."
+        },
+        {
+          "n": 34,
+          "italian": "direttore",
+          "pronunciation": "[диреттóре]",
+          "translation": "директор",
+          "examples": "Il direttore è bravo. Il direttore lavora."
+        },
+        {
+          "n": 35,
+          "italian": "disoccupato",
+          "pronunciation": "[дизоккупáто]",
+          "translation": "безработный",
+          "examples": "Il disoccupato è stanco. Il disoccupato cerca lavoro."
+        },
+        {
+          "n": 36,
+          "italian": "ditta",
+          "pronunciation": "[дíтта]",
+          "translation": "фирма",
+          "examples": "La ditta è grande. La ditta è italiana."
+        },
+        {
+          "n": 37,
+          "italian": "domanda",
+          "pronunciation": "[домáнда]",
+          "translation": "вопрос",
+          "examples": "La domanda è interessante. La domanda è difficile. La domanda è nuova."
+        },
+        {
+          "n": 38,
+          "italian": "domenica",
+          "pronunciation": "[домéника]",
+          "translation": "воскресенье",
+          "examples": "Domenica è libera. Domenica è bella."
+        },
+        {
+          "n": 39,
+          "italian": "donna",
+          "pronunciation": "[дóнна]",
+          "translation": "женщина",
+          "examples": "La donna è brava. La donna legge. La donna è italiana."
+        },
+        {
+          "n": 40,
+          "italian": "dottore",
+          "pronunciation": "[доттóре]",
+          "translation": "врач",
+          "examples": "Il dottore è bravo. Il dottore lavora. Il dottore è italiano."
+        },
+        {
+          "n": 41,
+          "italian": "esercizio",
+          "pronunciation": "[эзэрчúцио]",
+          "translation": "упражнение",
+          "examples": "L’esercizio è nuovo. L’esercizio è importante."
+        },
+        {
+          "n": 42,
+          "italian": "famiglia",
+          "pronunciation": "[фамíлья]",
+          "translation": "семья",
+          "examples": "La famiglia è grande. La famiglia è contenta. La famiglia è italiana."
+        },
+        {
+          "n": 43,
+          "italian": "febbraio",
+          "pronunciation": "[феббрáйо]",
+          "translation": "февраль",
+          "examples": "Febbraio è freddo. Febbraio è corto."
+        },
+        {
+          "n": 44,
+          "italian": "festa",
+          "pronunciation": "[фэста]",
+          "translation": "праздник",
+          "examples": "La festa è bella. La festa è domani. La festa è grande."
+        },
+        {
+          "n": 45,
+          "italian": "figlio",
+          "pronunciation": "[фíльо]",
+          "translation": "сын",
+          "examples": "Il figlio è piccolo. Il figlio è bravo. Il figlio dorme."
+        },
+        {
+          "n": 46,
+          "italian": "filiale",
+          "pronunciation": "[филиáле]",
+          "translation": "филиал",
+          "examples": "La filiale è nuova. La filiale è in città."
+        },
+        {
+          "n": 47,
+          "italian": "finestra",
+          "pronunciation": "[финэстра]",
+          "translation": "окно",
+          "examples": "La finestra è grande. La finestra è aperta. La finestra è nuova."
+        },
+        {
+          "n": 48,
+          "italian": "foglio",
+          "pronunciation": "[фóльо]",
+          "translation": "лист",
+          "examples": "Il foglio è nuovo. Il foglio è bianco."
+        },
+        {
+          "n": 49,
+          "italian": "forma",
+          "pronunciation": "[фóрма]",
+          "translation": "форма",
+          "examples": "La forma è nuova. La forma è bella. La forma è grande."
+        },
+        {
+          "n": 50,
+          "italian": "frase",
+          "pronunciation": "[фрáзе]",
+          "translation": "фраза",
+          "examples": "La frase è nuova. La frase è vera. La frase è interessante."
+        },
+        {
+          "n": 51,
+          "italian": "fratello",
+          "pronunciation": "[фратéлло]",
+          "translation": "брат",
+          "examples": "Il fratello è alto. Il fratello legge. Il fratello è bravo."
+        },
+        {
+          "n": 52,
+          "italian": "fungo",
+          "pronunciation": "[фýнго]",
+          "translation": "гриб",
+          "examples": "Il fungo è buono. Il fungo è piccolo."
+        },
+        {
+          "n": 53,
+          "italian": "gennaio",
+          "pronunciation": "[джэннáйо]",
+          "translation": "январь",
+          "examples": "Gennaio è freddo. Gennaio è nuovo."
+        },
+        {
+          "n": 54,
+          "italian": "ghiaccio",
+          "pronunciation": "[джáччо]",
+          "translation": "лёд",
+          "examples": "Il ghiaccio è freddo. Il ghiaccio è piccolo."
+        },
+        {
+          "n": 55,
+          "italian": "giornale",
+          "pronunciation": "[джорнáле]",
+          "translation": "газета",
+          "examples": "Il giornale è nuovo. Il giornale è interessante."
+        },
+        {
+          "n": 56,
+          "italian": "giornata",
+          "pronunciation": "[джорнáта]",
+          "translation": "день",
+          "examples": "La giornata è bella. La giornata è lunga."
+        },
+        {
+          "n": 57,
+          "italian": "giovedì",
+          "pronunciation": "[джовédи]",
+          "translation": "четверг",
+          "examples": "Giovedì è bello. Giovedì studio."
+        },
+        {
+          "n": 58,
+          "italian": "guida",
+          "pronunciation": "[гвúда]",
+          "translation": "гид",
+          "examples": "La guida è brava. La guida è italiana."
+        },
+        {
+          "n": 59,
+          "italian": "hobby",
+          "pronunciation": "[óбби]",
+          "translation": "хобби",
+          "examples": "L’hobby è bello. Il mio hobby è nuovo."
+        },
+        {
+          "n": 60,
+          "italian": "hotel",
+          "pronunciation": "[отéль]",
+          "translation": "отель",
+          "examples": "L’hotel è accogliente. L’hotel è grande. L’hotel è buono."
+        },
+        {
+          "n": 61,
+          "italian": "inglese",
+          "pronunciation": "[инглéзе]",
+          "translation": "англичанин",
+          "examples": "L’inglese è bravo. L’inglese legge."
+        },
+        {
+          "n": 62,
+          "italian": "Italia",
+          "pronunciation": "[итáлья]",
+          "translation": "Италия",
+          "examples": "L’Italia è bella. L’Italia è grande. L’Italia è calda."
+        },
+        {
+          "n": 63,
+          "italian": "italiano",
+          "pronunciation": "[итальáно]",
+          "translation": "итальянец",
+          "examples": "L’italiano è bravo. L’italiano parla."
+        },
+        {
+          "n": 64,
+          "italian": "lasagne",
+          "pronunciation": "[лазáнье]",
+          "translation": "лазанья",
+          "examples": "Le lasagne sono buone. Le lasagne sono italiane."
+        },
+        {
+          "n": 65,
+          "italian": "lavoro",
+          "pronunciation": "[лавóро]",
+          "translation": "работа",
+          "examples": "Il lavoro è importante. Il lavoro è in ufficio. Ho un lavoro. Il lavoro è buono."
+        },
+        {
+          "n": 66,
+          "italian": "letto",
+          "pronunciation": "[лэтто]",
+          "translation": "кровать",
+          "examples": "Il letto è grande. Il letto è nuovo. Il letto è caldo."
+        },
+        {
+          "n": 67,
+          "italian": "lezione",
+          "pronunciation": "[лецьóнэ]",
+          "translation": "урок",
+          "examples": "La lezione è interessante. La lezione è nuova. La lezione è importante."
+        },
+        {
+          "n": 68,
+          "italian": "limone",
+          "pronunciation": "[лимóнэ]",
+          "translation": "лимон",
+          "examples": "Il limone è giallo. Il limone è piccolo. Un limone è buono."
+        },
+        {
+          "n": 69,
+          "italian": "lingua",
+          "pronunciation": "[лíнгва]",
+          "translation": "язык",
+          "examples": "La lingua è italiana. La lingua è nuova. La lingua è importante."
+        },
+        {
+          "n": 70,
+          "italian": "luglio",
+          "pronunciation": "[лúльо]",
+          "translation": "июль",
+          "examples": "Luglio è caldo. Luglio è bello."
+        },
+        {
+          "n": 71,
+          "italian": "lunedì",
+          "pronunciation": "[лунэдú]",
+          "translation": "понедельник",
+          "examples": "Lunedì lavoro. Lunedì è buono."
+        },
+        {
+          "n": 72,
+          "italian": "macchina",
+          "pronunciation": "[мáккина]",
+          "translation": "машина",
+          "examples": "La macchina è nuova. La macchina è grande. La macchina è italiana."
+        },
+        {
+          "n": 73,
+          "italian": "madre",
+          "pronunciation": "[мáдрэ]",
+          "translation": "мать",
+          "examples": "La madre è brava. La madre legge. La madre ha una figlia. La madre cucina. La madre è contenta."
+        },
+        {
+          "n": 74,
+          "italian": "magazzino",
+          "pronunciation": "[маггадзúно]",
+          "translation": "склад",
+          "examples": "Il magazzino è grande. Il magazzino è chiuso."
+        },
+        {
+          "n": 75,
+          "italian": "marito",
+          "pronunciation": "[марúто]",
+          "translation": "муж",
+          "examples": "Il marito è contento. Il marito lavora. Il marito è italiano."
+        },
+        {
+          "n": 76,
+          "italian": "martedì",
+          "pronunciation": "[мартэдú]",
+          "translation": "вторник",
+          "examples": "Martedì studio. Martedì è libero."
+        },
+        {
+          "n": 77,
+          "italian": "mercoledì",
+          "pronunciation": "[мерколédи]",
+          "translation": "среда",
+          "examples": "Mercoledì è buono. Mercoledì lavoro."
+        },
+        {
+          "n": 78,
+          "italian": "mezzo",
+          "pronunciation": "[мéдзо]",
+          "translation": "средство",
+          "examples": "Il mezzo è buono. Il mezzo è nuovo."
+        },
+        {
+          "n": 79,
+          "italian": "mezzogiorno",
+          "pronunciation": "[медзоджóрно]",
+          "translation": "полдень",
+          "examples": "Mezzogiorno è caldo. A mezzogiorno mangio."
+        },
+        {
+          "n": 80,
+          "italian": "moglie",
+          "pronunciation": "[мóлье]",
+          "translation": "жена",
+          "examples": "La moglie è contenta. La moglie legge. La moglie è brava."
+        },
+        {
+          "n": 81,
+          "italian": "monumento",
+          "pronunciation": "[монументó]",
+          "translation": "памятник",
+          "examples": "Il monumento è grande. Il monumento è a Roma. Il monumento è bello."
+        },
+        {
+          "n": 82,
+          "italian": "museo",
+          "pronunciation": "[музэ́о]",
+          "translation": "музей",
+          "examples": "Il museo è grande. Il museo è interessante. Il museo è chiuso."
+        },
+        {
+          "n": 83,
+          "italian": "Napoli",
+          "pronunciation": "[нáполи]",
+          "translation": "Неаполь",
+          "examples": "Napoli è grande. Napoli è bella."
+        },
+        {
+          "n": 84,
+          "italian": "negozio",
+          "pronunciation": "[недзóцио]",
+          "translation": "магазин",
+          "examples": "Il negozio è grande. Il negozio è chiuso. Il negozio è nuovo."
+        },
+        {
+          "n": 85,
+          "italian": "nonna",
+          "pronunciation": "[нóнна]",
+          "translation": "бабушка",
+          "examples": "La nonna è buona. La nonna cucina. La nonna è contenta."
+        },
+        {
+          "n": 86,
+          "italian": "nonno",
+          "pronunciation": "[нóнно]",
+          "translation": "дедушка",
+          "examples": "Il nonno è vecchio. Il nonno è contento. Il nonno legge."
+        },
+        {
+          "n": 87,
+          "italian": "ottobre",
+          "pronunciation": "[оттóбре]",
+          "translation": "октябрь",
+          "examples": "Ottobre è fresco. Ottobre è bello."
+        },
+        {
+          "n": 88,
+          "italian": "padre",
+          "pronunciation": "[пáдрэ]",
+          "translation": "отец",
+          "examples": "Il padre è bravo. Il padre legge. Il padre ha un figlio. Il padre lavora in ufficio. Il padre è contento."
+        },
+        {
+          "n": 89,
+          "italian": "paese",
+          "pronunciation": "[паэ́зе]",
+          "translation": "страна / деревня",
+          "examples": "Il paese è bello. Il paese è italiano."
+        },
+        {
+          "n": 90,
+          "italian": "palazzo",
+          "pronunciation": "[палáццо]",
+          "translation": "дворец, здание",
+          "examples": "Il palazzo è grande. Il palazzo è a Roma. Il palazzo è bello."
+        },
+        {
+          "n": 91,
+          "italian": "panorama",
+          "pronunciation": "[панóрама]",
+          "translation": "панорама",
+          "examples": "Il panorama è bello. Il panorama è grande."
+        },
+        {
+          "n": 92,
+          "italian": "parola",
+          "pronunciation": "[парóла]",
+          "translation": "слово",
+          "examples": "La parola è nuova. La parola è vera. La parola è importante."
+        },
+        {
+          "n": 93,
+          "italian": "pasta",
+          "pronunciation": "[пáста]",
+          "translation": "паста",
+          "examples": "La pasta è buona. La pasta è italiana. La pasta è calda."
+        },
+        {
+          "n": 94,
+          "italian": "paura",
+          "pronunciation": "[паýра]",
+          "translation": "страх",
+          "examples": "La paura è grande. Ho paura. La paura è poca."
+        },
+        {
+          "n": 95,
+          "italian": "periferia",
+          "pronunciation": "[перифéрия]",
+          "translation": "окраина",
+          "examples": "La periferia è grande. La periferia è nuova."
+        },
+        {
+          "n": 96,
+          "italian": "persona",
+          "pronunciation": "[пэрсóна]",
+          "translation": "человек",
+          "examples": "La persona è buona. La persona è stanca. La persona è italiana."
+        },
+        {
+          "n": 97,
+          "italian": "pesce",
+          "pronunciation": "[пéше]",
+          "translation": "рыба",
+          "examples": "Il pesce è buono. Il pesce è fresco."
+        },
+        {
+          "n": 98,
+          "italian": "piazza",
+          "pronunciation": "[пьáцца]",
+          "translation": "площадь",
+          "examples": "La piazza è grande. La piazza è bella."
+        },
+        {
+          "n": 99,
+          "italian": "ponte",
+          "pronunciation": "[пóнтэ]",
+          "translation": "мост",
+          "examples": "Il ponte è grande. Il ponte è bello."
+        },
+        {
+          "n": 100,
+          "italian": "portafoglio",
+          "pronunciation": "[портафóльо]",
+          "translation": "кошелёк",
+          "examples": "Il portafoglio è nuovo. Il portafoglio è piccolo."
+        },
+        {
+          "n": 101,
+          "italian": "pranzo",
+          "pronunciation": "[прáнцо]",
+          "translation": "обед",
+          "examples": "Il pranzo è buono. Il pranzo è a mezzogiorno."
+        },
+        {
+          "n": 102,
+          "italian": "ragazzo",
+          "pronunciation": "[рагáццо]",
+          "translation": "парень",
+          "examples": "Il ragazzo è alto. Il ragazzo studia. Il ragazzo è contento."
+        },
+        {
+          "n": 103,
+          "italian": "ristorante",
+          "pronunciation": "[ристорáнтэ]",
+          "translation": "ресторан",
+          "examples": "Il ristorante è buono. Il ristorante è vicino. Il ristorante è grande."
+        },
+        {
+          "n": 104,
+          "italian": "Russia",
+          "pronunciation": "[рýссия]",
+          "translation": "Россия",
+          "examples": "La Russia è grande. La Russia è fredda. La Russia è bella."
+        },
+        {
+          "n": 105,
+          "italian": "russo",
+          "pronunciation": "[рýссо]",
+          "translation": "русский",
+          "examples": "Il russo è bravo. Il russo studia."
+        },
+        {
+          "n": 106,
+          "italian": "sabato",
+          "pronunciation": "[сáбато]",
+          "translation": "суббота",
+          "examples": "Sabato è libero. Sabato è bello. Il sabato è buono."
+        },
+        {
+          "n": 107,
+          "italian": "sciopero",
+          "pronunciation": "[шóперо]",
+          "translation": "забастовка",
+          "examples": "Lo sciopero è grande. Lo sciopero è domani."
+        },
+        {
+          "n": 108,
+          "italian": "scuola",
+          "pronunciation": "[скуóла]",
+          "translation": "школа",
+          "examples": "La scuola è grande. La scuola è nuova."
+        },
+        {
+          "n": 109,
+          "italian": "sete",
+          "pronunciation": "[сэте]",
+          "translation": "жажда",
+          "examples": "Ho sete. La sete è grande."
+        },
+        {
+          "n": 110,
+          "italian": "settembre",
+          "pronunciation": "[сеттэмбрэ]",
+          "translation": "сентябрь",
+          "examples": "Settembre è bello. Settembre è caldo."
+        },
+        {
+          "n": 111,
+          "italian": "signore",
+          "pronunciation": "[синьóре]",
+          "translation": "господин",
+          "examples": "Il signore è italiano. Il signore è bravo."
+        },
+        {
+          "n": 112,
+          "italian": "slavo",
+          "pronunciation": "[слáво]",
+          "translation": "славянин",
+          "examples": "Lo slavo è russo. Lo slavo parla."
+        },
+        {
+          "n": 113,
+          "italian": "società",
+          "pronunciation": "[сочъетá]",
+          "translation": "общество / компания",
+          "examples": "La società è grande. La società è italiana."
+        },
+        {
+          "n": 114,
+          "italian": "sorella",
+          "pronunciation": "[сорéлла]",
+          "translation": "сестра",
+          "examples": "La sorella è brava. La sorella studia. La sorella è alta."
+        },
+        {
+          "n": 115,
+          "italian": "sposato",
+          "pronunciation": "[спозáто]",
+          "translation": "женатый",
+          "examples": "Il sposato ha una moglie. Il sposato è contento."
+        },
+        {
+          "n": 116,
+          "italian": "stipendio",
+          "pronunciation": "[стипéndио]",
+          "translation": "зарплата",
+          "examples": "Lo stipendio è buono. Lo stipendio è grande."
+        },
+        {
+          "n": 117,
+          "italian": "studente",
+          "pronunciation": "[студéнтэ]",
+          "translation": "студент",
+          "examples": "Lo studente è bravo. Lo studente legge. Lo studente è stanco."
+        },
+        {
+          "n": 118,
+          "italian": "tagliatelle",
+          "pronunciation": "[тальятéлле]",
+          "translation": "тальятелле",
+          "examples": "Le tagliatelle sono buone. Le tagliatelle sono italiane."
+        },
+        {
+          "n": 119,
+          "italian": "tempo",
+          "pronunciation": "[тэмпо]",
+          "translation": "время",
+          "examples": "Il tempo è buono. Il tempo passa. Ho tempo. Il tempo è nuovo."
+        },
+        {
+          "n": 120,
+          "italian": "testo",
+          "pronunciation": "[тэсто]",
+          "translation": "текст",
+          "examples": "Il testo è interessante. Il testo è nuovo. Il testo è vero."
+        },
+        {
+          "n": 121,
+          "italian": "turista",
+          "pronunciation": "[турúста]",
+          "translation": "турист",
+          "examples": "Il turista è russo. Il turista visita il museo."
+        },
+        {
+          "n": 122,
+          "italian": "tuta",
+          "pronunciation": "[тýта]",
+          "translation": "комбинезон",
+          "examples": "La tuta è nuova. La tuta è calda."
+        },
+        {
+          "n": 123,
+          "italian": "ufficio",
+          "pronunciation": "[уффúчо]",
+          "translation": "офис",
+          "examples": "L’ufficio è grande. L’ufficio è in città. L’ufficio è nuovo."
+        },
+        {
+          "n": 124,
+          "italian": "venerdì",
+          "pronunciation": "[венэрдú]",
+          "translation": "пятница",
+          "examples": "Venerdì è libero. Venerdì lavoro."
+        },
+        {
+          "n": 125,
+          "italian": "verbo",
+          "pronunciation": "[вэрбо]",
+          "translation": "глагол",
+          "examples": "Il verbo è importante. Il verbo “avere” è nuovo. Il verbo è vero."
+        },
+        {
+          "n": 126,
+          "italian": "viaggio",
+          "pronunciation": "[вьяджо]",
+          "translation": "поездка",
+          "examples": "Il viaggio è bello. Il viaggio è a Roma."
+        },
+        {
+          "n": 127,
+          "italian": "vocabolario",
+          "pronunciation": "[вокаболáрио]",
+          "translation": "словарь",
+          "examples": "Il vocabolario è utile. Il vocabolario è nuovo. Il vocabolario è grande."
+        },
+        {
+          "n": 128,
+          "italian": "zero",
+          "pronunciation": "[дзéро]",
+          "translation": "ноль",
+          "examples": "Zero è piccolo. Zero è il numero."
+        },
+        {
+          "n": 129,
+          "italian": "zia",
+          "pronunciation": "[дзúа]",
+          "translation": "тётя",
+          "examples": "La zia è brava. La zia cucina. La zia è italiana."
+        },
+        {
+          "n": 130,
+          "italian": "zio",
+          "pronunciation": "[дзúо]",
+          "translation": "дядя",
+          "examples": "Lo zio è italiano. Lo zio è bravo. Lo zio legge."
+        },
+        {
+          "n": 131,
+          "italian": "zona",
+          "pronunciation": "[дзóна]",
+          "translation": "зона",
+          "examples": "La zona è grande. La zona è nuova."
+        },
+        {
+          "n": 132,
+          "italian": "zucchero",
+          "pronunciation": "[дзýккеро]",
+          "translation": "сахар",
+          "examples": "Lo zucchero è dolce. Lo zucchero è poco."
+        },
+        {
+          "n": 133,
+          "italian": "zucchine",
+          "pronunciation": "[дзуккúне]",
+          "translation": "кабачки (мн.)",
+          "examples": "Le zucchine sono buone. Le zucchine sono italiane."
+        }
+      ]
+    },
+    {
+      "key": "verb",
+      "label": "Verbs",
+      "words": [
+        {
+          "n": 1,
+          "italian": "abitare",
+          "pronunciation": "[абитáрэ]",
+          "translation": "жить",
+          "examples": "Io abito a Mosca. La famiglia abita in casa. Noi abitiamo in appartamento."
+        },
+        {
+          "n": 2,
+          "italian": "arrivare",
+          "pronunciation": "[арривáрэ]",
+          "translation": "прибывать",
+          "examples": "Io arrivo a Roma. Il treno arriva. La persona arriva."
+        },
+        {
+          "n": 3,
+          "italian": "avere",
+          "pronunciation": "[авэрэ]",
+          "translation": "иметь",
+          "examples": "Io ho un amico. Tu hai una casa. Noi abbiamo tempo."
+        },
+        {
+          "n": 4,
+          "italian": "bere",
+          "pronunciation": "[бэрэ]",
+          "translation": "пить",
+          "examples": "Io bevo un caffè. La persona beve acqua. Il bambino beve."
+        },
+        {
+          "n": 5,
+          "italian": "chiamare",
+          "pronunciation": "[кьямáре] (chiamo)",
+          "translation": "звать / называть",
+          "examples": "Io chiamo l’amico. Tu chiami la madre."
+        },
+        {
+          "n": 6,
+          "italian": "chiudere",
+          "pronunciation": "[кью́дере]",
+          "translation": "закрывать",
+          "examples": "Io chiudo la finestra. Tu chiudi la porta."
+        },
+        {
+          "n": 7,
+          "italian": "conoscere",
+          "pronunciation": "[конóшере] (conosco)",
+          "translation": "знать",
+          "examples": "Io conosco un amico. Tu conosci la lezione. Noi conosciamo l’Italia."
+        },
+        {
+          "n": 8,
+          "italian": "domandare",
+          "pronunciation": "[домандáрэ]",
+          "translation": "спрашивать",
+          "examples": "Io domando. La madre domanda. Lo studente domanda."
+        },
+        {
+          "n": 9,
+          "italian": "dormire",
+          "pronunciation": "[дормíре]",
+          "translation": "спать",
+          "examples": "Io dormo nel letto. Il bambino dorme."
+        },
+        {
+          "n": 10,
+          "italian": "essere",
+          "pronunciation": "[э́ссере] (sono, è, sei…)",
+          "translation": "быть",
+          "examples": "Io sono russo. Tu sei bravo. La casa è grande. Noi siamo contenti."
+        },
+        {
+          "n": 11,
+          "italian": "fare",
+          "pronunciation": "[фáрэ]",
+          "translation": "делать",
+          "examples": "Io faccio un esercizio. Tu fai colazione. Noi facciamo un viaggio."
+        },
+        {
+          "n": 12,
+          "italian": "guardare",
+          "pronunciation": "[гуардáре]",
+          "translation": "смотреть",
+          "examples": "Io guardo il panorama. Tu guardi la finestra."
+        },
+        {
+          "n": 13,
+          "italian": "insegnare",
+          "pronunciation": "[инсенья́ре] (insegno)",
+          "translation": "преподавать",
+          "examples": "Io insegno italiano. Tu insegni."
+        },
+        {
+          "n": 14,
+          "italian": "lavorare",
+          "pronunciation": "[лаворáрэ]",
+          "translation": "работать",
+          "examples": "Io lavoro in ufficio. Il padre lavora. Noi lavoriamo."
+        },
+        {
+          "n": 15,
+          "italian": "leggere",
+          "pronunciation": "[лэ́джере] (leggo)",
+          "translation": "читать",
+          "examples": "Io leggo un testo. Il padre legge il giornale. Noi leggiamo."
+        },
+        {
+          "n": 16,
+          "italian": "mangiare",
+          "pronunciation": "[манджáре] (mangio)",
+          "translation": "есть",
+          "examples": "Io mangio la pasta. Tu mangi il pesce. Noi mangiamo a pranzo."
+        },
+        {
+          "n": 17,
+          "italian": "mettere",
+          "pronunciation": "[мэттэре]",
+          "translation": "класть",
+          "examples": "Io metto il libro. Tu metti il cellulare."
+        },
+        {
+          "n": 18,
+          "italian": "pagare",
+          "pronunciation": "[пагáре]",
+          "translation": "платить",
+          "examples": "Io pago il caffè. Tu pagi il conto."
+        },
+        {
+          "n": 19,
+          "italian": "parlare",
+          "pronunciation": "[парлáрэ] (parlo)",
+          "translation": "говорить",
+          "examples": "Io parlo italiano. Tu parli russo. Noi parliamo."
+        },
+        {
+          "n": 20,
+          "italian": "partire",
+          "pronunciation": "[партíрэ]",
+          "translation": "уезжать",
+          "examples": "Io parto domani. Il treno parte. Lo studente parte."
+        },
+        {
+          "n": 21,
+          "italian": "preferire",
+          "pronunciation": "[преферíре] (preferisco)",
+          "translation": "предпочитать",
+          "examples": "Io preferisco il caffè. Tu preferisci la pasta. Noi preferiamo l’Italia."
+        },
+        {
+          "n": 22,
+          "italian": "preparare",
+          "pronunciation": "[препарáре]",
+          "translation": "готовить",
+          "examples": "Io preparo la colazione. La madre prepara la pasta."
+        },
+        {
+          "n": 23,
+          "italian": "riposare",
+          "pronunciation": "[рипозáрэ]",
+          "translation": "отдыхать",
+          "examples": "Io riposo. La persona riposa. Il bambino riposa."
+        },
+        {
+          "n": 24,
+          "italian": "rispondere",
+          "pronunciation": "[риспóндере]",
+          "translation": "отвечать",
+          "examples": "Io rispondo. La madre risponde. Lo studente risponde."
+        },
+        {
+          "n": 25,
+          "italian": "studiare",
+          "pronunciation": "[студья́ре]",
+          "translation": "учить",
+          "examples": "Io studio italiano. Tu studi la lezione. Noi studiamo."
+        },
+        {
+          "n": 26,
+          "italian": "tornare",
+          "pronunciation": "[торнáрэ]",
+          "translation": "возвращаться",
+          "examples": "Io torno a casa. Il padre torna. La madre torna."
+        },
+        {
+          "n": 27,
+          "italian": "usare",
+          "pronunciation": "[узáрэ]",
+          "translation": "использовать",
+          "examples": "Io uso il cellulare. Tu usi il vocabolario. Noi usiamo il mezzo."
+        },
+        {
+          "n": 28,
+          "italian": "viaggiare",
+          "pronunciation": "[вьяджáре]",
+          "translation": "путешествовать",
+          "examples": "Io viaggio in Italia. Tu viaggi. Noi viaggiamo."
+        },
+        {
+          "n": 29,
+          "italian": "visitare",
+          "pronunciation": "[визитáрэ]",
+          "translation": "посещать",
+          "examples": "Io visito il museo. Tu visiti Roma. Noi visitiamo l’Italia."
+        }
+      ]
+    },
+    {
+      "key": "adjective",
+      "label": "Adjectives",
+      "words": [
+        {
+          "n": 1,
+          "italian": "accogliente",
+          "pronunciation": "[аккольéнтэ]",
+          "translation": "уютный",
+          "examples": "L’albergo è accogliente. La camera è accogliente."
+        },
+        {
+          "n": 2,
+          "italian": "alto",
+          "pronunciation": "[áльто]",
+          "translation": "высокий",
+          "examples": "Il ragazzo è alto. Il palazzo è alto."
+        },
+        {
+          "n": 3,
+          "italian": "basso / bassa",
+          "pronunciation": "[бáссо / бáсса]",
+          "translation": "низкий / низкая",
+          "examples": "Il ragazzo è basso. La casa è bassa."
+        },
+        {
+          "n": 4,
+          "italian": "bello",
+          "pronunciation": "[бэлло]",
+          "translation": "красивый",
+          "examples": "La casa è bella. L’Italia è bella. Il panorama è bello."
+        },
+        {
+          "n": 5,
+          "italian": "bravo / brava",
+          "pronunciation": "[брáво / брáва]",
+          "translation": "хороший / хорошая",
+          "examples": "Il bambino è bravo. La madre è brava. Il ragazzo è bravo. La lezione è brava."
+        },
+        {
+          "n": 6,
+          "italian": "caldo",
+          "pronunciation": "[кáльдо]",
+          "translation": "тёплый / жаркий",
+          "examples": "Il caffè è caldo. Luglio è caldo. La coperta è calda."
+        },
+        {
+          "n": 7,
+          "italian": "caro / cara",
+          "pronunciation": "[кáро / кáра]",
+          "translation": "дорогой / дорогая",
+          "examples": "Il caffè è caro. La madre è cara. L’amico è caro. La casa è cara."
+        },
+        {
+          "n": 8,
+          "italian": "chiuso",
+          "pronunciation": "[кью́зо]",
+          "translation": "закрытый",
+          "examples": "Il museo è chiuso. Il negozio è chiuso."
+        },
+        {
+          "n": 9,
+          "italian": "contento",
+          "pronunciation": "[контéнто]",
+          "translation": "довольный",
+          "examples": "Il bambino è contento. La famiglia è contenta."
+        },
+        {
+          "n": 10,
+          "italian": "disoccupato",
+          "pronunciation": "[дизоккупáто]",
+          "translation": "безработный",
+          "examples": "Lo studente è disoccupato. Il disoccupato cerca lavoro."
+        },
+        {
+          "n": 11,
+          "italian": "diverso",
+          "pronunciation": "[дивéрсо]",
+          "translation": "другой / различный",
+          "examples": "Il verbo è diverso. La forma è diversa."
+        },
+        {
+          "n": 12,
+          "italian": "falso",
+          "pronunciation": "[фáльсо]",
+          "translation": "ложный",
+          "examples": "La frase è falsa. La forma è falsa."
+        },
+        {
+          "n": 13,
+          "italian": "freddo / fredda",
+          "pronunciation": "[фрэддо / фрэдда]",
+          "translation": "холодный / холодная",
+          "examples": "L’acqua è fredda. Gennaio è freddo. La Russia è fredda."
+        },
+        {
+          "n": 14,
+          "italian": "grande",
+          "pronunciation": "[грáндэ]",
+          "translation": "большой",
+          "examples": "La casa è grande. Il museo è grande. Il palazzo è grande. La famiglia è grande."
+        },
+        {
+          "n": 15,
+          "italian": "grasso / grassa",
+          "pronunciation": "[грáссо / грáсса]",
+          "translation": "толстый / толстая",
+          "examples": "Il bambino è grasso. La persona è grassa."
+        },
+        {
+          "n": 16,
+          "italian": "intelligente",
+          "pronunciation": "[интеллиджéнтэ]",
+          "translation": "умный",
+          "examples": "Lo studente è intelligente. Il ragazzo è intelligente."
+        },
+        {
+          "n": 17,
+          "italian": "interessante",
+          "pronunciation": "[интерессáнтэ]",
+          "translation": "интересный",
+          "examples": "Il testo è interessante. La lezione è interessante. Il museo è interessante."
+        },
+        {
+          "n": 18,
+          "italian": "libero",
+          "pronunciation": "[лíберо]",
+          "translation": "свободный",
+          "examples": "Sabato è libero. Il tempo è libero."
+        },
+        {
+          "n": 19,
+          "italian": "magro",
+          "pronunciation": "[мáгро]",
+          "translation": "худой",
+          "examples": "Il ragazzo è magro. La persona è magra."
+        },
+        {
+          "n": 20,
+          "italian": "malato",
+          "pronunciation": "[малáто]",
+          "translation": "больной",
+          "examples": "La persona è malata. Il bambino è malato."
+        },
+        {
+          "n": 21,
+          "italian": "necessario",
+          "pronunciation": "[нечессáрио]",
+          "translation": "необходимый",
+          "examples": "Il vocabolario è necessario. Il lavoro è necessario."
+        },
+        {
+          "n": 22,
+          "italian": "nuovo",
+          "pronunciation": "[нуóво]",
+          "translation": "новый",
+          "examples": "Il libro è nuovo. La casa è nuova. L’anno è nuovo. Il cellulare è nuovo."
+        },
+        {
+          "n": 23,
+          "italian": "occupato",
+          "pronunciation": "[оккупáто]",
+          "translation": "занятый",
+          "examples": "L’ufficio è occupato. Lo studente è occupato."
+        },
+        {
+          "n": 24,
+          "italian": "pesante",
+          "pronunciation": "[пезáнтэ]",
+          "translation": "тяжёлый",
+          "examples": "Il lavoro è pesante. La coperta è pesante."
+        },
+        {
+          "n": 25,
+          "italian": "piccolo",
+          "pronunciation": "[пíкколо]",
+          "translation": "маленький",
+          "examples": "Il bambino è piccolo. Il bicchiere è piccolo. La casa è piccola."
+        },
+        {
+          "n": 26,
+          "italian": "pieno",
+          "pronunciation": "[пьéно]",
+          "translation": "полный",
+          "examples": "Il bicchiere è pieno. Il portafoglio è pieno."
+        },
+        {
+          "n": 27,
+          "italian": "prossimo",
+          "pronunciation": "[прóссимо]",
+          "translation": "следующий",
+          "examples": "Il prossimo anno è nuovo. La prossima lezione è interessante."
+        },
+        {
+          "n": 28,
+          "italian": "russo / russa",
+          "pronunciation": "[рýссо / рýсса]",
+          "translation": "русский / русская",
+          "examples": "L’amico è russo. L’amica è russa. Lo slavo è russo."
+        },
+        {
+          "n": 29,
+          "italian": "sbagliato",
+          "pronunciation": "[сбалья́то]",
+          "translation": "неправильный",
+          "examples": "L’esercizio è sbagliato. La frase è sbagliata."
+        },
+        {
+          "n": 30,
+          "italian": "slavo / slava",
+          "pronunciation": "[слáво / слáва]",
+          "translation": "славянский / славянская",
+          "examples": "Lo slavo è russo. La persona è slava."
+        },
+        {
+          "n": 31,
+          "italian": "solito",
+          "pronunciation": "[сóлито]",
+          "translation": "обычный",
+          "examples": "La cosa è solita. La lezione è solita."
+        },
+        {
+          "n": 32,
+          "italian": "sposato / sposata",
+          "pronunciation": "[спозáто / спозáта]",
+          "translation": "женатый / замужняя",
+          "examples": "Il marito è sposato. La moglie è sposata."
+        },
+        {
+          "n": 33,
+          "italian": "stanco",
+          "pronunciation": "[стáнко]",
+          "translation": "уставший",
+          "examples": "Lo studente è stanco. La persona è stanca. Il bambino è stanco."
+        },
+        {
+          "n": 34,
+          "italian": "straniero",
+          "pronunciation": "[страньéро]",
+          "translation": "иностранный",
+          "examples": "Lo straniero è russo. Lo straniero visita l’Italia."
+        },
+        {
+          "n": 35,
+          "italian": "tedesco",
+          "pronunciation": "[тедéско]",
+          "translation": "немецкий",
+          "examples": "Il tedesco è bravo. La persona è tedesca."
+        },
+        {
+          "n": 36,
+          "italian": "terzo",
+          "pronunciation": "[тéрцо]",
+          "translation": "третий",
+          "examples": "Il terzo esercizio è nuovo. La terza lezione è interessante."
+        },
+        {
+          "n": 37,
+          "italian": "ultimo",
+          "pronunciation": "[ýльтимо]",
+          "translation": "последний",
+          "examples": "L’ultimo esercizio è difficile. L’ultimo mese è dicembre."
+        },
+        {
+          "n": 38,
+          "italian": "vero",
+          "pronunciation": "[вэро]",
+          "translation": "настоящий / правда",
+          "examples": "Il verbo è vero. La frase è vera. Il tempo è vero."
+        }
+      ]
+    },
+    {
+      "key": "adverb",
+      "label": "Adverbs",
+      "words": [
+        {
+          "n": 1,
+          "italian": "adesso",
+          "pronunciation": "[адэ́ссо]",
+          "translation": "сейчас",
+          "examples": "Adesso leggo. Adesso mangio. Adesso studio."
+        },
+        {
+          "n": 2,
+          "italian": "ancora",
+          "pronunciation": "[анкóра]",
+          "translation": "ещё",
+          "examples": "Ancora leggo. Ancora mangio. Ancora studio."
+        },
+        {
+          "n": 3,
+          "italian": "bene",
+          "pronunciation": "[бэ́не]",
+          "translation": "хорошо",
+          "examples": "Io sto bene. La lezione è bene. Il bambino è bene."
+        },
+        {
+          "n": 4,
+          "italian": "così",
+          "pronunciation": "[кóзи]",
+          "translation": "так",
+          "examples": "Così è bene. Così è grande. Così è vero."
+        },
+        {
+          "n": 5,
+          "italian": "di nuovo",
+          "pronunciation": "[ди нуóво]",
+          "translation": "снова",
+          "examples": "Di nuovo leggo. Di nuovo parto. Di nuovo mangio."
+        },
+        {
+          "n": 6,
+          "italian": "di solito",
+          "pronunciation": "[ди сóлито]",
+          "translation": "обычно",
+          "examples": "Di solito leggo. Di solito mangio. Di solito lavoro."
+        },
+        {
+          "n": 7,
+          "italian": "domani",
+          "pronunciation": "[домáни]",
+          "translation": "завтра",
+          "examples": "Domani parto. Domani è sabato. Domani studio."
+        },
+        {
+          "n": 8,
+          "italian": "dopo",
+          "pronunciation": "[дóпо]",
+          "translation": "после",
+          "examples": "Dopo leggo. Dopo mangio. Dopo torno."
+        },
+        {
+          "n": 9,
+          "italian": "dove",
+          "pronunciation": "[дóве]",
+          "translation": "где",
+          "examples": "Dove è la casa? Dove è il museo? Dove lavori?"
+        },
+        {
+          "n": 10,
+          "italian": "finalmente",
+          "pronunciation": "[финальмэ́нте]",
+          "translation": "наконец",
+          "examples": "Finalmente arrivo. Finalmente leggo. Finalmente mangio."
+        },
+        {
+          "n": 11,
+          "italian": "già",
+          "pronunciation": "[джá]",
+          "translation": "уже",
+          "examples": "Già leggo. Già mangio. Già so."
+        },
+        {
+          "n": 12,
+          "italian": "mai",
+          "pronunciation": "[мáй]",
+          "translation": "никогда",
+          "examples": "Mai male. Mai poco. Mai freddo."
+        },
+        {
+          "n": 13,
+          "italian": "male",
+          "pronunciation": "[мáле]",
+          "translation": "плохо",
+          "examples": "Io sto male. La persona è male."
+        },
+        {
+          "n": 14,
+          "italian": "meglio",
+          "pronunciation": "[мэ́льо]",
+          "translation": "лучше",
+          "examples": "Meglio così. Meglio domani. Meglio bene."
+        },
+        {
+          "n": 15,
+          "italian": "molto",
+          "pronunciation": "[мóльто]",
+          "translation": "очень / много",
+          "examples": "Molto bravo. Molto grande. Molto interessante."
+        },
+        {
+          "n": 16,
+          "italian": "perché",
+          "pronunciation": "[перке́]",
+          "translation": "почему / потому что",
+          "examples": "Perché leggi? Perché è grande."
+        },
+        {
+          "n": 17,
+          "italian": "poco",
+          "pronunciation": "[пóко]",
+          "translation": "мало",
+          "examples": "Poco tempo. Poco caffè. Poco zucchero."
+        },
+        {
+          "n": 18,
+          "italian": "poi",
+          "pronunciation": "[пóи]",
+          "translation": "потом",
+          "examples": "Poi leggo. Poi mangio. Poi torno."
+        },
+        {
+          "n": 19,
+          "italian": "prima",
+          "pronunciation": "[прíма]",
+          "translation": "раньше / сначала",
+          "examples": "Prima leggo. Prima mangio. Prima studio."
+        },
+        {
+          "n": 20,
+          "italian": "quando",
+          "pronunciation": "[куáндо]",
+          "translation": "когда",
+          "examples": "Quando parti? Quando torni? Quando leggi?"
+        },
+        {
+          "n": 21,
+          "italian": "quasi",
+          "pronunciation": "[куáзи]",
+          "translation": "почти",
+          "examples": "Quasi finito. Quasi grande. Quasi bene."
+        },
+        {
+          "n": 22,
+          "italian": "sempre",
+          "pronunciation": "[сэ́мпре]",
+          "translation": "всегда",
+          "examples": "Sempre bene. Sempre leggo. Sempre studio."
+        },
+        {
+          "n": 23,
+          "italian": "solo",
+          "pronunciation": "[сóло]",
+          "translation": "только / один",
+          "examples": "Solo io leggo. Solo tu sei bravo. Solo la casa è grande."
+        },
+        {
+          "n": 24,
+          "italian": "spesso",
+          "pronunciation": "[спэ́ссо]",
+          "translation": "часто",
+          "examples": "Spesso leggo. Spesso mangio pasta. Spesso viaggio."
+        },
+        {
+          "n": 25,
+          "italian": "troppo",
+          "pronunciation": "[трóппо]",
+          "translation": "слишком",
+          "examples": "Troppo grande. Troppo freddo. Troppo poco."
+        },
+        {
+          "n": 26,
+          "italian": "un po’",
+          "pronunciation": "[ун по]",
+          "translation": "немного",
+          "examples": "Un po’ di tempo. Un po’ di caffè. Un po’ di paura."
+        }
+      ]
+    },
+    {
+      "key": "article",
+      "label": "Articles",
+      "words": [
+        {
+          "n": 1,
+          "italian": "gli",
+          "pronunciation": "[льи]",
+          "translation": "определённый артикль (м. р. мн. ч. перед гласной/s/z)",
+          "examples": "Gli amici sono bravi. Gli studenti leggono. Gli zii sono italiani."
+        },
+        {
+          "n": 2,
+          "italian": "i",
+          "pronunciation": "[и]",
+          "translation": "определённый артикль (м. р. мн. ч.)",
+          "examples": "I bambini sono bravi. I padri lavorano. I musei sono grandi."
+        },
+        {
+          "n": 3,
+          "italian": "il",
+          "pronunciation": "[иль]",
+          "translation": "определённый артикль (м. р. ед. ч.)",
+          "examples": "Il padre lavora. Il bambino dorme. Il tempo è buono. Il museo è grande. Il caffè è caldo."
+        },
+        {
+          "n": 4,
+          "italian": "l'",
+          "pronunciation": "[ль]",
+          "translation": "определённый артикль (перед гласной)",
+          "examples": "L'amico è bravo. L'albergo è nuovo. L'amica è russa. L'acqua è fredda."
+        },
+        {
+          "n": 5,
+          "italian": "la",
+          "pronunciation": "[ла]",
+          "translation": "определённый артикль (ж. р. ед. ч.)",
+          "examples": "La madre è brava. La casa è grande. La paura è grande. La finestra è aperta. La lezione è interessante."
+        },
+        {
+          "n": 6,
+          "italian": "le",
+          "pronunciation": "[ле]",
+          "translation": "определённый артикль (ж. р. мн. ч.)",
+          "examples": "Le madri sono brave. Le case sono grandi. Le lezioni sono interessanti."
+        },
+        {
+          "n": 7,
+          "italian": "lo",
+          "pronunciation": "[ло]",
+          "translation": "определённый артикль (м. р. перед s/z)",
+          "examples": "Lo studente legge. Lo zio arriva. Lo studente è stanco."
+        },
+        {
+          "n": 8,
+          "italian": "un",
+          "pronunciation": "[ун]",
+          "translation": "неопределённый артикль (м. р. ед. ч.)",
+          "examples": "Un bambino è bravo. Un amico legge. Un padre ha un figlio. Un caffè è buono. Un albergo è grande."
+        },
+        {
+          "n": 9,
+          "italian": "un'",
+          "pronunciation": "[ун’]",
+          "translation": "неопределённый артикль (ж. р. перед гласной)",
+          "examples": "Un'amica è stanca. Un'acqua è fredda. Un'amica parla."
+        },
+        {
+          "n": 10,
+          "italian": "una",
+          "pronunciation": "[уна]",
+          "translation": "неопределённый артикль (ж. р. ед. ч.)",
+          "examples": "Una madre è brava. Una casa è grande. Una domanda è interessante. Una amica è russa. Una lezione è nuova."
+        },
+        {
+          "n": 11,
+          "italian": "uno",
+          "pronunciation": "[уно]",
+          "translation": "неопределённый артикль (м. р. перед s/z)",
+          "examples": "Uno studente è bravo. Uno zio è italiano. Uno studente legge."
+        }
+      ]
+    },
+    {
+      "key": "conjunction",
+      "label": "Conjunctions",
+      "words": [
+        {
+          "n": 1,
+          "italian": "che",
+          "pronunciation": "[ке]",
+          "translation": "что / который",
+          "examples": "So che è bravo. La casa che è grande."
+        },
+        {
+          "n": 2,
+          "italian": "dunque",
+          "pronunciation": "[дýнкве]",
+          "translation": "итак",
+          "examples": "Dunque è bravo. Dunque è grande."
+        },
+        {
+          "n": 3,
+          "italian": "e",
+          "pronunciation": "[э]",
+          "translation": "и",
+          "examples": "Il padre e la madre. Il bambino e l’amico. La casa e l’ufficio."
+        },
+        {
+          "n": 4,
+          "italian": "invece",
+          "pronunciation": "[инвэ́че]",
+          "translation": "вместо / а",
+          "examples": "Invece leggo. Invece studio."
+        },
+        {
+          "n": 5,
+          "italian": "ma",
+          "pronunciation": "[ма]",
+          "translation": "но",
+          "examples": "È grande ma bello. È bravo ma stanco."
+        },
+        {
+          "n": 6,
+          "italian": "mentre",
+          "pronunciation": "[мэнтрэ]",
+          "translation": "в то время как",
+          "examples": "Mentre leggo, mangio. Mentre studio, bevo."
+        },
+        {
+          "n": 7,
+          "italian": "o",
+          "pronunciation": "[о]",
+          "translation": "или",
+          "examples": "Il caffè o l’acqua. Il museo o il ristorante."
+        },
+        {
+          "n": 8,
+          "italian": "perché",
+          "pronunciation": "[перке́]",
+          "translation": "потому что",
+          "examples": "Leggo perché è interessante. Studio perché è importante."
+        },
+        {
+          "n": 9,
+          "italian": "perciò",
+          "pronunciation": "[перчó]",
+          "translation": "поэтому",
+          "examples": "Perciò studio. Perciò viaggio."
+        },
+        {
+          "n": 10,
+          "italian": "però",
+          "pronunciation": "[перó]",
+          "translation": "однако",
+          "examples": "È bello però freddo. È grande però nuovo."
+        },
+        {
+          "n": 11,
+          "italian": "quando",
+          "pronunciation": "[куáндо]",
+          "translation": "когда",
+          "examples": "Quando leggo, studio. Quando mangio, bevo."
+        },
+        {
+          "n": 12,
+          "italian": "quindi",
+          "pronunciation": "[куи́нди]",
+          "translation": "поэтому",
+          "examples": "Quindi leggo. Quindi mangio."
+        },
+        {
+          "n": 13,
+          "italian": "se",
+          "pronunciation": "[се]",
+          "translation": "если",
+          "examples": "Se è bravo, leggo. Se è grande, è bello."
+        }
+      ]
+    },
+    {
+      "key": "interjection",
+      "label": "Interjections",
+      "words": [
+        {
+          "n": 1,
+          "italian": "arrivederci",
+          "pronunciation": "[арривэдэ́рчи]",
+          "translation": "до свидания",
+          "examples": "Arrivederci! Arrivederci, madre! Arrivederci, Italia!"
+        },
+        {
+          "n": 2,
+          "italian": "bravo!",
+          "pronunciation": "[брáво]",
+          "translation": "молодец!",
+          "examples": "Bravo! Il bambino è bravo! Bravo, amico!"
+        },
+        {
+          "n": 3,
+          "italian": "buongiorno",
+          "pronunciation": "[буонджо́рно]",
+          "translation": "добрый день",
+          "examples": "Buongiorno! Buongiorno, padre! Buongiorno, amico!"
+        },
+        {
+          "n": 4,
+          "italian": "ciao",
+          "pronunciation": "[чья́о]",
+          "translation": "привет / пока",
+          "examples": "Ciao! Ciao amico! Ciao madre!"
+        },
+        {
+          "n": 5,
+          "italian": "ecco",
+          "pronunciation": "[э́кко]",
+          "translation": "вот",
+          "examples": "Ecco! Ecco il caffè. Ecco la casa."
+        },
+        {
+          "n": 6,
+          "italian": "grazie",
+          "pronunciation": "[грáцие]",
+          "translation": "спасибо",
+          "examples": "Grazie! Grazie mille! Grazie, amico!"
+        },
+        {
+          "n": 7,
+          "italian": "no",
+          "pronunciation": "[но]",
+          "translation": "нет",
+          "examples": "No! No, è piccolo. No, è freddo."
+        },
+        {
+          "n": 8,
+          "italian": "perfetto",
+          "pronunciation": "[перфэ́тто]",
+          "translation": "отлично",
+          "examples": "Perfetto! Perfetto, è grande. Perfetto, è nuovo."
+        },
+        {
+          "n": 9,
+          "italian": "piacere!",
+          "pronunciation": "[пьячэ́ре]",
+          "translation": "приятно познакомиться!",
+          "examples": "Piacere! Piacere, sono russo. Piacere, amico!"
+        },
+        {
+          "n": 10,
+          "italian": "prego",
+          "pronunciation": "[прэ́го]",
+          "translation": "пожалуйста / не за что",
+          "examples": "Prego! Il caffè, prego. Prego, entra."
+        },
+        {
+          "n": 11,
+          "italian": "scusa",
+          "pronunciation": "[ску́за]",
+          "translation": "извини",
+          "examples": "Scusa! Scusa, amico. Scusa, è tardi."
+        },
+        {
+          "n": 12,
+          "italian": "sì",
+          "pronunciation": "[си]",
+          "translation": "да",
+          "examples": "Sì! Sì, è bravo. Sì, leggo."
+        },
+        {
+          "n": 13,
+          "italian": "va bene",
+          "pronunciation": "[ва бэ́не]",
+          "translation": "хорошо / ладно",
+          "examples": "Va bene! Va bene, domani. Va bene, mangio."
+        }
+      ]
+    },
+    {
+      "key": "preposition",
+      "label": "Prepositions",
+      "words": [
+        {
+          "n": 1,
+          "italian": "a",
+          "pronunciation": "[а]",
+          "translation": "в / на / к",
+          "examples": "A Roma. A casa. A mezzogiorno. A pranzo."
+        },
+        {
+          "n": 2,
+          "italian": "al / allo / alla",
+          "pronunciation": "[аль / алло / алла]",
+          "translation": "в / на (слитные)",
+          "examples": "Al bar. Alla casa. Allo studio. Alla lezione."
+        },
+        {
+          "n": 3,
+          "italian": "con",
+          "pronunciation": "[кон]",
+          "translation": "с",
+          "examples": "Con l’amico. Con la madre. Con il caffè. Con il cellulare."
+        },
+        {
+          "n": 4,
+          "italian": "da",
+          "pronunciation": "[да]",
+          "translation": "от / из",
+          "examples": "Da Mosca. Da Roma. Da casa. Da lavoro."
+        },
+        {
+          "n": 5,
+          "italian": "davanti a",
+          "pronunciation": "[давáнти а]",
+          "translation": "перед",
+          "examples": "Davanti a casa. Davanti al museo."
+        },
+        {
+          "n": 6,
+          "italian": "del / della",
+          "pronunciation": "[дель / делла]",
+          "translation": "о / из (слитные)",
+          "examples": "Del padre. Della madre. Del museo. Della casa."
+        },
+        {
+          "n": 7,
+          "italian": "di",
+          "pronunciation": "[ди]",
+          "translation": "о / из / от",
+          "examples": "Di Roma. Di Mosca. Di nuovo. Di solito."
+        },
+        {
+          "n": 8,
+          "italian": "dietro",
+          "pronunciation": "[диэ́тро]",
+          "translation": "за",
+          "examples": "Dietro la casa. Dietro il palazzo."
+        },
+        {
+          "n": 9,
+          "italian": "in",
+          "pronunciation": "[ин]",
+          "translation": "в",
+          "examples": "In casa. In Italia. In ufficio. In Russia."
+        },
+        {
+          "n": 10,
+          "italian": "lontano da",
+          "pronunciation": "[лонтáно да]",
+          "translation": "далеко от",
+          "examples": "Lontano da Mosca. Lontano da Roma."
+        },
+        {
+          "n": 11,
+          "italian": "per",
+          "pronunciation": "[пер]",
+          "translation": "для / на",
+          "examples": "Per favore. Per il bambino. Per la lezione. Per il viaggio."
+        },
+        {
+          "n": 12,
+          "italian": "sopra",
+          "pronunciation": "[сóпра]",
+          "translation": "над",
+          "examples": "Sopra il tavolo. Sopra la coperta."
+        },
+        {
+          "n": 13,
+          "italian": "sotto",
+          "pronunciation": "[сóтто]",
+          "translation": "под",
+          "examples": "Sotto il letto. Sotto il ponte."
+        },
+        {
+          "n": 14,
+          "italian": "su",
+          "pronunciation": "[су]",
+          "translation": "на",
+          "examples": "Su il tavolo. Su il giornale. Su il ponte."
+        },
+        {
+          "n": 15,
+          "italian": "tra / fra",
+          "pronunciation": "[тра / фра]",
+          "translation": "между",
+          "examples": "Tra casa e ufficio. Fra gli amici."
+        },
+        {
+          "n": 16,
+          "italian": "vicino a",
+          "pronunciation": "[вичíно а]",
+          "translation": "рядом с",
+          "examples": "Vicino a casa. Vicino al bar. Vicino al museo."
+        }
+      ]
+    },
+    {
+      "key": "pronoun",
+      "label": "Pronouns",
+      "words": [
+        {
+          "n": 1,
+          "italian": "ci",
+          "pronunciation": "[чи]",
+          "translation": "нам / нас / туда",
+          "examples": "Ci piace il caffè. Ci siamo."
+        },
+        {
+          "n": 2,
+          "italian": "gli / le",
+          "pronunciation": "[льи / ле]",
+          "translation": "ему / ей",
+          "examples": "Gli piace il caffè. Le piace la casa."
+        },
+        {
+          "n": 3,
+          "italian": "io",
+          "pronunciation": "[и́о]",
+          "translation": "я (в глаголах)",
+          "examples": "Io leggo. Io sono russo. Io ho un amico."
+        },
+        {
+          "n": 4,
+          "italian": "lo / la",
+          "pronunciation": "[ло / ла]",
+          "translation": "его / её (прям. доп.)",
+          "examples": "Lo leggo. La leggo. Lo vedo."
+        },
+        {
+          "n": 5,
+          "italian": "loro",
+          "pronunciation": "[лóро]",
+          "translation": "они",
+          "examples": "Loro sono contenti. Loro leggono. Loro hanno una famiglia."
+        },
+        {
+          "n": 6,
+          "italian": "mi",
+          "pronunciation": "[ми]",
+          "translation": "мне / меня",
+          "examples": "Mi chiamo. Mi piace il caffè. Mi piace la casa."
+        },
+        {
+          "n": 7,
+          "italian": "mia",
+          "pronunciation": "[мíа]",
+          "translation": "моя",
+          "examples": "La mia casa è grande. La mia madre è brava. La mia amica è russa."
+        },
+        {
+          "n": 8,
+          "italian": "mio",
+          "pronunciation": "[мíо]",
+          "translation": "мой",
+          "examples": "Il mio padre è bravo. Il mio amico legge. Il mio fratello è alto."
+        },
+        {
+          "n": 9,
+          "italian": "molte",
+          "pronunciation": "[мóльте]",
+          "translation": "многие",
+          "examples": "Molte persone leggono. Molte case sono grandi."
+        },
+        {
+          "n": 10,
+          "italian": "ne",
+          "pronunciation": "[не]",
+          "translation": "оттуда / об этом",
+          "examples": "Ne ho paura. Ne parlo."
+        },
+        {
+          "n": 11,
+          "italian": "noi",
+          "pronunciation": "[нóи]",
+          "translation": "мы",
+          "examples": "Noi siamo italiani. Noi leggiamo. Noi abbiamo tempo."
+        },
+        {
+          "n": 12,
+          "italian": "qualcosa",
+          "pronunciation": "[куалькóза]",
+          "translation": "что-то",
+          "examples": "Qualcosa è interessante. Qualcosa è nuovo."
+        },
+        {
+          "n": 13,
+          "italian": "qualcuno",
+          "pronunciation": "[куалькýно]",
+          "translation": "кто-то",
+          "examples": "Qualcuno legge. Qualcuno è bravo."
+        },
+        {
+          "n": 14,
+          "italian": "quello / quella",
+          "pronunciation": "[куэ́лло / куэ́лла]",
+          "translation": "тот / та",
+          "examples": "Quello studente è stanco. Quella lezione è interessante. Quella casa è bella."
+        },
+        {
+          "n": 15,
+          "italian": "questo / questa",
+          "pronunciation": "[куэ́сто / куэ́ста]",
+          "translation": "этот / эта",
+          "examples": "Questo bambino è bravo. Questa casa è grande. Questo museo è interessante."
+        },
+        {
+          "n": 16,
+          "italian": "suo / sua",
+          "pronunciation": "[суó / суá]",
+          "translation": "его / её / свой",
+          "examples": "Il suo amico è bravo. La sua casa è grande. La sua madre è brava."
+        },
+        {
+          "n": 17,
+          "italian": "ti",
+          "pronunciation": "[ти]",
+          "translation": "тебе / тебя",
+          "examples": "Ti piace il caffè. Ti piace la lezione."
+        },
+        {
+          "n": 18,
+          "italian": "tu",
+          "pronunciation": "[ту]",
+          "translation": "ты",
+          "examples": "Tu sei bravo. Tu leggi. Tu hai una casa."
+        },
+        {
+          "n": 19,
+          "italian": "tutti",
+          "pronunciation": "[тýтти]",
+          "translation": "все",
+          "examples": "Tutti leggono. Tutti sono bravi. Tutti hanno tempo."
+        },
+        {
+          "n": 20,
+          "italian": "voi",
+          "pronunciation": "[вóи]",
+          "translation": "вы",
+          "examples": "Voi siete bravi. Voi leggete. Voi avete una macchina."
+        }
+      ]
+    }
+  ]
+}

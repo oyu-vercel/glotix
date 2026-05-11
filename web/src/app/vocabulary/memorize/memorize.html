@@ -1,0 +1,95 @@
+<div class="memorize-shell">
+  <div class="memorize-topbar">
+    <a mat-button (click)="exit()">← Exit</a>
+    <span class="topbar-right">
+      @if (hasCards()) {
+        <span class="progress">{{ progress() }}</span>
+      }
+      <button
+        mat-stroked-button
+        type="button"
+        [disabled]="skipCount() === 0"
+        (click)="resetSkips()"
+      >
+        Reset Skips ({{ skipCount() }})
+      </button>
+    </span>
+  </div>
+
+  @if (current(); as card) {
+    <article class="card" tabindex="0" (click)="advance()" (contextmenu)="onContextMenu($event)">
+      <button
+        mat-stroked-button
+        type="button"
+        class="skip-btn"
+        (click)="skip(); $event.stopPropagation()"
+      >
+        Skip
+      </button>
+
+      <div class="front">
+        @if (isReverse()) {
+          <div class="translation">{{ card.translation }}</div>
+        } @else {
+          <div class="italian">{{ card.italian }}</div>
+          <div class="pron">{{ card.pronunciation }}</div>
+        }
+      </div>
+      @if (stage() === 'back') {
+        <div class="back">
+          @if (isReverse()) {
+            <div class="italian">{{ card.italian }}</div>
+            <div class="pron">{{ card.pronunciation }}</div>
+          } @else {
+            <div class="translation">{{ card.translation }}</div>
+          }
+          <ol class="examples">
+            @for (ex of splitExamples(card.examples); track $index) {
+              <li>{{ ex }}</li>
+            }
+          </ol>
+        </div>
+      }
+      <div class="hint">
+        {{ stage() === 'front' ? 'Click or press Space to reveal' : 'Click or press Space for next word' }}
+      </div>
+    </article>
+
+    <section class="comment-area" (click)="$event.stopPropagation()">
+      <label class="comment-label" for="memorize-comment">Comment</label>
+      <textarea
+        id="memorize-comment"
+        class="comment-input"
+        rows="3"
+        [value]="commentDraft()"
+        (input)="onCommentInput($event)"
+        placeholder="Your notes for this word"
+      ></textarea>
+      <div class="comment-actions">
+        <button
+          mat-flat-button
+          color="primary"
+          type="button"
+          [disabled]="!commentDirty()"
+          (click)="saveComment()"
+        >
+          Save
+        </button>
+        <button
+          mat-stroked-button
+          type="button"
+          [disabled]="!commentDirty()"
+          (click)="cancelComment()"
+        >
+          Cancel
+        </button>
+      </div>
+    </section>
+  } @else if (category()) {
+    <div class="empty-state">
+      <p>All cards skipped — press <strong>Reset Skips</strong> to start over.</p>
+    </div>
+  } @else {
+    <p class="loading">Loading...</p>
+  }
+</div>

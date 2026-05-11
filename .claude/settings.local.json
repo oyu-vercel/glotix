@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm i *)",
+      "Bash(NG_CLI_ANALYTICS=false npx -y @angular/cli@latest new web --routing --style=scss --ssr=false --package-manager=npm --skip-git)",
+      "Bash(NG_CLI_ANALYTICS=false npx ng add @angular/material --theme=azure-blue --typography --animations=enabled --skip-confirmation)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npm test *)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue }; Start-Sleep -Seconds 2; \\(Get-NetTCPConnection -LocalPort 3000 -ErrorAction SilentlyContinue | Measure-Object\\).Count)"
+    ]
+  }
+}
