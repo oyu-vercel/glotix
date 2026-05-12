@@ -4,15 +4,16 @@ An English-UI vocabulary viewer for the Italian A2 word list. UI labels are Engl
 
 ## App shell
 
-[`web/src/app/app.html`](../web/src/app/app.html) renders a `mat-toolbar` (sticky, primary color) with the app title and a `Vocabulary` link that points to `/vocabulary`. The toolbar is visible on every page; the active link is highlighted via `routerLinkActive`.
+[`web/src/app/app.html`](../web/src/app/app.html) renders a `mat-toolbar` (sticky, primary color) with the app title and a `Vocabulary` link that points to `/vocabulary`. The toolbar is visible on every page; the active link is highlighted via `routerLinkActive` (partial match, so it stays highlighted under sub-routes like `/vocabulary/a2`).
 
 ## Routes
 
 | Path | Component | Notes |
 |---|---|---|
 | `/` | redirect | Forwards to `/vocabulary` (also catches unknown paths via `**`) |
-| `/vocabulary` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Landing page — `mat-table` with `Category` + `Words` columns, click row to drill in, footer row shows the grand total |
-| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category table with columns `#`, `Word`, `Pronunciation`, `Translation`, `Examples`. Words are numbered by the `n` field from the source JSON. Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat` |
+| `/vocabulary` | [`List`](../web/src/app/vocabulary/list/list.ts) | Landing page — index of vocabulary sources, split into two `mat-table`s. First (untitled) table has a single row "Global Vocabulary" (→ `/vocabulary/a2`). Second table is titled **Stories** and lists per-story vocabularies from `stories-index.json`, each row navigating to `/stories/:slug?tab=vocab` so the story opens directly on its Vocabulary tab. The stories section hides itself when there are no stories. |
+| `/vocabulary/a2` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Global vocabulary categories — `mat-table` with `Category` + `Words` columns, click row to drill into `/category/:key`, footer row shows the grand total. Page header reads "Global Vocabulary". |
+| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category table with columns `#`, `Word`, `Pronunciation`, `Translation`, `Examples`. Words are numbered by the `n` field from the source JSON. Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat`. The back link returns to `/vocabulary/a2`. |
 | `/category/:key/memorize` | [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) | Flashcard mode — see [Memorize mode](#memorize-mode) below. Accepts `?direction=russian` for the reverse mode |
 | `/category/:key/repeat` | [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) | Russian-only iterator — see [Repeat mode](#repeat-mode) below |
 

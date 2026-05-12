@@ -33,6 +33,7 @@ interface TextNode {
 export class StoryDetail {
   readonly slug = input.required<string>();
   readonly cat = input<string | null>(null);
+  readonly tab = input<string | null>(null);
 
   private readonly service = inject(StoriesService);
   private readonly router = inject(Router);
@@ -70,7 +71,7 @@ export class StoryDetail {
 
   constructor() {
     effect(() => {
-      if (this.cat()) this.selectedTab.set(1);
+      if (this.cat() || this.tab() === 'vocab') this.selectedTab.set(1);
     });
   }
 

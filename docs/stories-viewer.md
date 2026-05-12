@@ -9,11 +9,11 @@ A `Stories` link sits next to `Vocabulary` in the toolbar ([web/src/app/app.html
 | Path                                                       | Component                                                                                 |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
 | `/stories`                                                 | `StoriesSummary` ([summary.ts](../web/src/app/stories/summary/summary.ts))               |
-| `/stories/:slug` (optional `?cat=<key>` query param)       | `StoryDetail` ([detail.ts](../web/src/app/stories/detail/detail.ts))                     |
+| `/stories/:slug` (optional `?cat=<key>` or `?tab=vocab`)   | `StoryDetail` ([detail.ts](../web/src/app/stories/detail/detail.ts))                     |
 | `/stories/:slug/category/:key/memorize` (`?direction=russian` for reverse) | `StoryMemorize` ([memorize.ts](../web/src/app/stories/memorize/memorize.ts)) |
 | `/stories/:slug/category/:key/repeat`                      | `StoryRepeat` ([repeat.ts](../web/src/app/stories/repeat/repeat.ts))                     |
 
-`StoryDetail` reads `slug` (route param) and `cat` (query param) via `input` + `withComponentInputBinding()` (configured in [app.config.ts](../web/src/app/app.config.ts)). The `cat` param drives which category is drilled into; entering a `cat`-set URL also auto-opens the Vocabulary tab.
+`StoryDetail` reads `slug` (route param) plus `cat` and `tab` (query params) via `input` + `withComponentInputBinding()` (configured in [app.config.ts](../web/src/app/app.config.ts)). The `cat` param drives which category is drilled into and auto-opens the Vocabulary tab. `tab=vocab` (used by the vocabulary index at `/vocabulary` when clicking a story row) opens the Vocabulary tab without pre-selecting a category.
 
 ## Data flow
 

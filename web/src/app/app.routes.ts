@@ -4,6 +4,10 @@ export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'vocabulary' },
   {
     path: 'vocabulary',
+    loadComponent: () => import('./vocabulary/list/list').then((m) => m.List),
+  },
+  {
+    path: 'vocabulary/a2',
     loadComponent: () => import('./vocabulary/summary/summary').then((m) => m.Summary),
   },
   {
