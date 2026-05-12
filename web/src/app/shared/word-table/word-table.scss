@@ -1,0 +1,36 @@
+:host {
+  display: block;
+}
+
+.table-wrap {
+  background: var(--mat-sys-surface);
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 8px;
+  overflow: auto;
+}
+
+.vocab-table {
+  width: 100%;
+  background: transparent;
+}
+
+.col-n {
+  width: 48px;
+  color: var(--mat-sys-on-surface-variant);
+  text-align: right;
+  padding-right: 16px;
+}
+
+.italian-cell {
+  font-weight: 500;
+}
+
+.pron-cell {
+  color: var(--mat-sys-on-surface-variant);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+.examples-cell {
+  color: var(--mat-sys-on-surface-variant);
+  max-width: 360px;
+}

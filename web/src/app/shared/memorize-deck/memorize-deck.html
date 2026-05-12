@@ -1,6 +1,6 @@
 <div class="memorize-shell">
   <div class="memorize-topbar">
-    <a mat-button (click)="exit()">← Exit</a>
+    <a mat-button (click)="exit.emit()">← Exit</a>
     <span class="topbar-right">
       @if (hasCards()) {
         <span class="progress">{{ progress() }}</span>

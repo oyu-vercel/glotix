@@ -17,6 +17,7 @@ import { Router, RouterLink } from '@angular/router';
 
 import { StoriesService } from '../stories.service';
 import { Category } from '../../vocabulary/vocabulary.types';
+import { WordTable } from '../../shared/word-table/word-table';
 
 interface TextNode {
   type: 'h2' | 'p';
@@ -25,7 +26,7 @@ interface TextNode {
 
 @Component({
   selector: 'app-story-detail',
-  imports: [CommonModule, MatTabsModule, MatTableModule, MatButtonModule, RouterLink],
+  imports: [CommonModule, MatTabsModule, MatTableModule, MatButtonModule, RouterLink, WordTable],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
   styleUrl: './detail.scss',
@@ -65,7 +66,6 @@ export class StoryDetail {
   });
 
   readonly summaryColumns = ['label', 'count'];
-  readonly wordColumns = ['n', 'italian', 'pronunciation', 'translation', 'examples'];
 
   readonly selectedTab = signal(0);
 

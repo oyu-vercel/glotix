@@ -85,21 +85,19 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
 - **`/stories`** — `mat-table` listing each story with title, paragraph count, and matched vocab count. Row click navigates to `/stories/:slug`.
 - **`/stories/:slug`** — header with the title; `mat-tab-group` with two tabs:
   - **Read** — renders the story text as paragraphs. Short standalone lines ending in `.` (≤ 60 chars, ≤ 6 words, no quote characters) auto-promote to `<h2>` section headers. The title line is skipped (already shown as page header).
-  - **Vocabulary (N)** — `mat-table` of categories (with row click drilling into a per-category word table that mirrors the columns of [vocabulary/category](../web/src/app/vocabulary/category/category.ts): #, Word, Pronunciation, Translation, Examples). The drilldown header carries three buttons — **Italian → Russian**, **Russian → Italian**, **Repeat** — that link to `StoryMemorize` / `StoryRepeat` for that category's word set.
+  - **Vocabulary (N)** — `mat-table` of categories (with row click drilling into the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts), the same component used by `/category/:key`, columns: #, Word, Pronunciation, Translation, Examples). The drilldown header carries three buttons — **Italian → Russian**, **Russian → Italian**, **Repeat** — that link to `StoryMemorize` / `StoryRepeat` for that category's word set.
     - Category selection is URL-driven via the `cat` query param, so memorize/repeat can exit back to the same drilled-in state.
 
 ## Memorize / Repeat
 
-`StoryMemorize` and `StoryRepeat` mirror the vocabulary equivalents 1-for-1 ([memorize.ts](../web/src/app/vocabulary/memorize/memorize.ts), [repeat.ts](../web/src/app/vocabulary/repeat/repeat.ts)) — same shuffle, keyboard shortcuts, card layout, skip / comment UX — but pull their word set from `StoriesService.getStoryResolved(slug)` filtered to the requested category.
+`StoryMemorize` and `StoryRepeat` are thin route wrappers that render the shared [`MemorizeDeck`](../web/src/app/shared/memorize-deck/memorize-deck.ts) and [`RepeatDeck`](../web/src/app/shared/repeat-deck/repeat-deck.ts) — the same presentational components used by the vocabulary [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) and [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) wrappers. They resolve the word set via `StoriesService.getStoryResolved(slug)` filtered to the requested category, pass it to the deck, and handle exit navigation back to `/stories/<slug>?cat=<key>` (auto-opens the Vocabulary tab on the same drilled-in category).
 
-Skip and comment state is stored via the shared [`MemorizeStorage`](../web/src/app/vocabulary/memorize/memorize-storage.ts) under a per-story scope, isolated from main-vocabulary state:
+Skip state is stored via the shared [`MemorizeStorage`](../web/src/app/vocabulary/memorize/memorize-storage.ts) under a per-surface scope so skipping a word in vocabulary memorize does not hide it in story memorize and vice versa. Comments are stored **once per Italian word** and shared across every memorize view (vocabulary and any story containing that word).
 
-| Surface                                              | Skip key                                         | Comment key                                                  |
-| ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ |
-| `/category/<key>/memorize`                           | `glotix:skip:<key>`                              | `glotix:comment:<key>:<italian>`                             |
-| `/stories/<slug>/category/<key>/memorize`            | `glotix:skip:story:<slug>:<key>`                 | `glotix:comment:story:<slug>:<key>:<italian>`                |
-
-Exit from memorize/repeat navigates to `/stories/<slug>?cat=<key>`, which auto-opens the Vocabulary tab on the same drilled-in category.
+| Surface                                              | Skip key                                         | Comment key             |
+| ---------------------------------------------------- | ------------------------------------------------ | ----------------------- |
+| `/category/<key>/memorize`                           | `glotix:skip:<key>`                              | `glotix:comment:<italian>` (shared) |
+| `/stories/<slug>/category/<key>/memorize`            | `glotix:skip:story:<slug>:<key>`                 | `glotix:comment:<italian>` (shared) |
 
 ## Adding a new story
 

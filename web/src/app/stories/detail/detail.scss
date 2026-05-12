@@ -53,8 +53,7 @@
   margin-top: 16px;
 }
 
-.summary-table,
-.vocab-table {
+.summary-table {
   width: 100%;
   background: transparent;
 }
@@ -83,7 +82,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  margin: 16px 0 0;
+  margin: 16px 0;
   flex-wrap: wrap;
 
   .cat-title {
@@ -107,27 +106,6 @@
   background: var(--mat-sys-secondary-container);
   color: var(--mat-sys-on-secondary-container);
   font: var(--mat-sys-label-medium);
-}
-
-.col-n {
-  width: 48px;
-  color: var(--mat-sys-on-surface-variant);
-  text-align: right;
-  padding-right: 16px;
-}
-
-.italian-cell {
-  font-weight: 500;
-}
-
-.pron-cell {
-  color: var(--mat-sys-on-surface-variant);
-  font-family: 'Segoe UI', system-ui, sans-serif;
-}
-
-.examples-cell {
-  color: var(--mat-sys-on-surface-variant);
-  max-width: 360px;
 }
 
 .loading,

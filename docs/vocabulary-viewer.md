@@ -13,9 +13,9 @@ An English-UI vocabulary viewer for the Italian A2 word list. UI labels are Engl
 | `/` | redirect | Forwards to `/vocabulary` (also catches unknown paths via `**`) |
 | `/vocabulary` | [`List`](../web/src/app/vocabulary/list/list.ts) | Landing page — index of vocabulary sources, split into two `mat-table`s. First (untitled) table has a single row "Global Vocabulary" (→ `/vocabulary/a2`). Second table is titled **Stories** and lists per-story vocabularies from `stories-index.json`, each row navigating to `/stories/:slug?tab=vocab` so the story opens directly on its Vocabulary tab. The stories section hides itself when there are no stories. |
 | `/vocabulary/a2` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Global vocabulary categories — `mat-table` with `Category` + `Words` columns, click row to drill into `/category/:key`, footer row shows the grand total. Page header reads "Global Vocabulary". |
-| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category table with columns `#`, `Word`, `Pronunciation`, `Translation`, `Examples`. Words are numbered by the `n` field from the source JSON. Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat`. The back link returns to `/vocabulary/a2`. |
-| `/category/:key/memorize` | [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) | Flashcard mode — see [Memorize mode](#memorize-mode) below. Accepts `?direction=russian` for the reverse mode |
-| `/category/:key/repeat` | [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) | Russian-only iterator — see [Repeat mode](#repeat-mode) below |
+| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category page. The five-column word table (`#`, `Word`, `Pronunciation`, `Translation`, `Examples`) is the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts) (also used by the story detail page). Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat`. The back link returns to `/vocabulary/a2`. |
+| `/category/:key/memorize` | [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) | Thin wrapper that loads the category and renders the shared [`MemorizeDeck`](../web/src/app/shared/memorize-deck/memorize-deck.ts). See [Memorize mode](#memorize-mode) below. Accepts `?direction=russian` for the reverse mode |
+| `/category/:key/repeat` | [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) | Thin wrapper that loads the category and renders the shared [`RepeatDeck`](../web/src/app/shared/repeat-deck/repeat-deck.ts). See [Repeat mode](#repeat-mode) below |
 
 ## Data flow
 
@@ -116,7 +116,8 @@ All state lives in `localStorage` under the `glotix:` prefix, via [`MemorizeStor
 | Key | Value |
 |---|---|
 | `glotix:skip:<categoryKey>` | JSON `string[]` — Italian words skipped for that category |
-| `glotix:comment:<categoryKey>:<italian>` | Plain string — the user's comment for that word (deleted when emptied) |
+| `glotix:comment:<italian>` | Plain string — the user's comment for that word, shared across every memorize view (vocabulary and any story that contains the word). Deleted when emptied. |
+| `glotix:legacy-comments-wiped-v1` | One-time flag set after the per-scope legacy comment keys (`glotix:comment:<scope>:<italian>`) have been cleared on first load. |
 
 Skips persist across sessions and reloads. Re-entering memorize re-shuffles the deck but keeps the persisted skip list applied. The screen's `fullShuffled` signal is set once on entry; `cards` is a computed filter.
 

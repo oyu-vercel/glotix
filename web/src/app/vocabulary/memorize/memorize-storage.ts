@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 
+const COMMENT_PREFIX = 'glotix:comment:';
+const SKIP_PREFIX = 'glotix:skip:';
+const LEGACY_WIPED_FLAG = 'glotix:legacy-comments-wiped-v1';
+
 @Injectable({ providedIn: 'root' })
 export class MemorizeStorage {
-  private skipKey(scope: string): string {
-    return `glotix:skip:${scope}`;
-  }
-
-  private commentKey(scope: string, italian: string): string {
-    return `glotix:comment:${scope}:${italian}`;
+  constructor() {
+    this.wipeLegacyCommentsOnce();
   }
 
   getSkips(scope: string): Set<string> {
@@ -32,16 +32,39 @@ export class MemorizeStorage {
     this.remove(this.skipKey(scope));
   }
 
-  getComment(scope: string, italian: string): string {
-    return this.read(this.commentKey(scope, italian)) ?? '';
+  getComment(italian: string): string {
+    return this.read(this.commentKey(italian)) ?? '';
   }
 
-  setComment(scope: string, italian: string, value: string): void {
-    const key = this.commentKey(scope, italian);
+  setComment(italian: string, value: string): void {
+    const key = this.commentKey(italian);
     if (value.length === 0) {
       this.remove(key);
     } else {
       this.write(key, value);
+    }
+  }
+
+  private skipKey(scope: string): string {
+    return `${SKIP_PREFIX}${scope}`;
+  }
+
+  private commentKey(italian: string): string {
+    return `${COMMENT_PREFIX}${italian}`;
+  }
+
+  private wipeLegacyCommentsOnce(): void {
+    try {
+      if (localStorage.getItem(LEGACY_WIPED_FLAG)) return;
+      const toRemove: string[] = [];
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i);
+        if (k && k.startsWith(COMMENT_PREFIX)) toRemove.push(k);
+      }
+      toRemove.forEach((k) => localStorage.removeItem(k));
+      localStorage.setItem(LEGACY_WIPED_FLAG, '1');
+    } catch {
+      /* localStorage unavailable or quota — ignore */
     }
   }
 

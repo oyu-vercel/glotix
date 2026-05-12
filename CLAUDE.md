@@ -31,3 +31,7 @@ Feature reference docs live in `docs/`. See:
 
 - [docs/vocabulary-viewer.md](docs/vocabulary-viewer.md) — vocabulary feature reference (routes, data flow, JSON shape).
 - [docs/stories-viewer.md](docs/stories-viewer.md) — stories feature reference (parser, JSON shape).
+
+## Files Claude must not read
+
+- `docs/prompts.txt` — personal notes for the maintainer only. Do not open, read, summarize, or reference its contents. Treat it as if it does not exist.

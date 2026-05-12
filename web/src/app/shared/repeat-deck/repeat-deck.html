@@ -1,6 +1,6 @@
 <div class="repeat-shell">
   <div class="repeat-topbar">
-    <a mat-button (click)="exit()">← Exit</a>
+    <a mat-button (click)="exit.emit()">← Exit</a>
     @if (hasCards()) {
       <span class="progress">{{ progress() }}</span>
     }
