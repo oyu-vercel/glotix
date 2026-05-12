@@ -84,9 +84,20 @@
   align-items: center;
   gap: 12px;
   margin: 16px 0 0;
+  flex-wrap: wrap;
 
   .cat-title {
     font: var(--mat-sys-title-medium);
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .memorize-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
   }
 }
 

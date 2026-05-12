@@ -7,7 +7,12 @@
     <h1>{{ s.title }}</h1>
   </header>
 
-  <mat-tab-group class="story-tabs" animationDuration="120ms">
+  <mat-tab-group
+    class="story-tabs"
+    animationDuration="120ms"
+    [selectedIndex]="selectedTab()"
+    (selectedIndexChange)="selectedTab.set($event)"
+  >
     <mat-tab label="Read">
       <article class="story-text">
         @for (node of nodes(); track $index) {
@@ -58,6 +63,28 @@
             <button mat-button (click)="closeCategory()">← All categories</button>
             <span class="cat-title">{{ cat.label }}</span>
             <span class="count-pill">{{ cat.words.length }}</span>
+            <span class="spacer"></span>
+            <span class="memorize-actions">
+              <a
+                mat-stroked-button
+                color="primary"
+                [routerLink]="['/stories', slug(), 'category', cat.key, 'memorize']"
+                >Italian → Russian</a
+              >
+              <a
+                mat-stroked-button
+                color="primary"
+                [routerLink]="['/stories', slug(), 'category', cat.key, 'memorize']"
+                [queryParams]="{ direction: 'russian' }"
+                >Russian → Italian</a
+              >
+              <a
+                mat-stroked-button
+                color="primary"
+                [routerLink]="['/stories', slug(), 'category', cat.key, 'repeat']"
+                >Repeat</a
+              >
+            </span>
           </div>
           <div class="table-wrap">
             <table mat-table [dataSource]="cat.words" class="vocab-table">

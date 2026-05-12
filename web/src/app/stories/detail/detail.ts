@@ -1,11 +1,19 @@
-import { ChangeDetectionStrategy, Component, computed, inject, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  effect,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { switchMap } from 'rxjs';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 import { StoriesService } from '../stories.service';
 import { Category } from '../../vocabulary/vocabulary.types';
@@ -24,14 +32,14 @@ interface TextNode {
 })
 export class StoryDetail {
   readonly slug = input.required<string>();
+  readonly cat = input<string | null>(null);
 
   private readonly service = inject(StoriesService);
+  private readonly router = inject(Router);
 
   readonly story = toSignal(
     toObservable(this.slug).pipe(switchMap((s) => this.service.getStory(s))),
   );
-
-  readonly selectedCategoryKey = signal<string | null>(null);
 
   readonly nodes = computed<TextNode[]>(() => {
     const s = this.story();
@@ -50,7 +58,7 @@ export class StoryDetail {
   });
 
   readonly selectedCategory = computed<Category | undefined>(() => {
-    const key = this.selectedCategoryKey();
+    const key = this.cat();
     if (!key) return undefined;
     return this.nonEmptyCategories().find((c) => c.key === key);
   });
@@ -58,12 +66,20 @@ export class StoryDetail {
   readonly summaryColumns = ['label', 'count'];
   readonly wordColumns = ['n', 'italian', 'pronunciation', 'translation', 'examples'];
 
+  readonly selectedTab = signal(0);
+
+  constructor() {
+    effect(() => {
+      if (this.cat()) this.selectedTab.set(1);
+    });
+  }
+
   openCategory(key: string): void {
-    this.selectedCategoryKey.set(key);
+    this.router.navigate(['/stories', this.slug()], { queryParams: { cat: key } });
   }
 
   closeCategory(): void {
-    this.selectedCategoryKey.set(null);
+    this.router.navigate(['/stories', this.slug()]);
   }
 }
 

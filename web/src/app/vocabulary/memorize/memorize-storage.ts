@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class MemorizeStorage {
-  private skipKey(categoryKey: string): string {
-    return `glotix:skip:${categoryKey}`;
+  private skipKey(scope: string): string {
+    return `glotix:skip:${scope}`;
   }
 
-  private commentKey(categoryKey: string, italian: string): string {
-    return `glotix:comment:${categoryKey}:${italian}`;
+  private commentKey(scope: string, italian: string): string {
+    return `glotix:comment:${scope}:${italian}`;
   }
 
-  getSkips(categoryKey: string): Set<string> {
-    const raw = this.read(this.skipKey(categoryKey));
+  getSkips(scope: string): Set<string> {
+    const raw = this.read(this.skipKey(scope));
     if (!raw) return new Set();
     try {
       const parsed = JSON.parse(raw);
@@ -21,23 +21,23 @@ export class MemorizeStorage {
     }
   }
 
-  addSkip(categoryKey: string, italian: string): void {
-    const skips = this.getSkips(categoryKey);
+  addSkip(scope: string, italian: string): void {
+    const skips = this.getSkips(scope);
     if (skips.has(italian)) return;
     skips.add(italian);
-    this.write(this.skipKey(categoryKey), JSON.stringify([...skips]));
+    this.write(this.skipKey(scope), JSON.stringify([...skips]));
   }
 
-  clearSkips(categoryKey: string): void {
-    this.remove(this.skipKey(categoryKey));
+  clearSkips(scope: string): void {
+    this.remove(this.skipKey(scope));
   }
 
-  getComment(categoryKey: string, italian: string): string {
-    return this.read(this.commentKey(categoryKey, italian)) ?? '';
+  getComment(scope: string, italian: string): string {
+    return this.read(this.commentKey(scope, italian)) ?? '';
   }
 
-  setComment(categoryKey: string, italian: string, value: string): void {
-    const key = this.commentKey(categoryKey, italian);
+  setComment(scope: string, italian: string, value: string): void {
+    const key = this.commentKey(scope, italian);
     if (value.length === 0) {
       this.remove(key);
     } else {

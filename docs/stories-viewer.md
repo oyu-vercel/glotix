@@ -4,21 +4,23 @@ Per-story reading view + per-story vocabulary, mirroring the A2 vocabulary featu
 
 ## App shell
 
-A `Stories` link sits next to `Vocabulary` in the toolbar ([web/src/app/app.html](../web/src/app/app.html)). Two routes ([web/src/app/app.routes.ts](../web/src/app/app.routes.ts)):
+A `Stories` link sits next to `Vocabulary` in the toolbar ([web/src/app/app.html](../web/src/app/app.html)). Four routes ([web/src/app/app.routes.ts](../web/src/app/app.routes.ts)):
 
-| Path                  | Component                                                                   |
-| --------------------- | --------------------------------------------------------------------------- |
-| `/stories`            | `StoriesSummary` ([summary.ts](../web/src/app/stories/summary/summary.ts)) |
-| `/stories/:slug`      | `StoryDetail` ([detail.ts](../web/src/app/stories/detail/detail.ts))       |
+| Path                                                       | Component                                                                                 |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
+| `/stories`                                                 | `StoriesSummary` ([summary.ts](../web/src/app/stories/summary/summary.ts))               |
+| `/stories/:slug` (optional `?cat=<key>` query param)       | `StoryDetail` ([detail.ts](../web/src/app/stories/detail/detail.ts))                     |
+| `/stories/:slug/category/:key/memorize` (`?direction=russian` for reverse) | `StoryMemorize` ([memorize.ts](../web/src/app/stories/memorize/memorize.ts)) |
+| `/stories/:slug/category/:key/repeat`                      | `StoryRepeat` ([repeat.ts](../web/src/app/stories/repeat/repeat.ts))                     |
 
-`StoryDetail` reads the route parameter via `input.required<string>()` and `withComponentInputBinding()` (already configured in [app.config.ts](../web/src/app/app.config.ts)).
+`StoryDetail` reads `slug` (route param) and `cat` (query param) via `input` + `withComponentInputBinding()` (configured in [app.config.ts](../web/src/app/app.config.ts)). The `cat` param drives which category is drilled into; entering a `cat`-set URL also auto-opens the Vocabulary tab.
 
 ## Data flow
 
 ```
-docs/stories/<slug>.txt              (story source)
-docs/stories/<slug>.extras.csv       (optional, user-curated non-A2 vocab)
-docs/words/italian/a2/*.csv          (A2 vocabulary CSVs, reused via build-vocabulary.mjs)
+docs/stories/<folder>/<slug>.txt           (story source — one folder per story)
+docs/stories/<folder>/<slug>.extras.csv    (optional, user-curated non-A2 vocab)
+docs/words/italian/a2/*.csv                (A2 vocabulary CSVs, reused via build-vocabulary.mjs)
         │
         ▼   npm run build:vocab   (chains build-vocabulary.mjs + build-stories.mjs)
         │
@@ -32,12 +34,12 @@ StoriesSummary / StoryDetail
 
 The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.mjs)) does:
 
-1. **Discover** all `*.txt` files in `docs/stories/` (slug = filename without extension).
+1. **Discover** all `*.txt` files under `docs/stories/` recursively — one folder per story, slug = filename without extension. Duplicate slugs across folders are a build error.
 2. **Tokenize** each story: NFC normalize → lowercase → split on `\p{L}\p{N}` complement → drop empty/numeric tokens. Italian apostrophes (`l'aria` → `l`, `aria`) and quotation marks are handled.
 3. **Match tokens against A2 vocab** (loaded via shared `loadVocabulary()` from [build-vocabulary.mjs](../web/scripts/build-vocabulary.mjs)):
    - **Direct**: token === A2 `italian` headword (after lowercase + slash-variant split).
    - **Indirect**: token appears in any A2 entry's example sentences (first-match wins). Catches inflected forms — e.g. `saliamo` resolves to `salire`, `vado`/`vanno` to `andare`, `può` to `potere`.
-4. **Merge optional extras**: if `docs/stories/<slug>.extras.csv` exists, each row (`category, italian, pronunciation, translation, examples`) is added to the named category, overriding any A2 match with the same `italian`. Tokens from both the `italian` field and the row's `examples` are marked as matched, so inflected forms inside the curated examples (e.g. `abituata`, `abituati` under the headword `abituato`) drop out of `untranslated`.
+4. **Merge optional extras**: if `<slug>.extras.csv` exists next to the `.txt`, each row (`category, italian, pronunciation, translation, examples`) is added to the named category, overriding any A2 match with the same `italian`. Tokens from both the `italian` field and the row's `examples` are marked as matched, so inflected forms inside the curated examples (e.g. `abituata`, `abituati` under the headword `abituato`) drop out of `untranslated`.
 5. **Stubs**: any remaining unmatched story tokens become entries in an `untranslated` array (italian-only). Single-letter ASCII tokens are filtered out (Italian elision remnants like `l'`).
 
 ## JSON shape
@@ -87,12 +89,26 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
 - **`/stories`** — `mat-table` listing each story with title, paragraph count, A2 vocab count, untranslated count. Row click navigates to `/stories/:slug`.
 - **`/stories/:slug`** — header with the title; `mat-tab-group` with two tabs:
   - **Read** — renders the story text as paragraphs. Short standalone lines ending in `.` (≤ 60 chars, ≤ 6 words, no quote characters) auto-promote to `<h2>` section headers. The title line is skipped (already shown as page header).
-  - **Vocabulary (N)** — `mat-table` of categories (with row click drilling into a per-category word table that mirrors the columns of [vocabulary/category](../web/src/app/vocabulary/category/category.ts): #, Word, Pronunciation, Translation, Examples). Below that, a collapsible `<details>` panel labeled "Untranslated (N)" lists stub words as chips.
+  - **Vocabulary (N)** — `mat-table` of categories (with row click drilling into a per-category word table that mirrors the columns of [vocabulary/category](../web/src/app/vocabulary/category/category.ts): #, Word, Pronunciation, Translation, Examples). The drilldown header carries three buttons — **Italian → Russian**, **Russian → Italian**, **Repeat** — that link to `StoryMemorize` / `StoryRepeat` for that category's full word set (A2 matches + extras). Below the table, a collapsible `<details>` panel labeled "Untranslated (N)" lists stub words as chips.
+    - Category selection is URL-driven via the `cat` query param, so memorize/repeat can exit back to the same drilled-in state.
     - Word rows whose `italian` is not in the A2 vocabulary (i.e. story-only entries from the extras CSV) get a subtle primary-tinted background via the `.story-only-row` class. The build script sets `extras: true` on those `Word`s; the template binds the class with `[class.story-only-row]="row.extras"`.
+
+## Memorize / Repeat
+
+`StoryMemorize` and `StoryRepeat` mirror the vocabulary equivalents 1-for-1 ([memorize.ts](../web/src/app/vocabulary/memorize/memorize.ts), [repeat.ts](../web/src/app/vocabulary/repeat/repeat.ts)) — same shuffle, keyboard shortcuts, card layout, skip / comment UX — but pull their word set from `StoriesService.getStory(slug)` filtered to the requested category, so they cover A2 matches + extras (untranslated stubs are excluded).
+
+Skip and comment state is stored via the shared [`MemorizeStorage`](../web/src/app/vocabulary/memorize/memorize-storage.ts) under a per-story scope, isolated from main-vocabulary state:
+
+| Surface                                              | Skip key                                         | Comment key                                                  |
+| ---------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------ |
+| `/category/<key>/memorize`                           | `glotix:skip:<key>`                              | `glotix:comment:<key>:<italian>`                             |
+| `/stories/<slug>/category/<key>/memorize`            | `glotix:skip:story:<slug>:<key>`                 | `glotix:comment:story:<slug>:<key>:<italian>`                |
+
+Exit from memorize/repeat navigates to `/stories/<slug>?cat=<key>`, which auto-opens the Vocabulary tab on the same drilled-in category.
 
 ## CSV format for extras
 
-`docs/stories/<slug>.extras.csv` (optional, no header row required but tolerated):
+`docs/stories/<folder>/<slug>.extras.csv` (optional, no header row required but tolerated):
 
 ```
 category,italian,pronunciation,translation,examples
@@ -104,7 +120,7 @@ verb,scappare,[скаппáре],убегать,Scappiamo via!
 
 ## Adding a new story
 
-1. Drop `docs/stories/<slug>.txt`.
-2. (Optional) Add `docs/stories/<slug>.extras.csv` for non-A2 vocab you want translated.
+1. Create a folder `docs/stories/<folder>/` and drop `<slug>.txt` inside.
+2. (Optional) Add `<slug>.extras.csv` in the same folder for non-A2 vocab you want translated.
 3. Run `npm --prefix web run build:vocab` (or `build:stories` for the story step only).
 4. The story appears automatically at `/stories`.
