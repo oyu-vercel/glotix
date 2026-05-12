@@ -1,0 +1,52 @@
+Story to words prompt
+---------------------------------------------------------------------------------------
+
+You are an expert assistant specialized in Italian for beginners.
+
+I will give you a short story in Italian.
+
+Your task is:
+
+1. Extract ALL the words from the text.
+2. Normalize them as follows:
+   - Convert everything to lowercase
+   - Remove all punctuation (., ! ? ; : « » “ ” ' - etc.)
+   - Keep Italian accents (è, à, ì, ò, ù, é, etc.)
+   - Do NOT lemmatize or change the form of the words (leave each word exactly as it appears in the text)
+3. Remove all duplicates → create a list of UNIQUE words only.
+4. Sort the list in alphabetical order.
+
+Exact output format:
+- Start with: "Here is the complete list of normalized unique words from the story:"
+- Then output the list of words — **one word per line**
+- At the end write: "Total: X unique words."
+- Add a short friendly comment at the very end, for example: "You can copy them directly for your vocabulary practice or repetitions! 😊"
+
+Here is the story:
+
+[INSERT THE NEW STORY HERE]
+
+
+Words to table with translations prompt
+---------------------------------------------------------------------------------------
+
+You are a professional Italian language teacher specialized in creating high-quality learning materials for Russian-speaking students.
+
+Create a clean Markdown table with the following exact column headers:
+
+| Italian Phrase | Russian Phonetic Transcription | Russian Translation | Example Sentences (3-5, only words from the list) |
+
+For EVERY word or phrase in the provided list, create one row with these rules:
+
+1. Italian Phrase — Copy the word or phrase exactly as it appears in the list (keep original spelling, articles, forms, etc.).
+2. Russian Phonetic Transcription — Provide phonetic transcription using Russian Cyrillic letters in this style: [а], [акка́нто], [ачче́нто], [ама́ре], [а́нке]. Always indicate stress with (́) and show double consonants as [кк], [тт], [фф], etc.
+3. Russian Translation — Give an accurate and natural translation into Russian (one or two words or a short natural phrase).
+4. Example Sentences — Write exactly 3 to 5 short, natural Italian example sentences.
+   CRITICALLY IMPORTANT: Use ONLY words and forms from the provided list. Do not introduce any new words.
+
+Output ONLY the completed Markdown table. No extra text, explanations, comments, or greetings before or after the table.
+
+List of Italian words and phrases:
+[PASTE YOUR NEW LIST HERE]
+
+
