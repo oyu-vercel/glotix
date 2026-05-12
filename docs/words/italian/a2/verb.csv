@@ -1,30 +1,101 @@
 Итальянская фраза,Как произносить (по-русски),Перевод на русский,"Примеры использования в предложении (3-5, только слова из списка)"
-abitare,[абитáрэ],жить,Io abito a Mosca. La famiglia abita in casa. Noi abitiamo in appartamento.
-partire,[партíрэ],уезжать,Io parto domani. Il treno parte. Lo studente parte.
-tornare,[торнáрэ],возвращаться,Io torno a casa. Il padre torna. La madre torna.
-avere,[авэрэ],иметь,Io ho un amico. Tu hai una casa. Noi abbiamo tempo.
-bere,[бэрэ],пить,Io bevo un caffè. La persona beve acqua. Il bambino beve.
-domandare,[домандáрэ],спрашивать,Io domando. La madre domanda. Lo studente domanda.
-fare,[фáрэ],делать,Io faccio un esercizio. Tu fai colazione. Noi facciamo un viaggio.
-leggere,[лэ́джере] (leggo),читать,Io leggo un testo. Il padre legge il giornale. Noi leggiamo.
-conoscere,[конóшере] (conosco),знать,Io conosco un amico. Tu conosci la lezione. Noi conosciamo l’Italia.
-usare,[узáрэ],использовать,Io uso il cellulare. Tu usi il vocabolario. Noi usiamo il mezzo.
-visitare,[визитáрэ],посещать,Io visito il museo. Tu visiti Roma. Noi visitiamo l’Italia.
-riposare,[рипозáрэ],отдыхать,Io riposo. La persona riposa. Il bambino riposa.
-parlare,[парлáрэ] (parlo),говорить,Io parlo italiano. Tu parli russo. Noi parliamo.
-essere,"[э́ссере] (sono, è, sei…)",быть,Io sono russo. Tu sei bravo. La casa è grande. Noi siamo contenti.
-rispondere,[риспóндере],отвечать,Io rispondo. La madre risponde. Lo studente risponde.
-mettere,[мэттэре],класть,Io metto il libro. Tu metti il cellulare.
-arrivare,[арривáрэ],прибывать,Io arrivo a Roma. Il treno arriva. La persona arriva.
-lavorare,[лаворáрэ],работать,Io lavoro in ufficio. Il padre lavora. Noi lavoriamo.
-mangiare,[манджáре] (mangio),есть,Io mangio la pasta. Tu mangi il pesce. Noi mangiamo a pranzo.
-viaggiare,[вьяджáре],путешествовать,Io viaggio in Italia. Tu viaggi. Noi viaggiamo.
-chiamare,[кьямáре] (chiamo),звать / называть,Io chiamo l’amico. Tu chiami la madre.
-chiudere,[кью́дере],закрывать,Io chiudo la finestra. Tu chiudi la porta.
-dormire,[дормíре],спать,Io dormo nel letto. Il bambino dorme.
-preparare,[препарáре],готовить,Io preparo la colazione. La madre prepara la pasta.
-pagare,[пагáре],платить,Io pago il caffè. Tu pagi il conto.
-studiare,[студья́ре],учить,Io studio italiano. Tu studi la lezione. Noi studiamo.
-insegnare,[инсенья́ре] (insegno),преподавать,Io insegno italiano. Tu insegni.
-guardare,[гуардáре],смотреть,Io guardo il panorama. Tu guardi la finestra.
-preferire,[преферíре] (preferisco),предпочитать,Io preferisco il caffè. Tu preferisci la pasta. Noi preferiamo l’Italia.
+essere,[э́ссере],быть,Io sono russo. La casa è grande. Il bambino è bravo. La lezione è interessante. Noi siamo contenti.
+avere,[авэ́ре],иметь,Io ho un amico. Tu hai una casa. Il padre ha un figlio. La madre ha una macchina. Noi abbiamo tempo.
+fare,[фа́ре],делать,Io faccio un esercizio. Tu fai colazione. La madre fa la pasta. Noi facciamo un viaggio. Il ragazzo fa il lavoro.
+andare,[андáре],идти,Io vado a casa. Tu vai al bar. Il padre va in ufficio. La famiglia va a Roma. Noi andiamo al museo.
+potere,[потэ́ре],мочь (быть в состоянии),Io posso leggere. Tu puoi mangiare. Il bambino può dormire. Noi possiamo viaggiare. La madre può cucinare.
+dare,[да́ре],давать,Io do un caffè. Tu dai un libro. Il padre dà il biglietto. La madre dà la coperta. Noi diamo un regalo.
+volere,[волэ́ре],хотеть,Io voglio un caffè. Tu vuoi la pasta. Il bambino vuole il gelato. La madre vuole la macchina. Noi vogliamo viaggiare.
+venire,[венúре],приходить,Io vengo a casa. Tu vieni al bar. L’amico viene domani. La famiglia viene a pranzo. Noi veniamo al museo.
+dovere,[довэ́ре],быть должным / нужно,Io devo studiare. Tu devi lavorare. Il padre deve pagare. La madre deve preparare. Noi dobbiamo partire.
+stare,[стáре],находиться / быть,Io sto bene. Tu stai a casa. Il bambino sta bene. La lezione sta bene. Noi stiamo in Italia.
+dire,[дúре],говорить,Io dico la verità. Tu dici grazie. Il padre dice arrivederci. La madre dice buongiorno. Noi diciamo ciao.
+sapere,[сапэ́ре],знать,Io so la lezione. Tu sai la risposta. L’amico sa italiano. La madre sa cucinare. Noi sappiamo la strada.
+vedere,[ведэ́ре],видеть,Io vedo la casa. Tu vedi il museo. Il bambino vede il padre. La madre vede l’amica. Noi vediamo il panorama.
+mangiare,[манджáре],есть,Io mangio la pasta. Tu mangi il pesce. Il bambino mangia il limone. La madre mangia la colazione. Noi mangiamo a pranzo.
+parlare,[парлáре],говорить,Io parlo italiano. Tu parli russo. L’amico parla bene. La madre parla con il bambino. Noi parliamo con l’amico.
+uscire,[ушúре],выходить,Io esco di casa. Tu esci dal bar. Il padre esce dall’ufficio. La madre esce con l’amica. Noi usciamo al parco.
+prendere,[прэндэре],брать,Io prendo il caffè. Tu prendi il biglietto. Il bambino prende il libro. La madre prende la macchina. Noi prendiamo l’autobus.
+piacere,[пьячэ́ре],нравиться,Mi piace il caffè. Ti piace la casa. Al bambino piace il gelato. Alla madre piace la pasta. Ci piace l’Italia.
+leggere,[лэ́джере],читать,Io leggo il testo. Tu leggi il giornale. Il padre legge il libro. La madre legge la lezione. Noi leggiamo il vocabolario.
+amare,[амáре],любить,Io amo l’Italia. Tu ami la casa. Il bambino ama la madre. La madre ama il figlio. Noi amiamo il caffè.
+bere,[бэ́ре],пить,Io bevo il caffè. Tu bevi l’acqua. Il bambino beve il latte. La madre beve il tè. Noi beviamo a colazione.
+finire,[финúре],заканчивать,Io finisco il lavoro. Tu finisci la lezione. Il padre finisce il pranzo. La madre finisce la colazione. Noi finiamo l’esercizio.
+capire,[капи́ре],понимать,Io capisco la lezione. Tu capisci italiano. L’amico capisce bene. La madre capisce il bambino. Noi capiamo la domanda.
+arrivare,[арривáре],прибывать,Io arrivo a casa. Tu arrivi al bar. Il treno arriva a Roma. La madre arriva domani. Noi arriviamo in ufficio.
+scrivere,[скри́вере],писать,Io scrivo la lettera. Tu scrivi l’esercizio. Il padre scrive il giornale. La madre scrive la lista. Noi scriviamo la frase.
+partire,[партíре],уезжать / отправляться,Io parto domani. Tu parti per Roma. Il padre parte in treno. La madre parte con la macchina. Noi partiamo per l’Italia.
+mettere,[мэттэре],класть / ставить,Io metto il libro. Tu metti il cellulare. Il padre mette il caffè. La madre mette la coperta. Noi mettiamo il bicchiere.
+rimanere,[риманéре],оставаться,Io rimango a casa. Tu rimani in ufficio. Il bambino rimane con la madre. La famiglia rimane a Roma. Noi rimaniamo in Italia.
+dormire,[дормíре],спать,Io dormo nel letto. Tu dormi bene. Il bambino dorme molto. La madre dorme poco. Noi dormiamo a casa.
+vivere,[ви́вере],жить,Io vivo a Mosca. Tu vivi in città. Il padre vive in appartamento. La madre vive con la famiglia. Noi viviamo in Russia.
+conoscere,[коно́шере],знать (кого-то),Io conosco l’amico. Tu conosci la madre. Il padre conosce il dottore. La madre conosce l’amica. Noi conosciamo l’Italia.
+sentire,[сентúре],слышать / чувствовать,Io sento la voce. Tu senti la musica. Il bambino sente la madre. La madre sente il bambino. Noi sentiamo bene.
+cucinare,[кучинáре],готовить,Io cucino la pasta. Tu cucini le lasagne. La madre cucina la colazione. Il padre cucina il pesce. Noi cuciniamo a casa.
+studiare,[студья́ре],учиться / изучать,Io studio italiano. Tu studi la lezione. Il ragazzo studia molto. La madre studia la lingua. Noi studiamo il vocabolario.
+giocare,[джокáре],играть,Io gioco con il bambino. Tu giochi a calcio. Il bambino gioca bene. La madre gioca con il figlio. Noi giochiamo a casa.
+chiedere,[кьéдере],спрашивать,Io chiedo la strada. Tu chiedi il prezzo. Il padre chiede il conto. La madre chiede la lezione. Noi chiediamo l’informazione.
+trovare,[тровáре],находить,Io trovo la casa. Tu trovi il bar. Il padre trova il lavoro. La madre trova la chiave. Noi troviamo il museo.
+credere,[крэ́дере],верить,Io credo alla madre. Tu credi all’amico. Il bambino crede al padre. La famiglia crede bene. Noi crediamo alla lezione.
+aprire,[апрúре],открывать,Io apro la finestra. Tu apri la porta. Il padre apre il negozio. La madre apre la bottiglia. Noi apriamo la casa.
+lavorare,[лаворáре],работать,Io lavoro in ufficio. Tu lavori bene. Il padre lavora molto. La madre lavora in ditta. Noi lavoriamo a Roma.
+pensare,[пенсáре],думать,Io penso alla casa. Tu pensi al viaggio. Il padre pensa al lavoro. La madre pensa al bambino. Noi pensiamo all’Italia.
+correre,[кóррере],бежать,Io corro al bar. Tu corri a casa. Il bambino corre bene. La madre corre al negozio. Noi corriamo al museo.
+tenere,[тэнэ́ре],держать,Io tengo il bicchiere. Tu tieni il libro. Il padre tiene il portafoglio. La madre tiene la chiave. Noi teniamo il cellulare.
+guardare,[гуардáре],смотреть,Io guardo il panorama. Tu guardi la finestra. Il bambino guarda la madre. La madre guarda il padre. Noi guardiamo il museo.
+chiamare,[кьямáре],звать / называть,Io chiamo l’amico. Tu chiami la madre. Il padre chiama il figlio. La madre chiama il bambino. Noi chiamiamo il dottore.
+tornare,[торнáре],возвращаться,Io torno a casa. Tu torni al bar. Il padre torna dal lavoro. La madre torna dal negozio. Noi torniamo a Roma.
+salire,[салúре],подниматься,Io salgo al piano. Tu sali in camera. Il padre sale al palazzo. La madre sale in appartamento. Noi saliamo al ponte.
+preferire,[преферíре],предпочитать,Io preferisco il caffè. Tu preferisci la pasta. Il bambino preferisce il gelato. La madre preferisce la casa. Noi preferiamo l’Italia.
+morire,[морúре],умирать,Il nonno muore vecchio. La pianta muore in inverno. (пример с простыми словами)
+aspettare,[аспеттáре],ждать,Io aspetto l’amico. Tu aspetti il treno. Il padre aspetta il figlio. La madre aspetta la lezione. Noi aspettiamo il caffè.
+comprare,[компрáре],покупать,Io compro il caffè. Tu compri il biglietto. Il padre compra il giornale. La madre compra la pasta. Noi compriamo il pane.
+nascere,[нáшере],рождаться,Il bambino nasce in Italia. La sorella nasce a Mosca. Il figlio nasce felice.
+cercare,[чёркаре],искать,Io cerco la casa. Tu cerchi il lavoro. Il padre cerca il negozio. La madre cerca la chiave. Noi cerchiamo l’albergo.
+perdere,[пэрдэре],терять,Io perdo il biglietto. Tu perdi il tempo. Il bambino perde il libro. La madre perde la chiave. Noi perdiamo il treno.
+cantare,[кантáре],петь,Io canto bene. Tu canti la canzone. Il bambino canta felice. La madre canta la ninna nanna. Noi cantiamo in italiano.
+passare,[пассáре],проходить,Io passo la lezione. Tu passi il tempo. Il padre passa il ponte. La madre passa la giornata. Noi passiamo il sabato.
+cominciare,[коминчáре],начинать,Io comincio la lezione. Tu cominci il lavoro. Il padre comincia il pranzo. La madre comincia la colazione. Noi cominciamo il viaggio.
+ascoltare,[аскольтáре],слушать,Io ascolto la musica. Tu ascolti la madre. Il bambino ascolta il padre. La madre ascolta la radio. Noi ascoltiamo bene.
+riuscire,[рушúре],удаваться,Io riesco a leggere. Tu riesci a studiare. Il padre riesce a lavorare. La madre riesce a cucinare. Noi riusciamo a viaggiare.
+decidere,[дечúдере],решать,Io decido di partire. Tu decidi di studiare. Il padre decide di lavorare. La madre decide di comprare. Noi decidiamo di andare.
+abitare,[абитáре],жить (где-то),Io abito a Mosca. Tu abiti in città. Il padre abita in appartamento. La madre abita a Roma. Noi abitiamo in Italia.
+cadere,[кадэре],падать,Io cado dal letto. Tu cadi dal ponte. Il bambino cade piano. La madre cade poco.
+chiudere,[кью́дере],закрывать,Io chiudo la finestra. Tu chiudi la porta. Il padre chiude il negozio. La madre chiude la bottiglia. Noi chiudiamo la casa.
+lasciare,[лашáре],оставлять,Io lascio la casa. Tu lasci il lavoro. Il padre lascia il biglietto. La madre lascia il bambino. Noi lasciamo il bar.
+scegliere,[шельéре],выбирать,Io scelgo il caffè. Tu scegli la pasta. Il padre sceglie il lavoro. La madre sceglie la macchina. Noi scegliamo l’Italia.
+portare,[портáре],носить / приносить,Io porto il caffè. Tu porti il libro. Il padre porta il figlio. La madre porta la coperta. Noi portiamo il regalo.
+ricevere,[ричéвере],получать,Io ricevo il biglietto. Tu ricevi la lettera. Il padre riceve lo stipendio. La madre riceve il regalo. Noi riceviamo la lezione.
+lavare,[лавáре],мыть,Io lavo il bicchiere. Tu lavi la macchina. Il padre lava il pavimento. La madre lava la coperta. Noi laviamo la casa.
+rispondere,[риспóндере],отвечать,Io rispondo alla domanda. Tu rispondi bene. Il padre risponde al telefono. La madre risponde alla lezione. Noi rispondiamo in italiano.
+sedere,[седэре],сидеть,Io siedo a tavola. Tu siedi in camera. Il bambino siede con la madre. La madre siede al bar. Noi sediamo al ristorante.
+vincere,[вínчере],побеждать,Io vinco il gioco. Tu vinci la partita. Il ragazzo vince il premio. La squadra vince bene.
+pagare,[пагáре],платить,Io pago il caffè. Tu pagi il conto. Il padre paga il biglietto. La madre paga la lezione. Noi pagiamo il pranzo.
+alzare,[альцáре],поднимать,Io alzo il bicchiere. Tu alzi la mano. Il padre alza il bambino. La madre alza la voce. Noi alziamo la coperta.
+ridere,[рúдере],смеяться,Io rido molto. Tu ridi bene. Il bambino ride felice. La madre ride con l’amica. Noi ridiamo al bar.
+scendere,[шéндере],спускаться,Io scendo dal ponte. Tu scendi dalla macchina. Il padre scende dall’autobus. La madre scende dal palazzo. Noi scendiamo in piazza.
+incontrare,[инконтрáре],встречать,Io incontro l’amico. Tu incontri la madre. Il padre incontra il dottore. La madre incontra l’amica. Noi incontriamo la famiglia.
+offrire,[оффрúре],предлагать,Io offro il caffè. Tu offri il pranzo. Il padre offre il biglietto. La madre offre la pasta. Noi offriamo il gelato.
+imparare,[импарáре],учить,Io imparo italiano. Tu impari la lezione. Il bambino impara bene. La madre impara la lingua. Noi impariamo il vocabolario.
+dimenticare,[диментíкаре],забывать,Io dimentico la chiave. Tu dimentichi il biglietto. Il padre dimentica il portafoglio. La madre dimentica poco. Noi dimentichiamo il tempo.
+svegliare,[свелья́ре],будить,Io sveglio il bambino. Tu svegli il padre. La madre sveglia il figlio. Noi svegliamo presto.
+crescere,[крэ́шере],расти,Il bambino cresce bene. Il ragazzo cresce alto. La pianta cresce in giardino. Noi cresciamo in Russia.
+vendere,[вэ́ндере],продавать,Io vendo la macchina. Tu vendi il libro. Il padre vende il giornale. La madre vende la pasta. Noi vendiamo il caffè.
+divertire,[дивэртíре],развлекать,Io diverto il bambino. Tu diverti l’amico. La madre diverte il figlio. Noi divertiamo la famiglia.
+diventare,[дивентáре],становиться,Io divento bravo. Tu diventi italiano. Il bambino diventa grande. La madre diventa contenta. Noi diventiamo forti.
+porre,[пóрре],ставить / класть,Io pongo il libro. Tu poni il bicchiere. Il padre pone il caffè. La madre pone la coperta. Noi poniamo il cellulare.
+entrare,[энтрáре],входить,Io entro in casa. Tu entri nel bar. Il padre entra in ufficio. La madre entra nella camera. Noi entriamo nel museo.
+temere,[тэмэ́ре],бояться,Io temo la paura. Tu temi poco. Il bambino teme la notte. La madre teme il freddo. Noi temiamo il buio.
+pulire,[пулíре],чистить,Io pulisco la casa. Tu pulisci la camera. Il padre pulisce il bagno. La madre pulisce la cucina. Noi puliamo il negozio.
+vestire,[вестíре],одевать,Io vesto il bambino. Tu vesti il figlio. La madre veste la figlia. Noi vestiamo bene.
+seguire,[сегвíре],следовать,Io seguo la lezione. Tu segui la strada. Il padre segue il lavoro. La madre segue il bambino. Noi seguiamo il piano.
+restare,[рестáре],оставаться,Io resto a casa. Tu resti in ufficio. Il padre resta al lavoro. La madre resta con il bambino. Noi restiamo in Italia.
+cambiare,[камбья́ре],менять,Io cambio il vestito. Tu cambi il lavoro. Il padre cambia il biglietto. La madre cambia la macchina. Noi cambiamo il piano.
+viaggiare,[вьяджáре],путешествовать,Io viaggio in Italia. Tu viaggi a Roma. Il padre viaggia in treno. La madre viaggia con la famiglia. Noi viaggiamo bene.
+spegnere,[спэ́ньере],выключать,Io spengo la luce. Tu spegni il cellulare. Il padre spegne la radio. La madre spegne la televisione. Noi spegniamo il forno.
+ricordare,[рикордáре],помнить,Io ricordo la lezione. Tu ricordi il numero. Il padre ricorda il nome. La madre ricorda la data. Noi ricordiamo bene.
+apparire,[аппарíре],появляться,Io appaio in foto. Tu appari felice. Il bambino appare bravo. La madre appare contenta. Noi appariamo in piazza.
+aiutare,[аютáре],помогать,Io aiuto la madre. Tu aiuti il padre. Il bambino aiuta la famiglia. La madre aiuta il figlio. Noi aiutiamo l’amico.
+tacere,[тачэ́ре],молчать,Io taccio poco. Tu taci bene. Il padre tace al lavoro. La madre tace con il bambino. Noi taciamo in classe.
+spedire,[спедíре],отправлять,Io spedisco la lettera. Tu spedisci il biglietto. Il padre spedisce il pacchetto. La madre spedisce il regalo. Noi spediamo il messaggio.
+preparare,[препарáре],готовить / подготавливать,Io preparo la colazione. Tu prepari il pranzo. La madre prepara la pasta. Il padre prepara il caffè. Noi prepariamo il viaggio.

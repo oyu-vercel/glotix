@@ -946,205 +946,702 @@
         {
           "n": 1,
           "italian": "abitare",
-          "pronunciation": "[абитáрэ]",
-          "translation": "жить",
-          "examples": "Io abito a Mosca. La famiglia abita in casa. Noi abitiamo in appartamento."
+          "pronunciation": "[абитáре]",
+          "translation": "жить (где-то)",
+          "examples": "Io abito a Mosca. Tu abiti in città. Il padre abita in appartamento. La madre abita a Roma. Noi abitiamo in Italia."
         },
         {
           "n": 2,
-          "italian": "arrivare",
-          "pronunciation": "[арривáрэ]",
-          "translation": "прибывать",
-          "examples": "Io arrivo a Roma. Il treno arriva. La persona arriva."
+          "italian": "aiutare",
+          "pronunciation": "[аютáре]",
+          "translation": "помогать",
+          "examples": "Io aiuto la madre. Tu aiuti il padre. Il bambino aiuta la famiglia. La madre aiuta il figlio. Noi aiutiamo l’amico."
         },
         {
           "n": 3,
-          "italian": "avere",
-          "pronunciation": "[авэрэ]",
-          "translation": "иметь",
-          "examples": "Io ho un amico. Tu hai una casa. Noi abbiamo tempo."
+          "italian": "alzare",
+          "pronunciation": "[альцáре]",
+          "translation": "поднимать",
+          "examples": "Io alzo il bicchiere. Tu alzi la mano. Il padre alza il bambino. La madre alza la voce. Noi alziamo la coperta."
         },
         {
           "n": 4,
-          "italian": "bere",
-          "pronunciation": "[бэрэ]",
-          "translation": "пить",
-          "examples": "Io bevo un caffè. La persona beve acqua. Il bambino beve."
+          "italian": "amare",
+          "pronunciation": "[амáре]",
+          "translation": "любить",
+          "examples": "Io amo l’Italia. Tu ami la casa. Il bambino ama la madre. La madre ama il figlio. Noi amiamo il caffè."
         },
         {
           "n": 5,
-          "italian": "chiamare",
-          "pronunciation": "[кьямáре] (chiamo)",
-          "translation": "звать / называть",
-          "examples": "Io chiamo l’amico. Tu chiami la madre."
+          "italian": "andare",
+          "pronunciation": "[андáре]",
+          "translation": "идти",
+          "examples": "Io vado a casa. Tu vai al bar. Il padre va in ufficio. La famiglia va a Roma. Noi andiamo al museo."
         },
         {
           "n": 6,
-          "italian": "chiudere",
-          "pronunciation": "[кью́дере]",
-          "translation": "закрывать",
-          "examples": "Io chiudo la finestra. Tu chiudi la porta."
+          "italian": "apparire",
+          "pronunciation": "[аппарíре]",
+          "translation": "появляться",
+          "examples": "Io appaio in foto. Tu appari felice. Il bambino appare bravo. La madre appare contenta. Noi appariamo in piazza."
         },
         {
           "n": 7,
-          "italian": "conoscere",
-          "pronunciation": "[конóшере] (conosco)",
-          "translation": "знать",
-          "examples": "Io conosco un amico. Tu conosci la lezione. Noi conosciamo l’Italia."
+          "italian": "aprire",
+          "pronunciation": "[апрúре]",
+          "translation": "открывать",
+          "examples": "Io apro la finestra. Tu apri la porta. Il padre apre il negozio. La madre apre la bottiglia. Noi apriamo la casa."
         },
         {
           "n": 8,
-          "italian": "domandare",
-          "pronunciation": "[домандáрэ]",
-          "translation": "спрашивать",
-          "examples": "Io domando. La madre domanda. Lo studente domanda."
+          "italian": "arrivare",
+          "pronunciation": "[арривáре]",
+          "translation": "прибывать",
+          "examples": "Io arrivo a casa. Tu arrivi al bar. Il treno arriva a Roma. La madre arriva domani. Noi arriviamo in ufficio."
         },
         {
           "n": 9,
-          "italian": "dormire",
-          "pronunciation": "[дормíре]",
-          "translation": "спать",
-          "examples": "Io dormo nel letto. Il bambino dorme."
+          "italian": "ascoltare",
+          "pronunciation": "[аскольтáре]",
+          "translation": "слушать",
+          "examples": "Io ascolto la musica. Tu ascolti la madre. Il bambino ascolta il padre. La madre ascolta la radio. Noi ascoltiamo bene."
         },
         {
           "n": 10,
-          "italian": "essere",
-          "pronunciation": "[э́ссере] (sono, è, sei…)",
-          "translation": "быть",
-          "examples": "Io sono russo. Tu sei bravo. La casa è grande. Noi siamo contenti."
+          "italian": "aspettare",
+          "pronunciation": "[аспеттáре]",
+          "translation": "ждать",
+          "examples": "Io aspetto l’amico. Tu aspetti il treno. Il padre aspetta il figlio. La madre aspetta la lezione. Noi aspettiamo il caffè."
         },
         {
           "n": 11,
-          "italian": "fare",
-          "pronunciation": "[фáрэ]",
-          "translation": "делать",
-          "examples": "Io faccio un esercizio. Tu fai colazione. Noi facciamo un viaggio."
+          "italian": "avere",
+          "pronunciation": "[авэ́ре]",
+          "translation": "иметь",
+          "examples": "Io ho un amico. Tu hai una casa. Il padre ha un figlio. La madre ha una macchina. Noi abbiamo tempo."
         },
         {
           "n": 12,
-          "italian": "guardare",
-          "pronunciation": "[гуардáре]",
-          "translation": "смотреть",
-          "examples": "Io guardo il panorama. Tu guardi la finestra."
+          "italian": "bere",
+          "pronunciation": "[бэ́ре]",
+          "translation": "пить",
+          "examples": "Io bevo il caffè. Tu bevi l’acqua. Il bambino beve il latte. La madre beve il tè. Noi beviamo a colazione."
         },
         {
           "n": 13,
-          "italian": "insegnare",
-          "pronunciation": "[инсенья́ре] (insegno)",
-          "translation": "преподавать",
-          "examples": "Io insegno italiano. Tu insegni."
+          "italian": "cadere",
+          "pronunciation": "[кадэре]",
+          "translation": "падать",
+          "examples": "Io cado dal letto. Tu cadi dal ponte. Il bambino cade piano. La madre cade poco."
         },
         {
           "n": 14,
-          "italian": "lavorare",
-          "pronunciation": "[лаворáрэ]",
-          "translation": "работать",
-          "examples": "Io lavoro in ufficio. Il padre lavora. Noi lavoriamo."
+          "italian": "cambiare",
+          "pronunciation": "[камбья́ре]",
+          "translation": "менять",
+          "examples": "Io cambio il vestito. Tu cambi il lavoro. Il padre cambia il biglietto. La madre cambia la macchina. Noi cambiamo il piano."
         },
         {
           "n": 15,
-          "italian": "leggere",
-          "pronunciation": "[лэ́джере] (leggo)",
-          "translation": "читать",
-          "examples": "Io leggo un testo. Il padre legge il giornale. Noi leggiamo."
+          "italian": "cantare",
+          "pronunciation": "[кантáре]",
+          "translation": "петь",
+          "examples": "Io canto bene. Tu canti la canzone. Il bambino canta felice. La madre canta la ninna nanna. Noi cantiamo in italiano."
         },
         {
           "n": 16,
-          "italian": "mangiare",
-          "pronunciation": "[манджáре] (mangio)",
-          "translation": "есть",
-          "examples": "Io mangio la pasta. Tu mangi il pesce. Noi mangiamo a pranzo."
+          "italian": "capire",
+          "pronunciation": "[капи́ре]",
+          "translation": "понимать",
+          "examples": "Io capisco la lezione. Tu capisci italiano. L’amico capisce bene. La madre capisce il bambino. Noi capiamo la domanda."
         },
         {
           "n": 17,
-          "italian": "mettere",
-          "pronunciation": "[мэттэре]",
-          "translation": "класть",
-          "examples": "Io metto il libro. Tu metti il cellulare."
+          "italian": "cercare",
+          "pronunciation": "[чёркаре]",
+          "translation": "искать",
+          "examples": "Io cerco la casa. Tu cerchi il lavoro. Il padre cerca il negozio. La madre cerca la chiave. Noi cerchiamo l’albergo."
         },
         {
           "n": 18,
-          "italian": "pagare",
-          "pronunciation": "[пагáре]",
-          "translation": "платить",
-          "examples": "Io pago il caffè. Tu pagi il conto."
+          "italian": "chiamare",
+          "pronunciation": "[кьямáре]",
+          "translation": "звать / называть",
+          "examples": "Io chiamo l’amico. Tu chiami la madre. Il padre chiama il figlio. La madre chiama il bambino. Noi chiamiamo il dottore."
         },
         {
           "n": 19,
-          "italian": "parlare",
-          "pronunciation": "[парлáрэ] (parlo)",
-          "translation": "говорить",
-          "examples": "Io parlo italiano. Tu parli russo. Noi parliamo."
+          "italian": "chiedere",
+          "pronunciation": "[кьéдере]",
+          "translation": "спрашивать",
+          "examples": "Io chiedo la strada. Tu chiedi il prezzo. Il padre chiede il conto. La madre chiede la lezione. Noi chiediamo l’informazione."
         },
         {
           "n": 20,
-          "italian": "partire",
-          "pronunciation": "[партíрэ]",
-          "translation": "уезжать",
-          "examples": "Io parto domani. Il treno parte. Lo studente parte."
+          "italian": "chiudere",
+          "pronunciation": "[кью́дере]",
+          "translation": "закрывать",
+          "examples": "Io chiudo la finestra. Tu chiudi la porta. Il padre chiude il negozio. La madre chiude la bottiglia. Noi chiudiamo la casa."
         },
         {
           "n": 21,
-          "italian": "preferire",
-          "pronunciation": "[преферíре] (preferisco)",
-          "translation": "предпочитать",
-          "examples": "Io preferisco il caffè. Tu preferisci la pasta. Noi preferiamo l’Italia."
+          "italian": "cominciare",
+          "pronunciation": "[коминчáре]",
+          "translation": "начинать",
+          "examples": "Io comincio la lezione. Tu cominci il lavoro. Il padre comincia il pranzo. La madre comincia la colazione. Noi cominciamo il viaggio."
         },
         {
           "n": 22,
-          "italian": "preparare",
-          "pronunciation": "[препарáре]",
-          "translation": "готовить",
-          "examples": "Io preparo la colazione. La madre prepara la pasta."
+          "italian": "comprare",
+          "pronunciation": "[компрáре]",
+          "translation": "покупать",
+          "examples": "Io compro il caffè. Tu compri il biglietto. Il padre compra il giornale. La madre compra la pasta. Noi compriamo il pane."
         },
         {
           "n": 23,
-          "italian": "riposare",
-          "pronunciation": "[рипозáрэ]",
-          "translation": "отдыхать",
-          "examples": "Io riposo. La persona riposa. Il bambino riposa."
+          "italian": "conoscere",
+          "pronunciation": "[коно́шере]",
+          "translation": "знать (кого-то)",
+          "examples": "Io conosco l’amico. Tu conosci la madre. Il padre conosce il dottore. La madre conosce l’amica. Noi conosciamo l’Italia."
         },
         {
           "n": 24,
-          "italian": "rispondere",
-          "pronunciation": "[риспóндере]",
-          "translation": "отвечать",
-          "examples": "Io rispondo. La madre risponde. Lo studente risponde."
+          "italian": "correre",
+          "pronunciation": "[кóррере]",
+          "translation": "бежать",
+          "examples": "Io corro al bar. Tu corri a casa. Il bambino corre bene. La madre corre al negozio. Noi corriamo al museo."
         },
         {
           "n": 25,
-          "italian": "studiare",
-          "pronunciation": "[студья́ре]",
-          "translation": "учить",
-          "examples": "Io studio italiano. Tu studi la lezione. Noi studiamo."
+          "italian": "credere",
+          "pronunciation": "[крэ́дере]",
+          "translation": "верить",
+          "examples": "Io credo alla madre. Tu credi all’amico. Il bambino crede al padre. La famiglia crede bene. Noi crediamo alla lezione."
         },
         {
           "n": 26,
-          "italian": "tornare",
-          "pronunciation": "[торнáрэ]",
-          "translation": "возвращаться",
-          "examples": "Io torno a casa. Il padre torna. La madre torna."
+          "italian": "crescere",
+          "pronunciation": "[крэ́шере]",
+          "translation": "расти",
+          "examples": "Il bambino cresce bene. Il ragazzo cresce alto. La pianta cresce in giardino. Noi cresciamo in Russia."
         },
         {
           "n": 27,
-          "italian": "usare",
-          "pronunciation": "[узáрэ]",
-          "translation": "использовать",
-          "examples": "Io uso il cellulare. Tu usi il vocabolario. Noi usiamo il mezzo."
+          "italian": "cucinare",
+          "pronunciation": "[кучинáре]",
+          "translation": "готовить",
+          "examples": "Io cucino la pasta. Tu cucini le lasagne. La madre cucina la colazione. Il padre cucina il pesce. Noi cuciniamo a casa."
         },
         {
           "n": 28,
-          "italian": "viaggiare",
-          "pronunciation": "[вьяджáре]",
-          "translation": "путешествовать",
-          "examples": "Io viaggio in Italia. Tu viaggi. Noi viaggiamo."
+          "italian": "dare",
+          "pronunciation": "[да́ре]",
+          "translation": "давать",
+          "examples": "Io do un caffè. Tu dai un libro. Il padre dà il biglietto. La madre dà la coperta. Noi diamo un regalo."
         },
         {
           "n": 29,
-          "italian": "visitare",
-          "pronunciation": "[визитáрэ]",
-          "translation": "посещать",
-          "examples": "Io visito il museo. Tu visiti Roma. Noi visitiamo l’Italia."
+          "italian": "decidere",
+          "pronunciation": "[дечúдере]",
+          "translation": "решать",
+          "examples": "Io decido di partire. Tu decidi di studiare. Il padre decide di lavorare. La madre decide di comprare. Noi decidiamo di andare."
+        },
+        {
+          "n": 30,
+          "italian": "dimenticare",
+          "pronunciation": "[диментíкаре]",
+          "translation": "забывать",
+          "examples": "Io dimentico la chiave. Tu dimentichi il biglietto. Il padre dimentica il portafoglio. La madre dimentica poco. Noi dimentichiamo il tempo."
+        },
+        {
+          "n": 31,
+          "italian": "dire",
+          "pronunciation": "[дúре]",
+          "translation": "говорить",
+          "examples": "Io dico la verità. Tu dici grazie. Il padre dice arrivederci. La madre dice buongiorno. Noi diciamo ciao."
+        },
+        {
+          "n": 32,
+          "italian": "diventare",
+          "pronunciation": "[дивентáре]",
+          "translation": "становиться",
+          "examples": "Io divento bravo. Tu diventi italiano. Il bambino diventa grande. La madre diventa contenta. Noi diventiamo forti."
+        },
+        {
+          "n": 33,
+          "italian": "divertire",
+          "pronunciation": "[дивэртíре]",
+          "translation": "развлекать",
+          "examples": "Io diverto il bambino. Tu diverti l’amico. La madre diverte il figlio. Noi divertiamo la famiglia."
+        },
+        {
+          "n": 34,
+          "italian": "dormire",
+          "pronunciation": "[дормíре]",
+          "translation": "спать",
+          "examples": "Io dormo nel letto. Tu dormi bene. Il bambino dorme molto. La madre dorme poco. Noi dormiamo a casa."
+        },
+        {
+          "n": 35,
+          "italian": "dovere",
+          "pronunciation": "[довэ́ре]",
+          "translation": "быть должным / нужно",
+          "examples": "Io devo studiare. Tu devi lavorare. Il padre deve pagare. La madre deve preparare. Noi dobbiamo partire."
+        },
+        {
+          "n": 36,
+          "italian": "entrare",
+          "pronunciation": "[энтрáре]",
+          "translation": "входить",
+          "examples": "Io entro in casa. Tu entri nel bar. Il padre entra in ufficio. La madre entra nella camera. Noi entriamo nel museo."
+        },
+        {
+          "n": 37,
+          "italian": "essere",
+          "pronunciation": "[э́ссере]",
+          "translation": "быть",
+          "examples": "Io sono russo. La casa è grande. Il bambino è bravo. La lezione è interessante. Noi siamo contenti."
+        },
+        {
+          "n": 38,
+          "italian": "fare",
+          "pronunciation": "[фа́ре]",
+          "translation": "делать",
+          "examples": "Io faccio un esercizio. Tu fai colazione. La madre fa la pasta. Noi facciamo un viaggio. Il ragazzo fa il lavoro."
+        },
+        {
+          "n": 39,
+          "italian": "finire",
+          "pronunciation": "[финúре]",
+          "translation": "заканчивать",
+          "examples": "Io finisco il lavoro. Tu finisci la lezione. Il padre finisce il pranzo. La madre finisce la colazione. Noi finiamo l’esercizio."
+        },
+        {
+          "n": 40,
+          "italian": "giocare",
+          "pronunciation": "[джокáре]",
+          "translation": "играть",
+          "examples": "Io gioco con il bambino. Tu giochi a calcio. Il bambino gioca bene. La madre gioca con il figlio. Noi giochiamo a casa."
+        },
+        {
+          "n": 41,
+          "italian": "guardare",
+          "pronunciation": "[гуардáре]",
+          "translation": "смотреть",
+          "examples": "Io guardo il panorama. Tu guardi la finestra. Il bambino guarda la madre. La madre guarda il padre. Noi guardiamo il museo."
+        },
+        {
+          "n": 42,
+          "italian": "imparare",
+          "pronunciation": "[импарáре]",
+          "translation": "учить",
+          "examples": "Io imparo italiano. Tu impari la lezione. Il bambino impara bene. La madre impara la lingua. Noi impariamo il vocabolario."
+        },
+        {
+          "n": 43,
+          "italian": "incontrare",
+          "pronunciation": "[инконтрáре]",
+          "translation": "встречать",
+          "examples": "Io incontro l’amico. Tu incontri la madre. Il padre incontra il dottore. La madre incontra l’amica. Noi incontriamo la famiglia."
+        },
+        {
+          "n": 44,
+          "italian": "lasciare",
+          "pronunciation": "[лашáре]",
+          "translation": "оставлять",
+          "examples": "Io lascio la casa. Tu lasci il lavoro. Il padre lascia il biglietto. La madre lascia il bambino. Noi lasciamo il bar."
+        },
+        {
+          "n": 45,
+          "italian": "lavare",
+          "pronunciation": "[лавáре]",
+          "translation": "мыть",
+          "examples": "Io lavo il bicchiere. Tu lavi la macchina. Il padre lava il pavimento. La madre lava la coperta. Noi laviamo la casa."
+        },
+        {
+          "n": 46,
+          "italian": "lavorare",
+          "pronunciation": "[лаворáре]",
+          "translation": "работать",
+          "examples": "Io lavoro in ufficio. Tu lavori bene. Il padre lavora molto. La madre lavora in ditta. Noi lavoriamo a Roma."
+        },
+        {
+          "n": 47,
+          "italian": "leggere",
+          "pronunciation": "[лэ́джере]",
+          "translation": "читать",
+          "examples": "Io leggo il testo. Tu leggi il giornale. Il padre legge il libro. La madre legge la lezione. Noi leggiamo il vocabolario."
+        },
+        {
+          "n": 48,
+          "italian": "mangiare",
+          "pronunciation": "[манджáре]",
+          "translation": "есть",
+          "examples": "Io mangio la pasta. Tu mangi il pesce. Il bambino mangia il limone. La madre mangia la colazione. Noi mangiamo a pranzo."
+        },
+        {
+          "n": 49,
+          "italian": "mettere",
+          "pronunciation": "[мэттэре]",
+          "translation": "класть / ставить",
+          "examples": "Io metto il libro. Tu metti il cellulare. Il padre mette il caffè. La madre mette la coperta. Noi mettiamo il bicchiere."
+        },
+        {
+          "n": 50,
+          "italian": "morire",
+          "pronunciation": "[морúре]",
+          "translation": "умирать",
+          "examples": "Il nonno muore vecchio. La pianta muore in inverno. (пример с простыми словами)"
+        },
+        {
+          "n": 51,
+          "italian": "nascere",
+          "pronunciation": "[нáшере]",
+          "translation": "рождаться",
+          "examples": "Il bambino nasce in Italia. La sorella nasce a Mosca. Il figlio nasce felice."
+        },
+        {
+          "n": 52,
+          "italian": "offrire",
+          "pronunciation": "[оффрúре]",
+          "translation": "предлагать",
+          "examples": "Io offro il caffè. Tu offri il pranzo. Il padre offre il biglietto. La madre offre la pasta. Noi offriamo il gelato."
+        },
+        {
+          "n": 53,
+          "italian": "pagare",
+          "pronunciation": "[пагáре]",
+          "translation": "платить",
+          "examples": "Io pago il caffè. Tu pagi il conto. Il padre paga il biglietto. La madre paga la lezione. Noi pagiamo il pranzo."
+        },
+        {
+          "n": 54,
+          "italian": "parlare",
+          "pronunciation": "[парлáре]",
+          "translation": "говорить",
+          "examples": "Io parlo italiano. Tu parli russo. L’amico parla bene. La madre parla con il bambino. Noi parliamo con l’amico."
+        },
+        {
+          "n": 55,
+          "italian": "partire",
+          "pronunciation": "[партíре]",
+          "translation": "уезжать / отправляться",
+          "examples": "Io parto domani. Tu parti per Roma. Il padre parte in treno. La madre parte con la macchina. Noi partiamo per l’Italia."
+        },
+        {
+          "n": 56,
+          "italian": "passare",
+          "pronunciation": "[пассáре]",
+          "translation": "проходить",
+          "examples": "Io passo la lezione. Tu passi il tempo. Il padre passa il ponte. La madre passa la giornata. Noi passiamo il sabato."
+        },
+        {
+          "n": 57,
+          "italian": "pensare",
+          "pronunciation": "[пенсáре]",
+          "translation": "думать",
+          "examples": "Io penso alla casa. Tu pensi al viaggio. Il padre pensa al lavoro. La madre pensa al bambino. Noi pensiamo all’Italia."
+        },
+        {
+          "n": 58,
+          "italian": "perdere",
+          "pronunciation": "[пэрдэре]",
+          "translation": "терять",
+          "examples": "Io perdo il biglietto. Tu perdi il tempo. Il bambino perde il libro. La madre perde la chiave. Noi perdiamo il treno."
+        },
+        {
+          "n": 59,
+          "italian": "piacere",
+          "pronunciation": "[пьячэ́ре]",
+          "translation": "нравиться",
+          "examples": "Mi piace il caffè. Ti piace la casa. Al bambino piace il gelato. Alla madre piace la pasta. Ci piace l’Italia."
+        },
+        {
+          "n": 60,
+          "italian": "porre",
+          "pronunciation": "[пóрре]",
+          "translation": "ставить / класть",
+          "examples": "Io pongo il libro. Tu poni il bicchiere. Il padre pone il caffè. La madre pone la coperta. Noi poniamo il cellulare."
+        },
+        {
+          "n": 61,
+          "italian": "portare",
+          "pronunciation": "[портáре]",
+          "translation": "носить / приносить",
+          "examples": "Io porto il caffè. Tu porti il libro. Il padre porta il figlio. La madre porta la coperta. Noi portiamo il regalo."
+        },
+        {
+          "n": 62,
+          "italian": "potere",
+          "pronunciation": "[потэ́ре]",
+          "translation": "мочь (быть в состоянии)",
+          "examples": "Io posso leggere. Tu puoi mangiare. Il bambino può dormire. Noi possiamo viaggiare. La madre può cucinare."
+        },
+        {
+          "n": 63,
+          "italian": "preferire",
+          "pronunciation": "[преферíре]",
+          "translation": "предпочитать",
+          "examples": "Io preferisco il caffè. Tu preferisci la pasta. Il bambino preferisce il gelato. La madre preferisce la casa. Noi preferiamo l’Italia."
+        },
+        {
+          "n": 64,
+          "italian": "prendere",
+          "pronunciation": "[прэндэре]",
+          "translation": "брать",
+          "examples": "Io prendo il caffè. Tu prendi il biglietto. Il bambino prende il libro. La madre prende la macchina. Noi prendiamo l’autobus."
+        },
+        {
+          "n": 65,
+          "italian": "preparare",
+          "pronunciation": "[препарáре]",
+          "translation": "готовить / подготавливать",
+          "examples": "Io preparo la colazione. Tu prepari il pranzo. La madre prepara la pasta. Il padre prepara il caffè. Noi prepariamo il viaggio."
+        },
+        {
+          "n": 66,
+          "italian": "pulire",
+          "pronunciation": "[пулíре]",
+          "translation": "чистить",
+          "examples": "Io pulisco la casa. Tu pulisci la camera. Il padre pulisce il bagno. La madre pulisce la cucina. Noi puliamo il negozio."
+        },
+        {
+          "n": 67,
+          "italian": "restare",
+          "pronunciation": "[рестáре]",
+          "translation": "оставаться",
+          "examples": "Io resto a casa. Tu resti in ufficio. Il padre resta al lavoro. La madre resta con il bambino. Noi restiamo in Italia."
+        },
+        {
+          "n": 68,
+          "italian": "ricevere",
+          "pronunciation": "[ричéвере]",
+          "translation": "получать",
+          "examples": "Io ricevo il biglietto. Tu ricevi la lettera. Il padre riceve lo stipendio. La madre riceve il regalo. Noi riceviamo la lezione."
+        },
+        {
+          "n": 69,
+          "italian": "ricordare",
+          "pronunciation": "[рикордáре]",
+          "translation": "помнить",
+          "examples": "Io ricordo la lezione. Tu ricordi il numero. Il padre ricorda il nome. La madre ricorda la data. Noi ricordiamo bene."
+        },
+        {
+          "n": 70,
+          "italian": "ridere",
+          "pronunciation": "[рúдере]",
+          "translation": "смеяться",
+          "examples": "Io rido molto. Tu ridi bene. Il bambino ride felice. La madre ride con l’amica. Noi ridiamo al bar."
+        },
+        {
+          "n": 71,
+          "italian": "rimanere",
+          "pronunciation": "[риманéре]",
+          "translation": "оставаться",
+          "examples": "Io rimango a casa. Tu rimani in ufficio. Il bambino rimane con la madre. La famiglia rimane a Roma. Noi rimaniamo in Italia."
+        },
+        {
+          "n": 72,
+          "italian": "rispondere",
+          "pronunciation": "[риспóндере]",
+          "translation": "отвечать",
+          "examples": "Io rispondo alla domanda. Tu rispondi bene. Il padre risponde al telefono. La madre risponde alla lezione. Noi rispondiamo in italiano."
+        },
+        {
+          "n": 73,
+          "italian": "riuscire",
+          "pronunciation": "[рушúре]",
+          "translation": "удаваться",
+          "examples": "Io riesco a leggere. Tu riesci a studiare. Il padre riesce a lavorare. La madre riesce a cucinare. Noi riusciamo a viaggiare."
+        },
+        {
+          "n": 74,
+          "italian": "salire",
+          "pronunciation": "[салúре]",
+          "translation": "подниматься",
+          "examples": "Io salgo al piano. Tu sali in camera. Il padre sale al palazzo. La madre sale in appartamento. Noi saliamo al ponte."
+        },
+        {
+          "n": 75,
+          "italian": "sapere",
+          "pronunciation": "[сапэ́ре]",
+          "translation": "знать",
+          "examples": "Io so la lezione. Tu sai la risposta. L’amico sa italiano. La madre sa cucinare. Noi sappiamo la strada."
+        },
+        {
+          "n": 76,
+          "italian": "scegliere",
+          "pronunciation": "[шельéре]",
+          "translation": "выбирать",
+          "examples": "Io scelgo il caffè. Tu scegli la pasta. Il padre sceglie il lavoro. La madre sceglie la macchina. Noi scegliamo l’Italia."
+        },
+        {
+          "n": 77,
+          "italian": "scendere",
+          "pronunciation": "[шéндере]",
+          "translation": "спускаться",
+          "examples": "Io scendo dal ponte. Tu scendi dalla macchina. Il padre scende dall’autobus. La madre scende dal palazzo. Noi scendiamo in piazza."
+        },
+        {
+          "n": 78,
+          "italian": "scrivere",
+          "pronunciation": "[скри́вере]",
+          "translation": "писать",
+          "examples": "Io scrivo la lettera. Tu scrivi l’esercizio. Il padre scrive il giornale. La madre scrive la lista. Noi scriviamo la frase."
+        },
+        {
+          "n": 79,
+          "italian": "sedere",
+          "pronunciation": "[седэре]",
+          "translation": "сидеть",
+          "examples": "Io siedo a tavola. Tu siedi in camera. Il bambino siede con la madre. La madre siede al bar. Noi sediamo al ristorante."
+        },
+        {
+          "n": 80,
+          "italian": "seguire",
+          "pronunciation": "[сегвíре]",
+          "translation": "следовать",
+          "examples": "Io seguo la lezione. Tu segui la strada. Il padre segue il lavoro. La madre segue il bambino. Noi seguiamo il piano."
+        },
+        {
+          "n": 81,
+          "italian": "sentire",
+          "pronunciation": "[сентúре]",
+          "translation": "слышать / чувствовать",
+          "examples": "Io sento la voce. Tu senti la musica. Il bambino sente la madre. La madre sente il bambino. Noi sentiamo bene."
+        },
+        {
+          "n": 82,
+          "italian": "spedire",
+          "pronunciation": "[спедíре]",
+          "translation": "отправлять",
+          "examples": "Io spedisco la lettera. Tu spedisci il biglietto. Il padre spedisce il pacchetto. La madre spedisce il regalo. Noi spediamo il messaggio."
+        },
+        {
+          "n": 83,
+          "italian": "spegnere",
+          "pronunciation": "[спэ́ньере]",
+          "translation": "выключать",
+          "examples": "Io spengo la luce. Tu spegni il cellulare. Il padre spegne la radio. La madre spegne la televisione. Noi spegniamo il forno."
+        },
+        {
+          "n": 84,
+          "italian": "stare",
+          "pronunciation": "[стáре]",
+          "translation": "находиться / быть",
+          "examples": "Io sto bene. Tu stai a casa. Il bambino sta bene. La lezione sta bene. Noi stiamo in Italia."
+        },
+        {
+          "n": 85,
+          "italian": "studiare",
+          "pronunciation": "[студья́ре]",
+          "translation": "учиться / изучать",
+          "examples": "Io studio italiano. Tu studi la lezione. Il ragazzo studia molto. La madre studia la lingua. Noi studiamo il vocabolario."
+        },
+        {
+          "n": 86,
+          "italian": "svegliare",
+          "pronunciation": "[свелья́ре]",
+          "translation": "будить",
+          "examples": "Io sveglio il bambino. Tu svegli il padre. La madre sveglia il figlio. Noi svegliamo presto."
+        },
+        {
+          "n": 87,
+          "italian": "tacere",
+          "pronunciation": "[тачэ́ре]",
+          "translation": "молчать",
+          "examples": "Io taccio poco. Tu taci bene. Il padre tace al lavoro. La madre tace con il bambino. Noi taciamo in classe."
+        },
+        {
+          "n": 88,
+          "italian": "temere",
+          "pronunciation": "[тэмэ́ре]",
+          "translation": "бояться",
+          "examples": "Io temo la paura. Tu temi poco. Il bambino teme la notte. La madre teme il freddo. Noi temiamo il buio."
+        },
+        {
+          "n": 89,
+          "italian": "tenere",
+          "pronunciation": "[тэнэ́ре]",
+          "translation": "держать",
+          "examples": "Io tengo il bicchiere. Tu tieni il libro. Il padre tiene il portafoglio. La madre tiene la chiave. Noi teniamo il cellulare."
+        },
+        {
+          "n": 90,
+          "italian": "tornare",
+          "pronunciation": "[торнáре]",
+          "translation": "возвращаться",
+          "examples": "Io torno a casa. Tu torni al bar. Il padre torna dal lavoro. La madre torna dal negozio. Noi torniamo a Roma."
+        },
+        {
+          "n": 91,
+          "italian": "trovare",
+          "pronunciation": "[тровáре]",
+          "translation": "находить",
+          "examples": "Io trovo la casa. Tu trovi il bar. Il padre trova il lavoro. La madre trova la chiave. Noi troviamo il museo."
+        },
+        {
+          "n": 92,
+          "italian": "uscire",
+          "pronunciation": "[ушúре]",
+          "translation": "выходить",
+          "examples": "Io esco di casa. Tu esci dal bar. Il padre esce dall’ufficio. La madre esce con l’amica. Noi usciamo al parco."
+        },
+        {
+          "n": 93,
+          "italian": "vedere",
+          "pronunciation": "[ведэ́ре]",
+          "translation": "видеть",
+          "examples": "Io vedo la casa. Tu vedi il museo. Il bambino vede il padre. La madre vede l’amica. Noi vediamo il panorama."
+        },
+        {
+          "n": 94,
+          "italian": "vendere",
+          "pronunciation": "[вэ́ндере]",
+          "translation": "продавать",
+          "examples": "Io vendo la macchina. Tu vendi il libro. Il padre vende il giornale. La madre vende la pasta. Noi vendiamo il caffè."
+        },
+        {
+          "n": 95,
+          "italian": "venire",
+          "pronunciation": "[венúре]",
+          "translation": "приходить",
+          "examples": "Io vengo a casa. Tu vieni al bar. L’amico viene domani. La famiglia viene a pranzo. Noi veniamo al museo."
+        },
+        {
+          "n": 96,
+          "italian": "vestire",
+          "pronunciation": "[вестíре]",
+          "translation": "одевать",
+          "examples": "Io vesto il bambino. Tu vesti il figlio. La madre veste la figlia. Noi vestiamo bene."
+        },
+        {
+          "n": 97,
+          "italian": "viaggiare",
+          "pronunciation": "[вьяджáре]",
+          "translation": "путешествовать",
+          "examples": "Io viaggio in Italia. Tu viaggi a Roma. Il padre viaggia in treno. La madre viaggia con la famiglia. Noi viaggiamo bene."
+        },
+        {
+          "n": 98,
+          "italian": "vincere",
+          "pronunciation": "[вínчере]",
+          "translation": "побеждать",
+          "examples": "Io vinco il gioco. Tu vinci la partita. Il ragazzo vince il premio. La squadra vince bene."
+        },
+        {
+          "n": 99,
+          "italian": "vivere",
+          "pronunciation": "[ви́вере]",
+          "translation": "жить",
+          "examples": "Io vivo a Mosca. Tu vivi in città. Il padre vive in appartamento. La madre vive con la famiglia. Noi viviamo in Russia."
+        },
+        {
+          "n": 100,
+          "italian": "volere",
+          "pronunciation": "[волэ́ре]",
+          "translation": "хотеть",
+          "examples": "Io voglio un caffè. Tu vuoi la pasta. Il bambino vuole il gelato. La madre vuole la macchina. Noi vogliamo viaggiare."
         }
       ]
     },
