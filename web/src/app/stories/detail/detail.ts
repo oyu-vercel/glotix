@@ -38,7 +38,7 @@ export class StoryDetail {
   private readonly router = inject(Router);
 
   readonly story = toSignal(
-    toObservable(this.slug).pipe(switchMap((s) => this.service.getStory(s))),
+    toObservable(this.slug).pipe(switchMap((s) => this.service.getStoryResolved(s))),
   );
 
   readonly nodes = computed<TextNode[]>(() => {

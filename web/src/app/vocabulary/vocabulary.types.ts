@@ -4,7 +4,6 @@ export interface Word {
   pronunciation: string;
   translation: string;
   examples: string;
-  extras?: boolean;
 }
 
 export interface Category {

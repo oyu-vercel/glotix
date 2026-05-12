@@ -51,7 +51,7 @@ export class StoryRepeat {
     combineLatest([toObservable(this.slug), toObservable(this.key)]).pipe(
       switchMap(([slug, key]) =>
         this.service
-          .getStory(slug)
+          .getStoryResolved(slug)
           .pipe(map((story) => story?.vocabulary.categories.find((c) => c.key === key))),
       ),
     ),

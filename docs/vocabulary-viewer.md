@@ -1,6 +1,6 @@
 # Vocabulary viewer — Italian A2
 
-An English-UI vocabulary viewer for the Italian A2 word lists at [`words/italian/a2/`](words/italian/a2). UI labels are English; Russian appears only inside table cells (translation, transcription).
+An English-UI vocabulary viewer for the Italian A2 word list. UI labels are English; Russian appears only inside table cells (translation, transcription).
 
 ## App shell
 
@@ -12,21 +12,15 @@ An English-UI vocabulary viewer for the Italian A2 word lists at [`words/italian
 |---|---|---|
 | `/` | redirect | Forwards to `/vocabulary` (also catches unknown paths via `**`) |
 | `/vocabulary` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Landing page — `mat-table` with `Category` + `Words` columns, click row to drill in, footer row shows the grand total |
-| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category table with columns `#`, `Word`, `Pronunciation`, `Translation`, `Examples`. Words are numbered `1..N` after sorting alphabetically by the Italian word. Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat` |
+| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category table with columns `#`, `Word`, `Pronunciation`, `Translation`, `Examples`. Words are numbered by the `n` field from the source JSON. Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat` |
 | `/category/:key/memorize` | [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) | Flashcard mode — see [Memorize mode](#memorize-mode) below. Accepts `?direction=russian` for the reverse mode |
 | `/category/:key/repeat` | [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) | Russian-only iterator — see [Repeat mode](#repeat-mode) below |
 
 ## Data flow
 
-1. The CSVs at [`words/italian/a2/*.csv`](words/italian/a2) are the source of truth.
-2. [`web/scripts/build-vocabulary.mjs`](../web/scripts/build-vocabulary.mjs) reads them, sorts each category by Italian word (locale-aware via `localeCompare(b, 'it', { sensitivity: 'base' })`), assigns `n`, and writes a single JSON to [`web/public/assets/vocabulary-italian-a2.json`](../web/public/assets/vocabulary-italian-a2.json).
-3. [`VocabularyService`](../web/src/app/vocabulary/vocabulary.service.ts) fetches that JSON once via `HttpClient` and caches with `shareReplay(1)`. Components read via the async pipe.
-
-**Regenerate the JSON** when CSVs change:
-
-```
-npm --prefix web run build:vocab
-```
+1. [`web/public/assets/vocabulary.json`](../web/public/assets/vocabulary.json) is the single source of truth — hand-edited there. Within each category, the `n` field is a 1-indexed id used by stories to reference words.
+2. Angular's existing `public/` asset glob ([web/angular.json](../web/angular.json)) serves the file directly at `/assets/vocabulary.json` — no build step.
+3. [`VocabularyService`](../web/src/app/vocabulary/vocabulary.service.ts) fetches that JSON once via `HttpClient` and caches with `shareReplay(1)`. Components read it via the async pipe.
 
 ## JSON shape
 
@@ -45,15 +39,15 @@ interface Category {
 }
 
 interface Word {
-  n: number;
+  n: number;             // 1-indexed within its category; stable ref id for stories
   italian: string;
-  pronunciation: string;   // Cyrillic transcription
-  translation: string;     // Russian
-  examples: string;        // Italian example sentences
+  pronunciation: string; // Cyrillic transcription
+  translation: string;   // Russian
+  examples: string;      // Italian example sentences
 }
 ```
 
-Types live in [`web/src/app/vocabulary/vocabulary.types.ts`](../web/src/app/vocabulary/vocabulary.types.ts).
+Types live in [`web/src/app/vocabulary/vocabulary.types.ts`](../web/src/app/vocabulary/vocabulary.types.ts). The service also exposes `resolveStoryVocab(refs)` which the stories feature uses to expand `{ categoryKey: n[] }` refs into a filtered `Vocabulary`.
 
 ## Category labels
 
@@ -142,13 +136,3 @@ Reached by the third header button on the category page (`Repeat` → `/category
 The color scheme is locked to **light** at [`web/src/styles.scss:26`](../web/src/styles.scss) (`color-scheme: light;`). Do not introduce `prefers-color-scheme: dark` overrides or switch this to `dark` / `light dark` without a deliberate design decision.
 
 The category-page table cells are uniform `body-medium` (14px) and **not italic** — the `Examples` column included.
-
-## CSV format
-
-Each CSV has 4 comma-separated columns (with quoting where examples contain internal commas):
-
-```
-Итальянская фраза,Как произносить (по-русски),Перевод на русский,"Примеры использования в предложении (3-5, только слова из списка)"
-```
-
-The build script uses [`csv-parse`](https://www.npmjs.com/package/csv-parse) so quoted fields with internal commas are parsed correctly.
