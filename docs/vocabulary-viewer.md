@@ -12,8 +12,9 @@ An English-UI vocabulary viewer for the Italian A2 word lists at [`words/italian
 |---|---|---|
 | `/` | redirect | Forwards to `/vocabulary` (also catches unknown paths via `**`) |
 | `/vocabulary` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Landing page — `mat-table` with `Category` + `Words` columns, click row to drill in, footer row shows the grand total |
-| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category table with columns `#`, `Word`, `Pronunciation`, `Translation`, `Examples`. Words are numbered `1..N` after sorting alphabetically by the Italian word. Header row includes two `Memorize` buttons (`Italian → Russian` and `Russian → Italian`) |
+| `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category table with columns `#`, `Word`, `Pronunciation`, `Translation`, `Examples`. Words are numbered `1..N` after sorting alphabetically by the Italian word. Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat` |
 | `/category/:key/memorize` | [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) | Flashcard mode — see [Memorize mode](#memorize-mode) below. Accepts `?direction=russian` for the reverse mode |
+| `/category/:key/repeat` | [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) | Russian-only iterator — see [Repeat mode](#repeat-mode) below |
 
 ## Data flow
 
@@ -123,6 +124,18 @@ All state lives in `localStorage` under the `glotix:` prefix, via [`MemorizeStor
 | `glotix:comment:<categoryKey>:<italian>` | Plain string — the user's comment for that word (deleted when emptied) |
 
 Skips persist across sessions and reloads. Re-entering memorize re-shuffles the deck but keeps the persisted skip list applied. The screen's `fullShuffled` signal is set once on entry; `cards` is a computed filter.
+
+## Repeat mode
+
+Reached by the third header button on the category page (`Repeat` → `/category/:key/repeat`). A minimal, single-stage iterator over the Russian translations of the category — for plain repetition without a reveal.
+
+- The deck is shuffled on each entry (same Fisher–Yates as Memorize) and held in `fullShuffled`. The whole category is iterated — Repeat is **independent** of Memorize's `glotix:skip:*` list and does not read, write, or apply it.
+- Each card shows only `card.translation` (Russian), styled like the Memorize prompt (display-large, primary color, centered). No Italian word, no transcription, no examples.
+- Advance to the next word by clicking the card, pressing `Space`, or pressing `Enter`. There is no reveal/back stage — the card advances directly to the next word.
+- After the last card, the index wraps to `0`. Forward-only.
+- The top bar shows `← Exit` on the left and `n / total` progress on the right. No `Reset Skips` button.
+- No skip (no button, no `Esc` binding, no right-click handler), no comment textarea, no persistence.
+- Exit returns to `/category/:key`.
 
 ## Theming
 

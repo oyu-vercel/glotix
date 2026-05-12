@@ -14,5 +14,9 @@ export const routes: Routes = [
     path: 'category/:key/memorize',
     loadComponent: () => import('./vocabulary/memorize/memorize').then((m) => m.Memorize),
   },
+  {
+    path: 'category/:key/repeat',
+    loadComponent: () => import('./vocabulary/repeat/repeat').then((m) => m.Repeat),
+  },
   { path: '**', redirectTo: 'vocabulary' },
 ];
