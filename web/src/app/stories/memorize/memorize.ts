@@ -1,7 +1,5 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
-import { combineLatest, map, switchMap } from 'rxjs';
 
 import { StoriesService } from '../stories.service';
 import { MemorizeDeck } from '../../shared/memorize-deck/memorize-deck';
@@ -22,20 +20,10 @@ export class StoryMemorize {
   readonly key = input.required<string>();
   readonly direction = input<string>('italian');
 
-  private readonly service = inject(StoriesService);
   private readonly router = inject(Router);
 
   readonly scope = computed(() => `story:${this.slug()}:${this.key()}`);
-
-  readonly category = toSignal(
-    combineLatest([toObservable(this.slug), toObservable(this.key)]).pipe(
-      switchMap(([slug, key]) =>
-        this.service
-          .getStoryResolved(slug)
-          .pipe(map((story) => story?.vocabulary.categories.find((c) => c.key === key))),
-      ),
-    ),
-  );
+  readonly category = inject(StoriesService).getStoryCategorySignal(this.slug, this.key);
 
   onExit(): void {
     this.router.navigate(['/stories', this.slug()], { queryParams: { cat: this.key() } });

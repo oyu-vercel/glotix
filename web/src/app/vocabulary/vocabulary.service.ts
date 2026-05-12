@@ -1,6 +1,7 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, Signal, inject } from '@angular/core';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, shareReplay } from 'rxjs';
+import { Observable, map, shareReplay, switchMap } from 'rxjs';
 
 import { Category, Vocabulary } from './vocabulary.types';
 
@@ -14,6 +15,10 @@ export class VocabularyService {
 
   getCategory(key: string): Observable<Category | undefined> {
     return this.vocabulary$.pipe(map((v) => v.categories.find((c) => c.key === key)));
+  }
+
+  getCategorySignal(key: Signal<string>): Signal<Category | undefined> {
+    return toSignal(toObservable(key).pipe(switchMap((k) => this.getCategory(k))));
   }
 
   resolveStoryVocab(refs: Record<string, number[]>): Observable<Vocabulary> {

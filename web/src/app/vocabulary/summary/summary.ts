@@ -1,14 +1,15 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 
 import { Category } from '../vocabulary.types';
 import { VocabularyService } from '../vocabulary.service';
+import { countWords } from '../../shared/utils/count-words';
 
 @Component({
   selector: 'app-summary',
-  imports: [CommonModule, MatTableModule],
+  imports: [AsyncPipe, MatTableModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './summary.html',
   styleUrl: './summary.scss',
@@ -21,7 +22,7 @@ export class Summary {
   readonly columns = ['label', 'count'];
 
   total(categories: Category[]): number {
-    return categories.reduce((sum, c) => sum + c.words.length, 0);
+    return countWords(categories);
   }
 
   navigate(key: string): void {

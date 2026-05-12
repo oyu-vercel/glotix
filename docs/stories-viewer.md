@@ -92,7 +92,7 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
 
 `StoryMemorize` and `StoryRepeat` are thin route wrappers that render the shared [`MemorizeDeck`](../web/src/app/shared/memorize-deck/memorize-deck.ts) and [`RepeatDeck`](../web/src/app/shared/repeat-deck/repeat-deck.ts) — the same presentational components used by the vocabulary [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) and [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) wrappers. They resolve the word set via `StoriesService.getStoryResolved(slug)` filtered to the requested category, pass it to the deck, and handle exit navigation back to `/stories/<slug>?cat=<key>` (auto-opens the Vocabulary tab on the same drilled-in category).
 
-Skip state is stored via the shared [`MemorizeStorage`](../web/src/app/vocabulary/memorize/memorize-storage.ts) under a per-surface scope so skipping a word in vocabulary memorize does not hide it in story memorize and vice versa. Comments are stored **once per Italian word** and shared across every memorize view (vocabulary and any story containing that word).
+Skip state is stored via the shared [`MemorizeStorage`](../web/src/app/shared/storage/memorize-storage.ts) under a per-surface scope so skipping a word in vocabulary memorize does not hide it in story memorize and vice versa. Comments are stored **once per Italian word** and shared across every memorize view (vocabulary and any story containing that word).
 
 | Surface                                              | Skip key                                         | Comment key             |
 | ---------------------------------------------------- | ------------------------------------------------ | ----------------------- |

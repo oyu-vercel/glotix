@@ -7,7 +7,6 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { switchMap } from 'rxjs';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -18,15 +17,12 @@ import { Router, RouterLink } from '@angular/router';
 import { StoriesService } from '../stories.service';
 import { Category } from '../../vocabulary/vocabulary.types';
 import { WordTable } from '../../shared/word-table/word-table';
-
-interface TextNode {
-  type: 'h2' | 'p';
-  text: string;
-}
+import { countWords } from '../../shared/utils/count-words';
+import { TextNode, parseStoryText } from '../utils/parse-story-text';
 
 @Component({
   selector: 'app-story-detail',
-  imports: [CommonModule, MatTabsModule, MatTableModule, MatButtonModule, RouterLink, WordTable],
+  imports: [MatTabsModule, MatTableModule, MatButtonModule, RouterLink, WordTable],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
   styleUrl: './detail.scss',
@@ -55,9 +51,7 @@ export class StoryDetail {
     return s.vocabulary.categories.filter((c) => c.words.length > 0);
   });
 
-  readonly totalVocab = computed(() => {
-    return this.nonEmptyCategories().reduce((sum, c) => sum + c.words.length, 0);
-  });
+  readonly totalVocab = computed(() => countWords(this.nonEmptyCategories()));
 
   readonly selectedCategory = computed<Category | undefined>(() => {
     const key = this.cat();
@@ -82,33 +76,4 @@ export class StoryDetail {
   closeCategory(): void {
     this.router.navigate(['/stories', this.slug()]);
   }
-}
-
-function parseStoryText(raw: string): TextNode[] {
-  const lines = raw.split(/\r?\n/);
-  const nodes: TextNode[] = [];
-  let titleSkipped = false;
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed) continue;
-    if (!titleSkipped) {
-      titleSkipped = true;
-      continue;
-    }
-    if (isSectionHeader(trimmed)) {
-      nodes.push({ type: 'h2', text: trimmed.replace(/\.$/, '') });
-    } else {
-      nodes.push({ type: 'p', text: trimmed });
-    }
-  }
-  return nodes;
-}
-
-function isSectionHeader(line: string): boolean {
-  if (line.length > 60) return false;
-  if (!line.endsWith('.')) return false;
-  if (line.includes('«') || line.includes('»') || line.includes('"')) return false;
-  // 1-3 words ending with a period — likely a header
-  const wordCount = line.replace(/\.$/, '').split(/\s+/).length;
-  return wordCount <= 6;
 }

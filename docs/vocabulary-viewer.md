@@ -111,7 +111,7 @@ While the textarea has focus, the page-level keyboard handlers for `Space` / `En
 
 ### Persistence
 
-All state lives in `localStorage` under the `glotix:` prefix, via [`MemorizeStorage`](../web/src/app/vocabulary/memorize/memorize-storage.ts):
+All state lives in `localStorage` under the `glotix:` prefix, via [`MemorizeStorage`](../web/src/app/shared/storage/memorize-storage.ts):
 
 | Key | Value |
 |---|---|

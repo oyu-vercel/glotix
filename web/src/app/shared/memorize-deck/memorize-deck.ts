@@ -11,9 +11,10 @@ import {
 import { MatButtonModule } from '@angular/material/button';
 
 import { Category, Word } from '../../vocabulary/vocabulary.types';
-import { MemorizeStorage } from '../../vocabulary/memorize/memorize-storage';
+import { MemorizeStorage } from '../storage/memorize-storage';
 import { shuffle } from '../utils/shuffle';
 import { isFormField } from '../utils/is-form-field';
+import { splitExamples } from '../utils/split-examples';
 
 @Component({
   selector: 'app-memorize-deck',
@@ -145,10 +146,5 @@ export class MemorizeDeck {
     this.skip();
   }
 
-  splitExamples(s: string): string[] {
-    return s
-      .split(/(?<=[.!?])\s+/)
-      .map((x) => x.trim())
-      .filter((x) => x.length > 0);
-  }
+  readonly splitExamples = splitExamples;
 }

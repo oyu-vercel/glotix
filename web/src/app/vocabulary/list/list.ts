@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
 import { VocabularyService } from '../vocabulary.service';
 import { StoriesService } from '../../stories/stories.service';
+import { countWords } from '../../shared/utils/count-words';
 
 interface VocabularySource {
   name: string;
@@ -16,7 +17,7 @@ interface VocabularySource {
 
 @Component({
   selector: 'app-vocabulary-list',
-  imports: [CommonModule, MatTableModule],
+  imports: [AsyncPipe, MatTableModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './list.html',
   styleUrl: './list.scss',
@@ -30,7 +31,7 @@ export class List {
 
   readonly globalRows$ = this.vocabularyService.vocabulary$.pipe(
     map((vocabulary): VocabularySource[] => {
-      const globalCount = vocabulary.categories.reduce((sum, c) => sum + c.words.length, 0);
+      const globalCount = countWords(vocabulary.categories);
       return [{ name: 'Global Vocabulary', count: globalCount, route: ['/vocabulary/a2'] }];
     }),
   );

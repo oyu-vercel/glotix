@@ -2,7 +2,7 @@
   <a mat-button routerLink="/vocabulary/a2">← Back</a>
 </div>
 
-@if (category$ | async; as category) {
+@if (category(); as category) {
   <header class="cat-header">
     <h1>{{ category.label }}</h1>
     <span class="count-pill">{{ category.words.length }}</span>

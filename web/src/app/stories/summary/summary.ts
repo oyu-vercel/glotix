@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 
@@ -7,7 +7,7 @@ import { StoriesService } from '../stories.service';
 
 @Component({
   selector: 'app-stories-summary',
-  imports: [CommonModule, MatTableModule],
+  imports: [AsyncPipe, MatTableModule],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './summary.html',
   styleUrl: './summary.scss',

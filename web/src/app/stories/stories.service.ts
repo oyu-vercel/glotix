@@ -1,8 +1,10 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable, Signal, inject } from '@angular/core';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, of, shareReplay, switchMap } from 'rxjs';
+import { Observable, combineLatest, map, of, shareReplay, switchMap } from 'rxjs';
 
 import { Story, StoryIndex, StoryResolved } from './stories.types';
+import { Category } from '../vocabulary/vocabulary.types';
 import { VocabularyService } from '../vocabulary/vocabulary.service';
 
 @Injectable({ providedIn: 'root' })
@@ -55,7 +57,18 @@ export class StoriesService {
     return cached;
   }
 
-  getIndexEntry(slug: string) {
-    return this.index$.pipe(map((idx) => idx.stories.find((s) => s.slug === slug)));
+  getStoryCategorySignal(
+    slug: Signal<string>,
+    key: Signal<string>,
+  ): Signal<Category | undefined> {
+    return toSignal(
+      combineLatest([toObservable(slug), toObservable(key)]).pipe(
+        switchMap(([s, k]) =>
+          this.getStoryResolved(s).pipe(
+            map((story) => story?.vocabulary.categories.find((c) => c.key === k)),
+          ),
+        ),
+      ),
+    );
   }
 }
