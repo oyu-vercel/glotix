@@ -19,10 +19,6 @@ function tokenize(text) {
     .filter((t) => t.length > 0 && !/^\d+$/.test(t));
 }
 
-function isElisionRemnant(t) {
-  return t.length === 1 && /^[a-z]$/.test(t);
-}
-
 async function fileExists(p) {
   try {
     await access(p);
@@ -171,14 +167,6 @@ async function buildStory(slug, dir, rawText, headwordMap, indirectMap) {
     for (const sub of tokenize(row.examples)) matchedTokens.add(sub);
   }
 
-  const untranslated = [];
-  for (const tok of tokens) {
-    if (matchedTokens.has(tok)) continue;
-    if (isElisionRemnant(tok)) continue;
-    untranslated.push(tok);
-  }
-  untranslated.sort((a, b) => a.localeCompare(b, 'it', { sensitivity: 'base' }));
-
   const a2Headwords = new Set(headwordMap.keys());
   const categories = [];
   for (const c of CATEGORIES) {
@@ -197,7 +185,6 @@ async function buildStory(slug, dir, rawText, headwordMap, indirectMap) {
     title,
     text: rawText,
     vocabulary: { language: 'italian', level: 'a2', categories },
-    untranslated,
   };
 }
 
@@ -266,13 +253,8 @@ async function main() {
       title: story.title,
       paragraphs: paragraphCount(raw),
       vocabCount,
-      untranslatedCount: story.untranslated.length,
     });
-    console.log(
-      `${slug.padEnd(24)} ${String(vocabCount).padStart(3)} vocab  ${String(
-        story.untranslated.length,
-      ).padStart(3)} untranslated`,
-    );
+    console.log(`${slug.padEnd(24)} ${String(vocabCount).padStart(3)} vocab`);
   }
 
   const index = { language: 'italian', level: 'a2', stories: indexEntries };

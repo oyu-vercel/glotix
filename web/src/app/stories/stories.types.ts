@@ -5,7 +5,6 @@ export interface StoryIndexEntry {
   title: string;
   paragraphs: number;
   vocabCount: number;
-  untranslatedCount: number;
 }
 
 export interface StoryIndex {
@@ -19,5 +18,4 @@ export interface Story {
   title: string;
   text: string;
   vocabulary: Vocabulary;
-  untranslated: string[];
 }

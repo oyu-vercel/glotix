@@ -115,21 +115,6 @@
         }
       }
 
-      @if (s.untranslated.length > 0) {
-        <details class="untranslated-panel">
-          <summary>
-            <span class="untranslated-title">Untranslated ({{ s.untranslated.length }})</span>
-            <span class="untranslated-help">
-              Words from the story not yet covered by A2 vocab or an extras CSV.
-            </span>
-          </summary>
-          <ul class="untranslated-list">
-            @for (w of s.untranslated; track w) {
-              <li>{{ w }}</li>
-            }
-          </ul>
-        </details>
-      }
     </mat-tab>
   </mat-tab-group>
 } @else {

@@ -17,7 +17,7 @@ export class StoriesSummary {
   private readonly router = inject(Router);
 
   readonly index$ = this.service.index$;
-  readonly columns = ['title', 'paragraphs', 'vocabCount', 'untranslatedCount'];
+  readonly columns = ['title', 'paragraphs', 'vocabCount'];
 
   navigate(slug: string): void {
     this.router.navigate(['/stories', slug]);
