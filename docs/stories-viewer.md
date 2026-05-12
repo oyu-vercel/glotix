@@ -91,7 +91,6 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
   - **Read** — renders the story text as paragraphs. Short standalone lines ending in `.` (≤ 60 chars, ≤ 6 words, no quote characters) auto-promote to `<h2>` section headers. The title line is skipped (already shown as page header).
   - **Vocabulary (N)** — `mat-table` of categories (with row click drilling into a per-category word table that mirrors the columns of [vocabulary/category](../web/src/app/vocabulary/category/category.ts): #, Word, Pronunciation, Translation, Examples). The drilldown header carries three buttons — **Italian → Russian**, **Russian → Italian**, **Repeat** — that link to `StoryMemorize` / `StoryRepeat` for that category's full word set (A2 matches + extras). Below the table, a collapsible `<details>` panel labeled "Untranslated (N)" lists stub words as chips.
     - Category selection is URL-driven via the `cat` query param, so memorize/repeat can exit back to the same drilled-in state.
-    - Word rows whose `italian` is not in the A2 vocabulary (i.e. story-only entries from the extras CSV) get a subtle primary-tinted background via the `.story-only-row` class. The build script sets `extras: true` on those `Word`s; the template binds the class with `[class.story-only-row]="row.extras"`.
 
 ## Memorize / Repeat
 
