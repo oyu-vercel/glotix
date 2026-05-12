@@ -1,0 +1,13 @@
+{
+  "language": "italian",
+  "level": "a2",
+  "stories": [
+    {
+      "slug": "benvenute-al-sud",
+      "title": "Benvenute al Sud",
+      "paragraphs": 130,
+      "vocabCount": 455,
+      "untranslatedCount": 49
+    }
+  ]
+}

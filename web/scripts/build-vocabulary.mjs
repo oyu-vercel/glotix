@@ -1,14 +1,14 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { dirname, resolve } from 'node:path';
 import { parse } from 'csv-parse/sync';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(__dirname, '..', '..');
-const csvDir = resolve(repoRoot, 'docs', 'words', 'italian', 'a2');
+export const repoRoot = resolve(__dirname, '..', '..');
+export const csvDir = resolve(repoRoot, 'docs', 'words', 'italian', 'a2');
 const outFile = resolve(repoRoot, 'web', 'public', 'assets', 'vocabulary-italian-a2.json');
 
-const CATEGORIES = [
+export const CATEGORIES = [
   { key: 'noun', label: 'Nouns' },
   { key: 'verb', label: 'Verbs' },
   { key: 'adjective', label: 'Adjectives' },
@@ -24,7 +24,7 @@ function sortKey(italian) {
   return italian.split('/')[0].trim();
 }
 
-async function loadCategory({ key, label }) {
+export async function loadCategory({ key, label }) {
   const csvPath = resolve(csvDir, `${key}.csv`);
   const raw = await readFile(csvPath, 'utf8');
   const rows = parse(raw, {
@@ -52,12 +52,16 @@ async function loadCategory({ key, label }) {
   };
 }
 
-async function main() {
+export async function loadVocabulary() {
   const categories = await Promise.all(CATEGORIES.map(loadCategory));
-  const out = { language: 'italian', level: 'a2', categories };
+  return { language: 'italian', level: 'a2', categories };
+}
+
+async function main() {
+  const vocab = await loadVocabulary();
   await mkdir(dirname(outFile), { recursive: true });
-  await writeFile(outFile, JSON.stringify(out, null, 2) + '\n', 'utf8');
-  for (const c of categories) {
+  await writeFile(outFile, JSON.stringify(vocab, null, 2) + '\n', 'utf8');
+  for (const c of vocab.categories) {
     console.log(
       `${c.key.padEnd(14)} ${String(c.words.length).padStart(3)} words` +
         (c.words[0] ? `  (first: ${c.words[0].italian})` : ''),
@@ -66,7 +70,12 @@ async function main() {
   console.log(`\nWrote ${outFile}`);
 }
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+const isDirectRun =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (isDirectRun) {
+  main().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
+}

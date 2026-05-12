@@ -1,0 +1,114 @@
+<div class="back-row">
+  <a mat-button routerLink="/stories">← Stories</a>
+</div>
+
+@if (story(); as s) {
+  <header class="detail-header">
+    <h1>{{ s.title }}</h1>
+  </header>
+
+  <mat-tab-group class="story-tabs" animationDuration="120ms">
+    <mat-tab label="Read">
+      <article class="story-text">
+        @for (node of nodes(); track $index) {
+          @switch (node.type) {
+            @case ('h2') {
+              <h2>{{ node.text }}</h2>
+            }
+            @case ('p') {
+              <p>{{ node.text }}</p>
+            }
+          }
+        }
+      </article>
+    </mat-tab>
+
+    <mat-tab [label]="'Vocabulary (' + totalVocab() + ')'">
+      @if (!selectedCategory()) {
+        @if (nonEmptyCategories().length > 0) {
+          <div class="table-wrap">
+            <table mat-table [dataSource]="nonEmptyCategories()" class="summary-table">
+              <ng-container matColumnDef="label">
+                <th mat-header-cell *matHeaderCellDef>Category</th>
+                <td mat-cell *matCellDef="let c">{{ c.label }}</td>
+              </ng-container>
+
+              <ng-container matColumnDef="count">
+                <th mat-header-cell *matHeaderCellDef class="count-col">Words</th>
+                <td mat-cell *matCellDef="let c" class="count-col">{{ c.words.length }}</td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="summaryColumns"></tr>
+              <tr
+                mat-row
+                *matRowDef="let row; columns: summaryColumns"
+                class="clickable-row"
+                tabindex="0"
+                (click)="openCategory(row.key)"
+                (keyup.enter)="openCategory(row.key)"
+              ></tr>
+            </table>
+          </div>
+        } @else {
+          <p class="empty">No A2 vocabulary matched in this story.</p>
+        }
+      } @else {
+        @if (selectedCategory(); as cat) {
+          <div class="cat-actions">
+            <button mat-button (click)="closeCategory()">← All categories</button>
+            <span class="cat-title">{{ cat.label }}</span>
+            <span class="count-pill">{{ cat.words.length }}</span>
+          </div>
+          <div class="table-wrap">
+            <table mat-table [dataSource]="cat.words" class="vocab-table">
+              <ng-container matColumnDef="n">
+                <th mat-header-cell *matHeaderCellDef class="col-n">#</th>
+                <td mat-cell *matCellDef="let w" class="col-n">{{ w.n }}</td>
+              </ng-container>
+              <ng-container matColumnDef="italian">
+                <th mat-header-cell *matHeaderCellDef>Word</th>
+                <td mat-cell *matCellDef="let w" class="italian-cell">{{ w.italian }}</td>
+              </ng-container>
+              <ng-container matColumnDef="pronunciation">
+                <th mat-header-cell *matHeaderCellDef>Pronunciation</th>
+                <td mat-cell *matCellDef="let w" class="pron-cell">{{ w.pronunciation }}</td>
+              </ng-container>
+              <ng-container matColumnDef="translation">
+                <th mat-header-cell *matHeaderCellDef>Translation</th>
+                <td mat-cell *matCellDef="let w">{{ w.translation }}</td>
+              </ng-container>
+              <ng-container matColumnDef="examples">
+                <th mat-header-cell *matHeaderCellDef>Examples</th>
+                <td mat-cell *matCellDef="let w" class="examples-cell">{{ w.examples }}</td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="wordColumns; sticky: true"></tr>
+              <tr
+                mat-row
+                *matRowDef="let row; columns: wordColumns"
+                [class.story-only-row]="row.extras"
+              ></tr>
+            </table>
+          </div>
+        }
+      }
+
+      @if (s.untranslated.length > 0) {
+        <details class="untranslated-panel">
+          <summary>
+            <span class="untranslated-title">Untranslated ({{ s.untranslated.length }})</span>
+            <span class="untranslated-help">
+              Words from the story not yet covered by A2 vocab or an extras CSV.
+            </span>
+          </summary>
+          <ul class="untranslated-list">
+            @for (w of s.untranslated; track w) {
+              <li>{{ w }}</li>
+            }
+          </ul>
+        </details>
+      }
+    </mat-tab>
+  </mat-tab-group>
+} @else {
+  <p class="loading">Loading...</p>
+}

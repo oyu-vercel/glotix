@@ -18,5 +18,13 @@ export const routes: Routes = [
     path: 'category/:key/repeat',
     loadComponent: () => import('./vocabulary/repeat/repeat').then((m) => m.Repeat),
   },
+  {
+    path: 'stories',
+    loadComponent: () => import('./stories/summary/summary').then((m) => m.StoriesSummary),
+  },
+  {
+    path: 'stories/:slug',
+    loadComponent: () => import('./stories/detail/detail').then((m) => m.StoryDetail),
+  },
   { path: '**', redirectTo: 'vocabulary' },
 ];

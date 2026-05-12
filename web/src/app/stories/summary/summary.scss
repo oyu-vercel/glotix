@@ -1,0 +1,61 @@
+:host {
+  display: block;
+}
+
+.summary-header {
+  margin-bottom: 24px;
+
+  h1 {
+    margin: 0;
+    font: var(--mat-sys-headline-medium);
+  }
+}
+
+.table-wrap {
+  background: var(--mat-sys-surface);
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.summary-table {
+  width: 100%;
+  background: transparent;
+}
+
+.title-cell {
+  font-weight: 500;
+}
+
+.num-col {
+  width: 120px;
+  text-align: right;
+  padding-right: 24px;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--mat-sys-surface-container-highest);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--mat-sys-primary);
+    outline-offset: -2px;
+  }
+}
+
+.loading,
+.empty {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+code {
+  background: var(--mat-sys-surface-container);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.9em;
+}
