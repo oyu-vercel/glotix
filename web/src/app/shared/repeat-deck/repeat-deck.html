@@ -8,6 +8,11 @@
 
   @if (current(); as card) {
     <article class="card" tabindex="0" (click)="advance()">
+      <div class="card-actions" (click)="$event.stopPropagation()">
+        <button mat-stroked-button type="button" class="memorized-btn" (click)="markMemorized()">
+          Memorized
+        </button>
+      </div>
       <div class="front">
         <div class="translation">{{ card.translation }}</div>
       </div>

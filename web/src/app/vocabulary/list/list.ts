@@ -6,6 +6,7 @@ import { map } from 'rxjs';
 
 import { VocabularyService } from '../vocabulary.service';
 import { StoriesService } from '../../stories/stories.service';
+import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { countWords } from '../../shared/utils/count-words';
 
 interface VocabularySource {
@@ -25,6 +26,7 @@ interface VocabularySource {
 export class List {
   private readonly vocabularyService = inject(VocabularyService);
   private readonly storiesService = inject(StoriesService);
+  private readonly storage = inject(MemorizeStorage);
   private readonly router = inject(Router);
 
   readonly columns = ['name', 'count'];
@@ -32,7 +34,11 @@ export class List {
   readonly globalRows$ = this.vocabularyService.vocabulary$.pipe(
     map((vocabulary): VocabularySource[] => {
       const globalCount = countWords(vocabulary.categories);
-      return [{ name: 'Global Vocabulary', count: globalCount, route: ['/vocabulary/a2'] }];
+      const memorizedCount = this.storage.getMemorized().size;
+      return [
+        { name: 'Global Vocabulary', count: globalCount, route: ['/vocabulary/a2'] },
+        { name: 'Memorized Words', count: memorizedCount, route: ['/vocabulary/memorized'] },
+      ];
     }),
   );
 

@@ -18,14 +18,12 @@
 
   @if (current(); as card) {
     <article class="card" tabindex="0" (click)="advance()" (contextmenu)="onContextMenu($event)">
-      <button
-        mat-stroked-button
-        type="button"
-        class="skip-btn"
-        (click)="skip(); $event.stopPropagation()"
-      >
-        Skip
-      </button>
+      <div class="card-actions" (click)="$event.stopPropagation()">
+        <button mat-stroked-button type="button" class="memorized-btn" (click)="markMemorized()">
+          Memorized
+        </button>
+        <button mat-stroked-button type="button" class="skip-btn" (click)="skip()">Skip</button>
+      </div>
 
       <div class="front">
         @if (isReverse()) {

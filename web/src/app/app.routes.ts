@@ -11,6 +11,15 @@ export const routes: Routes = [
     loadComponent: () => import('./vocabulary/summary/summary').then((m) => m.Summary),
   },
   {
+    path: 'vocabulary/memorized',
+    loadComponent: () => import('./vocabulary/memorized/memorized').then((m) => m.Memorized),
+  },
+  {
+    path: 'vocabulary/memorized/:key',
+    loadComponent: () =>
+      import('./vocabulary/memorized/category/category').then((m) => m.MemorizedCategory),
+  },
+  {
     path: 'category/:key',
     loadComponent: () => import('./vocabulary/category/category').then((m) => m.Category),
   },

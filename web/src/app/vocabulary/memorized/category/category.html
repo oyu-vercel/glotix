@@ -1,0 +1,20 @@
+<div class="back-row">
+  <a mat-button routerLink="/vocabulary/memorized">← Back</a>
+</div>
+
+@if (category(); as category) {
+  <header class="cat-header">
+    <h1>{{ category.label }}</h1>
+    <span class="count-pill">{{ words().length }}</span>
+  </header>
+
+  @if (words().length > 0) {
+    <app-word-table [words]="words()" actionLabel="Restore" (action)="restore($event)" />
+  } @else {
+    <div class="empty-state">
+      <p>No memorized words in this category.</p>
+    </div>
+  }
+} @else {
+  <p class="loading">Category not found.</p>
+}

@@ -40,8 +40,11 @@ export class MemorizeDeck {
 
   private readonly fullShuffled = signal<Word[]>([]);
   readonly skips = signal<Set<string>>(new Set());
+  readonly memorized = signal<Set<string>>(new Set());
   readonly cards = computed(() =>
-    this.fullShuffled().filter((w) => !this.skips().has(w.italian)),
+    this.fullShuffled().filter(
+      (w) => !this.skips().has(w.italian) && !this.memorized().has(w.italian),
+    ),
   );
   readonly index = signal(0);
   readonly stage = signal<'front' | 'back'>('front');
@@ -61,6 +64,7 @@ export class MemorizeDeck {
       if (cat) {
         this.fullShuffled.set(shuffle(cat.words));
         this.skips.set(this.storage.getSkips(this.scope()));
+        this.memorized.set(this.storage.getMemorized());
         this.index.set(0);
         this.stage.set('front');
       }
@@ -95,6 +99,18 @@ export class MemorizeDeck {
     if (!card) return;
     this.storage.addSkip(this.scope(), card.italian);
     this.skips.update((s) => new Set([...s, card.italian]));
+    if (this.index() >= this.cards().length) {
+      this.index.set(0);
+    }
+    this.stage.set('front');
+  }
+
+  markMemorized(): void {
+    if (!this.hasCards()) return;
+    const card = this.current();
+    if (!card) return;
+    this.storage.addMemorized(card.italian);
+    this.memorized.update((s) => new Set([...s, card.italian]));
     if (this.index() >= this.cards().length) {
       this.index.set(0);
     }

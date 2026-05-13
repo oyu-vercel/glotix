@@ -2,17 +2,15 @@
 
 An English-UI vocabulary viewer for the Italian A2 word list. UI labels are English; Russian appears only inside table cells (translation, transcription).
 
-## App shell
-
-[`web/src/app/app.html`](../web/src/app/app.html) renders a `mat-toolbar` (sticky, primary color) with the app title and a `Vocabulary` link that points to `/vocabulary`. The toolbar is visible on every page; the active link is highlighted via `routerLinkActive` (partial match, so it stays highlighted under sub-routes like `/vocabulary/a2`).
-
 ## Routes
 
 | Path | Component | Notes |
 |---|---|---|
 | `/` | redirect | Forwards to `/vocabulary` (also catches unknown paths via `**`) |
-| `/vocabulary` | [`List`](../web/src/app/vocabulary/list/list.ts) | Landing page — index of vocabulary sources, split into two `mat-table`s. First (untitled) table has a single row "Global Vocabulary" (→ `/vocabulary/a2`). Second table is titled **Stories** and lists per-story vocabularies from `stories-index.json`, each row navigating to `/stories/:slug?tab=vocab` so the story opens directly on its Vocabulary tab. The stories section hides itself when there are no stories. |
+| `/vocabulary` | [`List`](../web/src/app/vocabulary/list/list.ts) | Landing page — index of vocabulary sources, split into two `mat-table`s. First (untitled) table has two rows: "Global Vocabulary" (→ `/vocabulary/a2`) and "Memorized Words" with the current count from `glotix:memorized` (→ `/vocabulary/memorized`, see [Memorized vocabulary](memorized-vocabulary.md)). Second table is titled **Stories** and lists per-story vocabularies from `stories-index.json`, each row navigating to `/stories/:slug?tab=vocab` so the story opens directly on its Vocabulary tab. The stories section hides itself when there are no stories. |
 | `/vocabulary/a2` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Global vocabulary categories — `mat-table` with `Category` + `Words` columns, click row to drill into `/category/:key`, footer row shows the grand total. Page header reads "Global Vocabulary". |
+| `/vocabulary/memorized` | [`Memorized`](../web/src/app/vocabulary/memorized/memorized.ts) | Category index of memorized words (same `Category`/`Words` + `Total` table layout as `/vocabulary/a2`). See [Memorized vocabulary](memorized-vocabulary.md). |
+| `/vocabulary/memorized/:key` | [`MemorizedCategory`](../web/src/app/vocabulary/memorized/category/category.ts) | Per-category memorized-words drill-down with a `Restore` action on each row. See [Memorized vocabulary](memorized-vocabulary.md). |
 | `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category page. The five-column word table (`#`, `Word`, `Pronunciation`, `Translation`, `Examples`) is the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts) (also used by the story detail page). Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat`. The back link returns to `/vocabulary/a2`. |
 | `/category/:key/memorize` | [`Memorize`](../web/src/app/vocabulary/memorize/memorize.ts) | Thin wrapper that loads the category and renders the shared [`MemorizeDeck`](../web/src/app/shared/memorize-deck/memorize-deck.ts). See [Memorize mode](#memorize-mode) below. Accepts `?direction=russian` for the reverse mode |
 | `/category/:key/repeat` | [`Repeat`](../web/src/app/vocabulary/repeat/repeat.ts) | Thin wrapper that loads the category and renders the shared [`RepeatDeck`](../web/src/app/shared/repeat-deck/repeat-deck.ts). See [Repeat mode](#repeat-mode) below |
@@ -50,20 +48,6 @@ interface Word {
 
 Types live in [`web/src/app/vocabulary/vocabulary.types.ts`](../web/src/app/vocabulary/vocabulary.types.ts). The service also exposes `resolveStoryVocab(refs)` which the stories feature uses to expand `{ categoryKey: n[] }` refs into a filtered `Vocabulary`.
 
-## Category labels
-
-| key | label |
-|---|---|
-| `noun` | Nouns |
-| `verb` | Verbs |
-| `adjective` | Adjectives |
-| `adverb` | Adverbs |
-| `article` | Articles |
-| `conjunction` | Conjunctions |
-| `interjection` | Interjections |
-| `preposition` | Prepositions |
-| `pronoun` | Pronouns |
-
 ## Memorize mode
 
 Reached by one of two buttons on the category page:
@@ -84,7 +68,6 @@ The direction is bound from the `direction` query param via the component's `dir
     1. **Front** — Russian translation only.
     2. **Back** — Italian word + transcription + examples.
 - Examples on the back render as a numbered list (`<ol>`), one sentence per line, regardless of mode.
-- Whichever element is in `.front` gets prompt-level styling (large + primary); whichever is in `.back` gets the smaller answer-level styling. CSS selectors are scoped under `.front` / `.back` parents so the same `.italian` / `.translation` class adapts.
 - After the back of the last card, the deck wraps to index 0 — forward-only, no previous-word/previous-stage navigation.
 - A progress indicator `n / total` is shown in the top bar.
 - Exit only via the `← Exit` link. `Esc` is repurposed (see Skip below).
@@ -93,11 +76,15 @@ The direction is bound from the `direction` query param via the component's `dir
 
 A word can be skipped from three places, all wired to the same `skip()` action:
 
-- The `Skip` button at the top-right corner of the card.
+- The `Skip` button at the top-right of the card (inside the `.card-actions` group, to the right of `Memorized`).
 - Right-click anywhere on the card (`(contextmenu)`, with `preventDefault()` to suppress the browser menu).
 - The `Esc` key.
 
-Skipping a word adds it to the persisted skip list **and** removes it from the current session's deck immediately (`cards` is `computed` over `fullShuffled` and `skips`, so it auto-updates). If the skip empties out the rest of the deck, `index` wraps to `0`. If every word is skipped, the empty-state message replaces the card.
+Skipping a word adds it to the persisted skip list **and** removes it from the current session's deck immediately (`cards` is `computed` over `fullShuffled` and the skip + memorized sets, so it auto-updates). If the skip empties out the rest of the deck, `index` wraps to `0`. If every word is skipped, the empty-state message replaces the card.
+
+### Memorized
+
+A `Memorized` button sits to the left of `Skip` in the `.card-actions` group at the top-right of the card. Unlike skips, the memorized set is **persistent + global** — see [Memorized vocabulary](memorized-vocabulary.md) for the full behavior and storage layout. Marking a word as memorized hides it from this deck immediately and from every other memorize/repeat deck (category and story) until the user un-memorizes it from `/vocabulary/memorized`.
 
 ### Reset skips
 
@@ -116,25 +103,23 @@ All state lives in `localStorage` under the `glotix:` prefix, via [`MemorizeStor
 | Key | Value |
 |---|---|
 | `glotix:skip:<categoryKey>` | JSON `string[]` — Italian words skipped for that category |
+| `glotix:memorized` | JSON `string[]` — Italian words memorized **globally** (see [Memorized vocabulary](memorized-vocabulary.md)). Deleted when the set becomes empty. |
 | `glotix:comment:<italian>` | Plain string — the user's comment for that word, shared across every memorize view (vocabulary and any story that contains the word). Deleted when emptied. |
 | `glotix:legacy-comments-wiped-v1` | One-time flag set after the per-scope legacy comment keys (`glotix:comment:<scope>:<italian>`) have been cleared on first load. |
-
-Skips persist across sessions and reloads. Re-entering memorize re-shuffles the deck but keeps the persisted skip list applied. The screen's `fullShuffled` signal is set once on entry; `cards` is a computed filter.
 
 ## Repeat mode
 
 Reached by the third header button on the category page (`Repeat` → `/category/:key/repeat`). A minimal, single-stage iterator over the Russian translations of the category — for plain repetition without a reveal.
 
-- The deck is shuffled on each entry (same Fisher–Yates as Memorize) and held in `fullShuffled`. The whole category is iterated — Repeat is **independent** of Memorize's `glotix:skip:*` list and does not read, write, or apply it.
+- The deck is shuffled on each entry (same Fisher–Yates as Memorize) and held in `fullShuffled`. The whole category is iterated, minus any words in `glotix:memorized` (see [Memorized vocabulary](memorized-vocabulary.md)). Repeat is **independent** of Memorize's `glotix:skip:*` list and does not read, write, or apply it.
 - Each card shows only `card.translation` (Russian), styled like the Memorize prompt (display-large, primary color, centered). No Italian word, no transcription, no examples.
+- A `Memorized` button sits at the top-right of the card. Clicking it adds the current word to the global memorized set and removes it from the deck immediately. There is no `Skip` button on Repeat.
 - Advance to the next word by clicking the card, pressing `Space`, or pressing `Enter`. There is no reveal/back stage — the card advances directly to the next word.
 - After the last card, the index wraps to `0`. Forward-only.
 - The top bar shows `← Exit` on the left and `n / total` progress on the right. No `Reset Skips` button.
-- No skip (no button, no `Esc` binding, no right-click handler), no comment textarea, no persistence.
+- No skip (no button, no `Esc` binding, no right-click handler), no comment textarea, no per-category persistence.
 - Exit returns to `/category/:key`.
 
 ## Theming
 
 The color scheme is locked to **light** at [`web/src/styles.scss:26`](../web/src/styles.scss) (`color-scheme: light;`). Do not introduce `prefers-color-scheme: dark` overrides or switch this to `dark` / `light dark` without a deliberate design decision.
-
-The category-page table cells are uniform `body-medium` (14px) and **not italic** — the `Examples` column included.

@@ -30,6 +30,7 @@ Italian language-learning app for Russian-speaking learners (currently: Italian 
 Feature reference docs live in `docs/`. See:
 
 - [docs/vocabulary-viewer.md](docs/vocabulary-viewer.md) — vocabulary feature reference (routes, data flow, JSON shape).
+- [docs/memorized-vocabulary.md](docs/memorized-vocabulary.md) — global "memorized" set: persistent filter on memorize/repeat decks, plus the `/vocabulary/memorized` un-memorize view.
 - [docs/stories-viewer.md](docs/stories-viewer.md) — stories feature reference (parser, JSON shape).
 
 ## Files Claude must not read

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 const COMMENT_PREFIX = 'glotix:comment:';
 const SKIP_PREFIX = 'glotix:skip:';
+const MEMORIZED_KEY = 'glotix:memorized';
 const LEGACY_WIPED_FLAG = 'glotix:legacy-comments-wiped-v1';
 
 @Injectable({ providedIn: 'root' })
@@ -30,6 +31,35 @@ export class MemorizeStorage {
 
   clearSkips(scope: string): void {
     this.remove(this.skipKey(scope));
+  }
+
+  getMemorized(): Set<string> {
+    const raw = this.read(MEMORIZED_KEY);
+    if (!raw) return new Set();
+    try {
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? new Set(parsed) : new Set();
+    } catch {
+      return new Set();
+    }
+  }
+
+  addMemorized(italian: string): void {
+    const memorized = this.getMemorized();
+    if (memorized.has(italian)) return;
+    memorized.add(italian);
+    this.write(MEMORIZED_KEY, JSON.stringify([...memorized]));
+  }
+
+  removeMemorized(italian: string): void {
+    const memorized = this.getMemorized();
+    if (!memorized.has(italian)) return;
+    memorized.delete(italian);
+    if (memorized.size === 0) {
+      this.remove(MEMORIZED_KEY);
+    } else {
+      this.write(MEMORIZED_KEY, JSON.stringify([...memorized]));
+    }
   }
 
   getComment(italian: string): string {
