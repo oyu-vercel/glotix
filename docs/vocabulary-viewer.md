@@ -8,7 +8,7 @@ An English-UI vocabulary viewer for the Italian A2 word list. UI labels are Engl
 |---|---|---|
 | `/` | redirect | Forwards to `/vocabulary` (also catches unknown paths via `**`) |
 | `/vocabulary` | [`List`](../web/src/app/vocabulary/list/list.ts) | Landing page — index of vocabulary sources, split into two `mat-table`s. First (untitled) table has two rows: "Global Vocabulary" (→ `/vocabulary/a2`) and "Memorized Words" with the current count from `glotix:memorized` (→ `/vocabulary/memorized`, see [Memorized vocabulary](memorized-vocabulary.md)). Second table is titled **Stories** and lists per-story vocabularies from `stories-index.json`, each row navigating to `/stories/:slug?tab=vocab` so the story opens directly on its Vocabulary tab. The stories section hides itself when there are no stories. |
-| `/vocabulary/a2` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Global vocabulary categories — `mat-table` with `Category` + `Words` columns, click row to drill into `/category/:key`, footer row shows the grand total. Page header reads "Global Vocabulary". |
+| `/vocabulary/a2` | [`Summary`](../web/src/app/vocabulary/summary/summary.ts) | Global vocabulary categories — `mat-table` with `Category` + `Words` columns, click row to drill into `/category/:key`, footer row shows the grand total. |
 | `/vocabulary/memorized` | [`Memorized`](../web/src/app/vocabulary/memorized/memorized.ts) | Category index of memorized words — adds `Total` and `%` columns to the standard `Category` / `Words` layout. See [Memorized vocabulary](memorized-vocabulary.md). |
 | `/vocabulary/memorized/:key` | [`MemorizedCategory`](../web/src/app/vocabulary/memorized/category/category.ts) | Per-category memorized-words drill-down with a `Restore` action on each row. See [Memorized vocabulary](memorized-vocabulary.md). |
 | `/category/:key` | [`Category`](../web/src/app/vocabulary/category/category.ts) | Per-category page. The five-column word table (`#`, `Word`, `Pronunciation`, `Translation`, `Examples`) is the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts) (also used by the story detail page). Header row includes three practice buttons: `Italian → Russian`, `Russian → Italian`, and `Repeat`. The back link returns to `/vocabulary/a2`. |
@@ -122,4 +122,4 @@ Reached by the third header button on the category page (`Repeat` → `/category
 
 ## Theming
 
-The color scheme is locked to **light** at [`web/src/styles.scss:26`](../web/src/styles.scss) (`color-scheme: light;`). Do not introduce `prefers-color-scheme: dark` overrides or switch this to `dark` / `light dark` without a deliberate design decision.
+See [docs/visual-redesign.md](visual-redesign.md) for the full visual system.

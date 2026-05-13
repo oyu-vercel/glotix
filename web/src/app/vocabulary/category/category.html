@@ -4,19 +4,35 @@
 
 @if (category(); as category) {
   <header class="cat-header">
-    <h1>{{ category.label }}</h1>
+    <div class="cat-headline">
+      <span class="eyebrow">Category</span>
+      <h1>{{ category.label }}</h1>
+    </div>
     <span class="count-pill">{{ category.words.length }}</span>
-    <span class="spacer"></span>
-    <span class="memorize-actions">
-      <a mat-stroked-button color="primary"
-         [routerLink]="['/category', category.key, 'memorize']">Italian → Russian</a>
-      <a mat-stroked-button color="primary"
-         [routerLink]="['/category', category.key, 'memorize']"
-         [queryParams]="{ direction: 'russian' }">Russian → Italian</a>
-      <a mat-stroked-button color="primary"
-         [routerLink]="['/category', category.key, 'repeat']">Repeat</a>
-    </span>
   </header>
+
+  <div class="memorize-actions">
+    <a
+      mat-flat-button
+      color="primary"
+      class="primary-action"
+      [routerLink]="['/category', category.key, 'memorize']"
+      >Italian → Russian</a
+    >
+    <a
+      mat-stroked-button
+      color="primary"
+      [routerLink]="['/category', category.key, 'memorize']"
+      [queryParams]="{ direction: 'russian' }"
+      >Russian → Italian</a
+    >
+    <a
+      mat-stroked-button
+      class="sage-action"
+      [routerLink]="['/category', category.key, 'repeat']"
+      >Repeat</a
+    >
+  </div>
 
   <app-word-table [words]="category.words" />
 } @else {

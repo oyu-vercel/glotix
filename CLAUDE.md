@@ -12,7 +12,7 @@ Italian language-learning app for Russian-speaking learners (currently: Italian 
 
 ## Stack
 
-- **Frontend** — Angular 21 standalone + Angular Material 21 (azure-blue palette, **light** color scheme) + Signals, in `web/`. TypeScript strict mode with `strictTemplates: true`.
+- **Frontend** — Angular 21 standalone + Angular Material 21 + Signals, in `web/`. TypeScript strict mode with `strictTemplates: true`. **Visual system: Soft Warm Modern** — terracotta `#C95D3A` primary + sage `#7E9173` tertiary on cream `#F7F1E5`, Inter body with Fraunces italic accents, light color scheme locked. See [docs/visual-redesign.md](docs/visual-redesign.md).
 - **Backend** — NestJS 11 + TypeORM + better-sqlite3 (dev) / Postgres (prod), scaffolded in `api/`. Currently paused — nothing in the Angular app calls it.
 - **Static data** — Files under `web/public/` are served at the URL root (e.g. `web/public/assets/x.json` → `/assets/x.json`).
 
@@ -32,6 +32,7 @@ Feature reference docs live in `docs/`. See:
 - [docs/vocabulary-viewer.md](docs/vocabulary-viewer.md) — vocabulary feature reference (routes, data flow, JSON shape).
 - [docs/memorized-vocabulary.md](docs/memorized-vocabulary.md) — global "memorized" set: persistent filter on memorize/repeat decks, plus the `/vocabulary/memorized` un-memorize view.
 - [docs/stories-viewer.md](docs/stories-viewer.md) — stories feature reference (parser, JSON shape).
+- [docs/visual-redesign.md](docs/visual-redesign.md) — visual system reference (theme tokens, fonts, reused patterns).
 
 ## Files Claude must not read
 

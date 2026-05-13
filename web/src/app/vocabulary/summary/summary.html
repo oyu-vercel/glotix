@@ -1,5 +1,6 @@
 <header class="summary-header">
-  <h1>Global Vocabulary</h1>
+  <span class="eyebrow">Vocabulary</span>
+  <h1><span class="accent-italic">all</span> Categories</h1>
 </header>
 
 @if (vocabulary$ | async; as vocabulary) {
@@ -8,7 +9,9 @@
       <ng-container matColumnDef="label">
         <th mat-header-cell *matHeaderCellDef>Category</th>
         <td mat-cell *matCellDef="let c">{{ c.label }}</td>
-        <td mat-footer-cell *matFooterCellDef class="footer-label">Total</td>
+        <td mat-footer-cell *matFooterCellDef class="footer-label">
+          <span class="accent-italic">Total</span>
+        </td>
       </ng-container>
 
       <ng-container matColumnDef="count">

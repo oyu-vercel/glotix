@@ -13,6 +13,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  a {
+    color: var(--mat-sys-on-surface-variant);
+    font-weight: 500;
+  }
 }
 
 .topbar-right {
@@ -22,8 +27,11 @@
 }
 
 .progress {
-  font: var(--mat-sys-label-large);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
   color: var(--mat-sys-on-surface-variant);
+  font-variant-numeric: tabular-nums;
 }
 
 .card {
@@ -33,14 +41,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 24px;
-  padding: 48px 24px;
-  background: var(--mat-sys-surface);
-  border: 1px solid var(--mat-sys-outline-variant);
-  border-radius: 16px;
+  gap: 28px;
+  padding: 64px 32px 56px;
+  background: var(--mat-sys-surface-container);
+  border: none;
+  border-radius: 28px;
   cursor: pointer;
   outline: none;
   text-align: center;
+  box-shadow:
+    0 1px 0 rgba(43, 42, 38, 0.05),
+    0 30px 60px -32px rgba(43, 42, 38, 0.25);
 
   &:focus-visible {
     outline: 2px solid var(--mat-sys-primary);
@@ -50,28 +61,38 @@
 
 .card-actions {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 18px;
+  right: 18px;
   display: flex;
   gap: 8px;
+
+  button {
+    border-radius: 999px;
+  }
 }
 
 .front {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
 
   .italian,
   .translation {
-    font: var(--mat-sys-display-large);
-    font-weight: 500;
+    font-weight: 700;
+    font-size: clamp(48px, 8vw, 76px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
     color: var(--mat-sys-primary);
+    word-break: break-word;
+    max-width: 100%;
   }
 }
 
 .pron {
-  font: var(--mat-sys-title-large);
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--mat-sys-on-surface-variant);
 }
 
@@ -79,36 +100,41 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
   max-width: 720px;
   animation: fadeIn 0.2s ease;
 
   .italian {
-    font: var(--mat-sys-headline-medium);
-    font-weight: 500;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
     color: var(--mat-sys-primary);
   }
 
   .translation {
-    font: var(--mat-sys-headline-medium);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     color: var(--mat-sys-on-surface);
   }
 }
 
 .examples {
-  margin: 0;
-  padding-left: 28px;
-  font: var(--mat-sys-body-large);
+  margin: 6px 0 0;
+  padding-left: 22px;
+  font-size: 15px;
   color: var(--mat-sys-on-surface-variant);
-  line-height: 1.6;
+  line-height: 1.65;
   text-align: left;
 
   li {
-    padding-left: 4px;
+    padding-left: 6px;
 
     &::marker {
-      font-weight: 500;
-      color: var(--mat-sys-on-surface-variant);
+      font-weight: 700;
+      color: var(--mat-sys-primary);
     }
 
     + li {
@@ -119,7 +145,8 @@
 
 .hint {
   margin-top: auto;
-  font: var(--mat-sys-body-small);
+  font-size: 12px;
+  letter-spacing: 0.04em;
   color: var(--mat-sys-on-surface-variant);
 }
 
@@ -130,21 +157,26 @@
 }
 
 .comment-label {
-  font: var(--mat-sys-label-large);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
   color: var(--mat-sys-on-surface-variant);
 }
 
 .comment-input {
   width: 100%;
-  padding: 12px;
-  font: var(--mat-sys-body-medium);
+  padding: 14px 16px;
+  font-family: inherit;
+  font-size: 14px;
   color: var(--mat-sys-on-surface);
-  background: var(--mat-sys-surface);
+  background: var(--mat-sys-surface-container);
   border: 1px solid var(--mat-sys-outline-variant);
-  border-radius: 8px;
+  border-radius: 14px;
   resize: vertical;
   min-height: 72px;
   box-sizing: border-box;
+  transition: border-color 0.15s ease;
 
   &:focus {
     outline: none;
@@ -154,8 +186,12 @@
 
 .comment-actions {
   display: flex;
-  gap: 8px;
+  gap: 10px;
   justify-content: flex-end;
+
+  button {
+    border-radius: 999px;
+  }
 }
 
 .empty-state {
@@ -165,7 +201,8 @@
   justify-content: center;
   padding: 48px;
   border: 1px dashed var(--mat-sys-outline-variant);
-  border-radius: 16px;
+  border-radius: 22px;
+  background: var(--mat-sys-surface-container-low);
   color: var(--mat-sys-on-surface-variant);
   text-align: center;
 }
@@ -182,5 +219,29 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 40px 20px 36px;
+    border-radius: 22px;
+  }
+
+  .front .italian,
+  .front .translation {
+    font-size: clamp(36px, 12vw, 48px);
+  }
+
+  .pron {
+    font-size: 26px;
+  }
+
+  .back .italian {
+    font-size: 26px;
+  }
+
+  .back .translation {
+    font-size: 20px;
   }
 }

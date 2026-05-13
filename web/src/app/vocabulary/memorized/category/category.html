@@ -4,7 +4,10 @@
 
 @if (category(); as category) {
   <header class="cat-header">
-    <h1>{{ category.label }}</h1>
+    <div class="cat-headline">
+      <span class="eyebrow">Memorized · Category</span>
+      <h1>{{ category.label }}</h1>
+    </div>
     <span class="count-pill">{{ words().length }}</span>
   </header>
 

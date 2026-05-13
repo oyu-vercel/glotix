@@ -1,8 +1,3 @@
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
 html {
@@ -10,30 +5,55 @@ html {
   @include mat.theme(
     (
       color: (
-        primary: mat.$azure-palette,
-        tertiary: mat.$blue-palette,
+        primary: mat.$orange-palette,
+        tertiary: mat.$green-palette,
       ),
-      typography: Roboto,
+      typography: 'Inter',
       density: 0,
     )
   );
+
+  // Surface — warm cream / paper tones
+  --mat-sys-surface: #f7f1e5;
+  --mat-sys-surface-container: #ffffff;
+  --mat-sys-surface-container-low: #fbf6ea;
+  --mat-sys-surface-container-high: #f1ead8;
+  --mat-sys-surface-container-highest: #ece3cc;
+  --mat-sys-on-surface: #2b2a26;
+  --mat-sys-on-surface-variant: #6b6961;
+  --mat-sys-outline: rgba(43, 42, 38, 0.32);
+  --mat-sys-outline-variant: rgba(43, 42, 38, 0.12);
+
+  // Primary — terracotta
+  --mat-sys-primary: #c95d3a;
+  --mat-sys-on-primary: #ffffff;
+  --mat-sys-primary-container: #f6d9c9;
+  --mat-sys-on-primary-container: #5a1f0c;
+
+  // Tertiary — sage
+  --mat-sys-tertiary: #7e9173;
+  --mat-sys-on-tertiary: #ffffff;
+  --mat-sys-tertiary-container: #d6dcc8;
+  --mat-sys-on-tertiary-container: #2d3a25;
+
+  // Secondary — warm muted (used by count-pill / footer-total)
+  --mat-sys-secondary-container: #ece0c8;
+  --mat-sys-on-secondary-container: #4a3f2e;
 }
 
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
   color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
   margin: 0;
-  height: 100%;
+  min-height: 100%;
+  display: flow-root;
 }
-/* You can add global styles to this file, and also import other style files */
+
+.accent-italic {
+  font-family: 'Fraunces', 'Inter', serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--mat-sys-primary);
+}

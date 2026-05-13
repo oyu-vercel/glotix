@@ -4,6 +4,7 @@
 
 @if (story(); as s) {
   <header class="detail-header">
+    <span class="eyebrow">Story</span>
     <h1>{{ s.title }}</h1>
   </header>
 
@@ -66,7 +67,7 @@
             <span class="spacer"></span>
             <span class="memorize-actions">
               <a
-                mat-stroked-button
+                mat-flat-button
                 color="primary"
                 [routerLink]="['/stories', slug(), 'category', cat.key, 'memorize']"
                 >Italian → Russian</a
@@ -89,7 +90,6 @@
           <app-word-table [words]="cat.words" />
         }
       }
-
     </mat-tab>
   </mat-tab-group>
 } @else {
