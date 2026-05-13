@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
 
+import { provideStoryDeckSurface } from './stories/story-deck-surface';
+import { provideVocabularyDeckSurface } from './vocabulary/vocabulary-deck-surface';
+
 export const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'vocabulary' },
   {
@@ -25,11 +28,14 @@ export const routes: Routes = [
   },
   {
     path: 'category/:key/memorize',
-    loadComponent: () => import('./vocabulary/memorize/memorize').then((m) => m.Memorize),
+    loadComponent: () =>
+      import('./shared/memorize-route/memorize-route').then((m) => m.MemorizeRoute),
+    providers: [provideVocabularyDeckSurface()],
   },
   {
     path: 'category/:key/repeat',
-    loadComponent: () => import('./vocabulary/repeat/repeat').then((m) => m.Repeat),
+    loadComponent: () => import('./shared/repeat-route/repeat-route').then((m) => m.RepeatRoute),
+    providers: [provideVocabularyDeckSurface()],
   },
   {
     path: 'stories',
@@ -42,11 +48,13 @@ export const routes: Routes = [
   {
     path: 'stories/:slug/category/:key/memorize',
     loadComponent: () =>
-      import('./stories/memorize/memorize').then((m) => m.StoryMemorize),
+      import('./shared/memorize-route/memorize-route').then((m) => m.MemorizeRoute),
+    providers: [provideStoryDeckSurface()],
   },
   {
     path: 'stories/:slug/category/:key/repeat',
-    loadComponent: () => import('./stories/repeat/repeat').then((m) => m.StoryRepeat),
+    loadComponent: () => import('./shared/repeat-route/repeat-route').then((m) => m.RepeatRoute),
+    providers: [provideStoryDeckSurface()],
   },
   { path: '**', redirectTo: 'vocabulary' },
 ];

@@ -29,7 +29,7 @@ A `Memorized` button appears in the top-right of the card on both the cards/memo
 
 ### Filtering decks
 
-[`MemorizeDeck`](../web/src/app/shared/memorize-deck/memorize-deck.ts) and [`RepeatDeck`](../web/src/app/shared/repeat-deck/repeat-deck.ts) load `glotix:memorized` in their category effect and exclude those words from their `cards` computed (alongside skips, on `MemorizeDeck` only). `StoryMemorize` and `StoryRepeat` inherit this because they render the same shared decks — there is no per-story memorized list.
+[`MemorizeDeck`](../web/src/app/shared/memorize-deck/memorize-deck.ts) and [`RepeatDeck`](../web/src/app/shared/repeat-deck/repeat-deck.ts) load `glotix:memorized` in their category effect and exclude those words from their `cards` computed (alongside skips, on `MemorizeDeck` only). Story memorize/repeat routes inherit this because they reuse the same shared decks via [`MemorizeRoute`](../web/src/app/shared/memorize-route/memorize-route.ts) / [`RepeatRoute`](../web/src/app/shared/repeat-route/repeat-route.ts) — there is no per-story memorized list.
 
 ### Restoring a word
 
