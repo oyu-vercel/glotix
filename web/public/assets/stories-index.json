@@ -6,13 +6,19 @@
       "slug": "benvenute-al-sud",
       "title": "Benvenute al Sud",
       "paragraphs": 130,
-      "vocabCount": 435
+      "vocabCount": 479
     },
     {
       "slug": "tra-le-stelle-di-roma",
       "title": "Tra le stelle di Roma",
       "paragraphs": 78,
-      "vocabCount": 390
+      "vocabCount": 431
+    },
+    {
+      "slug": "un-avventura-tra-i-canali",
+      "title": "Un’avventura tra i canali",
+      "paragraphs": 79,
+      "vocabCount": 626
     }
   ]
 }

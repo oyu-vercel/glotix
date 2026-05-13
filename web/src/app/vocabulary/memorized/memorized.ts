@@ -10,6 +10,8 @@ interface MemorizedCategoryRow {
   key: string;
   label: string;
   count: number;
+  total: number;
+  percent: number;
 }
 
 @Component({
@@ -27,7 +29,7 @@ export class Memorized {
   readonly memorized = signal<Set<string>>(this.storage.getMemorized());
   readonly vocabulary = toSignal(this.vocabularyService.vocabulary$);
 
-  readonly columns = ['label', 'count'];
+  readonly columns = ['label', 'count', 'total', 'percent'];
 
   readonly rows = computed<MemorizedCategoryRow[]>(() => {
     const vocab = this.vocabulary();
@@ -37,12 +39,25 @@ export class Memorized {
     for (const category of vocab.categories) {
       const count = category.words.reduce((n, w) => n + (memorized.has(w.italian) ? 1 : 0), 0);
       if (count === 0) continue;
-      out.push({ key: category.key, label: category.label, count });
+      const total = category.words.length;
+      const percent = total > 0 ? (count / total) * 100 : 0;
+      out.push({ key: category.key, label: category.label, count, total, percent });
     }
     return out;
   });
 
   readonly total = computed(() => this.rows().reduce((n, r) => n + r.count, 0));
+
+  readonly grandTotal = computed(() => {
+    const vocab = this.vocabulary();
+    if (!vocab) return 0;
+    return vocab.categories.reduce((n, c) => n + c.words.length, 0);
+  });
+
+  readonly grandPercent = computed(() => {
+    const g = this.grandTotal();
+    return g > 0 ? (this.total() / g) * 100 : 0;
+  });
 
   navigate(key: string): void {
     this.router.navigate(['/vocabulary/memorized', key]);

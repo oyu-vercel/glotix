@@ -11,7 +11,7 @@
           "italian": "accento",
           "pronunciation": "[ачче́нто]",
           "translation": "акцент",
-          "examples": "L’accento è italiano. L’accento è romano."
+          "examples": "L’accento è italiano. L’accento è romano. L'accento italiano. Ha accento. L'accento veneziano."
         },
         {
           "n": 2,
@@ -25,7 +25,7 @@
           "italian": "acqua",
           "pronunciation": "[ákква]",
           "translation": "вода",
-          "examples": "L’acqua è fredda. L’acqua è buona. L’acqua è poca."
+          "examples": "L’acqua è fredda. L’acqua è buona. L’acqua è poca. Acqua fresca. Bere acqua. Acqua limpida. Acqua in canali."
         },
         {
           "n": 4,
@@ -60,21 +60,21 @@
           "italian": "amica",
           "pronunciation": "[амíка]",
           "translation": "подруга",
-          "examples": "L’amica è brava. L’amica è russa. L’amica legge. Le amiche sono italiane."
+          "examples": "L’amica è brava. L’amica è russa. L’amica legge. Le amiche sono italiane. Mia amica. L'amica parla. L'amica sorride."
         },
         {
           "n": 9,
           "italian": "amico",
           "pronunciation": "[амíко]",
           "translation": "друг",
-          "examples": "L’amico è bravo. L’amico legge. Il mio amico è russo. Gli amici sono italiani."
+          "examples": "L’amico è bravo. L’amico legge. Il mio amico è russo. Gli amici sono italiani. Il mio amico. Amico parla. Amico arriva."
         },
         {
           "n": 10,
           "italian": "angolo",
           "pronunciation": "[а́нголо]",
           "translation": "угол",
-          "examples": "All’angolo c’è il bar. All’angolo c’è la casa."
+          "examples": "All’angolo c’è il bar. All’angolo c’è la casa. All'angolo. Angolo di strada. Angolo di casa."
         },
         {
           "n": 11,
@@ -179,7 +179,7 @@
           "italian": "avventura",
           "pronunciation": "[аввенту́ра]",
           "translation": "приключение",
-          "examples": "L’avventura è bella. Un’avventura romantica."
+          "examples": "L’avventura è bella. Un’avventura romantica. Avventura affascinante. Avventura in città."
         },
         {
           "n": 26,
@@ -207,7 +207,7 @@
           "italian": "bambino",
           "pronunciation": "[бамбúно]",
           "translation": "ребёнок (м)",
-          "examples": "Il bambino è piccolo. Il bambino dorme. Un bambino è bravo. Il bambino ha paura."
+          "examples": "Il bambino è piccolo. Il bambino dorme. Un bambino è bravo. Il bambino ha paura. Il bambino gioca. Bambino piccolo."
         },
         {
           "n": 30,
@@ -319,7 +319,7 @@
           "italian": "calma",
           "pronunciation": "[ка́льма]",
           "translation": "спокойствие",
-          "examples": "Stai con calma! Mantenere la calma."
+          "examples": "Stai con calma! Mantenere la calma. Calma in piazza."
         },
         {
           "n": 46,
@@ -347,7 +347,7 @@
           "italian": "casa",
           "pronunciation": "[кáза]",
           "translation": "дом",
-          "examples": "La casa è grande. La casa è bella. La mia casa è a Mosca. La casa è accogliente."
+          "examples": "La casa è grande. La casa è bella. La mia casa è a Mosca. La casa è accogliente. Casa accogliente. Casa in città."
         },
         {
           "n": 50,
@@ -424,7 +424,7 @@
           "italian": "città",
           "pronunciation": "[читтá]",
           "translation": "город",
-          "examples": "La città è grande. La città è bella. La città è italiana."
+          "examples": "La città è grande. La città è bella. La città è italiana. Città affascinante. Città di Venezia."
         },
         {
           "n": 61,
@@ -445,7 +445,7 @@
           "italian": "colazione",
           "pronunciation": "[колатцьóне]",
           "translation": "завтрак",
-          "examples": "La colazione è buona. La colazione è a casa."
+          "examples": "La colazione è buona. La colazione è a casa. Colazione fresca."
         },
         {
           "n": 64,
@@ -501,7 +501,7 @@
           "italian": "coppia",
           "pronunciation": "[ко́ппиа]",
           "translation": "пара",
-          "examples": "Una coppia felice. La coppia ride."
+          "examples": "Una coppia felice. La coppia ride. Coppia di turisti."
         },
         {
           "n": 72,
@@ -515,7 +515,7 @@
           "italian": "cosa",
           "pronunciation": "[кóза]",
           "translation": "вещь",
-          "examples": "La cosa è interessante. La cosa è nuova. La cosa è grande."
+          "examples": "La cosa è interessante. La cosa è nuova. La cosa è grande. Che cosa. Cosa fai."
         },
         {
           "n": 74,
@@ -627,7 +627,7 @@
           "italian": "edgard",
           "pronunciation": "[э́дгард]",
           "translation": "Эдгард",
-          "examples": "Edgard è l’editore."
+          "examples": "Edgard è l’editore. Edgard parla."
         },
         {
           "n": 90,
@@ -641,7 +641,7 @@
           "italian": "editore",
           "pronunciation": "[эди́торе]",
           "translation": "издатель",
-          "examples": "L’editore è molto gentile."
+          "examples": "L’editore è molto gentile. Editore copyright."
         },
         {
           "n": 92,
@@ -662,7 +662,7 @@
           "italian": "entusiasmo",
           "pronunciation": "[энтузиа́змо]",
           "translation": "энтузиазм",
-          "examples": "Con grande entusiasmo. Noi andiamo con entusiasmo."
+          "examples": "Con grande entusiasmo. Noi andiamo con entusiasmo. Entusiasmo forte."
         },
         {
           "n": 95,
@@ -907,7 +907,7 @@
           "italian": "giorno",
           "pronunciation": "[джо́рно]",
           "translation": "день",
-          "examples": "Buon giorno! Ogni giorno studio. Due giorni in Sicilia."
+          "examples": "Buon giorno! Ogni giorno studio. Due giorni in Sicilia. Bel giorno. Giorno in Venezia."
         },
         {
           "n": 130,
@@ -921,7 +921,7 @@
           "italian": "giro",
           "pronunciation": "[джи́ро]",
           "translation": "прогулка",
-          "examples": "Facciamo un giro in barca. Un bel giro turistico."
+          "examples": "Facciamo un giro in barca. Un bel giro turistico. Fare il giro. Giro in città."
         },
         {
           "n": 132,
@@ -956,7 +956,7 @@
           "italian": "gruppo",
           "pronunciation": "[гру́ппо]",
           "translation": "группа",
-          "examples": "Il nostro gruppo va al mare. Il gruppo di turisti."
+          "examples": "Il nostro gruppo va al mare. Il gruppo di turisti. Gruppo di turisti."
         },
         {
           "n": 137,
@@ -984,7 +984,7 @@
           "italian": "idea",
           "pronunciation": "[иде́а]",
           "translation": "идея",
-          "examples": "Bella idea! Che buona idea! Noi abbiamo molte idee."
+          "examples": "Bella idea! Che buona idea! Noi abbiamo molte idee. Idea buona."
         },
         {
           "n": 141,
@@ -1026,7 +1026,7 @@
           "italian": "italiano",
           "pronunciation": "[итальáно]",
           "translation": "итальянец",
-          "examples": "L’italiano è bravo. L’italiano parla."
+          "examples": "L’italiano è bravo. L’italiano parla. Italiano accento."
         },
         {
           "n": 147,
@@ -1180,7 +1180,7 @@
           "italian": "mare",
           "pronunciation": "[ма́ре]",
           "translation": "море",
-          "examples": "Il mare è bellissimo. Andiamo al mare. Noi amiamo il mare."
+          "examples": "Il mare è bellissimo. Andiamo al mare. Noi amiamo il mare. Mare vicino."
         },
         {
           "n": 169,
@@ -1285,7 +1285,7 @@
           "italian": "momento",
           "pronunciation": "[моме́нто]",
           "translation": "момент",
-          "examples": "In questo momento fa caldo. Un momento per favore."
+          "examples": "In questo momento fa caldo. Un momento per favore. Bel momento."
         },
         {
           "n": 184,
@@ -1299,7 +1299,7 @@
           "italian": "muro",
           "pronunciation": "[му́ро]",
           "translation": "стена",
-          "examples": "Al muro. Il muro è alto."
+          "examples": "Al muro. Il muro è alto. Muro alto."
         },
         {
           "n": 186,
@@ -1355,7 +1355,7 @@
           "italian": "nota",
           "pronunciation": "[но́та]",
           "translation": "заметка",
-          "examples": "Una nota importante."
+          "examples": "Una nota importante. Nota di attenzione."
         },
         {
           "n": 194,
@@ -1376,7 +1376,7 @@
           "italian": "occasione",
           "pronunciation": "[окказьо́не]",
           "translation": "случай",
-          "examples": "Un’occasione speciale."
+          "examples": "Un’occasione speciale. Occasione buona."
         },
         {
           "n": 197,
@@ -1453,7 +1453,7 @@
           "italian": "palazzo",
           "pronunciation": "[палáццо]",
           "translation": "дворец, здание",
-          "examples": "Il palazzo è grande. Il palazzo è a Roma. Il palazzo è bello."
+          "examples": "Il palazzo è grande. Il palazzo è a Roma. Il palazzo è bello. Palazzo alto. Palazzo imponente."
         },
         {
           "n": 208,
@@ -1467,7 +1467,7 @@
           "italian": "panorama",
           "pronunciation": "[панóрама]",
           "translation": "панорама",
-          "examples": "Il panorama è bello. Il panorama è grande."
+          "examples": "Il panorama è bello. Il panorama è grande. Panorama incredibile."
         },
         {
           "n": 210,
@@ -1523,7 +1523,7 @@
           "italian": "pausa",
           "pronunciation": "[па́уза]",
           "translation": "пауза",
-          "examples": "Una pausa caffè."
+          "examples": "Una pausa caffè. Pausa breve."
         },
         {
           "n": 218,
@@ -1558,7 +1558,7 @@
           "italian": "pesce",
           "pronunciation": "[пéше]",
           "translation": "рыба",
-          "examples": "Il pesce è buono. Il pesce è fresco."
+          "examples": "Il pesce è buono. Il pesce è fresco. Pesce fresco."
         },
         {
           "n": 223,
@@ -1572,14 +1572,14 @@
           "italian": "piano",
           "pronunciation": "[пья́но]",
           "translation": "медленно / план",
-          "examples": "Piano piano. Un piano magico."
+          "examples": "Piano piano. Un piano magico. Piano parla."
         },
         {
           "n": 225,
           "italian": "piazza",
           "pronunciation": "[пьáцца]",
           "translation": "площадь",
-          "examples": "La piazza è grande. La piazza è bella."
+          "examples": "La piazza è grande. La piazza è bella. Piazza grande. Piazza deserta."
         },
         {
           "n": 226,
@@ -1614,7 +1614,7 @@
           "italian": "ponte",
           "pronunciation": "[пóнтэ]",
           "translation": "мост",
-          "examples": "Il ponte è grande. Il ponte è bello."
+          "examples": "Il ponte è grande. Il ponte è bello. Ponte alto. Ponte grande."
         },
         {
           "n": 231,
@@ -1628,7 +1628,7 @@
           "italian": "posto",
           "pronunciation": "[по́сто]",
           "translation": "место",
-          "examples": "Un bel posto. Il posto è libero. I posti sono buoni."
+          "examples": "Un bel posto. Il posto è libero. I posti sono buoni. Posto bello."
         },
         {
           "n": 233,
@@ -1677,14 +1677,14 @@
           "italian": "prova",
           "pronunciation": "[про́ва]",
           "translation": "попытка",
-          "examples": "Prova a parlare italiano. Una buona prova."
+          "examples": "Prova a parlare italiano. Una buona prova. Lui prova. Prova a parlare."
         },
         {
           "n": 240,
           "italian": "punto",
           "pronunciation": "[пу́нто]",
           "translation": "момент",
-          "examples": "A un certo punto arriva il treno."
+          "examples": "A un certo punto arriva il treno. Punto di vista."
         },
         {
           "n": 241,
@@ -1719,7 +1719,7 @@
           "italian": "ragione",
           "pronunciation": "[раджо́не]",
           "translation": "правота",
-          "examples": "Hai ragione. Con ragione."
+          "examples": "Hai ragione. Con ragione. Ha ragione."
         },
         {
           "n": 246,
@@ -1901,14 +1901,14 @@
           "italian": "senso",
           "pronunciation": "[се́нсо]",
           "translation": "смысл",
-          "examples": "Ha senso."
+          "examples": "Ha senso. Senso di odore."
         },
         {
           "n": 272,
           "italian": "sera",
           "pronunciation": "[се́ра]",
           "translation": "вечер",
-          "examples": "Di sera. Buona sera."
+          "examples": "Di sera. Buona sera. Sera tranquilla."
         },
         {
           "n": 273,
@@ -1985,7 +1985,7 @@
           "italian": "silenzio",
           "pronunciation": "[сили́нцьо]",
           "translation": "тишина",
-          "examples": "In silenzio."
+          "examples": "In silenzio. Silenzio in piazza."
         },
         {
           "n": 284,
@@ -2139,7 +2139,7 @@
           "italian": "strada",
           "pronunciation": "[стра́да]",
           "translation": "улица",
-          "examples": "Le strade di Catania sono belle."
+          "examples": "Le strade di Catania sono belle. Strada stretta. Strada in città."
         },
         {
           "n": 306,
@@ -2167,7 +2167,7 @@
           "italian": "successo",
           "pronunciation": "[сучче́ссо]",
           "translation": "успех",
-          "examples": "Un grande successo."
+          "examples": "Un grande successo. Successo grande."
         },
         {
           "n": 310,
@@ -2265,14 +2265,14 @@
           "italian": "tempo",
           "pronunciation": "[тэмпо]",
           "translation": "время",
-          "examples": "Il tempo è buono. Il tempo passa. Ho tempo. Il tempo è nuovo."
+          "examples": "Il tempo è buono. Il tempo passa. Ho tempo. Il tempo è nuovo. Bel tempo. Tempo di pioggia."
         },
         {
           "n": 324,
           "italian": "terra",
           "pronunciation": "[те́рра]",
           "translation": "земля",
-          "examples": "Sulla terra."
+          "examples": "Sulla terra. Terra ferma."
         },
         {
           "n": 325,
@@ -2286,7 +2286,7 @@
           "italian": "testa",
           "pronunciation": "[те́ста]",
           "translation": "голова",
-          "examples": "La testa gira."
+          "examples": "La testa gira. Testa alta."
         },
         {
           "n": 327,
@@ -2440,7 +2440,7 @@
           "italian": "vita",
           "pronunciation": "[ви́та]",
           "translation": "жизнь",
-          "examples": "La vita in Sicilia è bella."
+          "examples": "La vita in Sicilia è bella. Vita in Venezia."
         },
         {
           "n": 349,
@@ -2496,7 +2496,7 @@
           "italian": "zona",
           "pronunciation": "[дзóна]",
           "translation": "зона",
-          "examples": "La zona è grande. La zona è nuova."
+          "examples": "La zona è grande. La zona è nuova. Zona turistica. Zona accogliente."
         },
         {
           "n": 357,
@@ -2511,6 +2511,916 @@
           "pronunciation": "[дзуккúне]",
           "translation": "кабачки (мн.)",
           "examples": "Le zucchine sono buone. Le zucchine sono italiane."
+        },
+        {
+          "n": 359,
+          "italian": "ali",
+          "pronunciation": "[а́ли]",
+          "translation": "крылья",
+          "examples": "Ali di colomba. Ali di piccione."
+        },
+        {
+          "n": 360,
+          "italian": "amici",
+          "pronunciation": "[ами́чи]",
+          "translation": "друзья",
+          "examples": "I miei amici. Amici in piazza. Amici italiani."
+        },
+        {
+          "n": 361,
+          "italian": "ansia",
+          "pronunciation": "[а́нся]",
+          "translation": "тревога",
+          "examples": "Ansia per il rumore. Ansia in città."
+        },
+        {
+          "n": 362,
+          "italian": "attenzione",
+          "pronunciation": "[аттенцьо́не]",
+          "translation": "внимание",
+          "examples": "Attenzione al rumore. Attenzione ai turisti."
+        },
+        {
+          "n": 363,
+          "italian": "attività",
+          "pronunciation": "[аттивита́]",
+          "translation": "деятельность",
+          "examples": "Attività in piazza. Attività turistica."
+        },
+        {
+          "n": 364,
+          "italian": "austriaca",
+          "pronunciation": "[аустриа́ка]",
+          "translation": "австрийка",
+          "examples": "Austriaca donna."
+        },
+        {
+          "n": 365,
+          "italian": "austriaci",
+          "pronunciation": "[аустриа́чи]",
+          "translation": "австрийцы",
+          "examples": "Austriaci turisti."
+        },
+        {
+          "n": 366,
+          "italian": "balena",
+          "pronunciation": "[бале́на]",
+          "translation": "кит",
+          "examples": "Balena grande."
+        },
+        {
+          "n": 367,
+          "italian": "bambini",
+          "pronunciation": "[бамби́ни]",
+          "translation": "дети",
+          "examples": "Bambini giocano. Bambini in piazza."
+        },
+        {
+          "n": 368,
+          "italian": "barche",
+          "pronunciation": "[ба́рке]",
+          "translation": "лодки",
+          "examples": "Barche in canali. Barche attraccato."
+        },
+        {
+          "n": 369,
+          "italian": "becco",
+          "pronunciation": "[бе́кко]",
+          "translation": "клюв",
+          "examples": "Becco di piccione."
+        },
+        {
+          "n": 370,
+          "italian": "beppe",
+          "pronunciation": "[бе́ппе]",
+          "translation": "Беппе (имя)",
+          "examples": "Beppe parla."
+        },
+        {
+          "n": 371,
+          "italian": "briciole",
+          "pronunciation": "[бри́чоле]",
+          "translation": "крошки",
+          "examples": "Briciole di pane."
+        },
+        {
+          "n": 372,
+          "italian": "brivido",
+          "pronunciation": "[бри́видо]",
+          "translation": "дрожь",
+          "examples": "Brivido di freddo."
+        },
+        {
+          "n": 373,
+          "italian": "calle",
+          "pronunciation": "[ка́лле]",
+          "translation": "узкая улочка (в Венеции)",
+          "examples": "Calle stretta."
+        },
+        {
+          "n": 374,
+          "italian": "canal",
+          "pronunciation": "[кана́ль]",
+          "translation": "канал (усеч.)",
+          "examples": "Canal grande."
+        },
+        {
+          "n": 375,
+          "italian": "canali",
+          "pronunciation": "[кана́ли]",
+          "translation": "каналы",
+          "examples": "Canali di Venezia. Canali pieni."
+        },
+        {
+          "n": 376,
+          "italian": "cane",
+          "pronunciation": "[ка́не]",
+          "translation": "собака",
+          "examples": "Il cane abbaia. Cane in cortile."
+        },
+        {
+          "n": 377,
+          "italian": "caos",
+          "pronunciation": "[ка́ос]",
+          "translation": "хаос",
+          "examples": "Caos in piazza. Caos di turisti."
+        },
+        {
+          "n": 378,
+          "italian": "carne",
+          "pronunciation": "[ка́рне]",
+          "translation": "мясо",
+          "examples": "Carne fresca."
+        },
+        {
+          "n": 379,
+          "italian": "castello",
+          "pronunciation": "[касте́лло]",
+          "translation": "замок",
+          "examples": "Castello alto."
+        },
+        {
+          "n": 380,
+          "italian": "chiacchiericcio",
+          "pronunciation": "[кьяккьери́ччо]",
+          "translation": "болтовня",
+          "examples": "Chiacchiericcio di turisti."
+        },
+        {
+          "n": 381,
+          "italian": "cibo",
+          "pronunciation": "[чи́бо]",
+          "translation": "еда",
+          "examples": "Cibo fresco. Cibo in piazza."
+        },
+        {
+          "n": 382,
+          "italian": "cielo",
+          "pronunciation": "[че́ло]",
+          "translation": "небо",
+          "examples": "Cielo limpido. Cielo nuvole."
+        },
+        {
+          "n": 383,
+          "italian": "clacson",
+          "pronunciation": "[кла́ксон]",
+          "translation": "клаксон",
+          "examples": "Clacson rumorosi."
+        },
+        {
+          "n": 384,
+          "italian": "clienti",
+          "pronunciation": "[клие́нти]",
+          "translation": "клиенты",
+          "examples": "Clienti in mercato."
+        },
+        {
+          "n": 385,
+          "italian": "colomba",
+          "pronunciation": "[коло́мба]",
+          "translation": "голубь (самка)",
+          "examples": "Colomba bianca."
+        },
+        {
+          "n": 386,
+          "italian": "colori",
+          "pronunciation": "[коло́ри]",
+          "translation": "цвета",
+          "examples": "Colori vividi."
+        },
+        {
+          "n": 387,
+          "italian": "colpo",
+          "pronunciation": "[ко́льпо]",
+          "translation": "удар",
+          "examples": "Colpo di vento."
+        },
+        {
+          "n": 388,
+          "italian": "copyright",
+          "pronunciation": "[ко́пирайт]",
+          "translation": "авторское право",
+          "examples": "Copyright editore."
+        },
+        {
+          "n": 389,
+          "italian": "cortile",
+          "pronunciation": "[корти́ле]",
+          "translation": "двор",
+          "examples": "Cortile di casa."
+        },
+        {
+          "n": 390,
+          "italian": "costi",
+          "pronunciation": "[ко́сти]",
+          "translation": "расходы",
+          "examples": "Costi alti."
+        },
+        {
+          "n": 391,
+          "italian": "crociera",
+          "pronunciation": "[кроче́ра]",
+          "translation": "круиз",
+          "examples": "Crociera in nave."
+        },
+        {
+          "n": 392,
+          "italian": "cuore",
+          "pronunciation": "[куо́ре]",
+          "translation": "сердце",
+          "examples": "Cuore di Venezia."
+        },
+        {
+          "n": 393,
+          "italian": "cura",
+          "pronunciation": "[ку́ра]",
+          "translation": "забота",
+          "examples": "Cura del bambino."
+        },
+        {
+          "n": 394,
+          "italian": "denti",
+          "pronunciation": "[де́нти]",
+          "translation": "зубы",
+          "examples": "Denti bianchi."
+        },
+        {
+          "n": 395,
+          "italian": "determinazione",
+          "pronunciation": "[детерминацьо́не]",
+          "translation": "решимость",
+          "examples": "Determinazione forte."
+        },
+        {
+          "n": 396,
+          "italian": "dirotto",
+          "pronunciation": "[диро́тто]",
+          "translation": "ливень",
+          "examples": "Pioggia dirotto."
+        },
+        {
+          "n": 397,
+          "italian": "dogana",
+          "pronunciation": "[дога́на]",
+          "translation": "таможня",
+          "examples": "Dogana al porto."
+        },
+        {
+          "n": 398,
+          "italian": "eroe",
+          "pronunciation": "[эро́э]",
+          "translation": "герой",
+          "examples": "Eroe di Venezia."
+        },
+        {
+          "n": 399,
+          "italian": "esperto",
+          "pronunciation": "[эспе́рто]",
+          "translation": "эксперт",
+          "examples": "Esperto di Venezia."
+        },
+        {
+          "n": 400,
+          "italian": "figura",
+          "pronunciation": "[фигу́ра]",
+          "translation": "фигура",
+          "examples": "Figura di statua."
+        },
+        {
+          "n": 401,
+          "italian": "fiuto",
+          "pronunciation": "[фью́то]",
+          "translation": "нюх",
+          "examples": "Fiuto del cane."
+        },
+        {
+          "n": 402,
+          "italian": "focaccia",
+          "pronunciation": "[фока́чча]",
+          "translation": "фокачча",
+          "examples": "Focaccia fresca."
+        },
+        {
+          "n": 403,
+          "italian": "fontana",
+          "pronunciation": "[фонта́на]",
+          "translation": "фонтан",
+          "examples": "Fontana in piazza."
+        },
+        {
+          "n": 404,
+          "italian": "gesto",
+          "pronunciation": "[дже́сто]",
+          "translation": "жест",
+          "examples": "Gesto della mano."
+        },
+        {
+          "n": 405,
+          "italian": "gianni",
+          "pronunciation": "[джа́нни]",
+          "translation": "Джанни (имя)",
+          "examples": "Gianni parla."
+        },
+        {
+          "n": 406,
+          "italian": "giardini",
+          "pronunciation": "[джарди́ни]",
+          "translation": "сады",
+          "examples": "Giardini di palazzo."
+        },
+        {
+          "n": 407,
+          "italian": "glicine",
+          "pronunciation": "[гли́чине]",
+          "translation": "глициния",
+          "examples": "Glicine fiorito."
+        },
+        {
+          "n": 408,
+          "italian": "gondole",
+          "pronunciation": "[гондо́ле]",
+          "translation": "гондолы",
+          "examples": "Gondole colorate."
+        },
+        {
+          "n": 409,
+          "italian": "gondolieri",
+          "pronunciation": "[гондолье́ри]",
+          "translation": "гондольеры",
+          "examples": "Gondolieri in canali."
+        },
+        {
+          "n": 410,
+          "italian": "luoghi",
+          "pronunciation": "[луо́ги]",
+          "translation": "места",
+          "examples": "Luoghi di Venezia."
+        },
+        {
+          "n": 411,
+          "italian": "marco",
+          "pronunciation": "[ма́рко]",
+          "translation": "Марко (имя)",
+          "examples": "Marco parla."
+        },
+        {
+          "n": 412,
+          "italian": "mattino",
+          "pronunciation": "[матти́но]",
+          "translation": "утро",
+          "examples": "Mattino fresco."
+        },
+        {
+          "n": 413,
+          "italian": "mente",
+          "pronunciation": "[ме́нте]",
+          "translation": "ум",
+          "examples": "Mente confusa."
+        },
+        {
+          "n": 414,
+          "italian": "mercato",
+          "pronunciation": "[мерка́то]",
+          "translation": "рынок",
+          "examples": "Mercato in piazza."
+        },
+        {
+          "n": 415,
+          "italian": "modo",
+          "pronunciation": "[мо́до]",
+          "translation": "способ",
+          "examples": "In modo giusto."
+        },
+        {
+          "n": 416,
+          "italian": "motoscafi",
+          "pronunciation": "[мотоска́фи]",
+          "translation": "моторные лодки",
+          "examples": "Motoscafi veloci."
+        },
+        {
+          "n": 417,
+          "italian": "nave",
+          "pronunciation": "[на́ве]",
+          "translation": "корабль",
+          "examples": "Nave grande."
+        },
+        {
+          "n": 418,
+          "italian": "negozi",
+          "pronunciation": "[него́ци]",
+          "translation": "магазины",
+          "examples": "Negozi in calle."
+        },
+        {
+          "n": 419,
+          "italian": "nemico",
+          "pronunciation": "[неми́ко]",
+          "translation": "враг",
+          "examples": "Nemico del silenzio."
+        },
+        {
+          "n": 420,
+          "italian": "nido",
+          "pronunciation": "[ни́до]",
+          "translation": "гнездо",
+          "examples": "Nido di piccioni."
+        },
+        {
+          "n": 421,
+          "italian": "notizie",
+          "pronunciation": "[ноти́цие]",
+          "translation": "новости",
+          "examples": "Notizie di Venezia."
+        },
+        {
+          "n": 422,
+          "italian": "nuvole",
+          "pronunciation": "[ну́воле]",
+          "translation": "облака",
+          "examples": "Nuvole grigie. Nuvole addensano."
+        },
+        {
+          "n": 423,
+          "italian": "occhi",
+          "pronunciation": "[о́кки]",
+          "translation": "глаза",
+          "examples": "Occhi lucenti."
+        },
+        {
+          "n": 424,
+          "italian": "odore",
+          "pronunciation": "[одо́ре]",
+          "translation": "запах",
+          "examples": "Odore intenso."
+        },
+        {
+          "n": 425,
+          "italian": "oggetto",
+          "pronunciation": "[одже́тто]",
+          "translation": "объект",
+          "examples": "Oggetto curioso."
+        },
+        {
+          "n": 426,
+          "italian": "olfatto",
+          "pronunciation": "[ольфа́тто]",
+          "translation": "обоняние",
+          "examples": "Olfatto del cane."
+        },
+        {
+          "n": 427,
+          "italian": "pancia",
+          "pronunciation": "[па́нча]",
+          "translation": "живот",
+          "examples": "Pancia piena."
+        },
+        {
+          "n": 428,
+          "italian": "pane",
+          "pronunciation": "[па́не]",
+          "translation": "хлеб",
+          "examples": "Pane fresco. Pane in piazza."
+        },
+        {
+          "n": 429,
+          "italian": "papadopoli",
+          "pronunciation": "[пападо́поли]",
+          "translation": "Пападополи (имя/место)",
+          "examples": "Papadopoli parla."
+        },
+        {
+          "n": 430,
+          "italian": "pavimento",
+          "pronunciation": "[павиме́нто]",
+          "translation": "пол",
+          "examples": "Pavimento pulito."
+        },
+        {
+          "n": 431,
+          "italian": "pezzo",
+          "pronunciation": "[пе́ццо]",
+          "translation": "кусок",
+          "examples": "Pezzo di pane."
+        },
+        {
+          "n": 432,
+          "italian": "piccione",
+          "pronunciation": "[пиччо́не]",
+          "translation": "голубь",
+          "examples": "Piccione bianco."
+        },
+        {
+          "n": 433,
+          "italian": "piccioni",
+          "pronunciation": "[пиччо́ни]",
+          "translation": "голуби",
+          "examples": "Piccioni beccano. Piccioni in piazza."
+        },
+        {
+          "n": 434,
+          "italian": "piero",
+          "pronunciation": "[пье́ро]",
+          "translation": "Пьеро (имя)",
+          "examples": "Piero parla."
+        },
+        {
+          "n": 435,
+          "italian": "pioggia",
+          "pronunciation": "[пьо́джя]",
+          "translation": "дождь",
+          "examples": "Pioggia cessa. Pioggia dirotto."
+        },
+        {
+          "n": 436,
+          "italian": "piuma",
+          "pronunciation": "[пью́ма]",
+          "translation": "перо",
+          "examples": "Piuma di colomba."
+        },
+        {
+          "n": 437,
+          "italian": "piume",
+          "pronunciation": "[пью́ме]",
+          "translation": "перья",
+          "examples": "Piume di piccioni."
+        },
+        {
+          "n": 438,
+          "italian": "ponti",
+          "pronunciation": "[по́нти]",
+          "translation": "мосты",
+          "examples": "Ponti di Venezia."
+        },
+        {
+          "n": 439,
+          "italian": "pontili",
+          "pronunciation": "[понти́ли]",
+          "translation": "причалы",
+          "examples": "Pontili in porto."
+        },
+        {
+          "n": 440,
+          "italian": "porta",
+          "pronunciation": "[по́рта]",
+          "translation": "дверь / несёт",
+          "examples": "Porta aperta. Lui porta."
+        },
+        {
+          "n": 441,
+          "italian": "porto",
+          "pronunciation": "[по́рто]",
+          "translation": "порт",
+          "examples": "Porto di Venezia."
+        },
+        {
+          "n": 442,
+          "italian": "principianti",
+          "pronunciation": "[принчипиа́нти]",
+          "translation": "начинающие",
+          "examples": "Principianti turisti."
+        },
+        {
+          "n": 443,
+          "italian": "profumo",
+          "pronunciation": "[профу́мо]",
+          "translation": "аромат",
+          "examples": "Profumo intenso."
+        },
+        {
+          "n": 444,
+          "italian": "quartiere",
+          "pronunciation": "[квартье́ре]",
+          "translation": "квартал",
+          "examples": "Quartiere di Venezia."
+        },
+        {
+          "n": 445,
+          "italian": "racconti",
+          "pronunciation": "[ракко́нти]",
+          "translation": "рассказы",
+          "examples": "Racconti di Venezia."
+        },
+        {
+          "n": 446,
+          "italian": "rami",
+          "pronunciation": "[ра́ми]",
+          "translation": "ветви",
+          "examples": "Rami fioriti."
+        },
+        {
+          "n": 447,
+          "italian": "regalo",
+          "pronunciation": "[рега́ло]",
+          "translation": "подарок",
+          "examples": "Regalo buono."
+        },
+        {
+          "n": 448,
+          "italian": "regina",
+          "pronunciation": "[реджи́на]",
+          "translation": "королева",
+          "examples": "Regina di Venezia."
+        },
+        {
+          "n": 449,
+          "italian": "replica",
+          "pronunciation": "[ре́плика]",
+          "translation": "реплика",
+          "examples": "Replica forte."
+        },
+        {
+          "n": 450,
+          "italian": "rialto",
+          "pronunciation": "[риа́льто]",
+          "translation": "Риальто (мост)",
+          "examples": "Rialto ponte."
+        },
+        {
+          "n": 451,
+          "italian": "ricerca",
+          "pronunciation": "[риче́рка]",
+          "translation": "поиск",
+          "examples": "Ricerca del ponte."
+        },
+        {
+          "n": 452,
+          "italian": "rifugio",
+          "pronunciation": "[рифу́джо]",
+          "translation": "убежище",
+          "examples": "Rifugio in casa."
+        },
+        {
+          "n": 453,
+          "italian": "riparo",
+          "pronunciation": "[рипа́ро]",
+          "translation": "укрытие",
+          "examples": "Riparo dalla pioggia."
+        },
+        {
+          "n": 454,
+          "italian": "risate",
+          "pronunciation": "[риза́те]",
+          "translation": "смех",
+          "examples": "Risate forti."
+        },
+        {
+          "n": 455,
+          "italian": "ritorno",
+          "pronunciation": "[рито́рно]",
+          "translation": "возвращение",
+          "examples": "Ritorno a casa."
+        },
+        {
+          "n": 456,
+          "italian": "segni",
+          "pronunciation": "[се́ньи]",
+          "translation": "знаки",
+          "examples": "Segni di attenzione."
+        },
+        {
+          "n": 457,
+          "italian": "segno",
+          "pronunciation": "[се́ньо]",
+          "translation": "знак",
+          "examples": "Segno di mano."
+        },
+        {
+          "n": 458,
+          "italian": "segreto",
+          "pronunciation": "[сегре́то]",
+          "translation": "секрет",
+          "examples": "Segreto di Venezia."
+        },
+        {
+          "n": 459,
+          "italian": "semi",
+          "pronunciation": "[се́ми]",
+          "translation": "семена",
+          "examples": "Semi di spezie."
+        },
+        {
+          "n": 460,
+          "italian": "serrande",
+          "pronunciation": "[серра́нде]",
+          "translation": "жалюзи",
+          "examples": "Serrande chiuse."
+        },
+        {
+          "n": 461,
+          "italian": "situazione",
+          "pronunciation": "[ситуацьо́не]",
+          "translation": "ситуация",
+          "examples": "Situazione agitata."
+        },
+        {
+          "n": 462,
+          "italian": "sosta",
+          "pronunciation": "[со́ста]",
+          "translation": "остановка",
+          "examples": "Sosta breve."
+        },
+        {
+          "n": 463,
+          "italian": "spezie",
+          "pronunciation": "[спе́цие]",
+          "translation": "специи",
+          "examples": "Spezie profumate."
+        },
+        {
+          "n": 464,
+          "italian": "splendore",
+          "pronunciation": "[сплендо́ре]",
+          "translation": "блеск",
+          "examples": "Splendore di Venezia."
+        },
+        {
+          "n": 465,
+          "italian": "statua",
+          "pronunciation": "[ста́туа]",
+          "translation": "статуя",
+          "examples": "Statua in piazza."
+        },
+        {
+          "n": 466,
+          "italian": "stimoli",
+          "pronunciation": "[сти́моли]",
+          "translation": "стимулы",
+          "examples": "Stimoli curiosi."
+        },
+        {
+          "n": 467,
+          "italian": "strade",
+          "pronunciation": "[стра́де]",
+          "translation": "улицы",
+          "examples": "Strade deserte."
+        },
+        {
+          "n": 468,
+          "italian": "stranieri",
+          "pronunciation": "[странье́ри]",
+          "translation": "иностранцы",
+          "examples": "Stranieri turisti."
+        },
+        {
+          "n": 469,
+          "italian": "tempesta",
+          "pronunciation": "[темпе́ста]",
+          "translation": "буря",
+          "examples": "Tempesta violenta."
+        },
+        {
+          "n": 470,
+          "italian": "tentazione",
+          "pronunciation": "[тентацьо́не]",
+          "translation": "искушение",
+          "examples": "Tentazione forte."
+        },
+        {
+          "n": 471,
+          "italian": "tetti",
+          "pronunciation": "[те́тти]",
+          "translation": "крыши",
+          "examples": "Tetti di Venezia."
+        },
+        {
+          "n": 472,
+          "italian": "tetto",
+          "pronunciation": "[те́тто]",
+          "translation": "крыша",
+          "examples": "Tetto alto."
+        },
+        {
+          "n": 473,
+          "italian": "tracce",
+          "pronunciation": "[тра́чче]",
+          "translation": "следы",
+          "examples": "Tracce di passi."
+        },
+        {
+          "n": 474,
+          "italian": "traccia",
+          "pronunciation": "[тра́чча]",
+          "translation": "след",
+          "examples": "Traccia di profumo."
+        },
+        {
+          "n": 475,
+          "italian": "traffico",
+          "pronunciation": "[тра́ффико]",
+          "translation": "движение",
+          "examples": "Traffico rumoroso."
+        },
+        {
+          "n": 476,
+          "italian": "tramonto",
+          "pronunciation": "[трамо́нто]",
+          "translation": "закат",
+          "examples": "Tramonto bello."
+        },
+        {
+          "n": 477,
+          "italian": "turisti",
+          "pronunciation": "[тури́сти]",
+          "translation": "туристы",
+          "examples": "Turisti in piazza. Turisti rumorosi."
+        },
+        {
+          "n": 478,
+          "italian": "uomo",
+          "pronunciation": "[уо́мо]",
+          "translation": "мужчина",
+          "examples": "Uomo anziano."
+        },
+        {
+          "n": 479,
+          "italian": "vaporetti",
+          "pronunciation": "[вапоре́тти]",
+          "translation": "вапоретто (водные автобусы)",
+          "examples": "Vaporetti veloci."
+        },
+        {
+          "n": 480,
+          "italian": "venditori",
+          "pronunciation": "[вендито́ри]",
+          "translation": "продавцы",
+          "examples": "Venditori in mercato."
+        },
+        {
+          "n": 481,
+          "italian": "venezia",
+          "pronunciation": "[вене́ция]",
+          "translation": "Венеция",
+          "examples": "Venezia affascinante. Venezia bella."
+        },
+        {
+          "n": 482,
+          "italian": "veneziani",
+          "pronunciation": "[венецья́ни]",
+          "translation": "венецианцы",
+          "examples": "Veneziani locali."
+        },
+        {
+          "n": 483,
+          "italian": "vento",
+          "pronunciation": "[ве́нто]",
+          "translation": "ветер",
+          "examples": "Vento forte."
+        },
+        {
+          "n": 484,
+          "italian": "verdure",
+          "pronunciation": "[верду́ре]",
+          "translation": "овощи",
+          "examples": "Verdure fresche."
+        },
+        {
+          "n": 485,
+          "italian": "vista",
+          "pronunciation": "[ви́ста]",
+          "translation": "вид",
+          "examples": "Vista incredibile. Vista dal ponte."
+        },
+        {
+          "n": 486,
+          "italian": "voci",
+          "pronunciation": "[во́чи]",
+          "translation": "голоса",
+          "examples": "Voci di turisti."
+        },
+        {
+          "n": 487,
+          "italian": "volo",
+          "pronunciation": "[во́ло]",
+          "translation": "полёт",
+          "examples": "Volo di colomba."
+        },
+        {
+          "n": 488,
+          "italian": "volte",
+          "pronunciation": "[во́льте]",
+          "translation": "разы",
+          "examples": "Molte volte."
         }
       ]
     },
@@ -2572,7 +3482,7 @@
           "italian": "aggiungere",
           "pronunciation": "[адджу́нджере]",
           "translation": "добавлять",
-          "examples": "Io aggiungo il pomodoro. Lei aggiunge la nduja. Martina aggiunge sale alla pasta. Noi aggiungiamo il riso."
+          "examples": "Io aggiungo il pomodoro. Lei aggiunge la nduja. Martina aggiunge sale alla pasta. Noi aggiungiamo il riso. Aggiungere spezie. Aggiungere pane."
         },
         {
           "n": 9,
@@ -2607,7 +3517,7 @@
           "italian": "andare",
           "pronunciation": "[андáре]",
           "translation": "идти",
-          "examples": "Io vado a casa. Tu vai al bar. Il padre va in ufficio. La famiglia va a Roma. Noi andiamo al museo."
+          "examples": "Io vado a casa. Tu vai al bar. Il padre va in ufficio. La famiglia va a Roma. Noi andiamo al museo. Andare in piazza. Andare a casa. Andare al mercato."
         },
         {
           "n": 14,
@@ -2691,7 +3601,7 @@
           "italian": "avere",
           "pronunciation": "[авэ́ре]",
           "translation": "иметь",
-          "examples": "Io ho un amico. Tu hai una casa. Il padre ha un figlio. La madre ha una macchina. Noi abbiamo tempo."
+          "examples": "Io ho un amico. Tu hai una casa. Il padre ha un figlio. La madre ha una macchina. Noi abbiamo tempo. Avere amici. Avere casa."
         },
         {
           "n": 26,
@@ -2712,14 +3622,14 @@
           "italian": "bere",
           "pronunciation": "[бэ́ре]",
           "translation": "пить",
-          "examples": "Io bevo il caffè. Tu bevi l’acqua. Il bambino beve il latte. La madre beve il tè. Noi beviamo a colazione."
+          "examples": "Io bevo il caffè. Tu bevi l’acqua. Il bambino beve il latte. La madre beve il tè. Noi beviamo a colazione. Bere acqua. Bere fresca."
         },
         {
           "n": 29,
           "italian": "cadere",
           "pronunciation": "[кадэре]",
           "translation": "падать",
-          "examples": "Io cado dal letto. Tu cadi dal ponte. Il bambino cade piano. La madre cade poco."
+          "examples": "Io cado dal letto. Tu cadi dal ponte. Il bambino cade piano. La madre cade poco. Cadere in acqua."
         },
         {
           "n": 30,
@@ -2747,7 +3657,7 @@
           "italian": "capire",
           "pronunciation": "[капи́ре]",
           "translation": "понимать",
-          "examples": "Io capisco la lezione. Tu capisci italiano. L’amico capisce bene. La madre capisce il bambino. Noi capiamo la domanda."
+          "examples": "Io capisco la lezione. Tu capisci italiano. L’amico capisce bene. La madre capisce il bambino. Noi capiamo la domanda. Capire tutto. Capire la situazione."
         },
         {
           "n": 34,
@@ -2894,7 +3804,7 @@
           "italian": "detto",
           "pronunciation": "[де́тто]",
           "translation": "сказанный",
-          "examples": "Come ho detto. Come detto prima."
+          "examples": "Come ho detto. Come detto prima. Detto prima."
         },
         {
           "n": 55,
@@ -2999,14 +3909,14 @@
           "italian": "essere",
           "pronunciation": "[э́ссере]",
           "translation": "быть",
-          "examples": "Io sono russo. La casa è grande. Il bambino è bravo. La lezione è interessante. Noi siamo contenti."
+          "examples": "Io sono russo. La casa è grande. Il bambino è bravo. La lezione è interessante. Noi siamo contenti. Essere contenti. Essere in piazza."
         },
         {
           "n": 70,
           "italian": "fare",
           "pronunciation": "[фа́ре]",
           "translation": "делать",
-          "examples": "Io faccio un esercizio. Tu fai colazione. La madre fa la pasta. Noi facciamo un viaggio. Il ragazzo fa il lavoro."
+          "examples": "Io faccio un esercizio. Tu fai colazione. La madre fa la pasta. Noi facciamo un viaggio. Il ragazzo fa il lavoro. Fare il giro. Fare attenzione."
         },
         {
           "n": 71,
@@ -3111,7 +4021,7 @@
           "italian": "incontrare",
           "pronunciation": "[инконтрáре]",
           "translation": "встречать",
-          "examples": "Io incontro l’amico. Tu incontri la madre. Il padre incontra il dottore. La madre incontra l’amica. Noi incontriamo la famiglia."
+          "examples": "Io incontro l’amico. Tu incontri la madre. Il padre incontra il dottore. La madre incontra l’amica. Noi incontriamo la famiglia. Incontrare turisti."
         },
         {
           "n": 86,
@@ -3146,7 +4056,7 @@
           "italian": "lasciare",
           "pronunciation": "[лашáре]",
           "translation": "оставлять",
-          "examples": "Io lascio la casa. Tu lasci il lavoro. Il padre lascia il biglietto. La madre lascia il bambino. Noi lasciamo il bar."
+          "examples": "Io lascio la casa. Tu lasci il lavoro. Il padre lascia il biglietto. La madre lascia il bambino. Noi lasciamo il bar. Lasciare il posto."
         },
         {
           "n": 91,
@@ -3181,7 +4091,7 @@
           "italian": "mangiare",
           "pronunciation": "[манджáре]",
           "translation": "есть",
-          "examples": "Io mangio la pasta. Tu mangi il pesce. Il bambino mangia il limone. La madre mangia la colazione. Noi mangiamo a pranzo."
+          "examples": "Io mangio la pasta. Tu mangi il pesce. Il bambino mangia il limone. La madre mangia la colazione. Noi mangiamo a pranzo. Mangiare pane. Mangiare focaccia."
         },
         {
           "n": 96,
@@ -3251,7 +4161,7 @@
           "italian": "parlare",
           "pronunciation": "[парлáре]",
           "translation": "говорить",
-          "examples": "Io parlo italiano. Tu parli russo. L’amico parla bene. La madre parla con il bambino. Noi parliamo con l’amico."
+          "examples": "Io parlo italiano. Tu parli russo. L’amico parla bene. La madre parla con il bambino. Noi parliamo con l’amico. Parlare italiano. Parlare con amici."
         },
         {
           "n": 106,
@@ -3265,7 +4175,7 @@
           "italian": "passare",
           "pronunciation": "[пассáре]",
           "translation": "проходить",
-          "examples": "Io passo la lezione. Tu passi il tempo. Il padre passa il ponte. La madre passa la giornata. Noi passiamo il sabato."
+          "examples": "Io passo la lezione. Tu passi il tempo. Il padre passa il ponte. La madre passa la giornata. Noi passiamo il sabato. Passare il ponte."
         },
         {
           "n": 108,
@@ -3279,7 +4189,7 @@
           "italian": "perdere",
           "pronunciation": "[пэрдэре]",
           "translation": "терять",
-          "examples": "Io perdo il biglietto. Tu perdi il tempo. Il bambino perde il libro. La madre perde la chiave. Noi perdiamo il treno."
+          "examples": "Io perdo il biglietto. Tu perdi il tempo. Il bambino perde il libro. La madre perde la chiave. Noi perdiamo il treno. Perdere la strada."
         },
         {
           "n": 110,
@@ -3391,7 +4301,7 @@
           "italian": "può",
           "pronunciation": "[пуо́]",
           "translation": "может",
-          "examples": "Può venire. Può aspettare."
+          "examples": "Può venire. Può aspettare. Può andare. Può bere."
         },
         {
           "n": 126,
@@ -3426,7 +4336,7 @@
           "italian": "restare",
           "pronunciation": "[рестáре]",
           "translation": "оставаться",
-          "examples": "Io resto a casa. Tu resti in ufficio. Il padre resta al lavoro. La madre resta con il bambino. Noi restiamo in Italia."
+          "examples": "Io resto a casa. Tu resti in ufficio. Il padre resta al lavoro. La madre resta con il bambino. Noi restiamo in Italia. Restare in piazza."
         },
         {
           "n": 131,
@@ -3510,7 +4420,7 @@
           "italian": "sapere",
           "pronunciation": "[сапэ́ре]",
           "translation": "знать",
-          "examples": "Io so la lezione. Tu sai la risposta. L’amico sa italiano. La madre sa cucinare. Noi sappiamo la strada."
+          "examples": "Io so la lezione. Tu sai la risposta. L’amico sa italiano. La madre sa cucinare. Noi sappiamo la strada. Sapere tutto. Sapere la strada."
         },
         {
           "n": 143,
@@ -3629,7 +4539,7 @@
           "italian": "sentire",
           "pronunciation": "[сентúре]",
           "translation": "слышать / чувствовать",
-          "examples": "Io sento la voce. Tu senti la musica. Il bambino sente la madre. La madre sente il bambino. Noi sentiamo bene."
+          "examples": "Io sento la voce. Tu senti la musica. Il bambino sente la madre. La madre sente il bambino. Noi sentiamo bene. Sentire il profumo."
         },
         {
           "n": 160,
@@ -3706,7 +4616,7 @@
           "italian": "svegliare",
           "pronunciation": "[свелья́ре]",
           "translation": "будить",
-          "examples": "Io sveglio il bambino. Tu svegli il padre. La madre sveglia il figlio. Noi svegliamo presto."
+          "examples": "Io sveglio il bambino. Tu svegli il padre. La madre sveglia il figlio. Noi svegliamo presto. Svegliare il bambino."
         },
         {
           "n": 171,
@@ -3741,14 +4651,14 @@
           "italian": "tornare",
           "pronunciation": "[торнáре]",
           "translation": "возвращаться",
-          "examples": "Io torno a casa. Tu torni al bar. Il padre torna dal lavoro. La madre torna dal negozio. Noi torniamo a Roma."
+          "examples": "Io torno a casa. Tu torni al bar. Il padre torna dal lavoro. La madre torna dal negozio. Noi torniamo a Roma. Tornare a casa."
         },
         {
           "n": 176,
           "italian": "trovare",
           "pronunciation": "[тровáре]",
           "translation": "находить",
-          "examples": "Io trovo la casa. Tu trovi il bar. Il padre trova il lavoro. La madre trova la chiave. Noi troviamo il museo."
+          "examples": "Io trovo la casa. Tu trovi il bar. Il padre trova il lavoro. La madre trova la chiave. Noi troviamo il museo. Trovare amici. Trovare casa."
         },
         {
           "n": 177,
@@ -3769,7 +4679,7 @@
           "italian": "vedere",
           "pronunciation": "[ведэ́ре]",
           "translation": "видеть",
-          "examples": "Io vedo la casa. Tu vedi il museo. Il bambino vede il padre. La madre vede l’amica. Noi vediamo il panorama."
+          "examples": "Io vedo la casa. Tu vedi il museo. Il bambino vede il padre. La madre vede l’amica. Noi vediamo il panorama. Vedere la vista."
         },
         {
           "n": 180,
@@ -3833,6 +4743,1196 @@
           "pronunciation": "[волэ́ре]",
           "translation": "хотеть",
           "examples": "Io voglio un caffè. Tu vuoi la pasta. Il bambino vuole il gelato. La madre vuole la macchina. Noi vogliamo viaggiare."
+        },
+        {
+          "n": 189,
+          "italian": "abbaia",
+          "pronunciation": "[абба́йа]",
+          "translation": "лает",
+          "examples": "Il cane abbaia. Il cane abbaia forte. Il cane abbaia in cortile. Il cane abbaia al bambino. Il cane abbaia ai piccioni."
+        },
+        {
+          "n": 190,
+          "italian": "abbiamo",
+          "pronunciation": "[аббья́мо]",
+          "translation": "у нас есть (мы имеем)",
+          "examples": "Noi abbiamo amici. Abbiamo casa. Abbiamo acqua. Abbiamo amici in città. Abbiamo pane."
+        },
+        {
+          "n": 191,
+          "italian": "abita",
+          "pronunciation": "[а́бита]",
+          "translation": "живёт (он/она)",
+          "examples": "Lui abita in città. Lei abita vicino. Abita in casa. Abita a Venezia. Abita vicino al ponte."
+        },
+        {
+          "n": 192,
+          "italian": "addensano",
+          "pronunciation": "[адде́нсано]",
+          "translation": "сгущают",
+          "examples": "Nuvole addensano. Nuvole addensano in cielo."
+        },
+        {
+          "n": 193,
+          "italian": "addormenta",
+          "pronunciation": "[аддорме́нта]",
+          "translation": "укладывает спать",
+          "examples": "Lui addormenta il bambino. Addormenta presto."
+        },
+        {
+          "n": 194,
+          "italian": "aggirano",
+          "pronunciation": "[адджира́но]",
+          "translation": "обходят",
+          "examples": "Turisti aggirano. Aggirano il mercato. Aggirano i canali."
+        },
+        {
+          "n": 195,
+          "italian": "aiutarlo",
+          "pronunciation": "[айута́рло]",
+          "translation": "помочь ему",
+          "examples": "Possiamo aiutarlo. Aiutarlo a trovare."
+        },
+        {
+          "n": 196,
+          "italian": "aiutarti",
+          "pronunciation": "[айута́рти]",
+          "translation": "помочь тебе",
+          "examples": "Posso aiutarti. Aiutarti a trovare."
+        },
+        {
+          "n": 197,
+          "italian": "alza",
+          "pronunciation": "[а́льца]",
+          "translation": "поднимает",
+          "examples": "Lui alza la testa. Alza la mano."
+        },
+        {
+          "n": 198,
+          "italian": "alzano",
+          "pronunciation": "[а́льцано]",
+          "translation": "поднимают",
+          "examples": "Loro alzano le mani. Alzano la testa."
+        },
+        {
+          "n": 199,
+          "italian": "amano",
+          "pronunciation": "[а́мано]",
+          "translation": "любят",
+          "examples": "Loro amano Venezia. Amano il mare. Amano il pane."
+        },
+        {
+          "n": 200,
+          "italian": "andata",
+          "pronunciation": "[анда́та]",
+          "translation": "ушла (ж.р.)",
+          "examples": "Lei andata. Andata via."
+        },
+        {
+          "n": 201,
+          "italian": "andiamo",
+          "pronunciation": "[андья́мо]",
+          "translation": "идём",
+          "examples": "Andiamo in piazza. Andiamo a casa. Andiamo al ponte."
+        },
+        {
+          "n": 202,
+          "italian": "annuisce",
+          "pronunciation": "[аннуи́сче]",
+          "translation": "кивает",
+          "examples": "Lui annuisce. Annuisce con la testa."
+        },
+        {
+          "n": 203,
+          "italian": "approfitta",
+          "pronunciation": "[аппрофи́тта]",
+          "translation": "пользуется",
+          "examples": "Lui approfitta. Approfitta dell'occasione."
+        },
+        {
+          "n": 204,
+          "italian": "arrende",
+          "pronunciation": "[арре́нде]",
+          "translation": "сдаётся",
+          "examples": "Lui arrende. Arrende subito."
+        },
+        {
+          "n": 205,
+          "italian": "arriva",
+          "pronunciation": "[арри́ва]",
+          "translation": "прибывает (он/она)",
+          "examples": "Lui arriva. Lei arriva in piazza."
+        },
+        {
+          "n": 206,
+          "italian": "arrivano",
+          "pronunciation": "[арри́вано]",
+          "translation": "прибывают (они)",
+          "examples": "Turisti arrivano. Arrivano in città."
+        },
+        {
+          "n": 207,
+          "italian": "ascolta",
+          "pronunciation": "[аско́льта]",
+          "translation": "слушает",
+          "examples": "Lui ascolta. Ascolta il rumore."
+        },
+        {
+          "n": 208,
+          "italian": "aspetta",
+          "pronunciation": "[аспе́тта]",
+          "translation": "ждёт",
+          "examples": "Lui aspetta. Aspetta il bambino."
+        },
+        {
+          "n": 209,
+          "italian": "aspettami",
+          "pronunciation": "[аспе́ттами]",
+          "translation": "подожди меня",
+          "examples": "Aspettami qui. Aspettami al ponte."
+        },
+        {
+          "n": 210,
+          "italian": "attirare",
+          "pronunciation": "[аттира́ре]",
+          "translation": "привлекать",
+          "examples": "Attirare turisti. Attirare attenzione."
+        },
+        {
+          "n": 211,
+          "italian": "attraversa",
+          "pronunciation": "[аттраве́рса]",
+          "translation": "пересекает",
+          "examples": "Lui attraversa. Attraversa la piazza."
+        },
+        {
+          "n": 212,
+          "italian": "aver",
+          "pronunciation": "[аве́р]",
+          "translation": "иметь (инф.)",
+          "examples": "Aver acqua. Aver pane."
+        },
+        {
+          "n": 213,
+          "italian": "avete",
+          "pronunciation": "[аве́те]",
+          "translation": "у вас есть (вы имеете)",
+          "examples": "Avete amici. Avete acqua."
+        },
+        {
+          "n": 214,
+          "italian": "aveva",
+          "pronunciation": "[аве́ва]",
+          "translation": "имел (он/она)",
+          "examples": "Aveva casa. Aveva amici."
+        },
+        {
+          "n": 215,
+          "italian": "avverte",
+          "pronunciation": "[авве́рте]",
+          "translation": "предупреждает",
+          "examples": "Lui avverte. Avverte il pericolo."
+        },
+        {
+          "n": 216,
+          "italian": "avvicina",
+          "pronunciation": "[аввичи́на]",
+          "translation": "приближается",
+          "examples": "Lui avvicina. Avvicina la casa."
+        },
+        {
+          "n": 217,
+          "italian": "avvicinandosi",
+          "pronunciation": "[аввичина́ндоси]",
+          "translation": "приближаясь",
+          "examples": "Avvicinandosi al ponte."
+        },
+        {
+          "n": 218,
+          "italian": "avvicinano",
+          "pronunciation": "[аввичи́нано]",
+          "translation": "приближаются",
+          "examples": "Loro avvicinano. Avvicinano la piazza."
+        },
+        {
+          "n": 219,
+          "italian": "beccano",
+          "pronunciation": "[бе́ккано]",
+          "translation": "клюют",
+          "examples": "Piccioni beccano. Beccano briciole."
+        },
+        {
+          "n": 220,
+          "italian": "cammina",
+          "pronunciation": "[камми́на]",
+          "translation": "ходит",
+          "examples": "Lui cammina. Cammina in calle."
+        },
+        {
+          "n": 221,
+          "italian": "capisce",
+          "pronunciation": "[капи́ше]",
+          "translation": "понимает",
+          "examples": "Lui capisce. Capisce il problema."
+        },
+        {
+          "n": 222,
+          "italian": "cerca",
+          "pronunciation": "[че́рка]",
+          "translation": "ищет",
+          "examples": "Lui cerca. Cerca il cane."
+        },
+        {
+          "n": 223,
+          "italian": "cercando",
+          "pronunciation": "[черка́ндо]",
+          "translation": "ища",
+          "examples": "Cercando il ponte."
+        },
+        {
+          "n": 224,
+          "italian": "cessa",
+          "pronunciation": "[че́сса]",
+          "translation": "прекращается",
+          "examples": "Pioggia cessa."
+        },
+        {
+          "n": 225,
+          "italian": "chiede",
+          "pronunciation": "[кье́де]",
+          "translation": "спрашивает",
+          "examples": "Lui chiede. Chiede la strada."
+        },
+        {
+          "n": 226,
+          "italian": "comincia",
+          "pronunciation": "[коми́нча]",
+          "translation": "начинает",
+          "examples": "Lui comincia. Comincia a parlare."
+        },
+        {
+          "n": 227,
+          "italian": "cominciano",
+          "pronunciation": "[коми́нчано]",
+          "translation": "начинают",
+          "examples": "Loro cominciano. Cominciano a camminare."
+        },
+        {
+          "n": 228,
+          "italian": "continua",
+          "pronunciation": "[конти́нуа]",
+          "translation": "продолжается",
+          "examples": "Pioggia continua."
+        },
+        {
+          "n": 229,
+          "italian": "corre",
+          "pronunciation": "[ко́рре]",
+          "translation": "бежит",
+          "examples": "Lui corre. Corre in piazza."
+        },
+        {
+          "n": 230,
+          "italian": "crederci",
+          "pronunciation": "[креде́рчи]",
+          "translation": "верить в это",
+          "examples": "Non crederci."
+        },
+        {
+          "n": 231,
+          "italian": "custodisce",
+          "pronunciation": "[кустоди́ше]",
+          "translation": "хранит",
+          "examples": "Custodisce il segreto."
+        },
+        {
+          "n": 232,
+          "italian": "decide",
+          "pronunciation": "[дечи́де]",
+          "translation": "решает",
+          "examples": "Lui decide. Decide di andare."
+        },
+        {
+          "n": 233,
+          "italian": "deve",
+          "pronunciation": "[де́ве]",
+          "translation": "должен",
+          "examples": "Deve andare. Deve bere."
+        },
+        {
+          "n": 234,
+          "italian": "dice",
+          "pronunciation": "[ди́че]",
+          "translation": "говорит",
+          "examples": "Lui dice. Dice grazie."
+        },
+        {
+          "n": 235,
+          "italian": "dicevano",
+          "pronunciation": "[диче́вано]",
+          "translation": "говорили",
+          "examples": "Loro dicevano."
+        },
+        {
+          "n": 236,
+          "italian": "dicono",
+          "pronunciation": "[ди́коно]",
+          "translation": "говорят",
+          "examples": "Loro dicono. Dicono che bello."
+        },
+        {
+          "n": 237,
+          "italian": "diventa",
+          "pronunciation": "[деве́нта]",
+          "translation": "становится",
+          "examples": "Lui diventa. Diventa agitato."
+        },
+        {
+          "n": 238,
+          "italian": "diventano",
+          "pronunciation": "[деве́нтано]",
+          "translation": "становятся",
+          "examples": "Loro diventano. Diventano contenti."
+        },
+        {
+          "n": 239,
+          "italian": "diventerà",
+          "pronunciation": "[дивенте́ра]",
+          "translation": "станет",
+          "examples": "Lui diventerà. Diventerà famoso."
+        },
+        {
+          "n": 240,
+          "italian": "dobbiamo",
+          "pronunciation": "[доббья́мо]",
+          "translation": "мы должны",
+          "examples": "Dobbiamo andare. Dobbiamo bere."
+        },
+        {
+          "n": 241,
+          "italian": "dà",
+          "pronunciation": "[да]",
+          "translation": "даёт",
+          "examples": "Lui dà. Dà il pane."
+        },
+        {
+          "n": 242,
+          "italian": "era",
+          "pronunciation": "[э́ра]",
+          "translation": "был (он/она)",
+          "examples": "Era bello. Era in piazza."
+        },
+        {
+          "n": 243,
+          "italian": "erano",
+          "pronunciation": "[э́рано]",
+          "translation": "были (они)",
+          "examples": "Erano contenti. Erano in città."
+        },
+        {
+          "n": 244,
+          "italian": "esclama",
+          "pronunciation": "[эскла́ма]",
+          "translation": "восклицает",
+          "examples": "Lui esclama. Esclama forte."
+        },
+        {
+          "n": 245,
+          "italian": "esplorando",
+          "pronunciation": "[эсплора́ндо]",
+          "translation": "исследуя",
+          "examples": "Esplorando la città."
+        },
+        {
+          "n": 246,
+          "italian": "fa",
+          "pronunciation": "[фа]",
+          "translation": "делает",
+          "examples": "Lui fa. Fa il gesto."
+        },
+        {
+          "n": 247,
+          "italian": "facendo",
+          "pronunciation": "[фаче́ндо]",
+          "translation": "делая",
+          "examples": "Facendo il giro."
+        },
+        {
+          "n": 248,
+          "italian": "faceva",
+          "pronunciation": "[фаче́ва]",
+          "translation": "делал (он/она)",
+          "examples": "Faceva il giro."
+        },
+        {
+          "n": 249,
+          "italian": "fai",
+          "pronunciation": "[фай]",
+          "translation": "делаешь",
+          "examples": "Che fai. Fai attenzione."
+        },
+        {
+          "n": 250,
+          "italian": "farà",
+          "pronunciation": "[фара́]",
+          "translation": "сделает",
+          "examples": "Lui farà. Farà il giro."
+        },
+        {
+          "n": 251,
+          "italian": "ferma",
+          "pronunciation": "[фе́рма]",
+          "translation": "останавливается (ж.р.)",
+          "examples": "Lei ferma."
+        },
+        {
+          "n": 252,
+          "italian": "fermiamoci",
+          "pronunciation": "[фермя́моччи]",
+          "translation": "остановимся",
+          "examples": "Fermiamoci qui."
+        },
+        {
+          "n": 253,
+          "italian": "fischiare",
+          "pronunciation": "[фискья́ре]",
+          "translation": "свистеть",
+          "examples": "Fischiare forte."
+        },
+        {
+          "n": 254,
+          "italian": "fiutare",
+          "pronunciation": "[фьюта́ре]",
+          "translation": "чуять",
+          "examples": "Fiutare il profumo."
+        },
+        {
+          "n": 255,
+          "italian": "giocano",
+          "pronunciation": "[джо́кано]",
+          "translation": "играют",
+          "examples": "Bambini giocano. Piccioni giocano."
+        },
+        {
+          "n": 256,
+          "italian": "grida",
+          "pronunciation": "[гри́да]",
+          "translation": "кричит",
+          "examples": "Lui grida. Grida forte."
+        },
+        {
+          "n": 257,
+          "italian": "guarda",
+          "pronunciation": "[гуа́рда]",
+          "translation": "смотрит",
+          "examples": "Lui guarda. Guarda il ponte."
+        },
+        {
+          "n": 258,
+          "italian": "guardano",
+          "pronunciation": "[гуа́рдано]",
+          "translation": "смотрят",
+          "examples": "Loro guardano. Guardano la vista."
+        },
+        {
+          "n": 259,
+          "italian": "guiderò",
+          "pronunciation": "[гвиде́ро]",
+          "translation": "поведу",
+          "examples": "Io guiderò. Guiderò il gruppo."
+        },
+        {
+          "n": 260,
+          "italian": "ha",
+          "pronunciation": "[а]",
+          "translation": "имеет (он/она)",
+          "examples": "Ha amici. Ha casa."
+        },
+        {
+          "n": 261,
+          "italian": "hai",
+          "pronunciation": "[ай]",
+          "translation": "имеешь (ты)",
+          "examples": "Hai acqua. Hai pane."
+        },
+        {
+          "n": 262,
+          "italian": "hanno",
+          "pronunciation": "[а́нно]",
+          "translation": "имеют (они)",
+          "examples": "Hanno amici. Hanno casa."
+        },
+        {
+          "n": 263,
+          "italian": "ho",
+          "pronunciation": "[о]",
+          "translation": "имею (я)",
+          "examples": "Ho amici. Ho casa."
+        },
+        {
+          "n": 264,
+          "italian": "incontra",
+          "pronunciation": "[инко́нтра]",
+          "translation": "встречает",
+          "examples": "Lui incontra. Incontra amici."
+        },
+        {
+          "n": 265,
+          "italian": "incrociano",
+          "pronunciation": "[инкро́чано]",
+          "translation": "пересекают",
+          "examples": "Strade incrociano."
+        },
+        {
+          "n": 266,
+          "italian": "inizia",
+          "pronunciation": "[ини́цья]",
+          "translation": "начинается",
+          "examples": "Lui inizia. Inizia il giro."
+        },
+        {
+          "n": 267,
+          "italian": "lascia",
+          "pronunciation": "[ла́ша]",
+          "translation": "оставляет",
+          "examples": "Lui lascia. Lascia il cane."
+        },
+        {
+          "n": 268,
+          "italian": "lasciali",
+          "pronunciation": "[ла́шали]",
+          "translation": "оставь их",
+          "examples": "Lasciali in pace."
+        },
+        {
+          "n": 269,
+          "italian": "lasciar",
+          "pronunciation": "[лаша́р]",
+          "translation": "оставить",
+          "examples": "Lasciar andare."
+        },
+        {
+          "n": 270,
+          "italian": "lasciato",
+          "pronunciation": "[лаша́то]",
+          "translation": "оставленный",
+          "examples": "Lasciato solo."
+        },
+        {
+          "n": 271,
+          "italian": "litigare",
+          "pronunciation": "[литига́ре]",
+          "translation": "ссориться",
+          "examples": "Non litigare."
+        },
+        {
+          "n": 272,
+          "italian": "mangiano",
+          "pronunciation": "[ма́нджяно]",
+          "translation": "едят",
+          "examples": "Loro mangiano. Mangiano pane."
+        },
+        {
+          "n": 273,
+          "italian": "mangiarne",
+          "pronunciation": "[манджа́рне]",
+          "translation": "съесть его",
+          "examples": "Mangiarne un po'."
+        },
+        {
+          "n": 274,
+          "italian": "mescola",
+          "pronunciation": "[ме́скола]",
+          "translation": "смешивает",
+          "examples": "Lui mescola. Mescola spezie."
+        },
+        {
+          "n": 275,
+          "italian": "mescolano",
+          "pronunciation": "[ме́сколано]",
+          "translation": "смешивают",
+          "examples": "Loro mescolano. Mescolano colori."
+        },
+        {
+          "n": 276,
+          "italian": "muoversi",
+          "pronunciation": "[муо́верси]",
+          "translation": "двигаться",
+          "examples": "Muoversi in piazza."
+        },
+        {
+          "n": 277,
+          "italian": "offre",
+          "pronunciation": "[о́ффре]",
+          "translation": "предлагает",
+          "examples": "Lui offre. Offre pane."
+        },
+        {
+          "n": 278,
+          "italian": "offrono",
+          "pronunciation": "[о́ффрано]",
+          "translation": "предлагают",
+          "examples": "Loro offrono. Offrono acqua."
+        },
+        {
+          "n": 279,
+          "italian": "ondeggiano",
+          "pronunciation": "[онде́джано]",
+          "translation": "колышутся",
+          "examples": "Gondole ondeggiano."
+        },
+        {
+          "n": 280,
+          "italian": "osservano",
+          "pronunciation": "[оссерва́но]",
+          "translation": "наблюдают",
+          "examples": "Loro osservano. Osservano i turisti."
+        },
+        {
+          "n": 281,
+          "italian": "parlano",
+          "pronunciation": "[па́рлано]",
+          "translation": "говорят",
+          "examples": "Loro parlano. Parlano di Venezia."
+        },
+        {
+          "n": 282,
+          "italian": "parlavano",
+          "pronunciation": "[парла́вано]",
+          "translation": "говорили",
+          "examples": "Loro parlavano."
+        },
+        {
+          "n": 283,
+          "italian": "passa",
+          "pronunciation": "[па́сса]",
+          "translation": "проходит",
+          "examples": "Lui passa. Passa la pioggia."
+        },
+        {
+          "n": 284,
+          "italian": "pensa",
+          "pronunciation": "[пе́нса]",
+          "translation": "думает",
+          "examples": "Lui pensa. Pensa al ponte."
+        },
+        {
+          "n": 285,
+          "italian": "perderla",
+          "pronunciation": "[перде́рла]",
+          "translation": "потерять её",
+          "examples": "Perderla subito."
+        },
+        {
+          "n": 286,
+          "italian": "piovere",
+          "pronunciation": "[пьо́вере]",
+          "translation": "идти (о дожде)",
+          "examples": "Comincia a piovere."
+        },
+        {
+          "n": 287,
+          "italian": "portano",
+          "pronunciation": "[по́ртано]",
+          "translation": "несут",
+          "examples": "Loro portano. Portano pane."
+        },
+        {
+          "n": 288,
+          "italian": "posano",
+          "pronunciation": "[по́зано]",
+          "translation": "кладут",
+          "examples": "Loro posano. Posano briciole."
+        },
+        {
+          "n": 289,
+          "italian": "possiamo",
+          "pronunciation": "[посся́мо]",
+          "translation": "мы можем",
+          "examples": "Possiamo andare. Possiamo aiutare."
+        },
+        {
+          "n": 290,
+          "italian": "posso",
+          "pronunciation": "[по́ссо]",
+          "translation": "я могу",
+          "examples": "Posso aiutare. Posso bere."
+        },
+        {
+          "n": 291,
+          "italian": "poteva",
+          "pronunciation": "[поте́ва]",
+          "translation": "мог (он/она)",
+          "examples": "Poteva andare."
+        },
+        {
+          "n": 292,
+          "italian": "prende",
+          "pronunciation": "[пре́нде]",
+          "translation": "берёт",
+          "examples": "Lui prende. Prende il pane."
+        },
+        {
+          "n": 293,
+          "italian": "preoccuparsi",
+          "pronunciation": "[преоккупа́рси]",
+          "translation": "беспокоиться",
+          "examples": "Non preoccuparsi."
+        },
+        {
+          "n": 294,
+          "italian": "preoccuparti",
+          "pronunciation": "[преоккупа́рти]",
+          "translation": "беспокоиться (ты)",
+          "examples": "Non preoccuparti."
+        },
+        {
+          "n": 295,
+          "italian": "proseguire",
+          "pronunciation": "[просегви́ре]",
+          "translation": "продолжать",
+          "examples": "Proseguire il giro."
+        },
+        {
+          "n": 296,
+          "italian": "punta",
+          "pronunciation": "[пу́нта]",
+          "translation": "указывает",
+          "examples": "Punta il dito."
+        },
+        {
+          "n": 297,
+          "italian": "puoi",
+          "pronunciation": "[пуо́й]",
+          "translation": "можешь (ты)",
+          "examples": "Puoi andare. Puoi aiutare."
+        },
+        {
+          "n": 298,
+          "italian": "rapire",
+          "pronunciation": "[рапи́ре]",
+          "translation": "похищать",
+          "examples": "Rapire l'attenzione."
+        },
+        {
+          "n": 299,
+          "italian": "rappresenta",
+          "pronunciation": "[раппрезе́нта]",
+          "translation": "представляет",
+          "examples": "Lui rappresenta. Rappresenta Venezia."
+        },
+        {
+          "n": 300,
+          "italian": "resti",
+          "pronunciation": "[ре́сти]",
+          "translation": "остаёшься",
+          "examples": "Tu resti."
+        },
+        {
+          "n": 301,
+          "italian": "rimangono",
+          "pronunciation": "[рима́ньяно]",
+          "translation": "остаются",
+          "examples": "Loro rimangono. Rimangono in piazza."
+        },
+        {
+          "n": 302,
+          "italian": "ripeto",
+          "pronunciation": "[рипе́то]",
+          "translation": "повторяю",
+          "examples": "Io ripeto. Ripeto grazie."
+        },
+        {
+          "n": 303,
+          "italian": "riposano",
+          "pronunciation": "[рипо́зано]",
+          "translation": "отдыхают",
+          "examples": "Loro riposano. Riposano al sole."
+        },
+        {
+          "n": 304,
+          "italian": "risolvere",
+          "pronunciation": "[ризо́львере]",
+          "translation": "решать",
+          "examples": "Risolvere il problema."
+        },
+        {
+          "n": 305,
+          "italian": "risponde",
+          "pronunciation": "[риспо́нде]",
+          "translation": "отвечает",
+          "examples": "Lui risponde. Risponde al cane."
+        },
+        {
+          "n": 306,
+          "italian": "sa",
+          "pronunciation": "[са]",
+          "translation": "знает (он/она)",
+          "examples": "Sa tutto. Sa la strada."
+        },
+        {
+          "n": 307,
+          "italian": "sai",
+          "pronunciation": "[сай]",
+          "translation": "знаешь (ты)",
+          "examples": "Sai dove."
+        },
+        {
+          "n": 308,
+          "italian": "sanno",
+          "pronunciation": "[са́нно]",
+          "translation": "знают (они)",
+          "examples": "Loro sanno. Sanno la città."
+        },
+        {
+          "n": 309,
+          "italian": "sarà",
+          "pronunciation": "[сара́]",
+          "translation": "будет",
+          "examples": "Sarà bello. Sarà grande."
+        },
+        {
+          "n": 310,
+          "italian": "sarò",
+          "pronunciation": "[саро́]",
+          "translation": "буду",
+          "examples": "Io sarò. Sarò in piazza."
+        },
+        {
+          "n": 311,
+          "italian": "scappa",
+          "pronunciation": "[ска́ппа]",
+          "translation": "убегает",
+          "examples": "Lui scappa. Scappa dal cane."
+        },
+        {
+          "n": 312,
+          "italian": "scuote",
+          "pronunciation": "[скуо́те]",
+          "translation": "трясёт",
+          "examples": "Lui scuote. Scuote la testa."
+        },
+        {
+          "n": 313,
+          "italian": "scuotono",
+          "pronunciation": "[скуо́тоно]",
+          "translation": "трясут",
+          "examples": "Loro scuotono. Scuotono la testa."
+        },
+        {
+          "n": 314,
+          "italian": "scusami",
+          "pronunciation": "[скуза́ми]",
+          "translation": "извини меня",
+          "examples": "Scusami per favore."
+        },
+        {
+          "n": 315,
+          "italian": "segue",
+          "pronunciation": "[се́гве]",
+          "translation": "следует",
+          "examples": "Lui segue. Segue il gruppo."
+        },
+        {
+          "n": 316,
+          "italian": "seguirla",
+          "pronunciation": "[сегуи́рла]",
+          "translation": "следовать за ней",
+          "examples": "Seguirla in calle."
+        },
+        {
+          "n": 317,
+          "italian": "sei",
+          "pronunciation": "[сей]",
+          "translation": "ты (есть)",
+          "examples": "Sei bravo. Sei in città."
+        },
+        {
+          "n": 318,
+          "italian": "sembra",
+          "pronunciation": "[се́мбра]",
+          "translation": "кажется",
+          "examples": "Sembra bello. Sembra tranquillo."
+        },
+        {
+          "n": 319,
+          "italian": "sente",
+          "pronunciation": "[се́нте]",
+          "translation": "чувствует",
+          "examples": "Lui sente. Sente il profumo."
+        },
+        {
+          "n": 320,
+          "italian": "sentito",
+          "pronunciation": "[сенти́то]",
+          "translation": "почувствовал",
+          "examples": "Ha sentito."
+        },
+        {
+          "n": 321,
+          "italian": "sentono",
+          "pronunciation": "[се́нтоно]",
+          "translation": "чувствуют",
+          "examples": "Loro sentono. Sentono il rumore."
+        },
+        {
+          "n": 322,
+          "italian": "serve",
+          "pronunciation": "[се́рве]",
+          "translation": "нужно",
+          "examples": "Serve acqua. Serve pane."
+        },
+        {
+          "n": 323,
+          "italian": "sia",
+          "pronunciation": "[си́а]",
+          "translation": "будь / является",
+          "examples": "Sia bello."
+        },
+        {
+          "n": 324,
+          "italian": "siamo",
+          "pronunciation": "[сья́мо]",
+          "translation": "мы есть",
+          "examples": "Siamo amici. Siamo in piazza."
+        },
+        {
+          "n": 325,
+          "italian": "significa",
+          "pronunciation": "[сигни́фика]",
+          "translation": "означает",
+          "examples": "Significa attenzione."
+        },
+        {
+          "n": 326,
+          "italian": "so",
+          "pronunciation": "[со]",
+          "translation": "знаю (я)",
+          "examples": "So tutto. So la strada."
+        },
+        {
+          "n": 327,
+          "italian": "sono",
+          "pronunciation": "[со́но]",
+          "translation": "я есть / они есть",
+          "examples": "Sono in piazza. Sono amici."
+        },
+        {
+          "n": 328,
+          "italian": "sorride",
+          "pronunciation": "[сорри́де]",
+          "translation": "улыбается",
+          "examples": "Lui sorride. Sorride al bambino."
+        },
+        {
+          "n": 329,
+          "italian": "sorvola",
+          "pronunciation": "[сорво́ла]",
+          "translation": "пролетает",
+          "examples": "Colomba sorvola."
+        },
+        {
+          "n": 330,
+          "italian": "sorvolano",
+          "pronunciation": "[сорво́лано]",
+          "translation": "пролетают",
+          "examples": "Piccioni sorvolano."
+        },
+        {
+          "n": 331,
+          "italian": "sparire",
+          "pronunciation": "[спари́ре]",
+          "translation": "исчезать",
+          "examples": "Sparire in calle."
+        },
+        {
+          "n": 332,
+          "italian": "stai",
+          "pronunciation": "[стай]",
+          "translation": "ты (есть)",
+          "examples": "Come stai. Stai bene."
+        },
+        {
+          "n": 333,
+          "italian": "stata",
+          "pronunciation": "[ста́та]",
+          "translation": "была (ж.р.)",
+          "examples": "È stata bella."
+        },
+        {
+          "n": 334,
+          "italian": "stiracchia",
+          "pronunciation": "[стира́ккья]",
+          "translation": "потягивается",
+          "examples": "Lui stiracchia. Stiracchia le braccia."
+        },
+        {
+          "n": 335,
+          "italian": "stringe",
+          "pronunciation": "[стри́нже]",
+          "translation": "сжимает",
+          "examples": "Lui stringe. Stringe la mano."
+        },
+        {
+          "n": 336,
+          "italian": "torna",
+          "pronunciation": "[то́рна]",
+          "translation": "возвращается",
+          "examples": "Lui torna. Torna a casa."
+        },
+        {
+          "n": 337,
+          "italian": "tornano",
+          "pronunciation": "[то́рнано]",
+          "translation": "возвращаются",
+          "examples": "Loro tornano. Tornano in piazza."
+        },
+        {
+          "n": 338,
+          "italian": "tratta",
+          "pronunciation": "[тра́тта]",
+          "translation": "речь идёт",
+          "examples": "Si tratta di."
+        },
+        {
+          "n": 339,
+          "italian": "trova",
+          "pronunciation": "[тро́ва]",
+          "translation": "находит",
+          "examples": "Lui trova. Trova il ponte."
+        },
+        {
+          "n": 340,
+          "italian": "trovano",
+          "pronunciation": "[тро́вано]",
+          "translation": "находят",
+          "examples": "Loro trovano. Trovano la strada."
+        },
+        {
+          "n": 341,
+          "italian": "trovarla",
+          "pronunciation": "[трова́рла]",
+          "translation": "найти её",
+          "examples": "Trovarla subito."
+        },
+        {
+          "n": 342,
+          "italian": "trovato",
+          "pronunciation": "[трова́то]",
+          "translation": "найденный",
+          "examples": "Trovato il cane."
+        },
+        {
+          "n": 343,
+          "italian": "troverà",
+          "pronunciation": "[тровера́]",
+          "translation": "найдёт",
+          "examples": "Lui troverà. Troverà la strada."
+        },
+        {
+          "n": 344,
+          "italian": "urlano",
+          "pronunciation": "[урла́но]",
+          "translation": "кричат",
+          "examples": "Loro urlano. Urlano forte."
+        },
+        {
+          "n": 345,
+          "italian": "va",
+          "pronunciation": "[ва]",
+          "translation": "идёт",
+          "examples": "Lui va. Va in piazza."
+        },
+        {
+          "n": 346,
+          "italian": "vanno",
+          "pronunciation": "[ва́нно]",
+          "translation": "идут",
+          "examples": "Loro vanno. Vanno al ponte."
+        },
+        {
+          "n": 347,
+          "italian": "vede",
+          "pronunciation": "[ве́де]",
+          "translation": "видит",
+          "examples": "Lui vede. Vede il ponte."
+        },
+        {
+          "n": 348,
+          "italian": "vederlo",
+          "pronunciation": "[веде́рло]",
+          "translation": "видеть его",
+          "examples": "Vederlo subito."
+        },
+        {
+          "n": 349,
+          "italian": "vengono",
+          "pronunciation": "[ве́нгоньо]",
+          "translation": "приходят",
+          "examples": "Loro vengono. Vengono in piazza."
+        },
+        {
+          "n": 350,
+          "italian": "viene",
+          "pronunciation": "[вье́не]",
+          "translation": "приходит",
+          "examples": "Lui viene. Viene in piazza."
+        },
+        {
+          "n": 351,
+          "italian": "vieni",
+          "pronunciation": "[вье́ни]",
+          "translation": "приходи (ты)",
+          "examples": "Vieni qui. Vieni con me."
+        },
+        {
+          "n": 352,
+          "italian": "visitano",
+          "pronunciation": "[визи́тано]",
+          "translation": "посещают",
+          "examples": "Turisti visitano. Visitano la città."
+        },
+        {
+          "n": 353,
+          "italian": "visto",
+          "pronunciation": "[ви́сто]",
+          "translation": "увидел",
+          "examples": "Ha visto."
+        },
+        {
+          "n": 354,
+          "italian": "vogliono",
+          "pronunciation": "[во́льоньо]",
+          "translation": "хотят",
+          "examples": "Loro vogliono. Vogliono andare."
+        },
+        {
+          "n": 355,
+          "italian": "vola",
+          "pronunciation": "[во́ла]",
+          "translation": "летит",
+          "examples": "Colomba vola."
+        },
+        {
+          "n": 356,
+          "italian": "volano",
+          "pronunciation": "[во́лано]",
+          "translation": "летят",
+          "examples": "Piccioni volano."
+        },
+        {
+          "n": 357,
+          "italian": "volare",
+          "pronunciation": "[вола́ре]",
+          "translation": "летать",
+          "examples": "Volare sopra i tetti."
+        },
+        {
+          "n": 358,
+          "italian": "vuole",
+          "pronunciation": "[вуо́ле]",
+          "translation": "хочет",
+          "examples": "Lui vuole. Vuole andare."
         }
       ]
     },
@@ -3852,7 +5952,7 @@
           "italian": "accogliente",
           "pronunciation": "[аккольéнтэ]",
           "translation": "уютный",
-          "examples": "L’albergo è accogliente. La camera è accogliente."
+          "examples": "L’albergo è accogliente. La camera è accogliente. La casa accogliente. Città accogliente. Zona accogliente."
         },
         {
           "n": 3,
@@ -3866,14 +5966,14 @@
           "italian": "alto",
           "pronunciation": "[áльто]",
           "translation": "высокий",
-          "examples": "Il ragazzo è alto. Il palazzo è alto."
+          "examples": "Il ragazzo è alto. Il palazzo è alto. Alto palazzo. Alto ponte. Alto castello."
         },
         {
           "n": 5,
           "italian": "altro",
           "pronunciation": "[а́льтро]",
           "translation": "другой",
-          "examples": "Gli altri giorni sono liberi. Gli altri amici arrivano domani. Io prendo un altro."
+          "examples": "Gli altri giorni sono liberi. Gli altri amici arrivano domani. Io prendo un altro. Altro ponte. Altro pane. Altro momento."
         },
         {
           "n": 6,
@@ -3894,14 +5994,14 @@
           "italian": "anziano",
           "pronunciation": "[андзя́но]",
           "translation": "пожилой",
-          "examples": "L’anziano è gentile. Il vecchietto anziano sorride. Lui è anziano."
+          "examples": "L’anziano è gentile. Il vecchietto anziano sorride. Lui è anziano. Anziano uomo. Anziano guarda."
         },
         {
           "n": 9,
           "italian": "aperto",
           "pronunciation": "[апэ́рто]",
           "translation": "открытый",
-          "examples": "Il bar è aperto. La finestra è aperta."
+          "examples": "Il bar è aperto. La finestra è aperta. Porta aperta. Finestra aperta. Mercato aperto."
         },
         {
           "n": 10,
@@ -3915,7 +6015,7 @@
           "italian": "bello",
           "pronunciation": "[бэлло]",
           "translation": "красивый",
-          "examples": "La casa è bella. L’Italia è bella. Il panorama è bello."
+          "examples": "La casa è bella. L’Italia è bella. Il panorama è bello. Bello palazzo. Bello ponte. Bello panorama."
         },
         {
           "n": 12,
@@ -3957,7 +6057,7 @@
           "italian": "buono",
           "pronunciation": "[буо́но]",
           "translation": "хороший / вкусный",
-          "examples": "Il caffè è buono. Le granite sono buonissime. Buon viaggio!"
+          "examples": "Il caffè è buono. Le granite sono buonissime. Buon viaggio! Buono pane. Buono momento."
         },
         {
           "n": 18,
@@ -3992,14 +6092,14 @@
           "italian": "chiaro",
           "pronunciation": "[кья́ро]",
           "translation": "ясный / светлый",
-          "examples": "La voce è chiara. L’audio è chiaro."
+          "examples": "La voce è chiara. L’audio è chiaro. Chiaro giorno."
         },
         {
           "n": 23,
           "italian": "chiuso",
           "pronunciation": "[кью́зо]",
           "translation": "закрытый",
-          "examples": "Il museo è chiuso. Il negozio è chiuso."
+          "examples": "Il museo è chiuso. Il negozio è chiuso. Mercato chiuso."
         },
         {
           "n": 24,
@@ -4069,7 +6169,7 @@
           "italian": "difficile",
           "pronunciation": "[диффи́чиле]",
           "translation": "трудный",
-          "examples": "È difficile. La cosa è difficile."
+          "examples": "È difficile. La cosa è difficile. Difficile capire."
         },
         {
           "n": 34,
@@ -4104,7 +6204,7 @@
           "italian": "due",
           "pronunciation": "[ду́э]",
           "translation": "два",
-          "examples": "Ho due bagagli. Due ragazze arrivano."
+          "examples": "Ho due bagagli. Due ragazze arrivano. Due amici. Due barche."
         },
         {
           "n": 39,
@@ -4167,7 +6267,7 @@
           "italian": "fresco",
           "pronunciation": "[фрэ́ско]",
           "translation": "свежий",
-          "examples": "L’aria è fresca. Il vino è fresco."
+          "examples": "L’aria è fresca. Il vino è fresco. Pane fresco."
         },
         {
           "n": 48,
@@ -4195,21 +6295,21 @@
           "italian": "giovane",
           "pronunciation": "[джо́ване]",
           "translation": "молодой",
-          "examples": "Il giovane è simpatico. Lei è giovane e bella."
+          "examples": "Il giovane è simpatico. Lei è giovane e bella. Giovane uomo."
         },
         {
           "n": 52,
           "italian": "giusto",
           "pronunciation": "[джу́сто]",
           "translation": "правильный",
-          "examples": "È giusto. Il momento è giusto."
+          "examples": "È giusto. Il momento è giusto. Giusto momento."
         },
         {
           "n": 53,
           "italian": "grande",
           "pronunciation": "[грáндэ]",
           "translation": "большой",
-          "examples": "La casa è grande. Il museo è grande. Il palazzo è grande. La famiglia è grande."
+          "examples": "La casa è grande. Il museo è grande. Il palazzo è grande. La famiglia è grande. Grande palazzo. Grande ponte."
         },
         {
           "n": 54,
@@ -4300,7 +6400,7 @@
           "italian": "lungo",
           "pronunciation": "[лу́нго]",
           "translation": "длинный",
-          "examples": "Il viaggio è lungo. La strada è lunghissima."
+          "examples": "Il viaggio è lungo. La strada è lunghissima. Lungo ponte."
         },
         {
           "n": 67,
@@ -4356,7 +6456,7 @@
           "italian": "mio",
           "pronunciation": "[мíо]",
           "translation": "мой",
-          "examples": "Il mio bagaglio. Le mie valigie. I miei nonni."
+          "examples": "Il mio bagaglio. Le mie valigie. I miei nonni. Mio amico. Mio cane."
         },
         {
           "n": 75,
@@ -4398,14 +6498,14 @@
           "italian": "nostro",
           "pronunciation": "[но́стро]",
           "translation": "наш",
-          "examples": "Il nostro gruppo. La nostra barca. Il nostro viaggio."
+          "examples": "Il nostro gruppo. La nostra barca. Il nostro viaggio. Nostro amico."
         },
         {
           "n": 81,
           "italian": "nuovo",
           "pronunciation": "[нуóво]",
           "translation": "новый",
-          "examples": "Il libro è nuovo. La casa è nuova. L’anno è nuovo. Il cellulare è nuovo."
+          "examples": "Il libro è nuovo. La casa è nuova. L’anno è nuovo. Il cellulare è nuovo. Nuovo ponte. Nuovo giorno."
         },
         {
           "n": 82,
@@ -4426,7 +6526,7 @@
           "italian": "ogni",
           "pronunciation": "[о́ньи]",
           "translation": "каждый",
-          "examples": "Ogni giorno studio italiano. Ogni volta è bello."
+          "examples": "Ogni giorno studio italiano. Ogni volta è bello. Ogni giorno. Ogni momento."
         },
         {
           "n": 85,
@@ -4468,7 +6568,7 @@
           "italian": "pericoloso",
           "pronunciation": "[периколо́зо]",
           "translation": "опасный",
-          "examples": "È pericoloso."
+          "examples": "È pericoloso. Pericoloso ponte."
         },
         {
           "n": 91,
@@ -4489,7 +6589,7 @@
           "italian": "piccolo",
           "pronunciation": "[пíкколо]",
           "translation": "маленький",
-          "examples": "Il bambino è piccolo. Il bicchiere è piccolo. La casa è piccola."
+          "examples": "Il bambino è piccolo. Il bicchiere è piccolo. La casa è piccola. Piccolo bambino."
         },
         {
           "n": 94,
@@ -4552,7 +6652,7 @@
           "italian": "pronto",
           "pronunciation": "[про́нто]",
           "translation": "готовый",
-          "examples": "Sei pronta? La cena è pronta. Noi siamo pronti."
+          "examples": "Sei pronta? La cena è pronta. Noi siamo pronti. Pronto a partire."
         },
         {
           "n": 103,
@@ -4587,14 +6687,14 @@
           "italian": "quello",
           "pronunciation": "[куэ́лло]",
           "translation": "тот",
-          "examples": "Quello è il bar. Quella è la casa."
+          "examples": "Quello è il bar. Quella è la casa. Quello palazzo."
         },
         {
           "n": 108,
           "italian": "questo",
           "pronunciation": "[куэ́сто]",
           "translation": "этот",
-          "examples": "Questo posto è bello. Queste ragazze sono simpatiche."
+          "examples": "Questo posto è bello. Queste ragazze sono simpatiche. Questo momento."
         },
         {
           "n": 109,
@@ -4629,7 +6729,7 @@
           "italian": "san",
           "pronunciation": "[сан]",
           "translation": "святой",
-          "examples": "San Giuseppe."
+          "examples": "San Giuseppe. San Marco."
         },
         {
           "n": 114,
@@ -4706,7 +6806,7 @@
           "italian": "solito",
           "pronunciation": "[сóлито]",
           "translation": "обычный",
-          "examples": "La cosa è solita. La lezione è solita."
+          "examples": "La cosa è solita. La lezione è solita. Solito giorno."
         },
         {
           "n": 125,
@@ -4776,7 +6876,7 @@
           "italian": "strano",
           "pronunciation": "[стра́но]",
           "translation": "странный",
-          "examples": "È strano."
+          "examples": "È strano. Strano rumore."
         },
         {
           "n": 135,
@@ -4790,7 +6890,7 @@
           "italian": "suo",
           "pronunciation": "[су́о]",
           "translation": "его / её",
-          "examples": "Il suo bagaglio. Le sue idee. I suoi amici."
+          "examples": "Il suo bagaglio. Le sue idee. I suoi amici. Suo amico. Suo cane."
         },
         {
           "n": 137,
@@ -4825,7 +6925,7 @@
           "italian": "tranquillo",
           "pronunciation": "[транкуи́лло]",
           "translation": "спокойный",
-          "examples": "Sono tranquillo. La serata è tranquilla."
+          "examples": "Sono tranquillo. La serata è tranquilla. Momento tranquillo."
         },
         {
           "n": 142,
@@ -4853,7 +6953,7 @@
           "italian": "tutto",
           "pronunciation": "[ту́тто]",
           "translation": "весь / всё",
-          "examples": "Tutto bene. Tutta la Sicilia. Tutto pronto."
+          "examples": "Tutto bene. Tutta la Sicilia. Tutto pronto. Tutto bello. Tutto tranquillo."
         },
         {
           "n": 146,
@@ -4867,7 +6967,7 @@
           "italian": "vecchio",
           "pronunciation": "[ве́ккьо]",
           "translation": "старый",
-          "examples": "Il vecchio film."
+          "examples": "Il vecchio film. Vecchio ponte."
         },
         {
           "n": 148,
@@ -4881,7 +6981,7 @@
           "italian": "vero",
           "pronunciation": "[вэро]",
           "translation": "настоящий / правда",
-          "examples": "Il verbo è vero. La frase è vera. Il tempo è vero."
+          "examples": "Il verbo è vero. La frase è vera. Il tempo è vero. Vero amico. Vero panorama."
         },
         {
           "n": 150,
@@ -4896,6 +6996,713 @@
           "pronunciation": "[дзи́тто]",
           "translation": "молчать",
           "examples": "Zitta per favore! Zitto!"
+        },
+        {
+          "n": 152,
+          "italian": "abituati",
+          "pronunciation": "[абитуа́ти]",
+          "translation": "привыкшие",
+          "examples": "Siamo abituati. Abituati a tutto. Abituati al rumore. Abituati alla città."
+        },
+        {
+          "n": 153,
+          "italian": "affascinante",
+          "pronunciation": "[аффашчина́нте]",
+          "translation": "очаровательный",
+          "examples": "Città affascinante. Vista affascinante. Avventura affascinante."
+        },
+        {
+          "n": 154,
+          "italian": "agitata",
+          "pronunciation": "[аджита́та]",
+          "translation": "взволнованная",
+          "examples": "Lei agitata. Situazione agitata. Lei agitata in piazza."
+        },
+        {
+          "n": 155,
+          "italian": "agitato",
+          "pronunciation": "[аджита́то]",
+          "translation": "взволнованный",
+          "examples": "Lui agitato. Lui agitato per il rumore."
+        },
+        {
+          "n": 156,
+          "italian": "alcuni",
+          "pronunciation": "[альку́ни]",
+          "translation": "некоторые",
+          "examples": "Alcuni turisti. Alcuni amici. Alcuni piccioni."
+        },
+        {
+          "n": 157,
+          "italian": "altri",
+          "pronunciation": "[а́льтри]",
+          "translation": "другие",
+          "examples": "Altri turisti. Altri amici. Altri piccioni."
+        },
+        {
+          "n": 158,
+          "italian": "attraccato",
+          "pronunciation": "[аттракка́то]",
+          "translation": "пришвартованный",
+          "examples": "Barche attraccato. Attraccato al porto."
+        },
+        {
+          "n": 159,
+          "italian": "bagnati",
+          "pronunciation": "[баньа́ти]",
+          "translation": "мокрые",
+          "examples": "Piedi bagnati."
+        },
+        {
+          "n": 160,
+          "italian": "bel",
+          "pronunciation": "[бель]",
+          "translation": "красивый (усеч.)",
+          "examples": "Bel palazzo. Bel giorno."
+        },
+        {
+          "n": 161,
+          "italian": "bella",
+          "pronunciation": "[бе́лла]",
+          "translation": "красивая",
+          "examples": "Bella casa. Bella città. Bella vista."
+        },
+        {
+          "n": 162,
+          "italian": "bellissima",
+          "pronunciation": "[белли́ссима]",
+          "translation": "прекраснейшая",
+          "examples": "Bellissima Venezia. Bellissima piazza."
+        },
+        {
+          "n": 163,
+          "italian": "bianca",
+          "pronunciation": "[бья́нка]",
+          "translation": "белая",
+          "examples": "Bianca colomba."
+        },
+        {
+          "n": 164,
+          "italian": "brevi",
+          "pronunciation": "[бре́ви]",
+          "translation": "короткие",
+          "examples": "Brevi momenti."
+        },
+        {
+          "n": 165,
+          "italian": "buona",
+          "pronunciation": "[буо́на]",
+          "translation": "хорошая",
+          "examples": "Buona giornata. Buona acqua."
+        },
+        {
+          "n": 166,
+          "italian": "certa",
+          "pronunciation": "[че́рта]",
+          "translation": "определённая",
+          "examples": "Certa cosa."
+        },
+        {
+          "n": 167,
+          "italian": "chiara",
+          "pronunciation": "[кья́ра]",
+          "translation": "ясная",
+          "examples": "Chiara acqua."
+        },
+        {
+          "n": 168,
+          "italian": "chiuse",
+          "pronunciation": "[кью́зе]",
+          "translation": "закрытые (ж.р. мн.ч.)",
+          "examples": "Porte chiuse."
+        },
+        {
+          "n": 169,
+          "italian": "colorate",
+          "pronunciation": "[колора́те]",
+          "translation": "цветные",
+          "examples": "Gondole colorate."
+        },
+        {
+          "n": 170,
+          "italian": "confusi",
+          "pronunciation": "[конфу́зи]",
+          "translation": "растерянные",
+          "examples": "Turisti confusi."
+        },
+        {
+          "n": 171,
+          "italian": "confuso",
+          "pronunciation": "[конфу́зо]",
+          "translation": "растерянный",
+          "examples": "Lui confuso."
+        },
+        {
+          "n": 172,
+          "italian": "contenti",
+          "pronunciation": "[конте́нти]",
+          "translation": "довольные",
+          "examples": "Tutti contenti."
+        },
+        {
+          "n": 173,
+          "italian": "costruito",
+          "pronunciation": "[коструи́то]",
+          "translation": "построенный",
+          "examples": "Costruito in pietra."
+        },
+        {
+          "n": 174,
+          "italian": "cresciuti",
+          "pronunciation": "[крешу́ти]",
+          "translation": "выросшие",
+          "examples": "Bambini cresciuti."
+        },
+        {
+          "n": 175,
+          "italian": "curiosi",
+          "pronunciation": "[курио́зи]",
+          "translation": "любопытные",
+          "examples": "Turisti curiosi."
+        },
+        {
+          "n": 176,
+          "italian": "deserta",
+          "pronunciation": "[десе́рта]",
+          "translation": "пустынная",
+          "examples": "Piazza deserta."
+        },
+        {
+          "n": 177,
+          "italian": "deserte",
+          "pronunciation": "[десе́рте]",
+          "translation": "пустынные",
+          "examples": "Strade deserte."
+        },
+        {
+          "n": 178,
+          "italian": "distratti",
+          "pronunciation": "[дистра́тти]",
+          "translation": "рассеянные",
+          "examples": "Turisti distratti."
+        },
+        {
+          "n": 179,
+          "italian": "famosa",
+          "pronunciation": "[фамо́за]",
+          "translation": "знаменитая",
+          "examples": "Famosa piazza."
+        },
+        {
+          "n": 180,
+          "italian": "fiorito",
+          "pronunciation": "[фьори́то]",
+          "translation": "цветущий",
+          "examples": "Fiorito glicine."
+        },
+        {
+          "n": 181,
+          "italian": "forte",
+          "pronunciation": "[фо́рте]",
+          "translation": "сильный",
+          "examples": "Forte vento. Forte rumore."
+        },
+        {
+          "n": 182,
+          "italian": "frenetico",
+          "pronunciation": "[френе́тико]",
+          "translation": "лихорадочный",
+          "examples": "Frenetico caos."
+        },
+        {
+          "n": 183,
+          "italian": "fresca",
+          "pronunciation": "[фре́ска]",
+          "translation": "свежая",
+          "examples": "Acqua fresca. Focaccia fresca."
+        },
+        {
+          "n": 184,
+          "italian": "galleggiante",
+          "pronunciation": "[галледжа́нте]",
+          "translation": "плавающий",
+          "examples": "Barche galleggiante."
+        },
+        {
+          "n": 185,
+          "italian": "gettate",
+          "pronunciation": "[джетта́те]",
+          "translation": "брошенные",
+          "examples": "Briciole gettate."
+        },
+        {
+          "n": 186,
+          "italian": "giusta",
+          "pronunciation": "[джу́ста]",
+          "translation": "правильная",
+          "examples": "Giusta strada."
+        },
+        {
+          "n": 187,
+          "italian": "grandi",
+          "pronunciation": "[гра́нди]",
+          "translation": "большие",
+          "examples": "Grandi palazzi."
+        },
+        {
+          "n": 188,
+          "italian": "grigie",
+          "pronunciation": "[гри́дже]",
+          "translation": "серые",
+          "examples": "Nuvole grigie."
+        },
+        {
+          "n": 189,
+          "italian": "grossi",
+          "pronunciation": "[гро́сси]",
+          "translation": "большие",
+          "examples": "Grossi piccioni."
+        },
+        {
+          "n": 190,
+          "italian": "immensa",
+          "pronunciation": "[имме́нса]",
+          "translation": "огромная",
+          "examples": "Piazza immensa."
+        },
+        {
+          "n": 191,
+          "italian": "imponente",
+          "pronunciation": "[импоне́нте]",
+          "translation": "внушительный",
+          "examples": "Palazzo imponente."
+        },
+        {
+          "n": 192,
+          "italian": "incredibile",
+          "pronunciation": "[инкреди́биле]",
+          "translation": "невероятный",
+          "examples": "Vista incredibile."
+        },
+        {
+          "n": 193,
+          "italian": "intenso",
+          "pronunciation": "[инте́нсо]",
+          "translation": "интенсивный",
+          "examples": "Odore intenso."
+        },
+        {
+          "n": 194,
+          "italian": "irresistibile",
+          "pronunciation": "[иррезисти́биле]",
+          "translation": "неотразимый",
+          "examples": "Profumo irresistibile."
+        },
+        {
+          "n": 195,
+          "italian": "lenta",
+          "pronunciation": "[ле́нта]",
+          "translation": "медленная",
+          "examples": "Camminata lenta."
+        },
+        {
+          "n": 196,
+          "italian": "limpido",
+          "pronunciation": "[ли́мпидо]",
+          "translation": "прозрачный",
+          "examples": "Cielo limpido."
+        },
+        {
+          "n": 197,
+          "italian": "lontana",
+          "pronunciation": "[лонта́на]",
+          "translation": "далёкая",
+          "examples": "Casa lontana."
+        },
+        {
+          "n": 198,
+          "italian": "lucenti",
+          "pronunciation": "[луче́нти]",
+          "translation": "блестящие",
+          "examples": "Occhi lucenti."
+        },
+        {
+          "n": 199,
+          "italian": "minacciose",
+          "pronunciation": "[миначчо́зе]",
+          "translation": "угрожающие",
+          "examples": "Nuvole minacciose."
+        },
+        {
+          "n": 200,
+          "italian": "molti",
+          "pronunciation": "[мо́льти]",
+          "translation": "многие",
+          "examples": "Molti turisti."
+        },
+        {
+          "n": 201,
+          "italian": "nati",
+          "pronunciation": "[на́ти]",
+          "translation": "родившиеся",
+          "examples": "Nati in città."
+        },
+        {
+          "n": 202,
+          "italian": "numerosi",
+          "pronunciation": "[нумеро́зи]",
+          "translation": "многочисленные",
+          "examples": "Turisti numerosi."
+        },
+        {
+          "n": 203,
+          "italian": "numeroso",
+          "pronunciation": "[нумеро́зо]",
+          "translation": "многочисленный",
+          "examples": "Gruppo numeroso."
+        },
+        {
+          "n": 204,
+          "italian": "particolare",
+          "pronunciation": "[партикола́ре]",
+          "translation": "особенный",
+          "examples": "Momento particolare."
+        },
+        {
+          "n": 205,
+          "italian": "passati",
+          "pronunciation": "[пасса́ти]",
+          "translation": "прошедшие",
+          "examples": "Momenti passati."
+        },
+        {
+          "n": 206,
+          "italian": "perso",
+          "pronunciation": "[пе́рсо]",
+          "translation": "потерянный",
+          "examples": "Lui perso."
+        },
+        {
+          "n": 207,
+          "italian": "piccola",
+          "pronunciation": "[пи́ккола]",
+          "translation": "маленькая",
+          "examples": "Piccola casa."
+        },
+        {
+          "n": 208,
+          "italian": "piena",
+          "pronunciation": "[пье́на]",
+          "translation": "полная",
+          "examples": "Piazza piena."
+        },
+        {
+          "n": 209,
+          "italian": "pieni",
+          "pronunciation": "[пье́ни]",
+          "translation": "полные",
+          "examples": "Canali pieni."
+        },
+        {
+          "n": 210,
+          "italian": "pochi",
+          "pronunciation": "[по́ки]",
+          "translation": "немногие",
+          "examples": "Pochi turisti."
+        },
+        {
+          "n": 211,
+          "italian": "preferiti",
+          "pronunciation": "[префери́ти]",
+          "translation": "любимые",
+          "examples": "Posti preferiti."
+        },
+        {
+          "n": 212,
+          "italian": "preoccupata",
+          "pronunciation": "[преоккупа́та]",
+          "translation": "обеспокоенная",
+          "examples": "Lei preoccupata."
+        },
+        {
+          "n": 213,
+          "italian": "preoccupato",
+          "pronunciation": "[преоккупа́то]",
+          "translation": "обеспокоенный",
+          "examples": "Lui preoccupato."
+        },
+        {
+          "n": 214,
+          "italian": "profumate",
+          "pronunciation": "[профума́те]",
+          "translation": "ароматные",
+          "examples": "Spezie profumate."
+        },
+        {
+          "n": 215,
+          "italian": "pronti",
+          "pronunciation": "[про́нти]",
+          "translation": "готовые",
+          "examples": "Pronti ad andare."
+        },
+        {
+          "n": 216,
+          "italian": "protetto",
+          "pronunciation": "[проте́тто]",
+          "translation": "защищённый",
+          "examples": "Protetto dal vento."
+        },
+        {
+          "n": 217,
+          "italian": "pulita",
+          "pronunciation": "[пули́та]",
+          "translation": "чистая",
+          "examples": "Piazza pulita."
+        },
+        {
+          "n": 218,
+          "italian": "puntuale",
+          "pronunciation": "[пунтуа́ле]",
+          "translation": "пунктуальный",
+          "examples": "Lui puntuale."
+        },
+        {
+          "n": 219,
+          "italian": "qualunque",
+          "pronunciation": "[квалькуа́нке]",
+          "translation": "любой",
+          "examples": "Qualunque cosa."
+        },
+        {
+          "n": 220,
+          "italian": "quel",
+          "pronunciation": "[квель]",
+          "translation": "тот (м.р.)",
+          "examples": "Quel ponte."
+        },
+        {
+          "n": 221,
+          "italian": "quell",
+          "pronunciation": "[квель]",
+          "translation": "тот (перед гласной)",
+          "examples": "Quell'angolo."
+        },
+        {
+          "n": 222,
+          "italian": "rapita",
+          "pronunciation": "[рапи́та]",
+          "translation": "похищенная",
+          "examples": "Lei rapita."
+        },
+        {
+          "n": 223,
+          "italian": "rapito",
+          "pronunciation": "[рапи́то]",
+          "translation": "похищенный",
+          "examples": "Lui rapito."
+        },
+        {
+          "n": 224,
+          "italian": "rimasti",
+          "pronunciation": "[рима́сти]",
+          "translation": "оставшиеся",
+          "examples": "Rimasti soli."
+        },
+        {
+          "n": 225,
+          "italian": "rumorosi",
+          "pronunciation": "[руморо́зи]",
+          "translation": "шумные",
+          "examples": "Turisti rumorosi."
+        },
+        {
+          "n": 226,
+          "italian": "scomparsa",
+          "pronunciation": "[скомпа́рса]",
+          "translation": "исчезнувшая",
+          "examples": "Scomparsa improvvisamente."
+        },
+        {
+          "n": 227,
+          "italian": "scoperto",
+          "pronunciation": "[скопе́рто]",
+          "translation": "открытый",
+          "examples": "Scoperto il segreto."
+        },
+        {
+          "n": 228,
+          "italian": "scuro",
+          "pronunciation": "[ску́ро]",
+          "translation": "тёмный",
+          "examples": "Cielo scuro."
+        },
+        {
+          "n": 229,
+          "italian": "sfornato",
+          "pronunciation": "[сфорна́то]",
+          "translation": "свежий (из печи)",
+          "examples": "Pane sfornato."
+        },
+        {
+          "n": 230,
+          "italian": "sicuro",
+          "pronunciation": "[сику́ро]",
+          "translation": "уверенный",
+          "examples": "Sicuro di sé."
+        },
+        {
+          "n": 231,
+          "italian": "silenzioso",
+          "pronunciation": "[силеньцьо́зо]",
+          "translation": "тихий",
+          "examples": "Silenzioso momento."
+        },
+        {
+          "n": 232,
+          "italian": "sollevato",
+          "pronunciation": "[соллева́то]",
+          "translation": "приподнятый",
+          "examples": "Sollevato dal vento."
+        },
+        {
+          "n": 233,
+          "italian": "sorpreso",
+          "pronunciation": "[сorpре́зо]",
+          "translation": "удивлённый",
+          "examples": "Lui sorpreso."
+        },
+        {
+          "n": 234,
+          "italian": "speranzoso",
+          "pronunciation": "[сперанцо́зо]",
+          "translation": "полный надежды",
+          "examples": "Lui speranzoso."
+        },
+        {
+          "n": 235,
+          "italian": "stanchi",
+          "pronunciation": "[ста́нки]",
+          "translation": "усталые",
+          "examples": "Turisti stanchi."
+        },
+        {
+          "n": 236,
+          "italian": "stretta",
+          "pronunciation": "[стре́тта]",
+          "translation": "узкая",
+          "examples": "Calle stretta."
+        },
+        {
+          "n": 237,
+          "italian": "studiato",
+          "pronunciation": "[студья́то]",
+          "translation": "изученный",
+          "examples": "Studiato prima."
+        },
+        {
+          "n": 238,
+          "italian": "stupito",
+          "pronunciation": "[ступи́то]",
+          "translation": "удивлённый",
+          "examples": "Lui stupito."
+        },
+        {
+          "n": 239,
+          "italian": "svegliato",
+          "pronunciation": "[свелья́то]",
+          "translation": "проснувшийся",
+          "examples": "Lui svegliato."
+        },
+        {
+          "n": 240,
+          "italian": "tanta",
+          "pronunciation": "[та́нта]",
+          "translation": "столько",
+          "examples": "Tanta acqua."
+        },
+        {
+          "n": 241,
+          "italian": "tanti",
+          "pronunciation": "[та́нти]",
+          "translation": "столько (мн.ч.)",
+          "examples": "Tanti turisti."
+        },
+        {
+          "n": 242,
+          "italian": "tranquilla",
+          "pronunciation": "[транкуи́лла]",
+          "translation": "спокойная",
+          "examples": "Piazza tranquilla."
+        },
+        {
+          "n": 243,
+          "italian": "turistica",
+          "pronunciation": "[тури́стика]",
+          "translation": "туристическая",
+          "examples": "Zona turistica."
+        },
+        {
+          "n": 244,
+          "italian": "vago",
+          "pronunciation": "[ва́го]",
+          "translation": "смутный",
+          "examples": "Vago ricordo."
+        },
+        {
+          "n": 245,
+          "italian": "vecchia",
+          "pronunciation": "[ве́ккья]",
+          "translation": "старая",
+          "examples": "Vecchia casa."
+        },
+        {
+          "n": 246,
+          "italian": "veloce",
+          "pronunciation": "[вело́че]",
+          "translation": "быстрый",
+          "examples": "Veloce motoscafo."
+        },
+        {
+          "n": 247,
+          "italian": "veneziano",
+          "pronunciation": "[венецья́но]",
+          "translation": "венецианский",
+          "examples": "Accento veneziano."
+        },
+        {
+          "n": 248,
+          "italian": "violenta",
+          "pronunciation": "[виоле́нта]",
+          "translation": "сильная",
+          "examples": "Tempesta violenta."
+        },
+        {
+          "n": 249,
+          "italian": "vividi",
+          "pronunciation": "[ви́види]",
+          "translation": "яркие",
+          "examples": "Colori vividi."
+        },
+        {
+          "n": 250,
+          "italian": "volante",
+          "pronunciation": "[вола́нте]",
+          "translation": "летающий",
+          "examples": "Piccione volante."
+        },
+        {
+          "n": 251,
+          "italian": "vuota",
+          "pronunciation": "[вуо́та]",
+          "translation": "пустая",
+          "examples": "Piazza vuota."
+        },
+        {
+          "n": 252,
+          "italian": "vuoto",
+          "pronunciation": "[вуо́то]",
+          "translation": "пустой",
+          "examples": "Posto vuoto."
         }
       ]
     },
@@ -4929,7 +7736,7 @@
           "italian": "altrimenti",
           "pronunciation": "[альтриме́нти]",
           "translation": "иначе / в противном случае",
-          "examples": "Altrimenti è tardi. Altrimenti perdiamo il traghetto. Io parto altrimenti."
+          "examples": "Altrimenti è tardi. Altrimenti perdiamo il traghetto. Io parto altrimenti. Altrimenti perde. Altrimenti resta."
         },
         {
           "n": 5,
@@ -4943,14 +7750,14 @@
           "italian": "ancora",
           "pronunciation": "[анкóра]",
           "translation": "ещё",
-          "examples": "Ancora leggo. Ancora mangio. Ancora studio."
+          "examples": "Ancora leggo. Ancora mangio. Ancora studio. Ancora acqua. Ancora pane. Ancora tempo."
         },
         {
           "n": 7,
           "italian": "appena",
           "pronunciation": "[аппе́нна]",
           "translation": "только что / едва",
-          "examples": "Appena arrivate a Catania. Io sono appena arrivato. Lei è appena uscita."
+          "examples": "Appena arrivate a Catania. Io sono appena arrivato. Lei è appena uscita. Appena arriva. Appena vede."
         },
         {
           "n": 8,
@@ -4985,7 +7792,7 @@
           "italian": "come",
           "pronunciation": "[ко́ме]",
           "translation": "как",
-          "examples": "Come stai? Come va la vacanza? Come si dice in italiano?"
+          "examples": "Come stai? Come va la vacanza? Come si dice in italiano? Come va."
         },
         {
           "n": 13,
@@ -5006,14 +7813,14 @@
           "italian": "così",
           "pronunciation": "[кóзи]",
           "translation": "так",
-          "examples": "Così è bene. Così è grande. Così è vero."
+          "examples": "Così è bene. Così è grande. Così è vero. Così bello. Così così."
         },
         {
           "n": 16,
           "italian": "davvero",
           "pronunciation": "[давве́ро]",
           "translation": "действительно",
-          "examples": "È davvero bello! Davvero buona la granita."
+          "examples": "È davvero bello! Davvero buona la granita. Davvero bello. Davvero affascinante."
         },
         {
           "n": 17,
@@ -5062,14 +7869,14 @@
           "italian": "dopo",
           "pronunciation": "[дóпо]",
           "translation": "после",
-          "examples": "Dopo leggo. Dopo mangio. Dopo torno."
+          "examples": "Dopo leggo. Dopo mangio. Dopo torno. Dopo la pioggia. Dopo il pasto."
         },
         {
           "n": 24,
           "italian": "dove",
           "pronunciation": "[дóве]",
           "translation": "где",
-          "examples": "Dove è la casa? Dove è il museo? Dove lavori?"
+          "examples": "Dove è la casa? Dove è il museo? Dove lavori? Dove abita. Dove va."
         },
         {
           "n": 25,
@@ -5083,14 +7890,14 @@
           "italian": "finalmente",
           "pronunciation": "[финальмэ́нте]",
           "translation": "наконец",
-          "examples": "Finalmente arrivo. Finalmente leggo. Finalmente mangio."
+          "examples": "Finalmente arrivo. Finalmente leggo. Finalmente mangio. Finalmente arriva."
         },
         {
           "n": 27,
           "italian": "forse",
           "pronunciation": "[фо́рсе]",
           "translation": "возможно",
-          "examples": "Forse andiamo al mare. Forse domani."
+          "examples": "Forse andiamo al mare. Forse domani. Forse piove. Forse arriva."
         },
         {
           "n": 28,
@@ -5111,14 +7918,14 @@
           "italian": "ieri",
           "pronunciation": "[йе́ри]",
           "translation": "вчера",
-          "examples": "Ieri sera. Ieri al cinema."
+          "examples": "Ieri sera. Ieri al cinema. Ieri in piazza."
         },
         {
           "n": 31,
           "italian": "insieme",
           "pronunciation": "[инсье́ме]",
           "translation": "вместе",
-          "examples": "Noi mangiamo insieme. Io vado insieme a te."
+          "examples": "Noi mangiamo insieme. Io vado insieme a te. Insieme a amici."
         },
         {
           "n": 32,
@@ -5146,7 +7953,7 @@
           "italian": "magari",
           "pronunciation": "[мага́ри]",
           "translation": "может быть",
-          "examples": "Magari domani andiamo al mare. Magari sì."
+          "examples": "Magari domani andiamo al mare. Magari sì. Magari piove."
         },
         {
           "n": 36,
@@ -5160,7 +7967,7 @@
           "italian": "male",
           "pronunciation": "[мáле]",
           "translation": "плохо",
-          "examples": "Io sto male. La persona è male."
+          "examples": "Io sto male. La persona è male. Male oggi."
         },
         {
           "n": 38,
@@ -5174,14 +7981,14 @@
           "italian": "meno",
           "pronunciation": "[ме́но]",
           "translation": "меньше",
-          "examples": "Meno male! Meno afa oggi."
+          "examples": "Meno male! Meno afa oggi. Meno rumore."
         },
         {
           "n": 40,
           "italian": "molto",
           "pronunciation": "[мóльто]",
           "translation": "очень / много",
-          "examples": "Molto bravo. Molto grande. Molto interessante."
+          "examples": "Molto bravo. Molto grande. Molto interessante. Molto bello."
         },
         {
           "n": 41,
@@ -5195,21 +8002,21 @@
           "italian": "nemmeno",
           "pronunciation": "[немме́но]",
           "translation": "даже не",
-          "examples": "Nemmeno io lo so. Nemmeno lei viene."
+          "examples": "Nemmeno io lo so. Nemmeno lei viene. Nemmeno lui."
         },
         {
           "n": 43,
           "italian": "non",
           "pronunciation": "[нон]",
           "translation": "не",
-          "examples": "Non è vero. Non ho fame. Non preoccupare."
+          "examples": "Non è vero. Non ho fame. Non preoccupare. Non abbaia. Non arriva."
         },
         {
           "n": 44,
           "italian": "ora",
           "pronunciation": "[о́ра]",
           "translation": "сейчас / час",
-          "examples": "Ora andiamo. Che ora è? Due ore di viaggio. Tante ore al mare."
+          "examples": "Ora andiamo. Che ora è? Due ore di viaggio. Tante ore al mare. Ora arriva. Ora è bello."
         },
         {
           "n": 45,
@@ -5230,14 +8037,14 @@
           "italian": "perché",
           "pronunciation": "[перке́]",
           "translation": "почему / потому что",
-          "examples": "Perché leggi? Perché è grande."
+          "examples": "Perché leggi? Perché è grande. Perché no. Perché bello."
         },
         {
           "n": 48,
           "italian": "più",
           "pronunciation": "[пью]",
           "translation": "больше",
-          "examples": "Il mare è più bello. Più grande della casa."
+          "examples": "Il mare è più bello. Più grande della casa. Più bello. Più grande."
         },
         {
           "n": 49,
@@ -5251,14 +8058,14 @@
           "italian": "poco",
           "pronunciation": "[пóко]",
           "translation": "мало",
-          "examples": "Poco tempo. Poco caffè. Poco zucchero."
+          "examples": "Poco tempo. Poco caffè. Poco zucchero. Poco pane."
         },
         {
           "n": 51,
           "italian": "poi",
           "pronunciation": "[пóи]",
           "translation": "потом",
-          "examples": "Poi leggo. Poi mangio. Poi torno."
+          "examples": "Poi leggo. Poi mangio. Poi torno. Poi arriva. Poi cammina."
         },
         {
           "n": 52,
@@ -5272,7 +8079,7 @@
           "italian": "prima",
           "pronunciation": "[прíма]",
           "translation": "раньше / сначала",
-          "examples": "Prima leggo. Prima mangio. Prima studio."
+          "examples": "Prima leggo. Prima mangio. Prima studio. Prima il giro."
         },
         {
           "n": 54,
@@ -5293,7 +8100,7 @@
           "italian": "purtroppo",
           "pronunciation": "[пуртро́ппо]",
           "translation": "к сожалению",
-          "examples": "Purtroppo è tardi. Purtroppo no."
+          "examples": "Purtroppo è tardi. Purtroppo no. Purtroppo piove."
         },
         {
           "n": 57,
@@ -5307,7 +8114,7 @@
           "italian": "quando",
           "pronunciation": "[куáндо]",
           "translation": "когда",
-          "examples": "Quando parti? Quando torni? Quando leggi?"
+          "examples": "Quando parti? Quando torni? Quando leggi? Quando arriva."
         },
         {
           "n": 59,
@@ -5321,21 +8128,21 @@
           "italian": "qui",
           "pronunciation": "[куи́]",
           "translation": "здесь",
-          "examples": "Qui fa caldo. Qui a Catania."
+          "examples": "Qui fa caldo. Qui a Catania. Qui in piazza."
         },
         {
           "n": 61,
           "italian": "sempre",
           "pronunciation": "[сэ́мпре]",
           "translation": "всегда",
-          "examples": "Sempre bene. Sempre leggo. Sempre studio."
+          "examples": "Sempre bene. Sempre leggo. Sempre studio. Sempre bello. Sempre in piazza."
         },
         {
           "n": 62,
           "italian": "sì",
           "pronunciation": "[си]",
           "translation": "да",
-          "examples": "Sì! Sì, certo."
+          "examples": "Sì! Sì, certo. Sì certo. Sì grazie."
         },
         {
           "n": 63,
@@ -5356,7 +8163,7 @@
           "italian": "soprattutto",
           "pronunciation": "[сопратту́тто]",
           "translation": "особенно",
-          "examples": "Soprattutto adesso."
+          "examples": "Soprattutto adesso. Soprattutto bello."
         },
         {
           "n": 66,
@@ -5370,7 +8177,7 @@
           "italian": "spesso",
           "pronunciation": "[спэ́ссо]",
           "translation": "часто",
-          "examples": "Spesso leggo. Spesso mangio pasta. Spesso viaggio."
+          "examples": "Spesso leggo. Spesso mangio pasta. Spesso viaggio. Spesso in piazza."
         },
         {
           "n": 68,
@@ -5398,7 +8205,7 @@
           "italian": "subito",
           "pronunciation": "[су́бито]",
           "translation": "сразу",
-          "examples": "Vengo subito. Subito dopo la cena."
+          "examples": "Vengo subito. Subito dopo la cena. Subito arriva. Subito va."
         },
         {
           "n": 72,
@@ -5426,7 +8233,7 @@
           "italian": "troppo",
           "pronunciation": "[трóппо]",
           "translation": "слишком",
-          "examples": "Troppo grande. Troppo freddo. Troppo poco."
+          "examples": "Troppo grande. Troppo freddo. Troppo poco. Troppo rumore. Troppo vento."
         },
         {
           "n": 76,
@@ -5447,14 +8254,14 @@
           "italian": "via",
           "pronunciation": "[ви́а]",
           "translation": "улица / прочь",
-          "examples": "Via del Corso. Via!"
+          "examples": "Via del Corso. Via! Via stretta. Va via."
         },
         {
           "n": 79,
           "italian": "vicino",
           "pronunciation": "[вичи́но]",
           "translation": "близко",
-          "examples": "Vicino a casa. Il bar è vicino."
+          "examples": "Vicino a casa. Il bar è vicino. Vicino al ponte."
         },
         {
           "n": 80,
@@ -5462,6 +8269,76 @@
           "pronunciation": "[визибильме́нте]",
           "translation": "visibly",
           "examples": "Visibilmente emozionato."
+        },
+        {
+          "n": 81,
+          "italian": "dov",
+          "pronunciation": "[дов]",
+          "translation": "где (усеч.)",
+          "examples": "Dov'è."
+        },
+        {
+          "n": 82,
+          "italian": "frattempo",
+          "pronunciation": "[фра́ттемпо]",
+          "translation": "тем временем",
+          "examples": "Frattempo lui cammina."
+        },
+        {
+          "n": 83,
+          "italian": "inoltre",
+          "pronunciation": "[инольтре]",
+          "translation": "кроме того",
+          "examples": "Inoltre ha amici."
+        },
+        {
+          "n": 84,
+          "italian": "lontano",
+          "pronunciation": "[лонта́но]",
+          "translation": "далеко",
+          "examples": "Lontano dalla piazza."
+        },
+        {
+          "n": 85,
+          "italian": "normalmente",
+          "pronunciation": "[нормальме́нте]",
+          "translation": "обычно",
+          "examples": "Normalmente tranquillo."
+        },
+        {
+          "n": 86,
+          "italian": "oggi",
+          "pronunciation": "[о́дджи]",
+          "translation": "сегодня",
+          "examples": "Oggi in piazza."
+        },
+        {
+          "n": 87,
+          "italian": "presto",
+          "pronunciation": "[пре́сто]",
+          "translation": "скоро",
+          "examples": "Presto arriva."
+        },
+        {
+          "n": 88,
+          "italian": "stranamente",
+          "pronunciation": "[странaме́нте]",
+          "translation": "странно",
+          "examples": "Stranamente tranquillo."
+        },
+        {
+          "n": 89,
+          "italian": "velocemente",
+          "pronunciation": "[велоче́менте]",
+          "translation": "быстро",
+          "examples": "Cammina velocemente."
+        },
+        {
+          "n": 90,
+          "italian": "violentemente",
+          "pronunciation": "[виолентаме́нте]",
+          "translation": "сильно",
+          "examples": "Piove violentemente."
         }
       ]
     },
@@ -5474,7 +8351,7 @@
           "italian": "gli",
           "pronunciation": "[льи]",
           "translation": "определённый артикль (м. р. мн. ч. перед гласной/s/z)",
-          "examples": "Gli amici sono bravi. Gli studenti leggono. Gli zii sono italiani."
+          "examples": "Gli amici sono bravi. Gli studenti leggono. Gli zii sono italiani. Gli amici. Gli piace."
         },
         {
           "n": 2,
@@ -5488,7 +8365,7 @@
           "italian": "il",
           "pronunciation": "[иль]",
           "translation": "определённый артикль (м. р. ед. ч.)",
-          "examples": "Il padre lavora. Il bambino dorme. Il tempo è buono. Il museo è grande. Il caffè è caldo."
+          "examples": "Il padre lavora. Il bambino dorme. Il tempo è buono. Il museo è grande. Il caffè è caldo. Il cane. Il ponte."
         },
         {
           "n": 4,
@@ -5509,28 +8386,28 @@
           "italian": "la",
           "pronunciation": "[ла]",
           "translation": "определённый артикль (ж. р. ед. ч.)",
-          "examples": "La madre è brava. La casa è grande. La paura è grande. La finestra è aperta. La lezione è interessante."
+          "examples": "La madre è brava. La casa è grande. La paura è grande. La finestra è aperta. La lezione è interessante. La casa. La piazza."
         },
         {
           "n": 7,
           "italian": "le",
           "pronunciation": "[ле]",
           "translation": "определённый артикль (ж. р. мн. ч.)",
-          "examples": "Le madri sono brave. Le case sono grandi. Le lezioni sono interessanti."
+          "examples": "Le madri sono brave. Le case sono grandi. Le lezioni sono interessanti. Le barche. Le gondole."
         },
         {
           "n": 8,
           "italian": "lo",
           "pronunciation": "[ло]",
           "translation": "определённый артикль (м. р. перед s/z)",
-          "examples": "Lo studente legge. Lo zio arriva. Lo studente è stanco."
+          "examples": "Lo studente legge. Lo zio arriva. Lo studente è stanco. Lo vede."
         },
         {
           "n": 9,
           "italian": "un",
           "pronunciation": "[ун]",
           "translation": "неопределённый артикль (м. р. ед. ч.)",
-          "examples": "Un bambino è bravo. Un amico legge. Un padre ha un figlio. Un caffè è buono. Un albergo è grande."
+          "examples": "Un bambino è bravo. Un amico legge. Un padre ha un figlio. Un caffè è buono. Un albergo è grande. Un amico. Un ponte."
         },
         {
           "n": 10,
@@ -5544,14 +8421,14 @@
           "italian": "una",
           "pronunciation": "[уна]",
           "translation": "неопределённый артикль (ж. р. ед. ч.)",
-          "examples": "Una madre è brava. Una casa è grande. Una domanda è interessante. Una amica è russa. Una lezione è nuova."
+          "examples": "Una madre è brava. Una casa è grande. Una domanda è interessante. Una amica è russa. Una lezione è nuova. Una casa. Una piazza."
         },
         {
           "n": 12,
           "italian": "uno",
           "pronunciation": "[уно]",
           "translation": "неопределённый артикль (м. р. перед s/z)",
-          "examples": "Uno studente è bravo. Uno zio è italiano. Uno studente legge."
+          "examples": "Uno studente è bravo. Uno zio è italiano. Uno studente legge. Uno di noi. Uno ponte."
         }
       ]
     },
@@ -5564,7 +8441,7 @@
           "italian": "che",
           "pronunciation": "[ке]",
           "translation": "что / который",
-          "examples": "So che è bravo. La casa che è grande."
+          "examples": "So che è bravo. La casa che è grande. Che cosa. Che bello."
         },
         {
           "n": 2,
@@ -5585,7 +8462,7 @@
           "italian": "ed",
           "pronunciation": "[эд]",
           "translation": "и",
-          "examples": "Ed io? Ed ecco la barca."
+          "examples": "Ed io? Ed ecco la barca. Ed acqua. Ed amici."
         },
         {
           "n": 5,
@@ -5599,14 +8476,14 @@
           "italian": "ma",
           "pronunciation": "[ма]",
           "translation": "но",
-          "examples": "È grande ma bello. È bravo ma stanco."
+          "examples": "È grande ma bello. È bravo ma stanco. Ma bello. Ma grande."
         },
         {
           "n": 7,
           "italian": "mentre",
           "pronunciation": "[мэнтрэ]",
           "translation": "в то время как",
-          "examples": "Mentre leggo, mangio. Mentre studio, bevo."
+          "examples": "Mentre leggo, mangio. Mentre studio, bevo. Mentre cammina."
         },
         {
           "n": 8,
@@ -5655,7 +8532,7 @@
           "italian": "se",
           "pronunciation": "[се]",
           "translation": "если",
-          "examples": "Se è bravo, leggo. Se è grande, è bello."
+          "examples": "Se è bravo, leggo. Se è grande, è bello. Se piove. Se arriva."
         }
       ]
     },
@@ -5738,7 +8615,7 @@
           "italian": "grazie",
           "pronunciation": "[грáцие]",
           "translation": "спасибо",
-          "examples": "Grazie! Grazie mille! Grazie, amico!"
+          "examples": "Grazie! Grazie mille! Grazie, amico! Grazie amici."
         },
         {
           "n": 12,
@@ -5794,7 +8671,7 @@
           "italian": "scusa",
           "pronunciation": "[ску́за]",
           "translation": "извини",
-          "examples": "Scusa! Scusa, amico. Scusa, è tardi."
+          "examples": "Scusa! Scusa, amico. Scusa, è tardi. Scusa amico."
         },
         {
           "n": 20,
@@ -5842,28 +8719,28 @@
           "italian": "al",
           "pronunciation": "[аль]",
           "translation": "в / на (слитный)",
-          "examples": "Vado al bar. Vado al cinema. Vado al tavolo."
+          "examples": "Vado al bar. Vado al cinema. Vado al tavolo. Al cane. Al bambino. Al mercato. Al ponte."
         },
         {
           "n": 3,
           "italian": "al / allo / alla",
           "pronunciation": "[аль / алло / алла]",
           "translation": "в / на (слитные)",
-          "examples": "Al bar. Alla casa. Allo studio. Alla lezione."
+          "examples": "Al bar. Alla casa. Allo studio. Alla lezione. Alla piazza. Alla fontana."
         },
         {
           "n": 4,
           "italian": "con",
           "pronunciation": "[кон]",
           "translation": "с",
-          "examples": "Con l’amico. Con la madre. Con il caffè. Con il cellulare."
+          "examples": "Con l’amico. Con la madre. Con il caffè. Con il cellulare. Con amici. Con acqua."
         },
         {
           "n": 5,
           "italian": "da",
           "pronunciation": "[да]",
           "translation": "от / из",
-          "examples": "Da Mosca. Da Roma. Da casa. Da lavoro."
+          "examples": "Da Mosca. Da Roma. Da casa. Da lavoro. Da Venezia."
         },
         {
           "n": 6,
@@ -5884,21 +8761,21 @@
           "italian": "dei",
           "pronunciation": "[де́и]",
           "translation": "некоторых (мн.)",
-          "examples": "Dei biscotti. Dei bicchieri."
+          "examples": "Dei biscotti. Dei bicchieri. Dei turisti."
         },
         {
           "n": 9,
           "italian": "del",
           "pronunciation": "[дель]",
           "translation": "о / из",
-          "examples": "Del caffè. Del vino."
+          "examples": "Del caffè. Del vino. Del cane. Del bambino."
         },
         {
           "n": 10,
           "italian": "del / della",
           "pronunciation": "[дель / делла]",
           "translation": "о / из (слитные)",
-          "examples": "Del padre. Della madre. Del museo. Della casa."
+          "examples": "Del padre. Della madre. Del museo. Della casa. Della piazza."
         },
         {
           "n": 11,
@@ -5912,7 +8789,7 @@
           "italian": "di",
           "pronunciation": "[ди]",
           "translation": "о / из / от",
-          "examples": "Di Roma. Di Mosca. Di nuovo. Di solito."
+          "examples": "Di Roma. Di Mosca. Di nuovo. Di solito. Di Venezia. Di casa."
         },
         {
           "n": 13,
@@ -5933,14 +8810,14 @@
           "italian": "fino",
           "pronunciation": "[фи́но]",
           "translation": "до",
-          "examples": "Fino a domani. Fino alla fine."
+          "examples": "Fino a domani. Fino alla fine. Fino al ponte. Fino a casa."
         },
         {
           "n": 16,
           "italian": "in",
           "pronunciation": "[ин]",
           "translation": "в",
-          "examples": "In casa. In Italia. In ufficio. In Russia."
+          "examples": "In casa. In Italia. In ufficio. In Russia. In città. In piazza."
         },
         {
           "n": 17,
@@ -5954,28 +8831,28 @@
           "italian": "per",
           "pronunciation": "[пер]",
           "translation": "для / на",
-          "examples": "Per favore. Per il bambino. Per la lezione. Per il viaggio."
+          "examples": "Per favore. Per il bambino. Per la lezione. Per il viaggio. Per acqua."
         },
         {
           "n": 19,
           "italian": "secondo",
           "pronunciation": "[секо́ндо]",
           "translation": "по мнению",
-          "examples": "Secondo me è bello. Secondo lei è caldo."
+          "examples": "Secondo me è bello. Secondo lei è caldo. Secondo me. Secondo lui."
         },
         {
           "n": 20,
           "italian": "senza",
           "pronunciation": "[се́нца]",
           "translation": "без",
-          "examples": "Senza problemi. Senza bagagli è difficile."
+          "examples": "Senza problemi. Senza bagagli è difficile. Senza acqua. Senza pane."
         },
         {
           "n": 21,
           "italian": "sopra",
           "pronunciation": "[сóпра]",
           "translation": "над",
-          "examples": "Sopra il tavolo. Sopra la coperta."
+          "examples": "Sopra il tavolo. Sopra la coperta. Sopra il ponte."
         },
         {
           "n": 22,
@@ -5989,21 +8866,21 @@
           "italian": "su",
           "pronunciation": "[су]",
           "translation": "на",
-          "examples": "Su il tavolo. Su il giornale. Su il ponte."
+          "examples": "Su il tavolo. Su il giornale. Su il ponte. Su ponte. Su piazza."
         },
         {
           "n": 24,
           "italian": "sul",
           "pronunciation": "[суль]",
           "translation": "на",
-          "examples": "Sul tavolo. Sulla barca. Sul ponte."
+          "examples": "Sul tavolo. Sulla barca. Sul ponte. Sul muro."
         },
         {
           "n": 25,
           "italian": "tra",
           "pronunciation": "[тра]",
           "translation": "между",
-          "examples": "Tra poco. Tra amici."
+          "examples": "Tra poco. Tra amici. Tra ponti."
         },
         {
           "n": 26,
@@ -6017,7 +8894,7 @@
           "italian": "verso",
           "pronunciation": "[ве́рсо]",
           "translation": "в направлении",
-          "examples": "Verso casa. Verso la piazza."
+          "examples": "Verso casa. Verso la piazza. Verso il ponte."
         },
         {
           "n": 28,
@@ -6025,6 +8902,90 @@
           "pronunciation": "[вичíно а]",
           "translation": "рядом с",
           "examples": "Vicino a casa. Vicino al bar. Vicino al museo."
+        },
+        {
+          "n": 29,
+          "italian": "ad",
+          "pronunciation": "[ад]",
+          "translation": "к (предлог)",
+          "examples": "Ad acqua. Ad amici. Ad angolo. Ad attenzione."
+        },
+        {
+          "n": 30,
+          "italian": "ai",
+          "pronunciation": "[ай]",
+          "translation": "к (предлог, мн.ч.)",
+          "examples": "Ai bambini. Ai piccioni. Ai turisti."
+        },
+        {
+          "n": 31,
+          "italian": "all",
+          "pronunciation": "[алл]",
+          "translation": "к (предлог перед гласной)",
+          "examples": "All'angolo. All'acqua."
+        },
+        {
+          "n": 32,
+          "italian": "attraverso",
+          "pronunciation": "[аттраве́рсо]",
+          "translation": "через",
+          "examples": "Attraverso i canali. Attraverso la città."
+        },
+        {
+          "n": 33,
+          "italian": "dai",
+          "pronunciation": "[дай]",
+          "translation": "от (мн.ч.) / дай",
+          "examples": "Dai bambini."
+        },
+        {
+          "n": 34,
+          "italian": "dal",
+          "pronunciation": "[даль]",
+          "translation": "от (м.р.)",
+          "examples": "Dal ponte. Dal castello."
+        },
+        {
+          "n": 35,
+          "italian": "dell",
+          "pronunciation": "[дель]",
+          "translation": "от (перед гласной)",
+          "examples": "Dell'acqua."
+        },
+        {
+          "n": 36,
+          "italian": "delle",
+          "pronunciation": "[де́лле]",
+          "translation": "от (ж.р. мн.ч.)",
+          "examples": "Delle barche."
+        },
+        {
+          "n": 37,
+          "italian": "nel",
+          "pronunciation": "[нель]",
+          "translation": "в (м.р.)",
+          "examples": "Nel cortile. Nel canale."
+        },
+        {
+          "n": 38,
+          "italian": "nella",
+          "pronunciation": "[не́лла]",
+          "translation": "в (ж.р.)",
+          "examples": "Nella casa. Nella piazza."
+        },
+        {
+          "n": 39,
+          "italian": "nelle",
+          "pronunciation": "[не́лле]",
+          "translation": "в (ж.р. мн.ч.)",
+          "examples": "Nelle strade."
+        },
+        {
+          "n": 40,
+          "italian": "sulla",
+          "pronunciation": "[су́лла]",
+          "translation": "на (ж.р.)",
+          "examples": "Sulla piazza. Sulla casa."
         }
       ]
     },
@@ -6037,14 +8998,14 @@
           "italian": "chi",
           "pronunciation": "[ки]",
           "translation": "кто",
-          "examples": "Chi è? Chi arriva con te? Chi è quella ragazza?"
+          "examples": "Chi è? Chi arriva con te? Chi è quella ragazza? Chi arriva. Chi parla."
         },
         {
           "n": 2,
           "italian": "ci",
           "pronunciation": "[чи]",
           "translation": "нам / нас / туда",
-          "examples": "Ci piace il caffè. Ci siamo."
+          "examples": "Ci piace il caffè. Ci siamo. Ci sono. Ci piace."
         },
         {
           "n": 3,
@@ -6072,21 +9033,21 @@
           "italian": "io",
           "pronunciation": "[и́о]",
           "translation": "я (в глаголах)",
-          "examples": "Io leggo. Io sono russo. Io ho un amico."
+          "examples": "Io leggo. Io sono russo. Io ho un amico. Io vado. Io parlo."
         },
         {
           "n": 7,
           "italian": "lei",
           "pronunciation": "[лей]",
           "translation": "она / Вы",
-          "examples": "Lei è siciliana. Lei è molto gentile."
+          "examples": "Lei è siciliana. Lei è molto gentile. Lei parla. Lei arriva."
         },
         {
           "n": 8,
           "italian": "li",
           "pronunciation": "[ли]",
           "translation": "их / там",
-          "examples": "Io li vedo. Noi li aspettiamo."
+          "examples": "Io li vedo. Noi li aspettiamo. Li vedo."
         },
         {
           "n": 9,
@@ -6100,14 +9061,14 @@
           "italian": "loro",
           "pronunciation": "[лóро]",
           "translation": "они",
-          "examples": "Loro sono contenti. Loro leggono. Loro hanno una famiglia."
+          "examples": "Loro sono contenti. Loro leggono. Loro hanno una famiglia. Loro parlano. Loro arrivano."
         },
         {
           "n": 11,
           "italian": "lui",
           "pronunciation": "[луи́]",
           "translation": "он",
-          "examples": "Lui è milanese. Lui accompagna Martina."
+          "examples": "Lui è milanese. Lui accompagna Martina. Lui parla. Lui arriva."
         },
         {
           "n": 12,
@@ -6121,7 +9082,7 @@
           "italian": "mi",
           "pronunciation": "[ми]",
           "translation": "мне / меня",
-          "examples": "Mi chiamo. Mi piace il caffè. Mi piace la casa."
+          "examples": "Mi chiamo. Mi piace il caffè. Mi piace la casa. Mi piace. Mi dice."
         },
         {
           "n": 14,
@@ -6156,7 +9117,7 @@
           "italian": "nessuno",
           "pronunciation": "[нессу́но]",
           "translation": "никто",
-          "examples": "Nessuno arriva in ritardo. Nessuno sa la risposta."
+          "examples": "Nessuno arriva in ritardo. Nessuno sa la risposta. Nessuno arriva."
         },
         {
           "n": 19,
@@ -6170,77 +9131,77 @@
           "italian": "noi",
           "pronunciation": "[нóи]",
           "translation": "мы",
-          "examples": "Noi siamo italiani. Noi leggiamo. Noi abbiamo tempo."
+          "examples": "Noi siamo italiani. Noi leggiamo. Noi abbiamo tempo. Noi andiamo. Noi abbiamo."
         },
         {
           "n": 21,
           "italian": "qualcosa",
           "pronunciation": "[куалькóза]",
           "translation": "что-то",
-          "examples": "Qualcosa è interessante. Qualcosa è nuovo."
+          "examples": "Qualcosa è interessante. Qualcosa è nuovo. Qualcosa di bello."
         },
         {
           "n": 22,
           "italian": "qualcuno",
           "pronunciation": "[куалькýно]",
           "translation": "кто-то",
-          "examples": "Qualcuno legge. Qualcuno è bravo."
+          "examples": "Qualcuno legge. Qualcuno è bravo. Qualcuno arriva."
         },
         {
           "n": 23,
           "italian": "quello / quella",
           "pronunciation": "[куэ́лло / куэ́лла]",
           "translation": "тот / та",
-          "examples": "Quello studente è stanco. Quella lezione è interessante. Quella casa è bella."
+          "examples": "Quello studente è stanco. Quella lezione è interessante. Quella casa è bella. Quella casa."
         },
         {
           "n": 24,
           "italian": "questo / questa",
           "pronunciation": "[куэ́сто / куэ́ста]",
           "translation": "этот / эта",
-          "examples": "Questo bambino è bravo. Questa casa è grande. Questo museo è interessante."
+          "examples": "Questo bambino è bravo. Questa casa è grande. Questo museo è interessante. Questa piazza."
         },
         {
           "n": 25,
           "italian": "si",
           "pronunciation": "[си]",
           "translation": "да / себя",
-          "examples": "Sì, certo. Si accomodi pure."
+          "examples": "Sì, certo. Si accomodi pure. Si dice. Si vede."
         },
         {
           "n": 26,
           "italian": "suo / sua",
           "pronunciation": "[суó / суá]",
           "translation": "его / её / свой",
-          "examples": "Il suo amico è bravo. La sua casa è grande. La sua madre è brava."
+          "examples": "Il suo amico è bravo. La sua casa è grande. La sua madre è brava. Sua casa. Sua amica."
         },
         {
           "n": 27,
           "italian": "te",
           "pronunciation": "[те]",
           "translation": "тебе",
-          "examples": "Per te. Con te è meglio."
+          "examples": "Per te. Con te è meglio. Con te."
         },
         {
           "n": 28,
           "italian": "ti",
           "pronunciation": "[ти]",
           "translation": "тебе / тебя",
-          "examples": "Ti piace il caffè. Ti piace la lezione."
+          "examples": "Ti piace il caffè. Ti piace la lezione. Ti piace. Ti dice."
         },
         {
           "n": 29,
           "italian": "tu",
           "pronunciation": "[ту]",
           "translation": "ты",
-          "examples": "Tu sei bravo. Tu leggi. Tu hai una casa."
+          "examples": "Tu sei bravo. Tu leggi. Tu hai una casa. Tu vai. Tu parli."
         },
         {
           "n": 30,
           "italian": "tutti",
           "pronunciation": "[тýтти]",
           "translation": "все",
-          "examples": "Tutti leggono. Tutti sono bravi. Tutti hanno tempo."
+          "examples": "Tutti leggono. Tutti sono bravi. Tutti hanno tempo. Tutti amici. Tutti contenti."
         },
         {
           "n": 31,
@@ -6255,6 +9216,27 @@
           "pronunciation": "[вóи]",
           "translation": "вы",
           "examples": "Voi siete bravi. Voi leggete. Voi avete una macchina."
+        },
+        {
+          "n": 33,
+          "italian": "ciò",
+          "pronunciation": "[чо]",
+          "translation": "это",
+          "examples": "Ciò che dice."
+        },
+        {
+          "n": 34,
+          "italian": "nessuna",
+          "pronunciation": "[нессу́на]",
+          "translation": "никакая",
+          "examples": "Nessuna paura."
+        },
+        {
+          "n": 35,
+          "italian": "nulla",
+          "pronunciation": "[ну́лла]",
+          "translation": "ничто",
+          "examples": "Nulla di male."
         }
       ]
     }

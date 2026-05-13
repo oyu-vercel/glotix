@@ -55,7 +55,7 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
       "slug": "benvenute-al-sud",
       "title": "Benvenute al Sud",
       "paragraphs": 130,
-      "vocabCount": 435
+      "vocabCount": 479
     }
   ]
 }
@@ -101,7 +101,16 @@ Skip state is stored via the shared [`MemorizeStorage`](../web/src/app/shared/st
 
 ## Adding a new story
 
-1. Create a folder `docs/stories/<folder>/` and drop `<slug>.txt` inside.
-2. If the story uses words not yet in `web/public/assets/vocabulary.json`, add them there first (otherwise they're silently excluded from the story's vocabulary).
-3. Run `npm --prefix web run build:stories`.
-4. The story appears automatically at `/stories`.
+Use the [`add-story` skill](../.claude/skills/add-story/SKILL.md). Drop two files into a fresh `docs/stories/<folder>/`:
+
+- `<slug>.txt` — the story (first non-empty line is the title).
+- `<slug>-words.csv` — vocabulary supplement, 4 columns: Italian phrase, Cyrillic pronunciation, Russian translation, example sentences.
+
+Then ask Claude to "add story `<folder>`" (or invoke the skill directly). It runs the 3 stages: merge CSV into vocabulary.json, categorize new words, rebuild story JSONs.
+
+The two helper scripts the skill calls:
+
+- [`web/scripts/merge-words.mjs <storyFolder>`](../web/scripts/merge-words.mjs) — for each CSV row, looks up the Italian headword in vocabulary.json. **Matched** → appends new unique example sentences (case-insensitive trimmed dedup, capped at 10 per word). Pronunciation and translation are never overwritten. **Unmatched** → written to `docs/stories/<folder>/unmatched.json` for categorization.
+- [`web/scripts/append-words.mjs <unmatched.json>`](../web/scripts/append-words.mjs) — after Claude annotates each entry with a `category` field, this appends them to the matching category with `n = max(n) + 1` per category. Examples are truncated to the first 10 sentences. Hard-fails if any entry has a missing or unknown category.
+
+If you only have a `.txt` (no CSV) you can still run `npm --prefix web run build:stories` directly — words not in vocabulary.json are silently dropped from the story's refs, as before.
