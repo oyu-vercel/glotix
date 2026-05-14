@@ -1,0 +1,23 @@
+<div class="repeat-shell">
+  <div class="repeat-topbar">
+    <a mat-button (click)="exit.emit()">← Exit</a>
+    @if (hasCards()) {
+      <span class="progress">{{ progress() }}</span>
+    }
+  </div>
+
+  @if (current(); as card) {
+    <article class="card" tabindex="0" (click)="advance()">
+      <div class="face">
+        <div class="italian">{{ card.italian }}</div>
+        <div class="divider"></div>
+        <div class="russian">{{ card.russian }}</div>
+      </div>
+      <div class="hint">Click or press Space for next pattern</div>
+    </article>
+  } @else if (patterns().length === 0) {
+    <p class="loading">No patterns in this drill.</p>
+  } @else {
+    <p class="loading">Loading...</p>
+  }
+</div>

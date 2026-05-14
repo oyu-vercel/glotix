@@ -1,0 +1,57 @@
+:host {
+  display: block;
+}
+
+.back-row {
+  margin-bottom: 16px;
+
+  a {
+    color: var(--mat-sys-on-surface-variant);
+    font-weight: 500;
+  }
+}
+
+.detail-header {
+  margin-bottom: 24px;
+
+  .eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--mat-sys-on-surface-variant);
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    color: var(--mat-sys-on-surface);
+  }
+}
+
+.drill-tabs {
+  margin-top: 8px;
+}
+
+.actions-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 0 24px;
+}
+
+.loading {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+@media (max-width: 600px) {
+  .detail-header h1 {
+    font-size: 30px;
+  }
+}

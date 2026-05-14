@@ -56,5 +56,26 @@ export const routes: Routes = [
     loadComponent: () => import('./shared/repeat-route/repeat-route').then((m) => m.RepeatRoute),
     providers: [provideStoryDeckSurface()],
   },
+  {
+    path: 'drills',
+    loadComponent: () => import('./drills/list/list').then((m) => m.DrillsList),
+  },
+  {
+    path: 'drills/:slug',
+    loadComponent: () => import('./drills/detail/detail').then((m) => m.DrillDetail),
+  },
+  {
+    path: 'drills/:slug/memorize',
+    loadComponent: () => import('./drills/memorize/memorize').then((m) => m.DrillMemorize),
+  },
+  {
+    path: 'drills/:slug/repeat',
+    loadComponent: () => import('./drills/repeat/repeat').then((m) => m.DrillRepeat),
+  },
+  {
+    path: 'drills/:slug/patterns/repeat',
+    loadComponent: () =>
+      import('./drills/patterns-repeat/patterns-repeat').then((m) => m.DrillPatternsRepeat),
+  },
   { path: '**', redirectTo: 'vocabulary' },
 ];

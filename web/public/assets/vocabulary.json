@@ -606,7 +606,7 @@
           "italian": "domenica",
           "pronunciation": "[домéника]",
           "translation": "воскресенье",
-          "examples": "Domenica è libera. Domenica è bella."
+          "examples": "Domenica è libera. Domenica è bella. Oggi è domenica. Domenica vado al parco. La domenica è giorno di riposo. Domenica leggo un libro. Mi piace la domenica. Domenica mangio a casa. Domani è domenica. Domenica bevo tè."
         },
         {
           "n": 87,
@@ -914,7 +914,7 @@
           "italian": "giovedì",
           "pronunciation": "[джовédи]",
           "translation": "четверг",
-          "examples": "Giovedì è bello. Giovedì studio."
+          "examples": "Giovedì è bello. Giovedì studio. Oggi è giovedì. Giovedì ho una riunione. Il giovedì bevo caffè. Giovedì vado al cinema. Mi piace il giovedì. Giovedì è un bel giorno. Domani è giovedì. Giovedì studio molto."
         },
         {
           "n": 131,
@@ -1124,7 +1124,7 @@
           "italian": "lunedì",
           "pronunciation": "[лунэдú]",
           "translation": "понедельник",
-          "examples": "Lunedì lavoro. Lunedì è buono."
+          "examples": "Lunedì lavoro. Lunedì è buono. Oggi è lunedì. Lunedì vado al lavoro. Il lunedì studio italiano. Lunedì mattina bevo caffè. Mi piace il lunedì. Lunedì è il primo giorno. Lunedì ho lezione. Domani è lunedì."
         },
         {
           "n": 161,
@@ -1194,7 +1194,7 @@
           "italian": "martedì",
           "pronunciation": "[мартэдú]",
           "translation": "вторник",
-          "examples": "Martedì studio. Martedì è libero."
+          "examples": "Martedì studio. Martedì è libero. Oggi è martedì. Martedì ho lezione. Il martedì lavoro molto. Martedì studio a casa. Mi piace il martedì. Martedì mangio pasta. Domani è martedì. Martedì bevo un caffè."
         },
         {
           "n": 171,
@@ -1229,7 +1229,7 @@
           "italian": "mercoledì",
           "pronunciation": "[мерколédи]",
           "translation": "среда",
-          "examples": "Mercoledì è buono. Mercoledì lavoro."
+          "examples": "Mercoledì è buono. Mercoledì lavoro. Oggi è mercoledì. Mercoledì è il terzo giorno. Il mercoledì mangio pizza. Mercoledì torno a casa. Mi piace il mercoledì. Mercoledì ho appuntamento. Domani è mercoledì. Mercoledì studio italiano."
         },
         {
           "n": 176,
@@ -1803,7 +1803,7 @@
           "italian": "sabato",
           "pronunciation": "[сáбато]",
           "translation": "суббота",
-          "examples": "Sabato è libero. Sabato è bello. Il sabato è buono."
+          "examples": "Sabato è libero. Sabato è bello. Il sabato è buono. Oggi è sabato. Sabato riposo a casa. Il sabato dormo tanto. Sabato mangio gelato. Mi piace il sabato. Sabato vado al mare. Domani è sabato."
         },
         {
           "n": 258,
@@ -2384,7 +2384,7 @@
           "italian": "venerdì",
           "pronunciation": "[венэрдú]",
           "translation": "пятница",
-          "examples": "Venerdì è libero. Venerdì lavoro."
+          "examples": "Venerdì è libero. Venerdì lavoro. Oggi è venerdì. Venerdì è l’ultimo giorno di lavoro. Il venerdì esco con amici. Venerdì vado in città. Mi piace il venerdì. Venerdì mangio pesce. Domani è venerdì. Venerdì bevo birra."
         },
         {
           "n": 341,

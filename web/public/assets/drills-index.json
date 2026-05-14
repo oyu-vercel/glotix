@@ -1,0 +1,12 @@
+{
+  "language": "italian",
+  "level": "a2",
+  "drills": [
+    {
+      "slug": "days-of-week",
+      "title": "Days of Week",
+      "wordCount": 7,
+      "patternCount": 70
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+<div class="back-row">
+  <a mat-button routerLink="/drills">← Drills</a>
+</div>
+
+@if (drill(); as d) {
+  <header class="detail-header">
+    <span class="eyebrow">Drill</span>
+    <h1>{{ d.title }}</h1>
+  </header>
+
+  <mat-tab-group class="drill-tabs" animationDuration="120ms">
+    <mat-tab [label]="'Words (' + d.words.length + ')'">
+      <div class="actions-row">
+        <a
+          mat-flat-button
+          color="primary"
+          [routerLink]="['/drills', d.slug, 'memorize']"
+          >Italian → Russian</a
+        >
+        <a
+          mat-stroked-button
+          color="primary"
+          [routerLink]="['/drills', d.slug, 'memorize']"
+          [queryParams]="{ direction: 'russian' }"
+          >Russian → Italian</a
+        >
+        <a
+          mat-stroked-button
+          color="primary"
+          [routerLink]="['/drills', d.slug, 'repeat']"
+          >Repeat</a
+        >
+      </div>
+      <app-word-table [words]="d.words" />
+    </mat-tab>
+
+    <mat-tab [label]="'Patterns (' + d.patterns.length + ')'">
+      <div class="actions-row">
+        <a
+          mat-flat-button
+          color="primary"
+          [routerLink]="['/drills', d.slug, 'patterns', 'repeat']"
+          >Repeat</a
+        >
+      </div>
+      <app-patterns-table [patterns]="d.patterns" />
+    </mat-tab>
+  </mat-tab-group>
+} @else {
+  <p class="loading">Loading...</p>
+}
