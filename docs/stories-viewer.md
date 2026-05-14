@@ -82,10 +82,10 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
 
 ## UI
 
-- **`/stories`** — `mat-table` listing each story with title, paragraph count, and matched vocab count. Row click navigates to `/stories/:slug`.
+- **`/stories`** — `mat-table` of stories with `Story` + `Paragraphs` + `Words` (memorized in story) + `Total` (= `vocabCount` from index) + `Progress` columns and a footer Total row. Per-story memorized counts come from resolving each story (one cached HTTP call per story on first visit). Row click navigates to `/stories/:slug`.
 - **`/stories/:slug`** — header with the title; `mat-tab-group` with two tabs:
   - **Read** — renders the story text as paragraphs. Short standalone lines ending in `.` (≤ 60 chars, ≤ 6 words, no quote characters) auto-promote to `<h2>` section headers. The title line is skipped (already shown as page header).
-  - **Vocabulary (N)** — `mat-table` of categories (with row click drilling into the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts), the same component used by `/category/:key`, columns: #, Word, Pronunciation, Translation, Examples). The drilldown header carries three buttons — **Italian → Russian**, **Russian → Italian**, **Repeat** — that link to the story-scoped `MemorizeRoute` / `RepeatRoute` for that category's word set.
+  - **Vocabulary (N)** — `mat-table` of categories (`Category` + `Words` (memorized in story) + `Total` (this story's per-category word count) + `Progress` columns + footer Total row). Row click drills into the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts), the same component used by `/category/:key`, columns: #, Word, Pronunciation, Translation, Examples. The drilldown header carries three buttons — **Italian → Russian**, **Russian → Italian**, **Repeat** — that link to the story-scoped `MemorizeRoute` / `RepeatRoute` for that category's word set.
     - Category selection is URL-driven via the `cat` query param, so memorize/repeat can exit back to the same drilled-in state.
 
 ## Memorize / Repeat

@@ -8,10 +8,10 @@ The word stays in the regular vocabulary tables; only the practice decks filter 
 
 | Path | Component | Notes |
 |---|---|---|
-| `/vocabulary/memorized` | [`Memorized`](../web/src/app/vocabulary/memorized/memorized.ts) | Category index — `mat-table` with `Category` + `Words` + `Total` + `%` columns and a totals footer row. `Words` is the user's memorized count in that category; `Total` is the category's full word count from `vocabulary.json`; `%` = Words / Total formatted to 1 decimal. The footer row's `%` is `Words / vocabulary.json grand total`. Empty categories (0 memorized) are omitted. Click row to drill into `/vocabulary/memorized/:key`. Empty state when no words are memorized. |
+| `/vocabulary/memorized` | [`Memorized`](../web/src/app/vocabulary/memorized/memorized.ts) | Category index — `mat-table` with `Category` + `Words` + `Total` + `Progress` columns and a totals footer row. `Words` is the user's memorized count in that category; `Total` is the category's full word count from `vocabulary.json`; `Progress` is a bar + `Words / Total` percent. The footer row's percent is `Words / vocabulary.json grand total`. Empty categories (0 memorized) are omitted (unlike `/vocabulary/a2`, which shows all). Click row to drill into `/vocabulary/memorized/:key`. Empty state when no words are memorized. |
 | `/vocabulary/memorized/:key` | [`MemorizedCategory`](../web/src/app/vocabulary/memorized/category/category.ts) | Per-category drill-down. Renders the shared [`app-word-table`](../web/src/app/shared/word-table/word-table.ts) (standard columns: `#`, Word, Pronunciation, Translation, Examples) plus a `Restore` action column. Header includes `← Back` to `/vocabulary/memorized`, category label, and count pill. Empty state when every word in this category has been restored. |
 
-Surfaced from the Vocabulary index ([`/vocabulary`](../web/src/app/vocabulary/list/list.ts)) as a second row in the global section, alongside "Global Vocabulary". The row count is read from storage at component construction.
+Surfaced from the Vocabulary index ([`/vocabulary`](../web/src/app/vocabulary/list/list.ts)) as a second row in the global section, alongside "Global Vocabulary". Both rows now share the same Words/Total/Progress numbers in the new progress layout — see [Vocabulary viewer](vocabulary-viewer.md) routes table.
 
 ## Storage
 

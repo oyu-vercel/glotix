@@ -89,11 +89,49 @@
 }
 
 .count-col {
-  width: 120px;
+  width: 100px;
   text-align: right;
   padding-right: 24px;
   color: var(--mat-sys-on-surface-variant);
   font-variant-numeric: tabular-nums;
+}
+
+.progress-col {
+  width: 180px;
+  text-align: right;
+  padding-right: 24px;
+}
+
+.progress-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.progress-track {
+  flex: 1;
+  max-width: 100px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--mat-sys-surface-container-high);
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--mat-sys-tertiary);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.progress-num {
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--mat-sys-on-surface);
+  min-width: 42px;
+  text-align: right;
 }
 
 .clickable-row {
@@ -107,6 +145,23 @@
   &:focus-visible {
     outline: 2px solid var(--mat-sys-primary);
     outline-offset: -2px;
+  }
+}
+
+.totals-row {
+  background: var(--mat-sys-secondary-container);
+
+  .footer-label,
+  .footer-total {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--mat-sys-on-secondary-container);
+    border-top: 1px solid var(--mat-sys-outline-variant);
+  }
+
+  .footer-label .accent-italic {
+    font-size: 17px;
+    color: var(--mat-sys-on-secondary-container);
   }
 }
 
@@ -169,5 +224,19 @@
       font-size: 22px;
       margin: 28px 0 10px;
     }
+  }
+
+  .count-col {
+    width: 64px;
+    padding-right: 12px;
+  }
+
+  .progress-col {
+    width: 110px;
+    padding-right: 12px;
+  }
+
+  .progress-track {
+    max-width: 50px;
   }
 }

@@ -17,8 +17,17 @@ import { Router, RouterLink } from '@angular/router';
 import { StoriesService } from '../stories.service';
 import { Category } from '../../vocabulary/vocabulary.types';
 import { WordTable } from '../../shared/word-table/word-table';
+import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { countWords } from '../../shared/utils/count-words';
 import { TextNode, parseStoryText } from '../utils/parse-story-text';
+
+interface VocabProgressRow {
+  key: string;
+  label: string;
+  count: number;
+  total: number;
+  percent: number;
+}
 
 @Component({
   selector: 'app-story-detail',
@@ -33,7 +42,10 @@ export class StoryDetail {
   readonly tab = input<string | null>(null);
 
   private readonly service = inject(StoriesService);
+  private readonly storage = inject(MemorizeStorage);
   private readonly router = inject(Router);
+
+  readonly memorized = signal<Set<string>>(this.storage.getMemorized());
 
   readonly story = toSignal(
     toObservable(this.slug).pipe(switchMap((s) => this.service.getStoryResolved(s))),
@@ -53,13 +65,30 @@ export class StoryDetail {
 
   readonly totalVocab = computed(() => countWords(this.nonEmptyCategories()));
 
+  readonly vocabRows = computed<VocabProgressRow[]>(() => {
+    const memorized = this.memorized();
+    return this.nonEmptyCategories().map((category) => {
+      const count = category.words.reduce((n, w) => n + (memorized.has(w.italian) ? 1 : 0), 0);
+      const total = category.words.length;
+      const percent = total > 0 ? (count / total) * 100 : 0;
+      return { key: category.key, label: category.label, count, total, percent };
+    });
+  });
+
+  readonly vocabMemorizedTotal = computed(() => this.vocabRows().reduce((n, r) => n + r.count, 0));
+
+  readonly vocabPercent = computed(() => {
+    const total = this.totalVocab();
+    return total > 0 ? (this.vocabMemorizedTotal() / total) * 100 : 0;
+  });
+
   readonly selectedCategory = computed<Category | undefined>(() => {
     const key = this.cat();
     if (!key) return undefined;
     return this.nonEmptyCategories().find((c) => c.key === key);
   });
 
-  readonly summaryColumns = ['label', 'count'];
+  readonly summaryColumns = ['label', 'count', 'total', 'percent'];
 
   readonly selectedTab = signal(0);
 
