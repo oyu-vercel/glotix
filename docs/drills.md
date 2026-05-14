@@ -79,13 +79,7 @@ NPM script: `npm --prefix web run build:drills`.
 
 ## Onboarding a new drill
 
-Use the `add-drill` skill (`.claude/skills/add-drill/SKILL.md`). It mirrors `add-story` exactly:
-
-1. `node web/scripts/merge-drill-words.mjs docs/drills/<folder>` — merge known words, emit `unmatched.json`.
-2. Auto-categorize each entry in `unmatched.json` (same 9-category set as add-story).
-3. `node web/scripts/append-words.mjs docs/drills/<folder>/unmatched.json` — append new words.
-4. `npm --prefix web run build:drills`.
-5. Visual verify in Claude_Preview.
+Use the [`add-drill` skill](../.claude/skills/add-drill/SKILL.md).
 
 ## Components
 

@@ -39,7 +39,7 @@
           "italian": "agosto",
           "pronunciation": "[аго́сто]",
           "translation": "август",
-          "examples": "In agosto andiamo in Calabria. Agosto è molto caldo. Noi partiamo in agosto. Io vado in agosto."
+          "examples": "In agosto andiamo in Calabria. Agosto è molto caldo. Noi partiamo in agosto. Io vado in agosto. Agosto è caldo. In agosto è estate. Agosto è l’ottavo mese. Il agosto è vacanza. Mi piace agosto. Agosto ha trentuno giorni."
         },
         {
           "n": 6,
@@ -123,7 +123,7 @@
           "italian": "aprile",
           "pronunciation": "[апри́ле]",
           "translation": "апрель",
-          "examples": "Aprile è bello. In aprile è primavera."
+          "examples": "Aprile è bello. In aprile è primavera. Aprile ha trenta giorni. Il aprile piove spesso. Mi piace aprile. Aprile è il quarto mese. In aprile è più caldo. Aprile ha Pasqua. Il aprile è fiorito. Aprile è primavera."
         },
         {
           "n": 18,
@@ -557,7 +557,7 @@
           "italian": "dicembre",
           "pronunciation": "[дичémбре]",
           "translation": "декабрь",
-          "examples": "Dicembre è freddo. Dicembre è buono."
+          "examples": "Dicembre è freddo. Dicembre è buono. Dicembre è inverno. In dicembre è Natale. Dicembre è il dodicesimo mese. Il dicembre è freddo. Mi piace dicembre. Dicembre ha trentuno giorni. In dicembre festeggio Natale. Dicembre è un mese festivo."
         },
         {
           "n": 80,
@@ -725,7 +725,7 @@
           "italian": "febbraio",
           "pronunciation": "[феббрáйо]",
           "translation": "февраль",
-          "examples": "Febbraio è freddo. Febbraio è corto."
+          "examples": "Febbraio è freddo. Febbraio è corto. In febbraio è ancora inverno. Febbraio ha ventotto giorni. Il febbraio è breve. Mi piace febbraio. Febbraio è il secondo mese. In febbraio fa freddo. Febbraio ha San Valentino. Il febbraio è grigio."
         },
         {
           "n": 104,
@@ -865,7 +865,7 @@
           "italian": "gennaio",
           "pronunciation": "[джэннáйо]",
           "translation": "январь",
-          "examples": "Gennaio è freddo. Gennaio è nuovo."
+          "examples": "Gennaio è freddo. Gennaio è nuovo. In gennaio è inverno. Gennaio è il primo mese. Il gennaio nevica spesso. Mi piace gennaio. Gennaio ha trentuno giorni. In gennaio festeggio il nuovo anno. Gennaio è un mese corto. Il gennaio è bianco."
         },
         {
           "n": 124,
@@ -1117,7 +1117,7 @@
           "italian": "luglio",
           "pronunciation": "[лúльо]",
           "translation": "июль",
-          "examples": "Luglio è caldo. Luglio è bello."
+          "examples": "Luglio è caldo. Luglio è bello. In luglio è estate. Luglio è il settimo mese. Il luglio è vacanza. Mi piace luglio. Luglio ha trentuno giorni. In luglio viaggio molto. Luglio è un mese caldo. Il luglio è soleggiato."
         },
         {
           "n": 160,
@@ -1152,7 +1152,7 @@
           "italian": "maggio",
           "pronunciation": "[ма́джо]",
           "translation": "май",
-          "examples": "In maggio è bello."
+          "examples": "In maggio è bello. Maggio è caldo. In maggio è primavera. Maggio è il quinto mese. Il maggio è fiorito. Mi piace maggio. Maggio ha trentuno giorni. In maggio vado al mare. Maggio è un bel mese. Il maggio è verde."
         },
         {
           "n": 165,
@@ -1425,7 +1425,7 @@
           "italian": "ottobre",
           "pronunciation": "[оттóбре]",
           "translation": "октябрь",
-          "examples": "Ottobre è fresco. Ottobre è bello."
+          "examples": "Ottobre è fresco. Ottobre è bello. Ottobre è autunno. In ottobre le foglie cadono. Ottobre è il decimo mese. Il ottobre è bello. Mi piace ottobre. Ottobre ha trentuno giorni. In ottobre è più fresco. Ottobre è un mese autunnale."
         },
         {
           "n": 204,
@@ -1929,7 +1929,7 @@
           "italian": "settembre",
           "pronunciation": "[сеттэмбрэ]",
           "translation": "сентябрь",
-          "examples": "Settembre è bello. Settembre è caldo."
+          "examples": "Settembre è bello. Settembre è caldo. Settembre è autunno. In settembre torna la scuola. Settembre è il nono mese. Il settembre è fresco. Mi piace settembre. Settembre ha trenta giorni. In settembre inizia l’autunno. Settembre è un mese bello."
         },
         {
           "n": 276,
@@ -3421,6 +3421,27 @@
           "pronunciation": "[во́льте]",
           "translation": "разы",
           "examples": "Molte volte."
+        },
+        {
+          "n": 489,
+          "italian": "marzo",
+          "pronunciation": "[ма́рцо]",
+          "translation": "март",
+          "examples": "Marzo è primavera. In marzo arriva la primavera. Marzo è il terzo mese. Il marzo è bello. Mi piace marzo. Marzo ha trentuno giorni. In marzo fioriscono i fiori. Marzo è un mese fresco. Il marzo è verde. Marzo fa più caldo."
+        },
+        {
+          "n": 490,
+          "italian": "giugno",
+          "pronunciation": "[джу́ньо]",
+          "translation": "июнь",
+          "examples": "Giugno è estate. In giugno inizia l’estate. Giugno è il sesto mese. Il giugno è caldo. Mi piace giugno. Giugno ha trenta giorni. In giugno vado in vacanza. Giugno è un mese bello. Il giugno è soleggiato. Giugno fa caldo."
+        },
+        {
+          "n": 491,
+          "italian": "novembre",
+          "pronunciation": "[новэ́мбрэ]",
+          "translation": "ноябрь",
+          "examples": "Novembre è autunno. In novembre fa freddo. Novembre è l’undicesimo mese. Il novembre è grigio. Mi piace novembre. Novembre ha trenta giorni. In novembre piove spesso. Novembre è un mese freddo. Il novembre è umido. Novembre fa freddo."
         }
       ]
     },

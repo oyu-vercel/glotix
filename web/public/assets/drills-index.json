@@ -7,6 +7,12 @@
       "title": "Days of Week",
       "wordCount": 7,
       "patternCount": 70
+    },
+    {
+      "slug": "months-of-the-year",
+      "title": "Months of the Year",
+      "wordCount": 12,
+      "patternCount": 120
     }
   ]
 }

@@ -89,7 +89,3 @@ UI navigation, headers, buttons, and descriptions are in **English** — the int
 - Color scheme locked to `light` in [web/src/styles.scss](../web/src/styles.scss) `body { color-scheme: light }`. No dark theme path.
 - All Angular Material components stayed (`mat-toolbar`, `mat-table`, `mat-button`, `mat-tab-group`, `mat-stroked-button`, `mat-flat-button`).
 - TypeScript / routing / signals / services untouched by the redesign.
-
-## Known cosmetic gap
-
-- `.sage-action` class on the "Repeat" button in [vocabulary/category.html](../web/src/app/vocabulary/category/category.html) was meant to color it sage; Material 21's MDC tokens didn't accept the override at the class level, so the button renders terracotta-outlined like the other secondaries. Cohesive but not the sage planned. Fix would be `::ng-deep` or a stronger inner-selector override.

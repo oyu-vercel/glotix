@@ -36,12 +36,3 @@ A `Memorized` button appears in the top-right of the card on both the cards/memo
 `MemorizedCategory` renders the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts) with `actionLabel="Restore"` to opt the table into its extra `action` column. The `(action)` output removes the word from `glotix:memorized` and the row disappears reactively; when the last word in the category is restored, the table is replaced by an empty state.
 
 The restored word reappears in memorize/repeat decks on the next entry — lazy-route navigation creates a fresh deck instance which re-reads storage on its category effect, so no shared service signal is needed.
-
-## What's intentionally not included
-
-- No "Reset memorized" / clear-all button.
-- No badge or strike-through indicator on the regular vocabulary tables.
-- No counter on the toolbar.
-- No keyboard shortcut.
-- No legacy migration.
-- No new top-level toolbar item — discovery is via the Vocabulary index row.
