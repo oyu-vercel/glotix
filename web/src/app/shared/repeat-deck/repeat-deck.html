@@ -1,6 +1,6 @@
 <div class="repeat-shell">
   <div class="repeat-topbar">
-    <a mat-button (click)="exit.emit()">← Exit</a>
+    <button mat-button type="button" (click)="exit.emit()">← Exit</button>
     @if (hasCards()) {
       <span class="progress">{{ progress() }}</span>
     }
@@ -19,7 +19,7 @@
       <div class="hint">Click or press Space for next word</div>
     </article>
   } @else if (category()) {
-    <p class="loading">No words in this category.</p>
+    <p class="loading">{{ emptyMessage() }}</p>
   } @else {
     <p class="loading">Loading...</p>
   }

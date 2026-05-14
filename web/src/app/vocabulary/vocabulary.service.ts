@@ -13,7 +13,7 @@ export class VocabularyService {
     .get<Vocabulary>('/assets/vocabulary.json')
     .pipe(shareReplay({ bufferSize: 1, refCount: false }));
 
-  getCategory(key: string): Observable<Category | undefined> {
+  private getCategory(key: string): Observable<Category | undefined> {
     return this.vocabulary$.pipe(map((v) => v.categories.find((c) => c.key === key)));
   }
 

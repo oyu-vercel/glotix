@@ -70,6 +70,10 @@ export class DrillsService {
     return cached;
   }
 
+  getDrillResolvedSignal(slug: Signal<string>): Signal<DrillResolved | undefined> {
+    return toSignal(toObservable(slug).pipe(switchMap((s) => this.getDrillResolved(s))));
+  }
+
   getDrillCategorySignal(slug: Signal<string>): Signal<Category | undefined> {
     return toSignal(
       toObservable(slug).pipe(

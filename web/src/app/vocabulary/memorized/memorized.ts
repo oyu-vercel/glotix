@@ -1,9 +1,12 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 
 import { MemorizeStorage } from '../../shared/storage/memorize-storage';
+import { PageHeader } from '../../shared/page-header/page-header';
+import { ProgressTable } from '../../shared/progress-table/progress-table';
+import { countWords } from '../../shared/utils/count-words';
 import { VocabularyService } from '../vocabulary.service';
 
 interface MemorizedCategoryRow {
@@ -16,7 +19,7 @@ interface MemorizedCategoryRow {
 
 @Component({
   selector: 'app-memorized',
-  imports: [MatTableModule],
+  imports: [MatTableModule, PageHeader, ProgressTable],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './memorized.html',
   styleUrl: './memorized.scss',
@@ -26,7 +29,6 @@ export class Memorized {
   private readonly vocabularyService = inject(VocabularyService);
   private readonly router = inject(Router);
 
-  readonly memorized = signal<Set<string>>(this.storage.getMemorized());
   readonly vocabulary = toSignal(this.vocabularyService.vocabulary$);
 
   readonly columns = ['label', 'count', 'total', 'percent'];
@@ -34,7 +36,7 @@ export class Memorized {
   readonly rows = computed<MemorizedCategoryRow[]>(() => {
     const vocab = this.vocabulary();
     if (!vocab) return [];
-    const memorized = this.memorized();
+    const memorized = this.storage.memorized();
     const out: MemorizedCategoryRow[] = [];
     for (const category of vocab.categories) {
       const count = category.words.reduce((n, w) => n + (memorized.has(w.italian) ? 1 : 0), 0);
@@ -50,8 +52,7 @@ export class Memorized {
 
   readonly grandTotal = computed(() => {
     const vocab = this.vocabulary();
-    if (!vocab) return 0;
-    return vocab.categories.reduce((n, c) => n + c.words.length, 0);
+    return vocab ? countWords(vocab.categories) : 0;
   });
 
   readonly grandPercent = computed(() => {

@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { switchMap } from 'rxjs';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
@@ -8,10 +6,11 @@ import { RouterLink } from '@angular/router';
 import { DrillsService } from '../drills.service';
 import { WordTable } from '../../shared/word-table/word-table';
 import { PatternsTable } from '../patterns-table/patterns-table';
+import { PageHeader } from '../../shared/page-header/page-header';
 
 @Component({
   selector: 'app-drill-detail',
-  imports: [MatTabsModule, MatButtonModule, RouterLink, WordTable, PatternsTable],
+  imports: [MatTabsModule, MatButtonModule, RouterLink, WordTable, PatternsTable, PageHeader],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
   styleUrl: './detail.scss',
@@ -21,7 +20,5 @@ export class DrillDetail {
 
   private readonly service = inject(DrillsService);
 
-  readonly drill = toSignal(
-    toObservable(this.slug).pipe(switchMap((s) => this.service.getDrillResolved(s))),
-  );
+  readonly drill = this.service.getDrillResolvedSignal(this.slug);
 }

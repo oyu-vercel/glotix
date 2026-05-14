@@ -43,11 +43,18 @@ Material Icons remains as-is.
 
 ## Reused visual patterns
 
-Each component .scss defines its own copy of these (Angular component styles are scoped, so they don't collide). Patterns are intentionally not extracted to a global utility — three similar lines beats premature abstraction.
+Patterns stay inlined per-component until duplicate copies cross a meaningful threshold — roughly **~4+ byte-identical template copies** or **~5+ identical SCSS blocks** across the app. Below that, three similar lines beats premature abstraction. Above that, extract a scoped shared component (not a global utility class) so future copies route through one definition and the styles stay encapsulated to the consumer's DOM.
 
-**Card-shell table-wrap** — white `surface-container`, 22px radius, layered shadow `0 1px 0 rgba(43, 42, 38, .05), 0 18px 40px -22px rgba(43, 42, 38, .18)`. Hover row → `surface-container-low` warm tint.
+Patterns already extracted into `web/src/app/shared/`:
 
-**Page-header eyebrow + H1** — eyebrow is `font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--mat-sys-on-surface-variant)`. H1 is 40px desktop / 30px mobile, weight 700, letter-spacing −0.02em. Italic accent words wrapped in `.accent-italic`.
+- **`<app-page-header>`** — the eyebrow + H1 + optional italic accent block. Replaces the `.summary-header` / `.page-header` / `.detail-header` copies across vocabulary, stories, and drills routes.
+- **`<app-progress-table>`** — the card-shell wrapper for `<table mat-table>` summary screens. Owns `.table-wrap`, `.summary-table`, `.title-cell`, `.num-col`/`.count-col`, `.progress-col`, `.progress-cell`, `.progress-track`, `.progress-fill`, `.progress-num`, `.clickable-row`, `.totals-row` + footer styles via `:host ::ng-deep` on the slot. Parents project the full `<table mat-table>` with their own column defs.
+
+Patterns still inlined (below the threshold, or visually divergent enough that one shared component would force unnatural API surface):
+
+**Card-shell table-wrap** — white `surface-container`, 22px radius, layered shadow `0 1px 0 rgba(43, 42, 38, .05), 0 18px 40px -22px rgba(43, 42, 38, .18)`. Hover row → `surface-container-low` warm tint. Lives inside `<app-progress-table>` for summary tables; `word-table.scss` still defines its own copy because its overflow behavior differs.
+
+**Page-header eyebrow + H1** — eyebrow is `font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--mat-sys-on-surface-variant)`. H1 is 40px desktop / 30px mobile, weight 700, letter-spacing −0.02em. Italic accent words wrapped in `.accent-italic`. Implemented once in `<app-page-header>`.
 
 **Practice card** (memorize/repeat decks) — white card with deeper shadow `0 1px 0 rgba(43, 42, 38, .05), 0 30px 60px -32px rgba(43, 42, 38, .25)`, 28px radius (22px mobile), 64px padding. Front word in Inter 700 terracotta, `clamp(48px, 8vw, 76px)` desktop / `clamp(36px, 12vw, 48px)` mobile. Pronunciation 36px desktop / 26px mobile, muted.
 
@@ -60,13 +67,15 @@ Each component .scss defines its own copy of these (Angular component styles are
 | [web/src/index.html](../web/src/index.html) | Google Fonts (Inter + Fraunces); page `<title>`. |
 | [web/src/styles.scss](../web/src/styles.scss) | `mat.theme` + all token overrides + `.accent-italic`. |
 | [web/src/app/app.html](../web/src/app/app.html) · [.scss](../web/src/app/app.scss) | Toolbar pill, nav pills, shell max-width 1120px. |
-| [web/src/app/vocabulary/list/list.scss](../web/src/app/vocabulary/list/list.scss) | Landing eyebrow + card tables + section dot. |
-| [web/src/app/vocabulary/summary/summary.scss](../web/src/app/vocabulary/summary/summary.scss) | Categorie list with sage-warm totals row. |
+| [web/src/app/shared/page-header/page-header.scss](../web/src/app/shared/page-header/page-header.scss) | Eyebrow + H1 + optional `.accent-italic` accent — single source of truth for top-of-page headers. |
+| [web/src/app/shared/progress-table/progress-table.scss](../web/src/app/shared/progress-table/progress-table.scss) | `.table-wrap` shell + all cell/row/footer styles for summary tables, applied via `:host ::ng-deep` to projected `<table mat-table>` content. |
+| [web/src/app/vocabulary/list/list.scss](../web/src/app/vocabulary/list/list.scss) | Only the section-spacing + section-title dot (shared component owns header and table). |
+| [web/src/app/vocabulary/summary/summary.scss](../web/src/app/vocabulary/summary/summary.scss) | Loading-state color only. |
 | [web/src/app/vocabulary/category/category.scss](../web/src/app/vocabulary/category/category.scss) | Cat-header (eyebrow + H1 + count-pill) + memorize-actions pills. |
-| [web/src/app/vocabulary/memorized/memorized.scss](../web/src/app/vocabulary/memorized/memorized.scss) | Memorized summary with `.progress-track` + `.progress-fill` sage bar. |
+| [web/src/app/vocabulary/memorized/memorized.scss](../web/src/app/vocabulary/memorized/memorized.scss) | Empty-state card only. |
 | [web/src/app/vocabulary/memorized/category/category.scss](../web/src/app/vocabulary/memorized/category/category.scss) | Inner memorized category cat-header. |
 | [web/src/app/shared/word-table/word-table.scss](../web/src/app/shared/word-table/word-table.scss) | Card-shell .table-wrap; all three text cells (`.italian-cell`, `.pron-cell`, `.translation-cell`) at 15.5px ink. Italian cell is weight 600, the other two are 400. |
-| [web/src/app/stories/summary/summary.scss](../web/src/app/stories/summary/summary.scss) | Stories list card. |
+| [web/src/app/stories/summary/summary.scss](../web/src/app/stories/summary/summary.scss) | Loading/empty-state copy only. |
 | [web/src/app/stories/detail/detail.scss](../web/src/app/stories/detail/detail.scss) | Reading card with Fraunces italic terracotta H2; vocab tab with cat-actions. |
 | [web/src/app/shared/memorize-deck/memorize-deck.scss](../web/src/app/shared/memorize-deck/memorize-deck.scss) | Focal practice card; Inter 700 terracotta front word; rounded comment input and pill action buttons. |
 | [web/src/app/shared/repeat-deck/repeat-deck.scss](../web/src/app/shared/repeat-deck/repeat-deck.scss) | Same focal card; translation-only front in Inter 700 terracotta. |

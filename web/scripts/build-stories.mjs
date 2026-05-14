@@ -2,6 +2,8 @@ import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve, basename, extname } from 'node:path';
 
+import { buildHeadwordMap } from './lib/vocab.mjs';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..', '..');
 const storiesDir = resolve(repoRoot, 'docs', 'stories');
@@ -15,19 +17,6 @@ function tokenize(text) {
     .toLowerCase()
     .split(/[^\p{L}\p{N}]+/u)
     .filter((t) => t.length > 0 && !/^\d+$/.test(t));
-}
-
-function buildHeadwordMap(vocab) {
-  const map = new Map();
-  for (const cat of vocab.categories) {
-    for (const w of cat.words) {
-      const variants = w.italian.split('/').map((s) => s.trim().toLowerCase());
-      for (const v of variants) {
-        if (v && !map.has(v)) map.set(v, { categoryKey: cat.key, n: w.n });
-      }
-    }
-  }
-  return map;
 }
 
 function buildIndirectMap(vocab, headwordMap) {

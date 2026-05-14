@@ -57,6 +57,10 @@ export class StoriesService {
     return cached;
   }
 
+  getStoryResolvedSignal(slug: Signal<string>): Signal<StoryResolved | undefined> {
+    return toSignal(toObservable(slug).pipe(switchMap((s) => this.getStoryResolved(s))));
+  }
+
   getStoryCategorySignal(
     slug: Signal<string>,
     key: Signal<string>,

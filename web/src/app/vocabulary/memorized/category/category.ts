@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  inject,
-  input,
-  signal,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
@@ -28,7 +21,6 @@ export class MemorizedCategory {
   private readonly storage = inject(MemorizeStorage);
   private readonly vocabularyService = inject(VocabularyService);
 
-  readonly memorized = signal<Set<string>>(this.storage.getMemorized());
   readonly vocabulary = toSignal(this.vocabularyService.vocabulary$);
 
   readonly category = computed(() => {
@@ -40,16 +32,11 @@ export class MemorizedCategory {
   readonly words = computed<Word[]>(() => {
     const cat = this.category();
     if (!cat) return [];
-    const memorized = this.memorized();
+    const memorized = this.storage.memorized();
     return cat.words.filter((w) => memorized.has(w.italian));
   });
 
   restore(word: Word): void {
     this.storage.removeMemorized(word.italian);
-    this.memorized.update((s) => {
-      const next = new Set(s);
-      next.delete(word.italian);
-      return next;
-    });
   }
 }

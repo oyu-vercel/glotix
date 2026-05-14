@@ -2,26 +2,13 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
+import { splitSentences, joinExamples } from './lib/sentences.mjs';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..', '..');
 const vocabFile = resolve(repoRoot, 'web', 'public', 'assets', 'vocabulary.json');
 
 const MAX_EXAMPLES = 10;
-
-function splitSentences(s) {
-  if (!s) return [];
-  return s
-    .normalize('NFC')
-    .split(/(?<=[.!?])\s+/)
-    .map((x) => x.trim())
-    .filter((x) => x.length > 0);
-}
-
-function joinExamples(sentences) {
-  if (sentences.length === 0) return '';
-  const joined = sentences.join(' ');
-  return /[.!?]$/.test(joined) ? joined : joined + '.';
-}
 
 async function main() {
   const arg = process.argv[2];

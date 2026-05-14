@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { AsyncPipe } from '@angular/common';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
 import { DrillsService } from '../drills.service';
+import { PageHeader } from '../../shared/page-header/page-header';
+import { ProgressTable } from '../../shared/progress-table/progress-table';
 
 interface DrillRow {
   slug: string;
@@ -13,7 +15,7 @@ interface DrillRow {
 
 @Component({
   selector: 'app-drills-list',
-  imports: [AsyncPipe, MatTableModule],
+  imports: [MatTableModule, PageHeader, ProgressTable],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './list.html',
   styleUrl: './list.scss',
@@ -24,8 +26,10 @@ export class DrillsList {
 
   readonly columns = ['title'];
 
-  readonly rows$ = this.service.index$.pipe(
-    map((idx): DrillRow[] => idx.drills.map((d) => ({ slug: d.slug, title: d.title }))),
+  readonly rows = toSignal(
+    this.service.index$.pipe(
+      map((idx): DrillRow[] => idx.drills.map((d) => ({ slug: d.slug, title: d.title }))),
+    ),
   );
 
   navigate(slug: string): void {

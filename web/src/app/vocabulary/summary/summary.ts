@@ -1,9 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 
 import { MemorizeStorage } from '../../shared/storage/memorize-storage';
+import { PageHeader } from '../../shared/page-header/page-header';
+import { ProgressTable } from '../../shared/progress-table/progress-table';
 import { VocabularyService } from '../vocabulary.service';
 
 interface CategoryProgressRow {
@@ -16,7 +18,7 @@ interface CategoryProgressRow {
 
 @Component({
   selector: 'app-summary',
-  imports: [MatTableModule],
+  imports: [MatTableModule, PageHeader, ProgressTable],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './summary.html',
   styleUrl: './summary.scss',
@@ -26,7 +28,6 @@ export class Summary {
   private readonly storage = inject(MemorizeStorage);
   private readonly router = inject(Router);
 
-  readonly memorized = signal<Set<string>>(this.storage.getMemorized());
   readonly vocabulary = toSignal(this.service.vocabulary$);
 
   readonly columns = ['label', 'count', 'total', 'percent'];
@@ -34,7 +35,7 @@ export class Summary {
   readonly rows = computed<CategoryProgressRow[]>(() => {
     const vocab = this.vocabulary();
     if (!vocab) return [];
-    const memorized = this.memorized();
+    const memorized = this.storage.memorized();
     return vocab.categories.map((category) => {
       const count = category.words.reduce((n, w) => n + (memorized.has(w.italian) ? 1 : 0), 0);
       const total = category.words.length;

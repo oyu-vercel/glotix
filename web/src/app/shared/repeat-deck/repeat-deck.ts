@@ -28,6 +28,7 @@ import { isFormField } from '../utils/is-form-field';
 })
 export class RepeatDeck {
   readonly category = input<Category | undefined>(undefined);
+  readonly emptyMessage = input<string>('No words to practice.');
 
   readonly exit = output<void>();
 

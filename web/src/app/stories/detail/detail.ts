@@ -7,8 +7,6 @@ import {
   input,
   signal,
 } from '@angular/core';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { switchMap } from 'rxjs';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,6 +15,8 @@ import { Router, RouterLink } from '@angular/router';
 import { StoriesService } from '../stories.service';
 import { Category } from '../../vocabulary/vocabulary.types';
 import { WordTable } from '../../shared/word-table/word-table';
+import { PageHeader } from '../../shared/page-header/page-header';
+import { ProgressTable } from '../../shared/progress-table/progress-table';
 import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { countWords } from '../../shared/utils/count-words';
 import { TextNode, parseStoryText } from '../utils/parse-story-text';
@@ -31,7 +31,15 @@ interface VocabProgressRow {
 
 @Component({
   selector: 'app-story-detail',
-  imports: [MatTabsModule, MatTableModule, MatButtonModule, RouterLink, WordTable],
+  imports: [
+    MatTabsModule,
+    MatTableModule,
+    MatButtonModule,
+    RouterLink,
+    WordTable,
+    PageHeader,
+    ProgressTable,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
   styleUrl: './detail.scss',
@@ -45,11 +53,7 @@ export class StoryDetail {
   private readonly storage = inject(MemorizeStorage);
   private readonly router = inject(Router);
 
-  readonly memorized = signal<Set<string>>(this.storage.getMemorized());
-
-  readonly story = toSignal(
-    toObservable(this.slug).pipe(switchMap((s) => this.service.getStoryResolved(s))),
-  );
+  readonly story = this.service.getStoryResolvedSignal(this.slug);
 
   readonly nodes = computed<TextNode[]>(() => {
     const s = this.story();
@@ -66,7 +70,7 @@ export class StoryDetail {
   readonly totalVocab = computed(() => countWords(this.nonEmptyCategories()));
 
   readonly vocabRows = computed<VocabProgressRow[]>(() => {
-    const memorized = this.memorized();
+    const memorized = this.storage.memorized();
     return this.nonEmptyCategories().map((category) => {
       const count = category.words.reduce((n, w) => n + (memorized.has(w.italian) ? 1 : 0), 0);
       const total = category.words.length;

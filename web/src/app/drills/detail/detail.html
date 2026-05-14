@@ -3,10 +3,7 @@
 </div>
 
 @if (drill(); as d) {
-  <header class="detail-header">
-    <span class="eyebrow">Drill</span>
-    <h1>{{ d.title }}</h1>
-  </header>
+  <app-page-header eyebrow="Drill" [title]="d.title" />
 
   <mat-tab-group class="drill-tabs" animationDuration="120ms">
     <mat-tab [label]="'Words (' + d.words.length + ')'">

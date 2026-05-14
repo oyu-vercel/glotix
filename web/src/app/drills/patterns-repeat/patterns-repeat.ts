@@ -1,6 +1,4 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { switchMap } from 'rxjs';
 import { Router } from '@angular/router';
 
 import { DrillsService } from '../drills.service';
@@ -18,9 +16,7 @@ export class DrillPatternsRepeat {
   private readonly service = inject(DrillsService);
   private readonly router = inject(Router);
 
-  private readonly drill = toSignal(
-    toObservable(this.slug).pipe(switchMap((s) => this.service.getDrillResolved(s))),
-  );
+  private readonly drill = this.service.getDrillResolvedSignal(this.slug);
 
   protected readonly patterns = computed(() => this.drill()?.patterns ?? []);
 

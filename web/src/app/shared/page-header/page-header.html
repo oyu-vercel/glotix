@@ -1,0 +1,10 @@
+<header class="page-header">
+  <span class="eyebrow">{{ eyebrow() }}</span>
+  <h1>
+    @if (italicAccent(); as accent) {
+      <span class="accent-italic">{{ accent }}</span> {{ title() }}
+    } @else {
+      {{ title() }}
+    }
+  </h1>
+</header>

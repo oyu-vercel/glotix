@@ -1,11 +1,8 @@
-<header class="summary-header">
-  <span class="eyebrow">Stories</span>
-  <h1><span class="accent-italic">your</span> Stories</h1>
-</header>
+<app-page-header eyebrow="Stories" title="Stories" italicAccent="your" />
 
-@if (view$ | async; as view) {
+@if (view(); as view) {
   @if (view.rows.length > 0) {
-    <div class="table-wrap">
+    <app-progress-table>
       <table mat-table [dataSource]="view.rows" class="summary-table">
         <ng-container matColumnDef="title">
           <th mat-header-cell *matHeaderCellDef>Story</th>
@@ -68,7 +65,7 @@
         ></tr>
         <tr mat-footer-row *matFooterRowDef="columns" class="totals-row"></tr>
       </table>
-    </div>
+    </app-progress-table>
   } @else {
     <p class="empty">No stories yet. Drop a <code>&lt;slug&gt;.txt</code> into a new <code>docs/stories/&lt;folder&gt;/</code> and run <code>npm run build:stories</code>.</p>
   }

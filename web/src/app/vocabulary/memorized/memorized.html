@@ -1,10 +1,7 @@
-<header class="page-header">
-  <span class="eyebrow">Progress</span>
-  <h1><span class="accent-italic">your</span> Memorized</h1>
-</header>
+<app-page-header eyebrow="Progress" title="Memorized" italicAccent="your" />
 
 @if (rows().length > 0) {
-  <div class="table-wrap">
+  <app-progress-table>
     <table mat-table [dataSource]="rows()" class="summary-table">
       <ng-container matColumnDef="label">
         <th mat-header-cell *matHeaderCellDef>Category</th>
@@ -15,15 +12,15 @@
       </ng-container>
 
       <ng-container matColumnDef="count">
-        <th mat-header-cell *matHeaderCellDef class="count-col">Words</th>
-        <td mat-cell *matCellDef="let r" class="count-col">{{ r.count }}</td>
-        <td mat-footer-cell *matFooterCellDef class="count-col footer-total">{{ total() }}</td>
+        <th mat-header-cell *matHeaderCellDef class="num-col">Words</th>
+        <td mat-cell *matCellDef="let r" class="num-col">{{ r.count }}</td>
+        <td mat-footer-cell *matFooterCellDef class="num-col footer-total">{{ total() }}</td>
       </ng-container>
 
       <ng-container matColumnDef="total">
-        <th mat-header-cell *matHeaderCellDef class="count-col">Total</th>
-        <td mat-cell *matCellDef="let r" class="count-col">{{ r.total }}</td>
-        <td mat-footer-cell *matFooterCellDef class="count-col footer-total">
+        <th mat-header-cell *matHeaderCellDef class="num-col">Total</th>
+        <td mat-cell *matCellDef="let r" class="num-col">{{ r.total }}</td>
+        <td mat-footer-cell *matFooterCellDef class="num-col footer-total">
           {{ grandTotal() }}
         </td>
       </ng-container>
@@ -59,7 +56,7 @@
       ></tr>
       <tr mat-footer-row *matFooterRowDef="columns" class="totals-row"></tr>
     </table>
-  </div>
+  </app-progress-table>
 } @else {
   <div class="empty-state">
     <p>

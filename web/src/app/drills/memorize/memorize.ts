@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { DrillsService } from '../drills.service';
 import { MemorizeDeck } from '../../shared/memorize-deck/memorize-deck';
+import { Direction } from '../../shared/utils/direction';
 
 @Component({
   selector: 'app-drill-memorize',
@@ -17,7 +18,7 @@ import { MemorizeDeck } from '../../shared/memorize-deck/memorize-deck';
 })
 export class DrillMemorize {
   readonly slug = input.required<string>();
-  readonly direction = input<string>('italian');
+  readonly direction = input<Direction>('italian');
 
   private readonly service = inject(DrillsService);
   private readonly router = inject(Router);

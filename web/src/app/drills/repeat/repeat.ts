@@ -8,7 +8,11 @@ import { RepeatDeck } from '../../shared/repeat-deck/repeat-deck';
   selector: 'app-drill-repeat',
   imports: [RepeatDeck],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<app-repeat-deck [category]="category()" (exit)="onExit()" />`,
+  template: `<app-repeat-deck
+    [category]="category()"
+    emptyMessage="No words in this drill."
+    (exit)="onExit()"
+  />`,
 })
 export class DrillRepeat {
   readonly slug = input.required<string>();

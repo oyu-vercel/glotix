@@ -15,6 +15,7 @@ import { MemorizeStorage } from '../storage/memorize-storage';
 import { shuffle } from '../utils/shuffle';
 import { isFormField } from '../utils/is-form-field';
 import { splitExamples } from '../utils/split-examples';
+import { Direction } from '../utils/direction';
 
 @Component({
   selector: 'app-memorize-deck',
@@ -31,7 +32,7 @@ import { splitExamples } from '../utils/split-examples';
 export class MemorizeDeck {
   readonly category = input<Category | undefined>(undefined);
   readonly scope = input.required<string>();
-  readonly direction = input<string>('italian');
+  readonly direction = input<Direction>('italian');
   readonly isReverse = computed(() => this.direction() === 'russian');
 
   readonly exit = output<void>();
@@ -50,6 +51,10 @@ export class MemorizeDeck {
   readonly stage = signal<'front' | 'back'>('front');
 
   readonly current = computed(() => this.cards()[this.index()]);
+  readonly currentExamples = computed(() => {
+    const card = this.current();
+    return card ? splitExamples(card.examples) : [];
+  });
   readonly progress = computed(() => `${this.index() + 1} / ${this.cards().length}`);
   readonly skipCount = computed(() => this.skips().size);
   readonly hasCards = computed(() => this.cards().length > 0);
@@ -161,6 +166,4 @@ export class MemorizeDeck {
     event.preventDefault();
     this.skip();
   }
-
-  readonly splitExamples = splitExamples;
 }

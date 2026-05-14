@@ -1,6 +1,6 @@
 <div class="memorize-shell">
   <div class="memorize-topbar">
-    <a mat-button (click)="exit.emit()">← Exit</a>
+    <button mat-button type="button" (click)="exit.emit()">← Exit</button>
     <span class="topbar-right">
       @if (hasCards()) {
         <span class="progress">{{ progress() }}</span>
@@ -42,7 +42,7 @@
             <div class="translation">{{ card.translation }}</div>
           }
           <ol class="examples">
-            @for (ex of splitExamples(card.examples); track $index) {
+            @for (ex of currentExamples(); track $index) {
               <li>{{ ex }}</li>
             }
           </ol>

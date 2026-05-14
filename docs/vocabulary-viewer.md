@@ -19,7 +19,7 @@ An English-UI vocabulary viewer for the Italian A2 word list. UI labels are Engl
 
 1. [`web/public/assets/vocabulary.json`](../web/public/assets/vocabulary.json) is the single source of truth — hand-edited there. Within each category, the `n` field is a 1-indexed id used by stories to reference words.
 2. Angular's existing `public/` asset glob ([web/angular.json](../web/angular.json)) serves the file directly at `/assets/vocabulary.json` — no build step.
-3. [`VocabularyService`](../web/src/app/vocabulary/vocabulary.service.ts) fetches that JSON once via `HttpClient` and caches with `shareReplay(1)`. Components read it via the async pipe.
+3. [`VocabularyService`](../web/src/app/vocabulary/vocabulary.service.ts) fetches that JSON once via `HttpClient` and caches with `shareReplay(1)`. Components consume it through `toSignal()`.
 
 ## JSON shape
 
@@ -105,7 +105,6 @@ All state lives in `localStorage` under the `glotix:` prefix, via [`MemorizeStor
 | `glotix:skip:<categoryKey>` | JSON `string[]` — Italian words skipped for that category |
 | `glotix:memorized` | JSON `string[]` — Italian words memorized **globally** (see [Memorized vocabulary](memorized-vocabulary.md)). Deleted when the set becomes empty. |
 | `glotix:comment:<italian>` | Plain string — the user's comment for that word, shared across every memorize view (vocabulary and any story that contains the word). Deleted when emptied. |
-| `glotix:legacy-comments-wiped-v1` | One-time flag set after the per-scope legacy comment keys (`glotix:comment:<scope>:<italian>`) have been cleared on first load. |
 
 ## Repeat mode
 

@@ -1,15 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 const COMMENT_PREFIX = 'glotix:comment:';
 const SKIP_PREFIX = 'glotix:skip:';
 const MEMORIZED_KEY = 'glotix:memorized';
-const LEGACY_WIPED_FLAG = 'glotix:legacy-comments-wiped-v1';
 
 @Injectable({ providedIn: 'root' })
 export class MemorizeStorage {
-  constructor() {
-    this.wipeLegacyCommentsOnce();
-  }
+  readonly memorized = signal<Set<string>>(this.readMemorizedFromStorage());
 
   getSkips(scope: string): Set<string> {
     const raw = this.read(this.skipKey(scope));
@@ -34,6 +31,32 @@ export class MemorizeStorage {
   }
 
   getMemorized(): Set<string> {
+    return this.memorized();
+  }
+
+  addMemorized(italian: string): void {
+    const current = this.memorized();
+    if (current.has(italian)) return;
+    const next = new Set(current);
+    next.add(italian);
+    this.memorized.set(next);
+    this.write(MEMORIZED_KEY, JSON.stringify([...next]));
+  }
+
+  removeMemorized(italian: string): void {
+    const current = this.memorized();
+    if (!current.has(italian)) return;
+    const next = new Set(current);
+    next.delete(italian);
+    this.memorized.set(next);
+    if (next.size === 0) {
+      this.remove(MEMORIZED_KEY);
+    } else {
+      this.write(MEMORIZED_KEY, JSON.stringify([...next]));
+    }
+  }
+
+  private readMemorizedFromStorage(): Set<string> {
     const raw = this.read(MEMORIZED_KEY);
     if (!raw) return new Set();
     try {
@@ -41,24 +64,6 @@ export class MemorizeStorage {
       return Array.isArray(parsed) ? new Set(parsed) : new Set();
     } catch {
       return new Set();
-    }
-  }
-
-  addMemorized(italian: string): void {
-    const memorized = this.getMemorized();
-    if (memorized.has(italian)) return;
-    memorized.add(italian);
-    this.write(MEMORIZED_KEY, JSON.stringify([...memorized]));
-  }
-
-  removeMemorized(italian: string): void {
-    const memorized = this.getMemorized();
-    if (!memorized.has(italian)) return;
-    memorized.delete(italian);
-    if (memorized.size === 0) {
-      this.remove(MEMORIZED_KEY);
-    } else {
-      this.write(MEMORIZED_KEY, JSON.stringify([...memorized]));
     }
   }
 
@@ -81,21 +86,6 @@ export class MemorizeStorage {
 
   private commentKey(italian: string): string {
     return `${COMMENT_PREFIX}${italian}`;
-  }
-
-  private wipeLegacyCommentsOnce(): void {
-    try {
-      if (localStorage.getItem(LEGACY_WIPED_FLAG)) return;
-      const toRemove: string[] = [];
-      for (let i = 0; i < localStorage.length; i++) {
-        const k = localStorage.key(i);
-        if (k && k.startsWith(COMMENT_PREFIX)) toRemove.push(k);
-      }
-      toRemove.forEach((k) => localStorage.removeItem(k));
-      localStorage.setItem(LEGACY_WIPED_FLAG, '1');
-    } catch {
-      /* localStorage unavailable or quota — ignore */
-    }
   }
 
   private read(key: string): string | null {

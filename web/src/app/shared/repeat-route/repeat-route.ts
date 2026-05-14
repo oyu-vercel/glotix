@@ -7,7 +7,11 @@ import { RepeatDeck } from '../repeat-deck/repeat-deck';
   selector: 'app-repeat-route',
   imports: [RepeatDeck],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template: `<app-repeat-deck [category]="category()" (exit)="onExit()" />`,
+  template: `<app-repeat-deck
+    [category]="category()"
+    emptyMessage="No words in this category."
+    (exit)="onExit()"
+  />`,
 })
 export class RepeatRoute {
   readonly slug = input<string>('');

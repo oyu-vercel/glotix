@@ -2,117 +2,16 @@ import { readFile, writeFile, readdir } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
 
+import { parseCsv } from './lib/csv.mjs';
+import { splitLines, splitSentences, dedupKey } from './lib/sentences.mjs';
+import { buildHeadwordMap, findWord } from './lib/vocab.mjs';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = resolve(__dirname, '..', '..');
 const vocabFile = resolve(repoRoot, 'web', 'public', 'assets', 'vocabulary.json');
 
 const MAX_EXAMPLES = 10;
 const CSV_HEADER_FIRST_CELL = 'italian phrase';
-
-function parseCsv(text) {
-  const rows = [];
-  let row = [];
-  let cell = '';
-  let inQuotes = false;
-  let i = 0;
-  const n = text.length;
-  while (i < n) {
-    const ch = text[i];
-    if (inQuotes) {
-      if (ch === '"') {
-        if (text[i + 1] === '"') {
-          cell += '"';
-          i += 2;
-          continue;
-        }
-        inQuotes = false;
-        i += 1;
-        continue;
-      }
-      cell += ch;
-      i += 1;
-      continue;
-    }
-    if (ch === '"') {
-      inQuotes = true;
-      i += 1;
-      continue;
-    }
-    if (ch === ',') {
-      row.push(cell);
-      cell = '';
-      i += 1;
-      continue;
-    }
-    if (ch === '\r') {
-      i += 1;
-      continue;
-    }
-    if (ch === '\n') {
-      row.push(cell);
-      rows.push(row);
-      row = [];
-      cell = '';
-      i += 1;
-      continue;
-    }
-    cell += ch;
-    i += 1;
-  }
-  if (cell.length > 0 || row.length > 0) {
-    row.push(cell);
-    rows.push(row);
-  }
-  return rows;
-}
-
-function splitLines(s) {
-  if (!s) return [];
-  return s
-    .normalize('NFC')
-    .split(/\r?\n/)
-    .map((x) => x.trim())
-    .filter((x) => x.length > 0);
-}
-
-function splitSentencesByPeriod(s) {
-  if (!s) return [];
-  return s
-    .normalize('NFC')
-    .split(/(?<=[.!?])\s+/)
-    .map((x) => x.trim())
-    .filter((x) => x.length > 0);
-}
-
-function dedupKey(sentence) {
-  return sentence
-    .normalize('NFC')
-    .toLowerCase()
-    .replace(/[.!?]+$/, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function buildHeadwordIndex(vocab) {
-  const map = new Map();
-  for (const cat of vocab.categories) {
-    for (const w of cat.words) {
-      const variants = w.italian.split('/').map((s) => s.normalize('NFC').trim().toLowerCase());
-      for (const v of variants) {
-        if (v && !map.has(v)) {
-          map.set(v, { categoryKey: cat.key, n: w.n });
-        }
-      }
-    }
-  }
-  return map;
-}
-
-function findWord(vocab, categoryKey, n) {
-  const cat = vocab.categories.find((c) => c.key === categoryKey);
-  if (!cat) return null;
-  return cat.words.find((w) => w.n === n) ?? null;
-}
 
 async function discoverCsv(drillDir) {
   const entries = await readdir(drillDir, { withFileTypes: true });
@@ -141,7 +40,7 @@ async function main() {
   const rows = parseCsv(csvText);
 
   const vocab = JSON.parse(await readFile(vocabFile, 'utf8'));
-  const headwordIndex = buildHeadwordIndex(vocab);
+  const headwordIndex = buildHeadwordMap(vocab);
 
   let matched = 0;
   let examplesAdded = 0;
@@ -170,7 +69,7 @@ async function main() {
         throw new Error(`Headword index referenced missing word ${hit.categoryKey}#${hit.n}`);
       }
       const incoming = splitLines(examplesRaw);
-      const existing = splitSentencesByPeriod(word.examples ?? '');
+      const existing = splitSentences(word.examples ?? '');
       const seen = new Set(existing.map(dedupKey));
       let space = MAX_EXAMPLES - existing.length;
       const additions = [];

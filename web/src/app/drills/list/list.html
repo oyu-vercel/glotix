@@ -1,11 +1,8 @@
-<header class="summary-header">
-  <span class="eyebrow">Drills</span>
-  <h1><span class="accent-italic">your</span> Drills</h1>
-</header>
+<app-page-header eyebrow="Drills" title="Drills" italicAccent="your" />
 
-@if (rows$ | async; as rows) {
+@if (rows(); as rows) {
   @if (rows.length > 0) {
-    <div class="table-wrap">
+    <app-progress-table>
       <table mat-table [dataSource]="rows" class="summary-table">
         <ng-container matColumnDef="title">
           <th mat-header-cell *matHeaderCellDef>Drill</th>
@@ -22,7 +19,7 @@
           (keyup.enter)="navigate(row.slug)"
         ></tr>
       </table>
-    </div>
+    </app-progress-table>
   } @else {
     <p class="empty">No drills yet. Drop a <code>&lt;slug&gt;.csv</code> into a new <code>docs/drills/&lt;folder&gt;/</code> and run the <code>add-drill</code> skill.</p>
   }
