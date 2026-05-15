@@ -26,7 +26,7 @@ import { Direction } from '../utils/direction';
   host: {
     '(document:keydown.space)': 'onSpace($event)',
     '(document:keydown.enter)': 'onEnter($event)',
-    '(document:keydown.escape)': 'onEscape($event)',
+    '(document:keydown.s)': 'onS($event)',
   },
 })
 export class MemorizeDeck {
@@ -161,7 +161,7 @@ export class MemorizeDeck {
     this.advance();
   }
 
-  onEscape(event: Event): void {
+  onS(event: Event): void {
     if (isFormField(event)) return;
     event.preventDefault();
     this.skip();

@@ -70,7 +70,7 @@ The direction is bound from the `direction` query param via the component's `dir
 - Examples on the back render as a numbered list (`<ol>`), one sentence per line, regardless of mode.
 - After the back of the last card, the deck wraps to index 0 — forward-only, no previous-word/previous-stage navigation.
 - A progress indicator `n / total` is shown in the top bar.
-- Exit only via the `← Exit` link. `Esc` is repurposed (see Skip below).
+- Exit only via the `← Exit` link.
 
 ### Skip
 
@@ -78,7 +78,7 @@ A word can be skipped from three places, all wired to the same `skip()` action:
 
 - The `Skip` button at the top-right of the card (inside the `.card-actions` group, to the right of `Memorized`).
 - Right-click anywhere on the card (`(contextmenu)`, with `preventDefault()` to suppress the browser menu).
-- The `Esc` key.
+- The `S` key.
 
 Skipping a word adds it to the persisted skip list **and** removes it from the current session's deck immediately (`cards` is `computed` over `fullShuffled` and the skip + memorized sets, so it auto-updates). If the skip empties out the rest of the deck, `index` wraps to `0`. If every word is skipped, the empty-state message replaces the card.
 
@@ -94,7 +94,7 @@ A `Reset Skips (N)` button sits in the top bar next to the progress indicator. I
 
 A textarea below the card stores a per-word note. Layout: label, textarea, then `Save` / `Cancel` buttons (right-aligned). Both buttons are disabled when the draft equals the saved value (no dirty state). Save persists; Cancel reverts the draft. **No keymap** for save/cancel — buttons only.
 
-While the textarea has focus, the page-level keyboard handlers for `Space` / `Enter` / `Esc` short-circuit so typing in the comment does not advance, reveal, or skip the card.
+While the textarea has focus, the page-level keyboard handlers for `Space` / `Enter` / `S` short-circuit so typing in the comment does not advance, reveal, or skip the card.
 
 ### Persistence
 
