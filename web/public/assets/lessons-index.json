@@ -7,6 +7,12 @@
       "title": "Lesson 1",
       "wordCount": 16,
       "patternCount": 22
+    },
+    {
+      "slug": "it-ru-2",
+      "title": "Lesson 2",
+      "wordCount": 11,
+      "patternCount": 44
     }
   ]
 }

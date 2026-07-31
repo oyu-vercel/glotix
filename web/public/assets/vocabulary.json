@@ -5968,6 +5968,20 @@
           "pronunciation": "[капи́ско]",
           "translation": "понимаю",
           "examples": "Io capisco. Io capisco l'inglese. Io non capisco l'italiano. Io capisco un po'."
+        },
+        {
+          "n": 360,
+          "italian": "sta",
+          "pronunciation": "[ста]",
+          "translation": "поживает / находится",
+          "examples": "Lei sta. Lei come sta? Lei come sta, signora?"
+        },
+        {
+          "n": 361,
+          "italian": "sto",
+          "pronunciation": "[сто]",
+          "translation": "поживаю / нахожусь",
+          "examples": "Io sto. Io sto bene. Sto bene."
         }
       ]
     },
@@ -7738,6 +7752,13 @@
           "pronunciation": "[вуо́то]",
           "translation": "пустой",
           "examples": "Posto vuoto."
+        },
+        {
+          "n": 253,
+          "italian": "buon",
+          "pronunciation": "[буо́н]",
+          "translation": "добрый / хороший",
+          "examples": "Buon giorno. Buongiorno, signora."
         }
       ]
     },
@@ -8749,6 +8770,13 @@
           "pronunciation": "[ску́зи]",
           "translation": "извините",
           "examples": "Scusi, lei capisce l'inglese? Scusi, non capisco."
+        },
+        {
+          "n": 25,
+          "italian": "ah",
+          "pronunciation": "[а]",
+          "translation": "ах / а",
+          "examples": "Ah, lei capisce l'italiano."
         }
       ]
     },

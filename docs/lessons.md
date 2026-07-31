@@ -165,3 +165,67 @@ re-drill earlier material):
   phrases, in first-appearance order, regardless of whether an earlier lesson drilled them.
 
 ### Step 5 — not yet defined
+
+## Lesson log
+
+| Lesson | Source | Italian-only | Words | Patterns |
+| --- | --- | --- | --- | --- |
+| 1 | [italian-1.txt](italian/italian-1.txt), 379 lines | [italian-1-it.txt](italian/italian-1-it.txt), 37 phrases | 16 | 22 |
+| 2 | [Italian-2.txt](italian/Italian-2.txt), 392 lines | [italian-2-it.txt](italian/italian-2-it.txt), 61 phrases | 11 | 44 |
+
+### Lesson 2 notes
+
+The maintainer trimmed the unit's reading-booklet section (Pimsleur Unit 2 ends with a decoding
+drill: *Mio, Topolino, Oliva salata, Stigmata, …*) from the source before ingestion. Lessons cover
+the conversational part only; if a later unit's reading section is kept, decide then whether those
+words belong in `words` or in `patterns`.
+
+New words (11, all absent from lesson 1): `buongiorno`, `buon`, `signora`, `come`, `sta`, `molto`,
+`bene`, `grazie`, `sto`, `arrivederci`, `ah`. Carried over from lesson 1 and therefore not
+re-listed: `scusi`, `l'`, `inglese`, `capisce`, `lei`, `no`, `signore`, `io`, `capisco`, `non`,
+`italiano`, `un po'`, `americano`, `è`, `sì`, `signorina`.
+
+Appended to `vocabulary.json` via `append-words.mjs` (the other 7 already existed):
+
+| Word | Category | Pronunciation | Translation |
+| --- | --- | --- | --- |
+| `buon` | adjective | `[буо́н]` | добрый / хороший |
+| `sta` | verb | `[ста]` | поживает / находится |
+| `sto` | verb | `[сто]` | поживаю / нахожусь |
+| `ah` | interjection | `[а]` | ах / а |
+
+Transcription fixes applied:
+
+- `Lei americano?` (lines 5, 14, 121, 123) → `Lei è americano?` — elided copula, same fix as
+  lesson 1; the source's own line 127 confirms the full form.
+- `un po'l'italiano` (lines 91, 343, 351, 361) → `un po' l'italiano` — missing space.
+- `Io sto...` (line 263) → `Io sto.` — trailing ellipsis is a transcription artifact; the narration
+  ("Try to say, I stay") introduces it as a form.
+- Lines 374 and 385 are the whole final conversation run together without punctuation. Split into
+  its constituent phrases; the only one not already listed is `Lei capisce molto bene.` (plus
+  `Sì, signorina.`), which line 376's *Grazie, signorina.* confirms.
+
+Judgment calls:
+
+- **Terminal `?` on repeated single words and statements is ASR noise, not intonation.** `Come?`
+  (line 192, prompted by "Say the word *how* alone") deduped into `Come.`, and `Lei sta?`
+  (line 195, prompted by "say once again, you stay") deduped into `Lei sta.` Rule 6 still holds
+  where the narration actually asks for the question form.
+- **Whole-word build-up steps are kept, sub-word syllables dropped** — matching lesson 1, which
+  kept both `Non.` and `Non capisco.` from the same kind of backwards drill. Kept: `Non.`, `Buon.`,
+  `Sta.`, `Sto bene.`, `Signore.`, `Signorina.`, `Bene.`, `Molto.`, `Come.`, `Grazie.`, `Signora.`
+  Dropped: `Rina`, `Gno`, `Gnorina`, `Sign`, `On`, `Ne`, `Ci`, `Vederci`, `Ri`, `Arri`.
+- **`ah` is listed as a word.** It is the only interjection in the file that the narration does not
+  formally introduce, but the rule for `words` is mechanical — every unique word in the
+  Italian-only file — so it is included rather than carved out by exception.
+- The transcript drops the answer line after "Now the word day" (line 146) and after "Say hello or
+  good day" (line 148), so `Giorno.` never appears. Nothing was invented to fill the gaps;
+  `buongiorno` is listed whole and `buon` from line 141.
+
+Verified: `npm --prefix web run build` clean; `/lessons` lists Lesson 2; the detail screen shows
+**Words (11)** with a non-empty Pronunciation and Examples cell on every row and **Patterns (44)**;
+all three decks load (11 / 11 / 44 cards); no console errors.
+
+Pre-existing, unrelated: `bene`'s examples in `vocabulary.json` include two ungrammatical sentences
+(*La lezione è bene.*, *Il bambino è bene.* — should be *buona* / *bravo*). Left untouched, since
+the workflow never overwrites existing vocabulary entries.
