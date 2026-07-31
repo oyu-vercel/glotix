@@ -1,0 +1,344 @@
+{
+  "slug": "it-ru-3",
+  "title": "Lesson 3",
+  "words": [
+    {
+      "italian": "ma",
+      "russian": "но",
+      "category": "conjunction"
+    },
+    {
+      "italian": "americana",
+      "russian": "американка",
+      "category": "noun"
+    },
+    {
+      "italian": "sono",
+      "russian": "я есть (1 л. ед. ч. от essere)",
+      "category": "verb"
+    },
+    {
+      "italian": "italiana",
+      "russian": "итальянка",
+      "category": "noun"
+    },
+    {
+      "italian": "e",
+      "russian": "и, а",
+      "category": "conjunction"
+    },
+    {
+      "italian": "per",
+      "russian": "для, за",
+      "category": "preposition"
+    },
+    {
+      "italian": "favore",
+      "russian": "одолжение, услуга",
+      "category": "noun"
+    },
+    {
+      "italian": "prego",
+      "russian": "пожалуйста, не за что",
+      "category": "interjection"
+    },
+    {
+      "italian": "trovo",
+      "russian": "нахожу, считаю (я)",
+      "category": "verb"
+    },
+    {
+      "italian": "che",
+      "russian": "что",
+      "category": "conjunction"
+    },
+    {
+      "italian": "un",
+      "russian": "неопределённый артикль (м. р.)",
+      "category": "article"
+    },
+    {
+      "italian": "parla",
+      "russian": "говорите (Вы), говорит",
+      "category": "verb"
+    }
+  ],
+  "patterns": [
+    {
+      "italian": "Buongiorno, signore.",
+      "russian": "Добрый день, синьор."
+    },
+    {
+      "italian": "Lei come sta?",
+      "russian": "Как Вы поживаете?"
+    },
+    {
+      "italian": "Bene, signora.",
+      "russian": "Хорошо, синьора."
+    },
+    {
+      "italian": "Ah, lei capisce l'italiano?",
+      "russian": "Ах, Вы понимаете итальянский?"
+    },
+    {
+      "italian": "Sì, signora, un po'.",
+      "russian": "Да, синьора, немного."
+    },
+    {
+      "italian": "Non molto bene.",
+      "russian": "Не очень хорошо."
+    },
+    {
+      "italian": "Lei è americano?",
+      "russian": "Вы американец?"
+    },
+    {
+      "italian": "Ma lei capisce molto bene l'italiano.",
+      "russian": "Но Вы очень хорошо понимаете итальянский."
+    },
+    {
+      "italian": "Io capisco l'italiano.",
+      "russian": "Я понимаю итальянский."
+    },
+    {
+      "italian": "Io capisco un po' l'italiano.",
+      "russian": "Я немного понимаю итальянский."
+    },
+    {
+      "italian": "Io non capisco.",
+      "russian": "Я не понимаю."
+    },
+    {
+      "italian": "Lei sta.",
+      "russian": "Вы поживаете."
+    },
+    {
+      "italian": "Molto bene, grazie.",
+      "russian": "Очень хорошо, спасибо."
+    },
+    {
+      "italian": "Grazie, signora.",
+      "russian": "Спасибо, синьора."
+    },
+    {
+      "italian": "Io non capisco l'italiano.",
+      "russian": "Я не понимаю итальянский."
+    },
+    {
+      "italian": "Lei è americana?",
+      "russian": "Вы американка?"
+    },
+    {
+      "italian": "Lei è americana, signora?",
+      "russian": "Вы американка, синьора?"
+    },
+    {
+      "italian": "Lei è americano, signore?",
+      "russian": "Вы американец, синьор?"
+    },
+    {
+      "italian": "Sì, io sono americano.",
+      "russian": "Да, я американец."
+    },
+    {
+      "italian": "Io sono.",
+      "russian": "Я есть."
+    },
+    {
+      "italian": "Io sono americano.",
+      "russian": "Я американец."
+    },
+    {
+      "italian": "Io sono americana.",
+      "russian": "Я американка."
+    },
+    {
+      "italian": "Io sono italiano.",
+      "russian": "Я итальянец."
+    },
+    {
+      "italian": "Io sono italiana.",
+      "russian": "Я итальянка."
+    },
+    {
+      "italian": "Lei è italiano?",
+      "russian": "Вы итальянец?"
+    },
+    {
+      "italian": "Lei è.",
+      "russian": "Вы есть."
+    },
+    {
+      "italian": "Lei è italiana?",
+      "russian": "Вы итальянка?"
+    },
+    {
+      "italian": "Io non sono italiana.",
+      "russian": "Я не итальянка."
+    },
+    {
+      "italian": "Io non sono italiano.",
+      "russian": "Я не итальянец."
+    },
+    {
+      "italian": "E lei?",
+      "russian": "А Вы?"
+    },
+    {
+      "italian": "Io sono americano, e lei?",
+      "russian": "Я американец, а Вы?"
+    },
+    {
+      "italian": "Io sono americana, e lei?",
+      "russian": "Я американка, а Вы?"
+    },
+    {
+      "italian": "Lei è americana.",
+      "russian": "Вы американка."
+    },
+    {
+      "italian": "Lei è americano.",
+      "russian": "Вы американец."
+    },
+    {
+      "italian": "Lei non è americana.",
+      "russian": "Вы не американка."
+    },
+    {
+      "italian": "Non è.",
+      "russian": "Не есть."
+    },
+    {
+      "italian": "Lei non è americano.",
+      "russian": "Вы не американец."
+    },
+    {
+      "italian": "Lei non è americana, signora.",
+      "russian": "Вы не американка, синьора."
+    },
+    {
+      "italian": "Lei non è americano, signore.",
+      "russian": "Вы не американец, синьор."
+    },
+    {
+      "italian": "Ma io capisco.",
+      "russian": "Но я понимаю."
+    },
+    {
+      "italian": "Ma io capisco l'italiano.",
+      "russian": "Но я понимаю итальянский."
+    },
+    {
+      "italian": "Lei è italiana, signora?",
+      "russian": "Вы итальянка, синьора?"
+    },
+    {
+      "italian": "Lei è italiano, signore?",
+      "russian": "Вы итальянец, синьор?"
+    },
+    {
+      "italian": "Lei capisce l'italiano?",
+      "russian": "Вы понимаете итальянский?"
+    },
+    {
+      "italian": "Per favore.",
+      "russian": "Пожалуйста."
+    },
+    {
+      "italian": "No, signorina.",
+      "russian": "Нет, синьорина."
+    },
+    {
+      "italian": "Io non sono americana.",
+      "russian": "Я не американка."
+    },
+    {
+      "italian": "Lei non capisce l'inglese.",
+      "russian": "Вы не понимаете английский."
+    },
+    {
+      "italian": "Lei non è italiano.",
+      "russian": "Вы не итальянец."
+    },
+    {
+      "italian": "Molto bene.",
+      "russian": "Очень хорошо."
+    },
+    {
+      "italian": "Lei sta bene?",
+      "russian": "Вы хорошо поживаете?"
+    },
+    {
+      "italian": "Sì, grazie.",
+      "russian": "Да, спасибо."
+    },
+    {
+      "italian": "Io sto bene.",
+      "russian": "Я поживаю хорошо."
+    },
+    {
+      "italian": "No, io non sto bene.",
+      "russian": "Нет, я поживаю нехорошо."
+    },
+    {
+      "italian": "Per favore, signore.",
+      "russian": "Пожалуйста, синьор."
+    },
+    {
+      "italian": "Sì, signorina.",
+      "russian": "Да, синьорина."
+    },
+    {
+      "italian": "Sì, signore.",
+      "russian": "Да, синьор."
+    },
+    {
+      "italian": "Buongiorno, signorina.",
+      "russian": "Добрый день, синьорина."
+    },
+    {
+      "italian": "Scusi, signorina.",
+      "russian": "Извините, синьорина."
+    },
+    {
+      "italian": "Lei capisce l'inglese?",
+      "russian": "Вы понимаете английский?"
+    },
+    {
+      "italian": "No, signore.",
+      "russian": "Нет, синьор."
+    },
+    {
+      "italian": "Io non capisco l'inglese.",
+      "russian": "Я не понимаю английский."
+    },
+    {
+      "italian": "Sì, signorina, io sono americano.",
+      "russian": "Да, синьорина, я американец."
+    },
+    {
+      "italian": "Grazie, signorina.",
+      "russian": "Спасибо, синьорина."
+    },
+    {
+      "italian": "Prego, trovo che per un americano lei parla molto bene l'italiano.",
+      "russian": "Не за что, я считаю, что для американца Вы очень хорошо говорите по-итальянски."
+    },
+    {
+      "italian": "Scusi, io non capisco.",
+      "russian": "Извините, я не понимаю."
+    },
+    {
+      "italian": "Lei parla molto bene.",
+      "russian": "Вы очень хорошо говорите."
+    },
+    {
+      "italian": "Per favore, signorina.",
+      "russian": "Пожалуйста, синьорина."
+    },
+    {
+      "italian": "Arrivederci, signorina.",
+      "russian": "До свидания, синьорина."
+    }
+  ]
+}

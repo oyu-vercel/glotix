@@ -3449,6 +3449,27 @@
           "pronunciation": "[америка́но]",
           "translation": "американец",
           "examples": "Lei è americano. Lei è americano? Sì, io sono americano."
+        },
+        {
+          "n": 493,
+          "italian": "americana",
+          "pronunciation": "[америка́на]",
+          "translation": "американка",
+          "examples": "Lei è americana? Io sono americana. Lei non è americana, signora."
+        },
+        {
+          "n": 494,
+          "italian": "italiana",
+          "pronunciation": "[италья́на]",
+          "translation": "итальянка",
+          "examples": "Io sono italiana. Lei è italiana? Io non sono italiana."
+        },
+        {
+          "n": 495,
+          "italian": "favore",
+          "pronunciation": "[фаво́ре]",
+          "translation": "одолжение / услуга",
+          "examples": "Per favore. Per favore, signore. Per favore, signorina."
         }
       ]
     },
@@ -5982,6 +6003,20 @@
           "pronunciation": "[сто]",
           "translation": "поживаю / нахожусь",
           "examples": "Io sto. Io sto bene. Sto bene."
+        },
+        {
+          "n": 362,
+          "italian": "trovo",
+          "pronunciation": "[тро́во]",
+          "translation": "нахожу / считаю",
+          "examples": "Trovo che lei parla molto bene l'italiano."
+        },
+        {
+          "n": 363,
+          "italian": "parla",
+          "pronunciation": "[па́рла]",
+          "translation": "говорит / говорите",
+          "examples": "Lei parla molto bene. Lei parla molto bene l'italiano."
         }
       ]
     },

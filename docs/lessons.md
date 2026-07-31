@@ -172,6 +172,7 @@ re-drill earlier material):
 | --- | --- | --- | --- | --- |
 | 1 | [italian-1.txt](italian/italian-1.txt), 379 lines | [italian-1-it.txt](italian/italian-1-it.txt), 37 phrases | 16 | 22 |
 | 2 | [Italian-2.txt](italian/Italian-2.txt), 392 lines | [italian-2-it.txt](italian/italian-2-it.txt), 61 phrases | 11 | 44 |
+| 3 | [Italian-3.txt](italian/Italian-3.txt), 434 lines | [italian-3-it.txt](italian/italian-3-it.txt), 87 phrases | 12 | 69 |
 
 ### Lesson 2 notes
 
@@ -229,3 +230,59 @@ all three decks load (11 / 11 / 44 cards); no console errors.
 Pre-existing, unrelated: `bene`'s examples in `vocabulary.json` include two ungrammatical sentences
 (*La lezione è bene.*, *Il bambino è bene.* — should be *buona* / *bravo*). Left untouched, since
 the workflow never overwrites existing vocabulary entries.
+
+### Lesson 3 notes
+
+Like lesson 2, the source was trimmed of the unit's reading-booklet section before ingestion, so the
+open question from the lesson 2 notes still stands unanswered — lessons remain conversational-only.
+
+New words (12): `ma`, `americana`, `sono`, `italiana`, `e`, `per`, `favore`, `prego`, `trovo`,
+`che`, `un`, `parla`. Everything else in the unit is lesson 1 or lesson 2 material and is not
+re-listed.
+
+Appended to `vocabulary.json` via `append-words.mjs` (the other 7 already existed):
+
+| Word | Category | Pronunciation | Translation |
+| --- | --- | --- | --- |
+| `americana` | noun | `[америка́на]` | американка |
+| `italiana` | noun | `[италья́на]` | итальянка |
+| `favore` | noun | `[фаво́ре]` | одолжение / услуга |
+| `trovo` | verb | `[тро́во]` | нахожу / считаю |
+| `parla` | verb | `[па́рла]` | говорит / говорите |
+
+Transcription fixes applied:
+
+- `Lei americano?` (lines 79, 111, 393) and `Lei americana?` (82, 107) / `Lei americana, signora?`
+  (84, 108) / `Lei americano, signore?` (112) → `Lei è …` — elided copula, the same fix as lessons 1
+  and 2; the source's own line 15 (`Lei è americano?`) and 175 (`Lei è italiana?`) confirm the full
+  form.
+- `un po'l'italiano` (line 32) → `un po' l'italiano` — missing space.
+- `Lei è Lei è?` (line 279) — two utterances run together, and the narration ("Now say you are.")
+  asks for a statement. Split and deduped into the existing `Lei è.`; the trailing `?` is ASR noise.
+- `E?` (lines 196–197) → `E.` — terminal `?` on an isolated word being drilled, same judgment as
+  lesson 2's `Come?`. Line 243 (`E. E.`) confirms the statement form.
+- `Sì?` (lines 382, 428) deduped into `Sì.` — conversational filler, same word, contributes nothing
+  as a single-word line.
+
+Judgment calls:
+
+- **Contrast pairs are dropped.** `Cano, cana.` (96–97), `Americano, americana.` (98–99) and
+  `Italiano, italiana.` (153, 155) are minimal-pair drills, not phrases — they teach no sentence
+  structure, and both members already appear as standalone words. `Cano` / `Cana` are sub-word
+  endings and fall to rule 3 regardless.
+- **Whole-word build-up steps kept, syllables dropped** — matching lesson 2. Kept: `Sono.`,
+  `Favore.`, `Non è.`, `Parla.`, `Americana.`, `Americano.`, `Italiana.`, `Ma.`, `E.`, `Prego.`,
+  `Signorina.` Dropped: `Arri`, `Cana`, `Cano`, `Vore`, `Co`, `Go`.
+- **`Lei?` (line 377) is kept** as a genuine conversational turn ("And you?"), not scaffolding —
+  unlike lesson 1's `Lei.` at its line 51. It is inert in the output (single word, and `lei` is
+  lesson 1 material), but the Italian-only file stays a faithful record of what is spoken.
+- **`italiana` and `americana` are both `noun`.** In this unit they are nationalities applied to a
+  person (*Io sono italiana.*), not the language sense that made lesson 1 file `italiano` under
+  `adjective`.
+- Line 413 (`Prego, trovo che per un americano lei parla molto bene l'italiano.`) is the only
+  sentence in the unit the course does not drill — the learner is meant to fail to understand it.
+  It is kept as a pattern, and its five new words (`trovo`, `che`, `per`, `un`, `parla`) are listed.
+
+Verified: `npm --prefix web run build` clean; `/lessons` lists Lesson 3; the detail screen shows
+**Words (12)** with a non-empty Pronunciation and Examples cell on every row and **Patterns (69)**;
+all three decks load (12 / 12 / 69 cards); no console errors; screenshots taken of both tabs.
