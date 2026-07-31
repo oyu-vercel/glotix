@@ -1,0 +1,28 @@
+:host {
+  display: block;
+}
+
+.back-row {
+  margin-bottom: 16px;
+
+  a {
+    color: var(--mat-sys-on-surface-variant);
+    font-weight: 500;
+  }
+}
+
+.lesson-tabs {
+  margin-top: 8px;
+}
+
+.actions-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 20px 0 24px;
+}
+
+.loading {
+  color: var(--mat-sys-on-surface-variant);
+}

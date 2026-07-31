@@ -1,0 +1,48 @@
+<div class="back-row">
+  <a mat-button routerLink="/lessons">← Lessons</a>
+</div>
+
+@if (lesson(); as l) {
+  <app-page-header eyebrow="Lesson" [title]="l.title" />
+
+  <mat-tab-group class="lesson-tabs" animationDuration="120ms">
+    <mat-tab [label]="'Words (' + l.words.length + ')'">
+      <div class="actions-row">
+        <a
+          mat-flat-button
+          color="primary"
+          [routerLink]="['/lessons', l.slug, 'memorize']"
+          >Italian → Russian</a
+        >
+        <a
+          mat-stroked-button
+          color="primary"
+          [routerLink]="['/lessons', l.slug, 'memorize']"
+          [queryParams]="{ direction: 'russian' }"
+          >Russian → Italian</a
+        >
+        <a
+          mat-stroked-button
+          color="primary"
+          [routerLink]="['/lessons', l.slug, 'repeat']"
+          >Repeat</a
+        >
+      </div>
+      <app-word-table [words]="l.words" />
+    </mat-tab>
+
+    <mat-tab [label]="'Patterns (' + l.patterns.length + ')'">
+      <div class="actions-row">
+        <a
+          mat-flat-button
+          color="primary"
+          [routerLink]="['/lessons', l.slug, 'patterns', 'repeat']"
+          >Repeat</a
+        >
+      </div>
+      <app-patterns-table [patterns]="l.patterns" />
+    </mat-tab>
+  </mat-tab-group>
+} @else {
+  <p class="loading">Loading...</p>
+}
