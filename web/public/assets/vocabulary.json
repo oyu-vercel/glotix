@@ -3442,6 +3442,13 @@
           "pronunciation": "[новэ́мбрэ]",
           "translation": "ноябрь",
           "examples": "Novembre è autunno. In novembre fa freddo. Novembre è l’undicesimo mese. Il novembre è grigio. Mi piace novembre. Novembre ha trenta giorni. In novembre piove spesso. Novembre è un mese freddo. Il novembre è umido. Novembre fa freddo."
+        },
+        {
+          "n": 492,
+          "italian": "americano",
+          "pronunciation": "[америка́но]",
+          "translation": "американец",
+          "examples": "Lei è americano. Lei è americano? Sì, io sono americano."
         }
       ]
     },
@@ -5954,6 +5961,13 @@
           "pronunciation": "[вуо́ле]",
           "translation": "хочет",
           "examples": "Lui vuole. Vuole andare."
+        },
+        {
+          "n": 359,
+          "italian": "capisco",
+          "pronunciation": "[капи́ско]",
+          "translation": "понимаю",
+          "examples": "Io capisco. Io capisco l'inglese. Io non capisco l'italiano. Io capisco un po'."
         }
       ]
     },
@@ -8360,6 +8374,13 @@
           "pronunciation": "[виолентаме́нте]",
           "translation": "сильно",
           "examples": "Piove violentemente."
+        },
+        {
+          "n": 91,
+          "italian": "un po'",
+          "pronunciation": "[ун по́]",
+          "translation": "немного",
+          "examples": "Io capisco un po'. Io capisco un po' l'italiano."
         }
       ]
     },
@@ -8721,6 +8742,13 @@
           "pronunciation": "[вау]",
           "translation": "вау",
           "examples": "Wow! Che bello!"
+        },
+        {
+          "n": 24,
+          "italian": "scusi",
+          "pronunciation": "[ску́зи]",
+          "translation": "извините",
+          "examples": "Scusi, lei capisce l'inglese? Scusi, non capisco."
         }
       ]
     },

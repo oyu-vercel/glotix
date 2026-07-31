@@ -1,0 +1,12 @@
+{
+  "language": "italian",
+  "level": "a2",
+  "lessons": [
+    {
+      "slug": "it-ru-1",
+      "title": "Lesson 1",
+      "wordCount": 16,
+      "patternCount": 22
+    }
+  ]
+}

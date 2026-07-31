@@ -77,5 +77,26 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./drills/patterns-repeat/patterns-repeat').then((m) => m.DrillPatternsRepeat),
   },
+  {
+    path: 'lessons',
+    loadComponent: () => import('./lessons/list/list').then((m) => m.LessonsList),
+  },
+  {
+    path: 'lessons/:slug',
+    loadComponent: () => import('./lessons/detail/detail').then((m) => m.LessonDetail),
+  },
+  {
+    path: 'lessons/:slug/memorize',
+    loadComponent: () => import('./lessons/memorize/memorize').then((m) => m.LessonMemorize),
+  },
+  {
+    path: 'lessons/:slug/repeat',
+    loadComponent: () => import('./lessons/repeat/repeat').then((m) => m.LessonRepeat),
+  },
+  {
+    path: 'lessons/:slug/patterns/repeat',
+    loadComponent: () =>
+      import('./lessons/patterns-repeat/patterns-repeat').then((m) => m.LessonPatternsRepeat),
+  },
   { path: '**', redirectTo: 'vocabulary' },
 ];
