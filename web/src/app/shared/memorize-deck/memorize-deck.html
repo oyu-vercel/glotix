@@ -29,14 +29,14 @@
         @if (isReverse()) {
           <div class="translation">{{ card.translation }}</div>
         } @else {
-          <div class="italian">{{ card.italian }}</div>
+          <div class="target">{{ card.target }}</div>
           <div class="pron">{{ card.pronunciation }}</div>
         }
       </div>
       @if (stage() === 'back') {
         <div class="back">
           @if (isReverse()) {
-            <div class="italian">{{ card.italian }}</div>
+            <div class="target">{{ card.target }}</div>
             <div class="pron">{{ card.pronunciation }}</div>
           } @else {
             <div class="translation">{{ card.translation }}</div>
@@ -49,7 +49,11 @@
         </div>
       }
       <div class="hint">
-        {{ stage() === 'front' ? 'Click or press Space to reveal' : 'Click or press Space for next word' }}
+        {{
+          stage() === 'front'
+            ? 'Click or press Space to reveal'
+            : 'Click or press Space for next word'
+        }}
       </div>
     </article>
 

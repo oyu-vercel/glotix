@@ -32,8 +32,8 @@ import { Direction } from '../utils/direction';
 export class MemorizeDeck {
   readonly category = input<Category | undefined>(undefined);
   readonly scope = input.required<string>();
-  readonly direction = input<Direction>('italian');
-  readonly isReverse = computed(() => this.direction() === 'russian');
+  readonly direction = input<Direction>('target');
+  readonly isReverse = computed(() => this.direction() === 'native');
 
   readonly exit = output<void>();
 
@@ -44,7 +44,7 @@ export class MemorizeDeck {
   readonly memorized = signal<Set<string>>(new Set());
   readonly cards = computed(() =>
     this.fullShuffled().filter(
-      (w) => !this.skips().has(w.italian) && !this.memorized().has(w.italian),
+      (w) => !this.skips().has(w.target) && !this.memorized().has(w.target),
     ),
   );
   readonly index = signal(0);
@@ -78,7 +78,7 @@ export class MemorizeDeck {
     effect(() => {
       const card = this.current();
       if (card) {
-        const saved = this.storage.getComment(card.italian);
+        const saved = this.storage.getComment(card.target);
         this.savedComment.set(saved);
         this.commentDraft.set(saved);
       } else {
@@ -102,8 +102,8 @@ export class MemorizeDeck {
     if (!this.hasCards()) return;
     const card = this.current();
     if (!card) return;
-    this.storage.addSkip(this.scope(), card.italian);
-    this.skips.update((s) => new Set([...s, card.italian]));
+    this.storage.addSkip(this.scope(), card.target);
+    this.skips.update((s) => new Set([...s, card.target]));
     if (this.index() >= this.cards().length) {
       this.index.set(0);
     }
@@ -114,8 +114,8 @@ export class MemorizeDeck {
     if (!this.hasCards()) return;
     const card = this.current();
     if (!card) return;
-    this.storage.addMemorized(card.italian);
-    this.memorized.update((s) => new Set([...s, card.italian]));
+    this.storage.addMemorized(card.target);
+    this.memorized.update((s) => new Set([...s, card.target]));
     if (this.index() >= this.cards().length) {
       this.index.set(0);
     }
@@ -132,7 +132,7 @@ export class MemorizeDeck {
   saveComment(): void {
     const card = this.current();
     if (!card) return;
-    this.storage.setComment(card.italian, this.commentDraft());
+    this.storage.setComment(card.target, this.commentDraft());
     this.savedComment.set(this.commentDraft());
   }
 

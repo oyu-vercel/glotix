@@ -1,0 +1,176 @@
+{
+  "slug": "it-ru-1",
+  "title": "Lesson 1",
+  "words": [
+    {
+      "target": "scusi",
+      "native": "извините",
+      "category": "interjection"
+    },
+    {
+      "target": "l'",
+      "native": "определённый артикль перед гласной",
+      "category": "article"
+    },
+    {
+      "target": "inglese",
+      "native": "английский",
+      "category": "noun"
+    },
+    {
+      "target": "capisce",
+      "native": "понимаете (Вы)",
+      "category": "verb"
+    },
+    {
+      "target": "lei",
+      "native": "Вы (вежливая форма)",
+      "category": "pronoun"
+    },
+    {
+      "target": "no",
+      "native": "нет",
+      "category": "interjection"
+    },
+    {
+      "target": "signore",
+      "native": "синьор",
+      "category": "noun"
+    },
+    {
+      "target": "io",
+      "native": "я",
+      "category": "pronoun"
+    },
+    {
+      "target": "capisco",
+      "native": "понимаю",
+      "category": "verb"
+    },
+    {
+      "target": "non",
+      "native": "не",
+      "category": "adverb"
+    },
+    {
+      "target": "italiano",
+      "native": "итальянский",
+      "category": "adjective"
+    },
+    {
+      "target": "un po'",
+      "native": "немного",
+      "category": "adverb"
+    },
+    {
+      "target": "americano",
+      "native": "американец",
+      "category": "noun"
+    },
+    {
+      "target": "è",
+      "native": "есть (3 л. ед. ч. от essere)",
+      "category": "verb"
+    },
+    {
+      "target": "sì",
+      "native": "да",
+      "category": "interjection"
+    },
+    {
+      "target": "signorina",
+      "native": "синьорина",
+      "category": "noun"
+    }
+  ],
+  "patterns": [
+    {
+      "target": "Lei capisce.",
+      "native": "Вы понимаете."
+    },
+    {
+      "target": "Lei capisce l'inglese.",
+      "native": "Вы понимаете английский."
+    },
+    {
+      "target": "Lei capisce?",
+      "native": "Вы понимаете?"
+    },
+    {
+      "target": "Lei capisce l'inglese?",
+      "native": "Вы понимаете английский?"
+    },
+    {
+      "target": "No, signore.",
+      "native": "Нет, синьор."
+    },
+    {
+      "target": "Io capisco.",
+      "native": "Я понимаю."
+    },
+    {
+      "target": "Io capisco l'inglese.",
+      "native": "Я понимаю английский."
+    },
+    {
+      "target": "Io non capisco.",
+      "native": "Я не понимаю."
+    },
+    {
+      "target": "Non capisco.",
+      "native": "Не понимаю."
+    },
+    {
+      "target": "Io non capisco l'inglese.",
+      "native": "Я не понимаю английский."
+    },
+    {
+      "target": "No, io non capisco.",
+      "native": "Нет, я не понимаю."
+    },
+    {
+      "target": "Lei capisce l'italiano?",
+      "native": "Вы понимаете итальянский?"
+    },
+    {
+      "target": "Io capisco l'italiano.",
+      "native": "Я понимаю итальянский."
+    },
+    {
+      "target": "Io non capisco l'italiano.",
+      "native": "Я не понимаю итальянский."
+    },
+    {
+      "target": "Io capisco un po'.",
+      "native": "Я немного понимаю."
+    },
+    {
+      "target": "Io capisco un po' l'italiano.",
+      "native": "Я немного понимаю итальянский."
+    },
+    {
+      "target": "Lei è.",
+      "native": "Вы есть."
+    },
+    {
+      "target": "Lei è americano.",
+      "native": "Вы американец."
+    },
+    {
+      "target": "Lei è americano?",
+      "native": "Вы американец?"
+    },
+    {
+      "target": "Sì, signorina.",
+      "native": "Да, синьорина."
+    },
+    {
+      "target": "Scusi, lei capisce l'inglese?",
+      "native": "Извините, Вы понимаете английский?"
+    },
+    {
+      "target": "No, signore, io non capisco l'inglese.",
+      "native": "Нет, синьор, я не понимаю английский."
+    }
+  ]
+}

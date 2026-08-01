@@ -1,5 +1,5 @@
 <div class="back-row">
-  <a mat-button routerLink="/drills">← Drills</a>
+  <a mat-button [routerLink]="['/', pair(), 'drills']">← Drills</a>
 </div>
 
 @if (drill(); as d) {
@@ -11,20 +11,20 @@
         <a
           mat-flat-button
           color="primary"
-          [routerLink]="['/drills', d.slug, 'memorize']"
-          >Italian → Russian</a
+          [routerLink]="['/', pair(), 'drills', d.slug, 'memorize']"
+          >{{ targetLabel() }} → {{ nativeLabel() }}</a
         >
         <a
           mat-stroked-button
           color="primary"
-          [routerLink]="['/drills', d.slug, 'memorize']"
-          [queryParams]="{ direction: 'russian' }"
-          >Russian → Italian</a
+          [routerLink]="['/', pair(), 'drills', d.slug, 'memorize']"
+          [queryParams]="{ direction: 'native' }"
+          >{{ nativeLabel() }} → {{ targetLabel() }}</a
         >
         <a
           mat-stroked-button
           color="primary"
-          [routerLink]="['/drills', d.slug, 'repeat']"
+          [routerLink]="['/', pair(), 'drills', d.slug, 'repeat']"
           >Repeat</a
         >
       </div>
@@ -36,7 +36,7 @@
         <a
           mat-flat-button
           color="primary"
-          [routerLink]="['/drills', d.slug, 'patterns', 'repeat']"
+          [routerLink]="['/', pair(), 'drills', d.slug, 'patterns', 'repeat']"
           >Repeat</a
         >
       </div>

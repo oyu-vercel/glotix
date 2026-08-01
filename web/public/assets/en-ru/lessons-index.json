@@ -1,0 +1,16 @@
+{
+  "lessons": [
+    {
+      "slug": "en-ru-1",
+      "title": "Lesson 1",
+      "wordCount": 14,
+      "patternCount": 25
+    },
+    {
+      "slug": "en-ru-2",
+      "title": "Lesson 2",
+      "wordCount": 12,
+      "patternCount": 37
+    }
+  ]
+}

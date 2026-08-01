@@ -8,14 +8,13 @@ export interface DrillIndexEntry {
 }
 
 export interface DrillIndex {
-  language: string;
-  level: string;
   drills: DrillIndexEntry[];
 }
 
+/** One phrase in the language being learned, with its native-language gloss. */
 export interface PatternPair {
-  italian: string;
-  russian: string;
+  target: string;
+  native: string;
 }
 
 export interface DrillWordRef {

@@ -1,0 +1,38 @@
+Excuse me.
+Russian.
+Understand.
+You understand.
+You understand Russian.
+Do.
+Do you understand?
+Do you understand Russian?
+No.
+Sir.
+No, sir.
+Excuse me, sir.
+I.
+I understand.
+I understand Russian.
+I don't understand.
+Don't.
+I don't understand Russian.
+No, I don't understand.
+English.
+I understand English.
+I don't understand English.
+You understand English.
+Do you understand English?
+A little.
+I understand a little.
+I understand English a little.
+You are Russian.
+Are.
+Are you Russian?
+Yes.
+Miss.
+Yes, miss.
+Excuse me, miss.
+Yes, I understand English.
+Do you understand Russian, sir?
+Yes, I understand Russian.
+Yes, miss, I understand Russian.

@@ -1,5 +1,5 @@
 <div class="back-row">
-  <a mat-button routerLink="/lessons">← Lessons</a>
+  <a mat-button [routerLink]="['/', pair(), 'lessons']">← Lessons</a>
 </div>
 
 @if (lesson(); as l) {
@@ -11,20 +11,20 @@
         <a
           mat-flat-button
           color="primary"
-          [routerLink]="['/lessons', l.slug, 'memorize']"
-          >Italian → Russian</a
+          [routerLink]="['/', pair(), 'lessons', l.slug, 'memorize']"
+          >{{ targetLabel() }} → {{ nativeLabel() }}</a
         >
         <a
           mat-stroked-button
           color="primary"
-          [routerLink]="['/lessons', l.slug, 'memorize']"
-          [queryParams]="{ direction: 'russian' }"
-          >Russian → Italian</a
+          [routerLink]="['/', pair(), 'lessons', l.slug, 'memorize']"
+          [queryParams]="{ direction: 'native' }"
+          >{{ nativeLabel() }} → {{ targetLabel() }}</a
         >
         <a
           mat-stroked-button
           color="primary"
-          [routerLink]="['/lessons', l.slug, 'repeat']"
+          [routerLink]="['/', pair(), 'lessons', l.slug, 'repeat']"
           >Repeat</a
         >
       </div>
@@ -36,11 +36,25 @@
         <a
           mat-flat-button
           color="primary"
-          [routerLink]="['/lessons', l.slug, 'patterns', 'repeat']"
+          [routerLink]="['/', pair(), 'lessons', l.slug, 'patterns', 'repeat']"
           >Repeat</a
         >
       </div>
       <app-patterns-table [patterns]="l.patterns" />
+    </mat-tab>
+
+    <mat-tab label="Text">
+      @if (text() === undefined) {
+        <p class="loading">Loading...</p>
+      } @else if (text() === null) {
+        <p class="loading">No text for this lesson.</p>
+      } @else {
+        <article class="lesson-text">
+          @for (p of paragraphs(); track $index) {
+            <p>{{ p }}</p>
+          }
+        </article>
+      }
     </mat-tab>
   </mat-tab-group>
 } @else {

@@ -1,5 +1,5 @@
 <div class="back-row">
-  <a mat-button routerLink="/vocabulary/a2">← Back</a>
+  <a mat-button [routerLink]="['/', pair(), 'vocabulary', 'summary']">← Back</a>
 </div>
 
 @if (category(); as category) {
@@ -16,20 +16,20 @@
       mat-flat-button
       color="primary"
       class="primary-action"
-      [routerLink]="['/category', category.key, 'memorize']"
-      >Italian → Russian</a
+      [routerLink]="['/', pair(), 'category', category.key, 'memorize']"
+      >{{ targetLabel() }} → {{ nativeLabel() }}</a
     >
     <a
       mat-stroked-button
       color="primary"
-      [routerLink]="['/category', category.key, 'memorize']"
-      [queryParams]="{ direction: 'russian' }"
-      >Russian → Italian</a
+      [routerLink]="['/', pair(), 'category', category.key, 'memorize']"
+      [queryParams]="{ direction: 'native' }"
+      >{{ nativeLabel() }} → {{ targetLabel() }}</a
     >
     <a
       mat-stroked-button
       class="sage-action"
-      [routerLink]="['/category', category.key, 'repeat']"
+      [routerLink]="['/', pair(), 'category', category.key, 'repeat']"
       >Repeat</a
     >
   </div>

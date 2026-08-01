@@ -1,5 +1,5 @@
 <div class="back-row">
-  <a mat-button routerLink="/stories">← Stories</a>
+  <a mat-button [routerLink]="['/', pair(), 'stories']">← Stories</a>
 </div>
 
 @if (story(); as s) {
@@ -88,7 +88,7 @@
             </table>
           </app-progress-table>
         } @else {
-          <p class="empty">No A2 vocabulary matched in this story.</p>
+          <p class="empty">No {{ level() }} vocabulary matched in this story.</p>
         }
       } @else {
         @if (selectedCategory(); as cat) {
@@ -101,20 +101,20 @@
               <a
                 mat-flat-button
                 color="primary"
-                [routerLink]="['/stories', slug(), 'category', cat.key, 'memorize']"
-                >Italian → Russian</a
+                [routerLink]="['/', pair(), 'stories', slug(), 'category', cat.key, 'memorize']"
+                >{{ targetLabel() }} → {{ nativeLabel() }}</a
               >
               <a
                 mat-stroked-button
                 color="primary"
-                [routerLink]="['/stories', slug(), 'category', cat.key, 'memorize']"
-                [queryParams]="{ direction: 'russian' }"
-                >Russian → Italian</a
+                [routerLink]="['/', pair(), 'stories', slug(), 'category', cat.key, 'memorize']"
+                [queryParams]="{ direction: 'native' }"
+                >{{ nativeLabel() }} → {{ targetLabel() }}</a
               >
               <a
                 mat-stroked-button
                 color="primary"
-                [routerLink]="['/stories', slug(), 'category', cat.key, 'repeat']"
+                [routerLink]="['/', pair(), 'stories', slug(), 'category', cat.key, 'repeat']"
                 >Repeat</a
               >
             </span>

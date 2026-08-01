@@ -1,5 +1,5 @@
 <div class="back-row">
-  <a mat-button routerLink="/vocabulary/memorized">← Back</a>
+  <a mat-button [routerLink]="['/', pair(), 'vocabulary', 'memorized']">← Back</a>
 </div>
 
 @if (category(); as category) {

@@ -7,6 +7,7 @@ import { MemorizeStorage } from '../../../shared/storage/memorize-storage';
 import { WordTable } from '../../../shared/word-table/word-table';
 import { Word } from '../../vocabulary.types';
 import { VocabularyService } from '../../vocabulary.service';
+import { LanguageService } from '../../../shared/language/language.service';
 
 @Component({
   selector: 'app-memorized-category',
@@ -21,6 +22,7 @@ export class MemorizedCategory {
   private readonly storage = inject(MemorizeStorage);
   private readonly vocabularyService = inject(VocabularyService);
 
+  readonly pair = inject(LanguageService).pair;
   readonly vocabulary = toSignal(this.vocabularyService.vocabulary$);
 
   readonly category = computed(() => {
@@ -33,10 +35,10 @@ export class MemorizedCategory {
     const cat = this.category();
     if (!cat) return [];
     const memorized = this.storage.memorized();
-    return cat.words.filter((w) => memorized.has(w.italian));
+    return cat.words.filter((w) => memorized.has(w.target));
   });
 
   restore(word: Word): void {
-    this.storage.removeMemorized(word.italian);
+    this.storage.removeMemorized(word.target);
   }
 }

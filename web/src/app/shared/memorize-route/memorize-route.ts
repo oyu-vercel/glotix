@@ -18,7 +18,7 @@ import { Direction } from '../utils/direction';
 export class MemorizeRoute {
   readonly slug = input<string>('');
   readonly key = input.required<string>();
-  readonly direction = input<Direction>('italian');
+  readonly direction = input<Direction>('target');
 
   private readonly surface = inject(DECK_SURFACE);
   protected readonly category = this.surface.resolveCategory(this.slug, this.key);

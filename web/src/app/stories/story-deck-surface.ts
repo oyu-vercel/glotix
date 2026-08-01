@@ -4,11 +4,13 @@ import { Router } from '@angular/router';
 import { Category } from '../vocabulary/vocabulary.types';
 import { DECK_SURFACE, DeckSurface } from '../shared/deck-surface/deck-surface';
 import { StoriesService } from './stories.service';
+import { LanguageService } from '../shared/language/language.service';
 
 @Injectable()
 class StoryDeckSurface implements DeckSurface {
   private readonly router = inject(Router);
   private readonly stories = inject(StoriesService);
+  private readonly language = inject(LanguageService);
 
   resolveCategory(slug: Signal<string>, key: Signal<string>): Signal<Category | undefined> {
     return this.stories.getStoryCategorySignal(slug, key);
@@ -19,7 +21,9 @@ class StoryDeckSurface implements DeckSurface {
   }
 
   exit(slug: string, key: string): void {
-    this.router.navigate(['/stories', slug], { queryParams: { cat: key } });
+    this.router.navigate(['/', this.language.pair(), 'stories', slug], {
+      queryParams: { cat: key },
+    });
   }
 }
 

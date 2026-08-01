@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { LessonsService } from '../lessons.service';
 import { PatternRepeatDeck } from '../../shared/pattern-repeat-deck/pattern-repeat-deck';
+import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-lesson-patterns-repeat',
@@ -15,12 +16,13 @@ export class LessonPatternsRepeat {
 
   private readonly service = inject(LessonsService);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   private readonly lesson = this.service.getLessonResolvedSignal(this.slug);
 
   protected readonly patterns = computed(() => this.lesson()?.patterns ?? []);
 
   protected onExit(): void {
-    this.router.navigate(['/lessons', this.slug()]);
+    this.router.navigate(['/', this.language.pair(), 'lessons', this.slug()]);
   }
 }

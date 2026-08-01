@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { DrillsService } from '../drills.service';
 import { RepeatDeck } from '../../shared/repeat-deck/repeat-deck';
+import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-drill-repeat',
@@ -19,10 +20,11 @@ export class DrillRepeat {
 
   private readonly service = inject(DrillsService);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   protected readonly category = this.service.getDrillCategorySignal(this.slug);
 
   protected onExit(): void {
-    this.router.navigate(['/drills', this.slug()]);
+    this.router.navigate(['/', this.language.pair(), 'drills', this.slug()]);
   }
 }

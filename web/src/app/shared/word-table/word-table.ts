@@ -17,7 +17,7 @@ export class WordTable {
   readonly action = output<Word>();
 
   readonly columns = computed(() => {
-    const base = ['n', 'italian', 'pronunciation', 'translation', 'examples'];
+    const base = ['n', 'target', 'pronunciation', 'translation', 'examples'];
     return this.actionLabel() ? [...base, 'action'] : base;
   });
 }

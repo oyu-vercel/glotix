@@ -9,19 +9,17 @@ export interface LessonIndexEntry {
 }
 
 export interface LessonIndex {
-  language: string;
-  level: string;
   lessons: LessonIndexEntry[];
 }
 
 /**
  * A lesson word is authored inline (unlike a drill's `{ category, n }` reference).
- * `russian` is the lesson's own gloss and wins over the vocabulary.json translation;
+ * `native` is the lesson's own gloss and wins over the vocabulary.json translation;
  * `category` disambiguates headwords that exist in more than one category.
  */
 export interface LessonWordRef {
-  italian: string;
-  russian: string;
+  target: string;
+  native: string;
   category: string;
 }
 

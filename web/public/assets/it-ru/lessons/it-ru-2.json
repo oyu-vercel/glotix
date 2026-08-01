@@ -1,0 +1,239 @@
+{
+  "slug": "it-ru-2",
+  "title": "Lesson 2",
+  "words": [
+    {
+      "target": "buongiorno",
+      "native": "добрый день, здравствуйте",
+      "category": "interjection"
+    },
+    {
+      "target": "buon",
+      "native": "добрый, хороший",
+      "category": "adjective"
+    },
+    {
+      "target": "signora",
+      "native": "синьора",
+      "category": "noun"
+    },
+    {
+      "target": "come",
+      "native": "как",
+      "category": "adverb"
+    },
+    {
+      "target": "sta",
+      "native": "поживаете (Вы)",
+      "category": "verb"
+    },
+    {
+      "target": "molto",
+      "native": "очень",
+      "category": "adverb"
+    },
+    {
+      "target": "bene",
+      "native": "хорошо",
+      "category": "adverb"
+    },
+    {
+      "target": "grazie",
+      "native": "спасибо",
+      "category": "interjection"
+    },
+    {
+      "target": "sto",
+      "native": "поживаю (я)",
+      "category": "verb"
+    },
+    {
+      "target": "arrivederci",
+      "native": "до свидания",
+      "category": "interjection"
+    },
+    {
+      "target": "ah",
+      "native": "ах, а",
+      "category": "interjection"
+    }
+  ],
+  "patterns": [
+    {
+      "target": "Scusi, signore, lei capisce l'italiano?",
+      "native": "Извините, синьор, Вы понимаете итальянский?"
+    },
+    {
+      "target": "Lei è americano?",
+      "native": "Вы американец?"
+    },
+    {
+      "target": "Lei capisce l'inglese, signorina?",
+      "native": "Вы понимаете английский, синьорина?"
+    },
+    {
+      "target": "No, signore, io non capisco l'inglese.",
+      "native": "Нет, синьор, я не понимаю английский."
+    },
+    {
+      "target": "Io capisco.",
+      "native": "Я понимаю."
+    },
+    {
+      "target": "Io capisco l'italiano.",
+      "native": "Я понимаю итальянский."
+    },
+    {
+      "target": "Lei capisce?",
+      "native": "Вы понимаете?"
+    },
+    {
+      "target": "Lei capisce l'italiano?",
+      "native": "Вы понимаете итальянский?"
+    },
+    {
+      "target": "Lei capisce l'inglese?",
+      "native": "Вы понимаете английский?"
+    },
+    {
+      "target": "No, signore.",
+      "native": "Нет, синьор."
+    },
+    {
+      "target": "Io non capisco.",
+      "native": "Я не понимаю."
+    },
+    {
+      "target": "Io non capisco l'inglese.",
+      "native": "Я не понимаю английский."
+    },
+    {
+      "target": "Io non capisco l'italiano.",
+      "native": "Я не понимаю итальянский."
+    },
+    {
+      "target": "Io capisco un po'.",
+      "native": "Я немного понимаю."
+    },
+    {
+      "target": "Scusi, signorina.",
+      "native": "Извините, синьорина."
+    },
+    {
+      "target": "Io capisco un po' l'italiano.",
+      "native": "Я немного понимаю итальянский."
+    },
+    {
+      "target": "Sì, lei è americano.",
+      "native": "Да, Вы американец."
+    },
+    {
+      "target": "Buongiorno, signorina.",
+      "native": "Добрый день, синьорина."
+    },
+    {
+      "target": "Buongiorno, signora.",
+      "native": "Добрый день, синьора."
+    },
+    {
+      "target": "Buongiorno, signore.",
+      "native": "Добрый день, синьор."
+    },
+    {
+      "target": "Lei sta.",
+      "native": "Вы поживаете."
+    },
+    {
+      "target": "Lei come sta?",
+      "native": "Как Вы поживаете?"
+    },
+    {
+      "target": "Molto bene, grazie.",
+      "native": "Очень хорошо, спасибо."
+    },
+    {
+      "target": "Molto bene.",
+      "native": "Очень хорошо."
+    },
+    {
+      "target": "Molto bene, signorina.",
+      "native": "Очень хорошо, синьорина."
+    },
+    {
+      "target": "Io sto bene.",
+      "native": "Я поживаю хорошо."
+    },
+    {
+      "target": "Sto bene.",
+      "native": "Поживаю хорошо."
+    },
+    {
+      "target": "Io sto.",
+      "native": "Я поживаю."
+    },
+    {
+      "target": "No, signora.",
+      "native": "Нет, синьора."
+    },
+    {
+      "target": "Arrivederci, signora.",
+      "native": "До свидания, синьора."
+    },
+    {
+      "target": "Scusi, signora.",
+      "native": "Извините, синьора."
+    },
+    {
+      "target": "Sì, signore, io capisco.",
+      "native": "Да, синьор, я понимаю."
+    },
+    {
+      "target": "Ah, lei capisce l'italiano.",
+      "native": "Ах, Вы понимаете итальянский."
+    },
+    {
+      "target": "Sì, io capisco l'italiano.",
+      "native": "Да, я понимаю итальянский."
+    },
+    {
+      "target": "Lei come sta, signora?",
+      "native": "Как Вы поживаете, синьора?"
+    },
+    {
+      "target": "Molto bene, signore.",
+      "native": "Очень хорошо, синьор."
+    },
+    {
+      "target": "Io non capisco, signora.",
+      "native": "Я не понимаю, синьора."
+    },
+    {
+      "target": "Sì, io capisco l'inglese.",
+      "native": "Да, я понимаю английский."
+    },
+    {
+      "target": "Non molto bene.",
+      "native": "Не очень хорошо."
+    },
+    {
+      "target": "Sì, signorina.",
+      "native": "Да, синьорина."
+    },
+    {
+      "target": "Lei capisce molto bene.",
+      "native": "Вы понимаете очень хорошо."
+    },
+    {
+      "target": "Grazie, signorina.",
+      "native": "Спасибо, синьорина."
+    },
+    {
+      "target": "Arrivederci, signore.",
+      "native": "До свидания, синьор."
+    },
+    {
+      "target": "Arrivederci, signorina.",
+      "native": "До свидания, синьорина."
+    }
+  ]
+}

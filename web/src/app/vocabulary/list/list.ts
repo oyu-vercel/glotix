@@ -11,6 +11,7 @@ import { countWords } from '../../shared/utils/count-words';
 import { countMemorizedInVocabulary } from '../../shared/utils/count-memorized';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
+import { LanguageService } from '../../shared/language/language.service';
 
 interface ProgressRow {
   name: string;
@@ -40,6 +41,7 @@ export class List {
   private readonly storiesService = inject(StoriesService);
   private readonly storage = inject(MemorizeStorage);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   readonly columns = ['name', 'count', 'total', 'percent'];
 
@@ -57,14 +59,14 @@ export class List {
             count: memorizedInVocab,
             total,
             percent,
-            route: ['/vocabulary/a2'],
+            route: ['vocabulary', 'summary'],
           },
           {
             name: 'Memorized Words',
             count: memorizedInVocab,
             total,
             percent,
-            route: ['/vocabulary/memorized'],
+            route: ['vocabulary', 'memorized'],
           },
         ];
 
@@ -102,7 +104,7 @@ export class List {
                 count,
                 total,
                 percent,
-                route: ['/stories', s.slug] as const,
+                route: ['stories', s.slug] as const,
                 queryParams: { tab: 'vocab' },
               };
             });
@@ -117,6 +119,10 @@ export class List {
   );
 
   navigate(row: ProgressRow): void {
-    this.router.navigate([...row.route], { queryParams: row.queryParams });
+    // Rows carry pair-less segments; the active pair is prefixed here so the row builders above
+    // stay free of it.
+    this.router.navigate(['/', this.language.pair(), ...row.route], {
+      queryParams: row.queryParams,
+    });
   }
 }

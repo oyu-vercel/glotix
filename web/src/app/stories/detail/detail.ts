@@ -20,6 +20,7 @@ import { ProgressTable } from '../../shared/progress-table/progress-table';
 import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { countWords } from '../../shared/utils/count-words';
 import { TextNode, parseStoryText } from '../utils/parse-story-text';
+import { LanguageService } from '../../shared/language/language.service';
 
 interface VocabProgressRow {
   key: string;
@@ -52,6 +53,12 @@ export class StoryDetail {
   private readonly service = inject(StoriesService);
   private readonly storage = inject(MemorizeStorage);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
+
+  readonly pair = this.language.pair;
+  readonly level = this.language.level;
+  readonly targetLabel = this.language.targetLabel;
+  readonly nativeLabel = this.language.nativeLabel;
 
   readonly story = this.service.getStoryResolvedSignal(this.slug);
 
@@ -72,7 +79,7 @@ export class StoryDetail {
   readonly vocabRows = computed<VocabProgressRow[]>(() => {
     const memorized = this.storage.memorized();
     return this.nonEmptyCategories().map((category) => {
-      const count = category.words.reduce((n, w) => n + (memorized.has(w.italian) ? 1 : 0), 0);
+      const count = category.words.reduce((n, w) => n + (memorized.has(w.target) ? 1 : 0), 0);
       const total = category.words.length;
       const percent = total > 0 ? (count / total) * 100 : 0;
       return { key: category.key, label: category.label, count, total, percent };
@@ -103,10 +110,12 @@ export class StoryDetail {
   }
 
   openCategory(key: string): void {
-    this.router.navigate(['/stories', this.slug()], { queryParams: { cat: key } });
+    this.router.navigate(['/', this.pair(), 'stories', this.slug()], {
+      queryParams: { cat: key },
+    });
   }
 
   closeCategory(): void {
-    this.router.navigate(['/stories', this.slug()]);
+    this.router.navigate(['/', this.pair(), 'stories', this.slug()]);
   }
 }

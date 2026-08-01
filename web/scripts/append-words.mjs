@@ -1,22 +1,21 @@
 import { readFile, writeFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
+import { resolve } from 'node:path';
 
 import { splitSentences, joinExamples } from './lib/sentences.mjs';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(__dirname, '..', '..');
-const vocabFile = resolve(repoRoot, 'web', 'public', 'assets', 'vocabulary.json');
+import { pairPaths, resolvePairs } from './lib/pairs.mjs';
 
 const MAX_EXAMPLES = 10;
 
 async function main() {
-  const arg = process.argv[2];
-  if (!arg) {
-    console.error('Usage: node web/scripts/append-words.mjs <unmatched.json>');
+  const [pairArg, inputArg] = process.argv.slice(2);
+  if (!pairArg || !inputArg) {
+    console.error('Usage: node web/scripts/append-words.mjs <pair> <unmatched.json>');
     process.exit(2);
   }
-  const inputPath = resolve(process.cwd(), arg);
+  const [pair] = await resolvePairs(pairArg);
+  const { vocabFile } = pairPaths(pair);
+
+  const inputPath = resolve(process.cwd(), inputArg);
 
   const vocab = JSON.parse(await readFile(vocabFile, 'utf8'));
   const allowedKeys = new Set(vocab.categories.map((c) => c.key));
@@ -35,12 +34,12 @@ async function main() {
     }
     if (!row.category || !allowedKeys.has(row.category)) {
       bad.push(
-        `row ${i} (${row.italian ?? '<no italian>'}): category=${JSON.stringify(row.category)} not in allowed set`,
+        `row ${i} (${row.target ?? '<no target>'}): category=${JSON.stringify(row.category)} not in allowed set`,
       );
     }
-    for (const f of ['italian', 'pronunciation', 'translation']) {
+    for (const f of ['target', 'pronunciation', 'translation']) {
       if (typeof row[f] !== 'string' || row[f].length === 0) {
-        bad.push(`row ${i} (${row.italian ?? '<no italian>'}): missing field "${f}"`);
+        bad.push(`row ${i} (${row.target ?? '<no target>'}): missing field "${f}"`);
       }
     }
   }
@@ -59,7 +58,7 @@ async function main() {
     const sentences = splitSentences(row.examples ?? '').slice(0, MAX_EXAMPLES);
     cat.words.push({
       n: maxN + 1,
-      italian: row.italian,
+      target: row.target,
       pronunciation: row.pronunciation,
       translation: row.translation,
       examples: joinExamples(sentences),
@@ -69,7 +68,7 @@ async function main() {
 
   await writeFile(vocabFile, JSON.stringify(vocab, null, 2) + '\n', 'utf8');
 
-  console.log(`Appended ${input.length} word(s) to vocabulary.json:`);
+  console.log(`Appended ${input.length} word(s) to ${vocabFile}:`);
   for (const key of Object.keys(insertCounts)) {
     if (insertCounts[key] > 0) {
       console.log(`  ${key.padEnd(14)} +${insertCounts[key]}`);

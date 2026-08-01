@@ -1,0 +1,34 @@
+<app-page-header eyebrow="Glotix" title="learning" italicAccent="Start" />
+
+@if (languages().length === 0) {
+  <p class="loading">Loading...</p>
+} @else if (native() === null) {
+  <section class="pick-step">
+    <h2 class="step-title">I speak<span class="accent-italic">…</span></h2>
+    <div class="options">
+      @for (n of natives(); track n.code) {
+        <button mat-stroked-button type="button" class="option" (click)="chooseNative(n.code)">
+          {{ n.label }}
+        </button>
+      }
+    </div>
+  </section>
+} @else {
+  <section class="pick-step">
+    <div class="step-head">
+      <button mat-button type="button" (click)="back()">← Back</button>
+      <h2 class="step-title">I'm learning<span class="accent-italic">…</span></h2>
+    </div>
+    <div class="options">
+      @for (t of targets(); track t.pair) {
+        <button mat-flat-button type="button" class="option" (click)="chooseTarget(t.pair)">
+          {{ t.targetLabel }}
+          <span class="option-level">{{ t.level.toUpperCase() }}</span>
+        </button>
+      }
+    </div>
+    @if (targets().length === 0) {
+      <p class="empty">No courses for this language yet.</p>
+    }
+  </section>
+}

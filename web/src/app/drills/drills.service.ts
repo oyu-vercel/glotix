@@ -6,42 +6,68 @@ import { Observable, map, of, shareReplay, switchMap } from 'rxjs';
 import { Drill, DrillIndex, DrillResolved } from './drills.types';
 import { Category, Word } from '../vocabulary/vocabulary.types';
 import { VocabularyService } from '../vocabulary/vocabulary.service';
+import { LanguageService } from '../shared/language/language.service';
 
 @Injectable({ providedIn: 'root' })
 export class DrillsService {
   private readonly http = inject(HttpClient);
   private readonly vocabularyService = inject(VocabularyService);
+  private readonly language = inject(LanguageService);
 
-  readonly index$: Observable<DrillIndex> = this.http
-    .get<DrillIndex>('/assets/drills-index.json')
-    .pipe(shareReplay({ bufferSize: 1, refCount: false }));
-
+  private readonly indexCache = new Map<string, Observable<DrillIndex>>();
   private readonly drillCache = new Map<string, Observable<Drill | undefined>>();
   private readonly resolvedCache = new Map<string, Observable<DrillResolved | undefined>>();
 
-  getDrill(slug: string): Observable<Drill | undefined> {
-    let cached = this.drillCache.get(slug);
+  /** The drill index of the pair currently in the URL. */
+  readonly index$: Observable<DrillIndex> = this.language.pair$.pipe(
+    switchMap((pair) => this.indexFor(pair)),
+    shareReplay({ bufferSize: 1, refCount: false }),
+  );
+
+  private indexFor(pair: string): Observable<DrillIndex> {
+    let cached = this.indexCache.get(pair);
     if (!cached) {
-      cached = this.index$.pipe(
+      cached = this.http
+        .get<DrillIndex>(`/assets/${pair}/drills-index.json`)
+        .pipe(shareReplay({ bufferSize: 1, refCount: false }));
+      this.indexCache.set(pair, cached);
+    }
+    return cached;
+  }
+
+  getDrill(slug: string): Observable<Drill | undefined> {
+    return this.language.pair$.pipe(switchMap((pair) => this.drillFor(pair, slug)));
+  }
+
+  private drillFor(pair: string, slug: string): Observable<Drill | undefined> {
+    const key = `${pair}:${slug}`;
+    let cached = this.drillCache.get(key);
+    if (!cached) {
+      cached = this.indexFor(pair).pipe(
         switchMap((idx) => {
           const exists = idx.drills.some((d) => d.slug === slug);
           if (!exists) return of(undefined);
-          return this.http.get<Drill>(`/assets/drills/${slug}.json`);
+          return this.http.get<Drill>(`/assets/${pair}/drills/${slug}.json`);
         }),
         shareReplay({ bufferSize: 1, refCount: false }),
       );
-      this.drillCache.set(slug, cached);
+      this.drillCache.set(key, cached);
     }
     return cached;
   }
 
   getDrillResolved(slug: string): Observable<DrillResolved | undefined> {
-    let cached = this.resolvedCache.get(slug);
+    return this.language.pair$.pipe(switchMap((pair) => this.resolvedFor(pair, slug)));
+  }
+
+  private resolvedFor(pair: string, slug: string): Observable<DrillResolved | undefined> {
+    const key = `${pair}:${slug}`;
+    let cached = this.resolvedCache.get(key);
     if (!cached) {
-      cached = this.getDrill(slug).pipe(
+      cached = this.drillFor(pair, slug).pipe(
         switchMap((drill) => {
           if (!drill) return of(undefined);
-          return this.vocabularyService.vocabulary$.pipe(
+          return this.vocabularyService.vocabularyFor(pair).pipe(
             map((vocab) => {
               const wordsByCat = new Map<string, Map<number, Word>>();
               for (const c of vocab.categories) {
@@ -65,7 +91,7 @@ export class DrillsService {
         }),
         shareReplay({ bufferSize: 1, refCount: false }),
       );
-      this.resolvedCache.set(slug, cached);
+      this.resolvedCache.set(key, cached);
     }
     return cached;
   }

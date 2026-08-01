@@ -1,1 +1,1 @@
-export type Direction = 'italian' | 'russian';
+export type Direction = 'target' | 'native';

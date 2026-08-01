@@ -1,28 +1,29 @@
 # Lessons
 
-**Status: Steps 1–3 implemented. Later steps not yet defined.**
+**Status: Steps 1–8 implemented. Later steps not yet defined.**
 
-New top-level feature alongside Vocabulary, Stories and Drills: **Lessons** — conversation-based
-Italian lessons derived from audio-course transcripts. Each lesson goes through the same
-onboarding process, recorded here so lesson 2, 3, … can repeat it.
+Top-level feature alongside Vocabulary, Stories and Drills: **Lessons** — conversation-based lessons
+derived from audio-course transcripts. Each lesson goes through the same onboarding process,
+recorded here so lesson 2, 3, … can repeat it.
 
-Source material lives in `docs/italian/`. First lesson: [italian-1.txt](italian/italian-1.txt) —
-a Pimsleur-style Unit 1 transcript, English narration interleaved with Italian.
+Source material lives in `docs/<pair>/transcripts/`. First lesson:
+[lesson-1.txt](it-ru/transcripts/lesson-1.txt) — a Pimsleur-style Unit 1 transcript, English
+narration interleaved with Italian.
 
 ## Scope decisions (answered by the maintainer)
 
 | Question | Decision |
 | --- | --- |
-| Italian-only output content | Ordered, deduplicated phrases — first-appearance order, each distinct phrase once |
-| Output path | `docs/italian/italian-<n>-it.txt`, next to the source |
+| Target-only output content | Ordered, deduplicated phrases — first-appearance order, each distinct phrase once |
+| Output path | `docs/<pair>/transcripts/lesson-<n>-target.txt`, next to the source |
 | Extraction method | By hand for now; write a script once the rules are proven over several lessons |
 
 ## Step log
 
-### Step 1 — strip English, produce an Italian-only file ✅
+### Step 1 — strip English, produce an target-only file ✅
 
-Input: `docs/italian/italian-1.txt` (379 lines, mixed English/Italian)
-Output: `docs/italian/italian-1-it.txt` (37 lines, Italian only, one phrase per line)
+Input: `docs/it-ru/transcripts/lesson-1.txt` (379 lines, mixed English/Italian)
+Output: `docs/it-ru/transcripts/lesson-1-target.txt` (37 lines, Italian only, one phrase per line)
 
 Rules applied, in the order they resolve:
 
@@ -54,19 +55,20 @@ Transcription fixes applied in this lesson:
 - `Sì.` at line 94 sits inside the *signore* drill with no prompt; *sì* is formally introduced at
   line 277, so it is listed once at that teaching point.
 
-### Step 2 — convert the Italian-only file to lesson JSON ✅
+### Step 2 — convert the target-only file to lesson JSON ✅
 
-Input: `docs/italian/italian-1-it.txt`
-Output: `web/public/assets/lessons/it-ru-1.json` (new `lessons/` asset folder)
+Input: `docs/it-ru/transcripts/lesson-1-target.txt`
+Output: `web/public/assets/it-ru/lessons/it-ru-1.json` (see Step 8 for the current asset layout)
 
-Shape follows the drills JSON ([days-of-week.json](../web/public/assets/drills/days-of-week.json))
-with one deliberate difference:
+Shape follows the drills JSON
+([days-of-week.json](../web/public/assets/it-ru/drills/days-of-week.json)) with one deliberate
+difference:
 
 - `words` — every unique word from the lesson, in first-appearance order. **Stored inline**
-  (`{ italian, russian }`), *not* as `{ category, n }` references into `vocabulary.json` the way
+  (`{ target, native }`), *not* as `{ category, n }` references into `vocabulary.json` the way
   drills store `wordOrder`. Lesson files are self-contained; `vocabulary.json` is untouched.
 - `patterns` — the unique **multi-word phrases** from the lesson file, in file order, as
-  `{ italian, russian }`. Same key and same shape as drills. Single-word lines are excluded —
+  `{ target, native }`. Same key and same shape as drills. Single-word lines are excluded —
   they already appear in `words`, and a lone word teaches no sentence structure. `L'inglese.`,
   `L'italiano.` and `Un po'.` count as single words for this rule: article + noun is one lexical
   item, and `un po'` is one expression (it is a single `words` entry).
@@ -92,7 +94,7 @@ Pronunciation / Examples columns.
 **Decisions**
 
 - Word rows are **resolved against `vocabulary.json`** for `pronunciation` and `examples`.
-- `translation` comes from the **lesson's own `russian` field**, not from `vocabulary.json`.
+- `translation` comes from the **lesson's own `native` field**, not from `vocabulary.json`.
   Several vocabulary glosses are wrong for this lesson's meaning — `inglese` is "англичанин"
   (an Englishman) in `vocabulary.json` but means the English *language* here; likewise
   `italiano` ("итальянец"), `signore` ("господин"), `signorina` ("барышня").
@@ -115,8 +117,8 @@ Pronunciation / Examples columns.
 
    Examples are taken from the lesson's own phrases.
 
-2. `web/public/assets/lessons/it-ru-1.json` — add `category` to each of the 16 word entries.
-3. New `web/public/assets/lessons-index.json`, mirroring `drills-index.json`.
+2. `web/public/assets/it-ru/lessons/it-ru-1.json` — add `category` to each of the 16 word entries.
+3. New lessons index, mirroring `drills-index.json`.
 
 **Angular files**
 
@@ -137,13 +139,13 @@ decks are reused as-is — no new shared components, and no changes to the Drill
 
 | Path | Component | Purpose |
 | --- | --- | --- |
-| `/lessons` | `LessonsList` | Title-only table of lessons, row click → detail. |
-| `/lessons/:slug` | `LessonDetail` | Two tabs: **Words** (word table + 3 deck buttons) and **Patterns** (phrase table + Repeat). |
-| `/lessons/:slug/memorize` | `LessonMemorize` | Words memorize deck. Default direction `italian`; `?direction=russian` for the reverse. |
-| `/lessons/:slug/repeat` | `LessonRepeat` | Words repeat deck. |
-| `/lessons/:slug/patterns/repeat` | `LessonPatternsRepeat` | Pattern repeat — italian + russian shown together. |
+| `/:pair/lessons` | `LessonsList` | Title-only table of lessons, row click → detail. |
+| `/:pair/lessons/:slug` | `LessonDetail` | Tabs: **Words** (word table + 3 deck buttons), **Patterns** (phrase table + Repeat), **Text** (Step 7). |
+| `/:pair/lessons/:slug/memorize` | `LessonMemorize` | Words memorize deck. Default direction `target`; `?direction=native` for the reverse. |
+| `/:pair/lessons/:slug/repeat` | `LessonRepeat` | Words repeat deck. |
+| `/:pair/lessons/:slug/patterns/repeat` | `LessonPatternsRepeat` | Pattern repeat — target + native shown together. |
 
-Lesson words join the global `glotix:memorized` set like every other deck. Skips live under
+Lesson words join that pair's `glotix:<pair>:memorized` set like every other deck. Skips live under
 `lesson:<slug>` in the memorize-storage scope namespace.
 
 **Verified** — `ng build` clean; `/lessons` lists Lesson 1; the detail screen renders 16 words with
@@ -153,26 +155,96 @@ errors and every asset returns 200.
 ### Step 4 — `add-lesson` skill ✅
 
 The onboarding process from Steps 1–3 is captured as [`.claude/skills/add-lesson`](../.claude/skills/add-lesson/SKILL.md),
-alongside the existing `add-drill` and `add-story` skills. Trigger it with "add lesson 2" once
-`docs/italian/italian-2.txt` is in place.
+alongside the existing `add-drill` and `add-story` skills. Trigger it with "add lesson 4" once
+`docs/it-ru/transcripts/lesson-4.txt` is in place.
 
 **Cross-lesson rule** (decided here, lesson 1 could not reveal it — Pimsleur units deliberately
 re-drill earlier material):
 
 - **`words` — new material only.** A word is listed in lesson N only if it does not already appear
-  in any earlier `it-ru-*.json`. Lesson 2 will not re-list `scusi` or `capisce`.
+  in any earlier lesson JSON for the same pair. Lesson 2 will not re-list `scusi` or `capisce`.
 - **`patterns` — everything in that lesson's file.** Same rule as lesson 1: all unique multi-word
   phrases, in first-appearance order, regardless of whether an earlier lesson drilled them.
 
-### Step 5 — not yet defined
+### Steps 5–6 — per-pair lesson folders and a language landing page ✅ (superseded by Step 8)
+
+Lessons were the first feature to grow a language-pair layer, ahead of the rest of the app: lesson
+JSONs moved into `lessons/<pair>/` subfolders derived from the slug, `lessons-index.json` grew a
+`languages[]` wrapper, and `/lessons` became a language table feeding `/lessons/:pair`.
+
+Step 8 generalised all of that to the whole app, so none of those specifics survive — the pair is a
+route segment now, not a slug derivation, and the language choice happens once at `/` rather than
+per feature. The lesson-facing outcome is unchanged: one folder and one index per pair.
+
+### Step 7 — lesson Text tab ✅
+
+A third tab, **Text**, on the lesson detail screen, showing that lesson's full transcript.
+
+**Asset naming** — the transcript lives next to the lesson JSON, under the same stem:
+
+```
+web/public/assets/it-ru/lessons/it-ru-1.json
+web/public/assets/it-ru/lessons/it-ru-1.txt
+```
+
+The existing transcripts were renamed into this scheme so the URL is derived from the slug — no
+index or JSON field points at it, and nothing depends on filesystem case. Contents are untouched.
+
+**Rendering — formatting only, never the text.** Blank lines split the file into paragraphs; inside
+a paragraph, source line breaks are preserved by `white-space: pre-line` rather than by rewriting
+the string. No trimming of content, no re-wrapping, no reordering. The block is set at a ~68ch
+measure with a 1.75 line-height for comfortable reading.
+
+**Files**
+
+| File | Change |
+| --- | --- |
+| `app/lessons/lessons.service.ts` | `getLessonText(slug)` (`responseType: 'text'`, `catchError` → `null`, cached like the other loads) and `getLessonTextSignal()` |
+| `app/lessons/detail/detail.ts` | `text` signal + `paragraphs` computed |
+| `app/lessons/detail/detail.html` | Third `mat-tab` with the paragraphs, `Loading...` / `No text for this lesson.` states |
+| `app/lessons/detail/detail.scss` | `.lesson-text` reading typography |
+
+A missing `.txt` is not an error: `getLessonText` maps the 404 to `null` and the tab says
+"No text for this lesson."
+
+The [`add-lesson` skill](../.claude/skills/add-lesson/SKILL.md) gained the copy step: Stage 4 copies
+the source transcript verbatim into the assets folder before updating the index, and Stage 5 checks
+the Text tab.
+
+**Verified** — `npm --prefix web run build` clean. In the browser: lessons 1 and 2 render the Text
+tab with the full transcript, paragraph breaks intact; all three `.txt` assets return 200; no
+console errors.
+
+### Step 8 — app-wide multi-language restructure ✅
+
+The pair layer moved out of Lessons and became the app's top-level axis. See
+[multi-language.md](multi-language.md) for the full design; what changed for lessons:
+
+| Before | After |
+| --- | --- |
+| `assets/lessons/<pair>/<slug>.json` \| `.txt` | `assets/<pair>/lessons/<slug>.json` \| `.txt` |
+| `assets/lessons-index.json` with a `languages[]` wrapper | `assets/<pair>/lessons-index.json`, a flat `{ lessons: [...] }` |
+| `/lessons` language table → `/lessons/:pair` | `/:pair/lessons` (the language choice happens once at `/`) |
+| `/lessons/:pair/:slug/…` | `/:pair/lessons/:slug/…` |
+| `pairFolder(slug)` derives the folder | the pair is a route segment; `LanguageService` holds it |
+| `LessonWordRef { italian, russian }` | `LessonWordRef { target, native }` |
+| `app/lessons/languages/` | deleted — replaced by the `/` picker and the toolbar switcher |
+| `glotix:memorized` (shared across languages) | `glotix:<pair>:memorized` |
+
+`LessonsService` keeps the same public surface apart from `getLanguage()` / `lessonsFor(pair)`,
+which collapse into a single `lessons$` for the active pair.
+
+### Step 9 — not yet defined
 
 ## Lesson log
 
-| Lesson | Source | Italian-only | Words | Patterns |
-| --- | --- | --- | --- | --- |
-| 1 | [italian-1.txt](italian/italian-1.txt), 379 lines | [italian-1-it.txt](italian/italian-1-it.txt), 37 phrases | 16 | 22 |
-| 2 | [Italian-2.txt](italian/Italian-2.txt), 392 lines | [italian-2-it.txt](italian/italian-2-it.txt), 61 phrases | 11 | 44 |
-| 3 | [Italian-3.txt](italian/Italian-3.txt), 434 lines | [italian-3-it.txt](italian/italian-3-it.txt), 87 phrases | 12 | 69 |
+| Pair | Lesson | Source | Target-only | Words | Patterns |
+| --- | --- | --- | --- | --- | --- |
+| it-ru | 1 | [lesson-1.txt](it-ru/transcripts/lesson-1.txt), 379 lines | [lesson-1-target.txt](it-ru/transcripts/lesson-1-target.txt), 37 phrases | 16 | 22 |
+| it-ru | 2 | [lesson-2.txt](it-ru/transcripts/lesson-2.txt), 392 lines | [lesson-2-target.txt](it-ru/transcripts/lesson-2-target.txt), 61 phrases | 11 | 44 |
+| it-ru | 3 | [lesson-3.txt](it-ru/transcripts/lesson-3.txt), 434 lines | [lesson-3-target.txt](it-ru/transcripts/lesson-3-target.txt), 87 phrases | 12 | 69 |
+| en-ru | 1 | [lesson-1.txt](en-ru/transcripts/lesson-1.txt), 391 lines | [lesson-1-target.txt](en-ru/transcripts/lesson-1-target.txt), 38 phrases | 14 | 25 |
+| en-ru | 2 | [lesson-2.txt](en-ru/transcripts/lesson-2.txt), 377 lines | [lesson-2-target.txt](en-ru/transcripts/lesson-2-target.txt), 52 phrases | 12 | 37 |
 
 ### Lesson 2 notes
 
@@ -218,7 +290,7 @@ Judgment calls:
   Dropped: `Rina`, `Gno`, `Gnorina`, `Sign`, `On`, `Ne`, `Ci`, `Vederci`, `Ri`, `Arri`.
 - **`ah` is listed as a word.** It is the only interjection in the file that the narration does not
   formally introduce, but the rule for `words` is mechanical — every unique word in the
-  Italian-only file — so it is included rather than carved out by exception.
+  target-only file — so it is included rather than carved out by exception.
 - The transcript drops the answer line after "Now the word day" (line 146) and after "Say hello or
   good day" (line 148), so `Giorno.` never appears. Nothing was invented to fill the gaps;
   `buongiorno` is listed whole and `buon` from line 141.
@@ -275,7 +347,7 @@ Judgment calls:
   `Signorina.` Dropped: `Arri`, `Cana`, `Cano`, `Vore`, `Co`, `Go`.
 - **`Lei?` (line 377) is kept** as a genuine conversational turn ("And you?"), not scaffolding —
   unlike lesson 1's `Lei.` at its line 51. It is inert in the output (single word, and `lei` is
-  lesson 1 material), but the Italian-only file stays a faithful record of what is spoken.
+  lesson 1 material), but the target-only file stays a faithful record of what is spoken.
 - **`italiana` and `americana` are both `noun`.** In this unit they are nationalities applied to a
   person (*Io sono italiana.*), not the language sense that made lesson 1 file `italiano` under
   `adjective`.
@@ -286,3 +358,65 @@ Judgment calls:
 Verified: `npm --prefix web run build` clean; `/lessons` lists Lesson 3; the detail screen shows
 **Words (12)** with a non-empty Pronunciation and Examples cell on every row and **Patterns (69)**;
 all three decks load (12 / 12 / 69 cards); no console errors; screenshots taken of both tabs.
+
+## en-ru lessons 1–2
+
+The first lessons for the `en-ru` pair (English taught to Russian speakers), from a Pimsleur-style
+Russian-narrated course. Structurally the mirror of it-ru: the narration is Russian, the drilled
+utterances are English.
+
+`en-ru/vocabulary.json` was empty (`{ "categories": [] }`) before this. It was seeded with the same
+nine category skeletons as `it-ru/vocabulary.json` (`noun`, `verb`, `adjective`, `adverb`,
+`article`, `conjunction`, `interjection`, `preposition`, `pronoun`) so `append-words.mjs` — which
+only appends into categories that already exist — had somewhere to write. All **26** lesson words
+were then appended through the script; `article`, `conjunction` and `preposition` remain empty.
+Pronunciations follow the it-ru convention: Cyrillic transliteration in square brackets with a
+stress mark.
+
+Lesson 1 — 14 words, 25 patterns. Words: `excuse me`, `Russian`, `understand`, `you`, `do`, `no`,
+`sir`, `I`, `don't`, `English`, `a little`, `are`, `yes`, `miss`.
+
+Lesson 2 — 12 new words, 37 patterns. Words: `you're`, `I'm`, `hello`, `ma'am`, `how`, `fine`,
+`thanks`, `goodbye`, `ah`, `very`, `well`, `not`. Everything else in the unit is lesson 1 material
+and is not re-listed.
+
+Category calls, made so the runtime `category` + lowercased-`target` lookup stays deterministic:
+
+- `English` → `noun` (the language), `Russian` → `adjective` — the same split it-ru made between
+  `inglese` (noun) and `italiano` (adjective).
+- `do` and `don't` → `verb`; they are the auxiliary and its negated contraction.
+- `you're` and `I'm` → `pronoun`, keyed on the pronoun head rather than the elided copula.
+- `excuse me` and `a little` are single entries, not split into their parts — the same rule that
+  keeps it-ru's `un po'` whole.
+
+Transcription fixes and drops (both sources are ASR output):
+
+- Backwards syllable drills dropped as non-words — lesson 1: `Use`, `Shun`, `Ra`, `Stand`, `Der`,
+  `Der stand`, `Un`, `Under`; lesson 2: `Use`, `Excuse`, `Ex`, `Bye`, `Good`, `Re`, `There`.
+- Repetition artifacts collapsed: `Don't Don't Don't understand.` (lesson 1, line 156) → `Don't.`,
+  `I'm I'm.` (lesson 2, line 81) → `I'm.`
+- Mixed-language lines split rather than kept or dropped whole — lesson 1 lines 13, 195; lesson 2
+  lines 10, 116, 122.
+- `your` (lesson 2, lines 65, 68, 69, 71, 73, 90, 96) → `you're` — the ASR heard the contraction of
+  *you are* as the possessive; the narration is explicitly about that contraction.
+- `You are your.` (line 71) and `I'm your.` (line 96) are contrast drills pairing full form against
+  contraction, not utterances. Dropped; both forms are already listed.
+- `Are you?` (lesson 1 line 280, lesson 2 line 165) dropped as a build-up of `Are you Russian?`
+
+Judgment calls:
+
+- **Phrases the narration prompts but the ASR did not capture were reconstructed** — this transcript
+  drops most of the learner-response gaps, so a strict line-by-line extraction would lose material
+  the unit clearly teaches (`No.`, `Sir.`, `Excuse me, sir.`, `I.`, `Hello.`, `Very well.`). The
+  it-ru target files were built the same way.
+- **Lesson 2, line 153** — "Спросите ее вежливо, американка ли она?" was skipped: answering it needs
+  the word *American*, which neither unit teaches, and nothing in the file supplies the English
+  form. Nothing was invented to fill the gap.
+- `ah` is listed as a word for the same mechanical reason it was in it-ru lesson 2 — it appears in
+  the target-only file, so it is included rather than carved out.
+
+Verified: `npm --prefix web run build` clean; `/en-ru/lessons` lists Lesson 1 and Lesson 2; both
+detail screens show every word row with a non-empty Pronunciation and Examples cell
+(**Words (14)** / **Patterns (25)**, **Words (12)** / **Patterns (37)**); the Text tab renders each
+full transcript; all three decks load (12 / 12 / 37 checked on lesson 2); every `assets/en-ru/…`
+request returns 200; screenshots taken of both tabs.

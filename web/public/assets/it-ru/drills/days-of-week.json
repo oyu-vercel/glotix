@@ -1,0 +1,316 @@
+{
+  "slug": "days-of-week",
+  "title": "Days of Week",
+  "wordOrder": [
+    {
+      "category": "noun",
+      "n": 160
+    },
+    {
+      "category": "noun",
+      "n": 170
+    },
+    {
+      "category": "noun",
+      "n": 175
+    },
+    {
+      "category": "noun",
+      "n": 130
+    },
+    {
+      "category": "noun",
+      "n": 340
+    },
+    {
+      "category": "noun",
+      "n": 257
+    },
+    {
+      "category": "noun",
+      "n": 86
+    }
+  ],
+  "patterns": [
+    {
+      "target": "Oggi è lunedì.",
+      "native": "Сегодня понедельник."
+    },
+    {
+      "target": "Lunedì vado al lavoro.",
+      "native": "В понедельник я иду на работу."
+    },
+    {
+      "target": "Il lunedì studio italiano.",
+      "native": "По понедельникам я изучаю итальянский."
+    },
+    {
+      "target": "Lunedì mattina bevo caffè.",
+      "native": "В понедельник утром я пью кофе."
+    },
+    {
+      "target": "Mi piace il lunedì.",
+      "native": "Мне нравится понедельник."
+    },
+    {
+      "target": "Lunedì è il primo giorno.",
+      "native": "Понедельник — первый день."
+    },
+    {
+      "target": "Lunedì ho lezione.",
+      "native": "В понедельник у меня урок."
+    },
+    {
+      "target": "Domani è lunedì.",
+      "native": "Завтра понедельник."
+    },
+    {
+      "target": "Lunedì vado in città.",
+      "native": "В понедельник я еду в город."
+    },
+    {
+      "target": "Non lavoro di lunedì.",
+      "native": "Я не работаю по понедельникам."
+    },
+    {
+      "target": "Oggi è martedì.",
+      "native": "Сегодня вторник."
+    },
+    {
+      "target": "Martedì ho lezione.",
+      "native": "Во вторник у меня урок."
+    },
+    {
+      "target": "Il martedì lavoro molto.",
+      "native": "По вторникам я много работаю."
+    },
+    {
+      "target": "Martedì studio a casa.",
+      "native": "Во вторник я занимаюсь дома."
+    },
+    {
+      "target": "Mi piace il martedì.",
+      "native": "Мне нравится вторник."
+    },
+    {
+      "target": "Martedì mangio pasta.",
+      "native": "Во вторник я ем пасту."
+    },
+    {
+      "target": "Domani è martedì.",
+      "native": "Завтра вторник."
+    },
+    {
+      "target": "Martedì bevo un caffè.",
+      "native": "Во вторник я пью кофе."
+    },
+    {
+      "target": "Il martedì vado a scuola.",
+      "native": "По вторникам я хожу в школу."
+    },
+    {
+      "target": "Martedì è un buon giorno.",
+      "native": "Вторник — хороший день."
+    },
+    {
+      "target": "Oggi è mercoledì.",
+      "native": "Сегодня среда."
+    },
+    {
+      "target": "Mercoledì è il terzo giorno.",
+      "native": "Среда — третий день."
+    },
+    {
+      "target": "Il mercoledì mangio pizza.",
+      "native": "По средам я ем пиццу."
+    },
+    {
+      "target": "Mercoledì torno a casa.",
+      "native": "В среду я возвращаюсь домой."
+    },
+    {
+      "target": "Mi piace il mercoledì.",
+      "native": "Мне нравится среда."
+    },
+    {
+      "target": "Mercoledì ho appuntamento.",
+      "native": "В среду у меня встреча."
+    },
+    {
+      "target": "Domani è mercoledì.",
+      "native": "Завтра среда."
+    },
+    {
+      "target": "Mercoledì studio italiano.",
+      "native": "В среду я изучаю итальянский."
+    },
+    {
+      "target": "Il mercoledì bevo caffè.",
+      "native": "По средам я пью кофе."
+    },
+    {
+      "target": "Mercoledì vado al parco.",
+      "native": "В среду я иду в парк."
+    },
+    {
+      "target": "Oggi è giovedì.",
+      "native": "Сегодня четверг."
+    },
+    {
+      "target": "Giovedì ho una riunione.",
+      "native": "В четверг у меня собрание."
+    },
+    {
+      "target": "Il giovedì bevo caffè.",
+      "native": "По четвергам я пью кофе."
+    },
+    {
+      "target": "Giovedì vado al cinema.",
+      "native": "В четверг я иду в кино."
+    },
+    {
+      "target": "Mi piace il giovedì.",
+      "native": "Мне нравится четверг."
+    },
+    {
+      "target": "Giovedì è un bel giorno.",
+      "native": "Четверг — хороший день."
+    },
+    {
+      "target": "Domani è giovedì.",
+      "native": "Завтра четверг."
+    },
+    {
+      "target": "Giovedì studio molto.",
+      "native": "В четверг я много занимаюсь."
+    },
+    {
+      "target": "Il giovedì mangio gelato.",
+      "native": "По четвергам я ем мороженое."
+    },
+    {
+      "target": "Giovedì torno presto.",
+      "native": "В четверг я возвращаюсь рано."
+    },
+    {
+      "target": "Oggi è venerdì.",
+      "native": "Сегодня пятница."
+    },
+    {
+      "target": "Venerdì è l’ultimo giorno di lavoro.",
+      "native": "Пятница — последний рабочий день."
+    },
+    {
+      "target": "Il venerdì esco con amici.",
+      "native": "По пятницам я выхожу с друзьями."
+    },
+    {
+      "target": "Venerdì vado in città.",
+      "native": "В пятницу я еду в город."
+    },
+    {
+      "target": "Mi piace il venerdì.",
+      "native": "Мне нравится пятница."
+    },
+    {
+      "target": "Venerdì mangio pesce.",
+      "native": "В пятницу я ем рыбу."
+    },
+    {
+      "target": "Domani è venerdì.",
+      "native": "Завтра пятница."
+    },
+    {
+      "target": "Venerdì bevo birra.",
+      "native": "В пятницу я пью пиво."
+    },
+    {
+      "target": "Il venerdì è bello.",
+      "native": "Пятница — хороший день."
+    },
+    {
+      "target": "Venerdì ho vacanza.",
+      "native": "В пятницу у меня выходной."
+    },
+    {
+      "target": "Oggi è sabato.",
+      "native": "Сегодня суббота."
+    },
+    {
+      "target": "Sabato riposo a casa.",
+      "native": "В субботу я отдыхаю дома."
+    },
+    {
+      "target": "Il sabato dormo tanto.",
+      "native": "По субботам я много сплю."
+    },
+    {
+      "target": "Sabato mangio gelato.",
+      "native": "В субботу я ем мороженое."
+    },
+    {
+      "target": "Mi piace il sabato.",
+      "native": "Мне нравится суббота."
+    },
+    {
+      "target": "Sabato vado al mare.",
+      "native": "В субботу я еду на море."
+    },
+    {
+      "target": "Domani è sabato.",
+      "native": "Завтра суббота."
+    },
+    {
+      "target": "Sabato studio poco.",
+      "native": "В субботу я мало занимаюсь."
+    },
+    {
+      "target": "Il sabato è giorno libero.",
+      "native": "Суббота — свободный день."
+    },
+    {
+      "target": "Sabato vedo amici.",
+      "native": "В субботу я вижу друзей."
+    },
+    {
+      "target": "Oggi è domenica.",
+      "native": "Сегодня воскресенье."
+    },
+    {
+      "target": "Domenica vado al parco.",
+      "native": "В воскресенье я иду в парк."
+    },
+    {
+      "target": "La domenica è giorno di riposo.",
+      "native": "Воскресенье — день отдыха."
+    },
+    {
+      "target": "Domenica leggo un libro.",
+      "native": "В воскресенье я читаю книгу."
+    },
+    {
+      "target": "Mi piace la domenica.",
+      "native": "Мне нравится воскресенье."
+    },
+    {
+      "target": "Domenica mangio a casa.",
+      "native": "В воскресенье я ем дома."
+    },
+    {
+      "target": "Domani è domenica.",
+      "native": "Завтра воскресенье."
+    },
+    {
+      "target": "Domenica bevo tè.",
+      "native": "В воскресенье я пью чай."
+    },
+    {
+      "target": "La domenica è bella.",
+      "native": "Воскресенье — хороший день."
+    },
+    {
+      "target": "Domenica ho tempo libero.",
+      "native": "В воскресенье у меня свободное время."
+    }
+  ]
+}

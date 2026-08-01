@@ -8,6 +8,7 @@ import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
 import { countWords } from '../../shared/utils/count-words';
 import { VocabularyService } from '../vocabulary.service';
+import { LanguageService } from '../../shared/language/language.service';
 
 interface MemorizedCategoryRow {
   key: string;
@@ -28,6 +29,7 @@ export class Memorized {
   private readonly storage = inject(MemorizeStorage);
   private readonly vocabularyService = inject(VocabularyService);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   readonly vocabulary = toSignal(this.vocabularyService.vocabulary$);
 
@@ -39,7 +41,7 @@ export class Memorized {
     const memorized = this.storage.memorized();
     const out: MemorizedCategoryRow[] = [];
     for (const category of vocab.categories) {
-      const count = category.words.reduce((n, w) => n + (memorized.has(w.italian) ? 1 : 0), 0);
+      const count = category.words.reduce((n, w) => n + (memorized.has(w.target) ? 1 : 0), 0);
       if (count === 0) continue;
       const total = category.words.length;
       const percent = total > 0 ? (count / total) * 100 : 0;
@@ -61,6 +63,6 @@ export class Memorized {
   });
 
   navigate(key: string): void {
-    this.router.navigate(['/vocabulary/memorized', key]);
+    this.router.navigate(['/', this.language.pair(), 'vocabulary', 'memorized', key]);
   }
 }

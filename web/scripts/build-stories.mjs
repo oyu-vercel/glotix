@@ -1,15 +1,8 @@
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 import { dirname, resolve, basename, extname } from 'node:path';
 
 import { buildHeadwordMap } from './lib/vocab.mjs';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(__dirname, '..', '..');
-const storiesDir = resolve(repoRoot, 'docs', 'stories');
-const vocabFile = resolve(repoRoot, 'web', 'public', 'assets', 'vocabulary.json');
-const outDir = resolve(repoRoot, 'web', 'public', 'assets', 'stories');
-const indexFile = resolve(repoRoot, 'web', 'public', 'assets', 'stories-index.json');
+import { pairPaths, resolvePairs } from './lib/pairs.mjs';
 
 function tokenize(text) {
   return text
@@ -91,23 +84,22 @@ async function discoverStories(rootDir) {
   return found;
 }
 
-async function main() {
+async function buildPair(paths) {
+  const { pair, storiesSrc, vocabFile, storiesOut, storiesIndex } = paths;
+  console.log(`\n=== ${pair} ===`);
+
   const vocab = JSON.parse(await readFile(vocabFile, 'utf8'));
   const categoryKeys = vocab.categories.map((c) => c.key);
   const headwordMap = buildHeadwordMap(vocab);
   const indirectMap = buildIndirectMap(vocab, headwordMap);
 
-  const stories = await discoverStories(storiesDir);
+  const stories = await discoverStories(storiesSrc);
 
-  await mkdir(dirname(indexFile), { recursive: true });
+  await mkdir(dirname(storiesIndex), { recursive: true });
 
   if (stories.length === 0) {
-    console.log(`No .txt files under ${storiesDir} — nothing to build.`);
-    await writeFile(
-      indexFile,
-      JSON.stringify({ language: vocab.language, level: vocab.level, stories: [] }, null, 2) + '\n',
-      'utf8',
-    );
+    console.log(`No .txt files under ${storiesSrc} — nothing to build.`);
+    await writeFile(storiesIndex, JSON.stringify({ stories: [] }, null, 2) + '\n', 'utf8');
     return;
   }
 
@@ -119,14 +111,13 @@ async function main() {
     seen.set(s.slug, s.txtPath);
   }
 
-  await mkdir(outDir, { recursive: true });
+  await mkdir(storiesOut, { recursive: true });
 
   const indexEntries = [];
   for (const { slug, txtPath } of stories) {
     const raw = await readFile(txtPath, 'utf8');
     const story = buildStory(slug, raw, categoryKeys, headwordMap, indirectMap);
-    const outPath = resolve(outDir, `${slug}.json`);
-    await writeFile(outPath, JSON.stringify(story, null, 2) + '\n', 'utf8');
+    await writeFile(resolve(storiesOut, `${slug}.json`), JSON.stringify(story, null, 2) + '\n', 'utf8');
     const vocabCount = Object.values(story.vocabulary).reduce((s, ns) => s + ns.length, 0);
     indexEntries.push({
       slug,
@@ -137,9 +128,15 @@ async function main() {
     console.log(`${slug.padEnd(24)} ${String(vocabCount).padStart(3)} vocab`);
   }
 
-  const index = { language: vocab.language, level: vocab.level, stories: indexEntries };
-  await writeFile(indexFile, JSON.stringify(index, null, 2) + '\n', 'utf8');
-  console.log(`\nWrote ${indexFile}`);
+  await writeFile(storiesIndex, JSON.stringify({ stories: indexEntries }, null, 2) + '\n', 'utf8');
+  console.log(`Wrote ${storiesIndex}`);
+}
+
+async function main() {
+  const pairs = await resolvePairs(process.argv[2]);
+  for (const pair of pairs) {
+    await buildPair(pairPaths(pair));
+  }
 }
 
 main().catch((err) => {

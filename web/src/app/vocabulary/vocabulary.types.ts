@@ -1,7 +1,9 @@
 export interface Word {
   n: number;
-  italian: string;
+  /** The headword in the language being learned. */
+  target: string;
   pronunciation: string;
+  /** The gloss in the learner's native language. */
   translation: string;
   examples: string;
 }
@@ -13,7 +15,5 @@ export interface Category {
 }
 
 export interface Vocabulary {
-  language: string;
-  level: string;
   categories: Category[];
 }

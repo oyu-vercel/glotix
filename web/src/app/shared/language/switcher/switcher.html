@@ -1,0 +1,14 @@
+@if (current(); as active) {
+  <button mat-stroked-button type="button" class="switcher-btn" [matMenuTriggerFor]="menu">
+    {{ active.targetLabel }}
+    <span class="switcher-caret">▾</span>
+  </button>
+  <mat-menu #menu="matMenu">
+    @for (l of languages(); track l.pair) {
+      <button mat-menu-item type="button" (click)="select(l.pair)">
+        {{ l.targetLabel }}
+        <span class="menu-native">for {{ l.nativeLabel }} speakers</span>
+      </button>
+    }
+  </mat-menu>
+}

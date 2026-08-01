@@ -1,0 +1,536 @@
+{
+  "slug": "months-of-the-year",
+  "title": "Months of the Year",
+  "wordOrder": [
+    {
+      "category": "noun",
+      "n": 123
+    },
+    {
+      "category": "noun",
+      "n": 103
+    },
+    {
+      "category": "noun",
+      "n": 489
+    },
+    {
+      "category": "noun",
+      "n": 17
+    },
+    {
+      "category": "noun",
+      "n": 164
+    },
+    {
+      "category": "noun",
+      "n": 490
+    },
+    {
+      "category": "noun",
+      "n": 159
+    },
+    {
+      "category": "noun",
+      "n": 5
+    },
+    {
+      "category": "noun",
+      "n": 275
+    },
+    {
+      "category": "noun",
+      "n": 203
+    },
+    {
+      "category": "noun",
+      "n": 491
+    },
+    {
+      "category": "noun",
+      "n": 79
+    }
+  ],
+  "patterns": [
+    {
+      "target": "Gennaio è freddo.",
+      "native": "Январь холодный."
+    },
+    {
+      "target": "In gennaio è inverno.",
+      "native": "В январе зима."
+    },
+    {
+      "target": "Gennaio è il primo mese.",
+      "native": "Январь — первый месяц."
+    },
+    {
+      "target": "Il gennaio nevica spesso.",
+      "native": "В январе часто идёт снег."
+    },
+    {
+      "target": "Mi piace gennaio.",
+      "native": "Мне нравится январь."
+    },
+    {
+      "target": "Gennaio ha trentuno giorni.",
+      "native": "В январе тридцать один день."
+    },
+    {
+      "target": "In gennaio festeggio il nuovo anno.",
+      "native": "В январе я праздную Новый год."
+    },
+    {
+      "target": "Gennaio è un mese corto.",
+      "native": "Январь — короткий месяц."
+    },
+    {
+      "target": "Il gennaio è bianco.",
+      "native": "Январь белый."
+    },
+    {
+      "target": "Gennaio fa freddo.",
+      "native": "В январе холодно."
+    },
+    {
+      "target": "Febbraio è corto.",
+      "native": "Февраль короткий."
+    },
+    {
+      "target": "In febbraio è ancora inverno.",
+      "native": "В феврале ещё зима."
+    },
+    {
+      "target": "Febbraio ha ventotto giorni.",
+      "native": "В феврале двадцать восемь дней."
+    },
+    {
+      "target": "Il febbraio è breve.",
+      "native": "Февраль — короткий."
+    },
+    {
+      "target": "Mi piace febbraio.",
+      "native": "Мне нравится февраль."
+    },
+    {
+      "target": "Febbraio è il secondo mese.",
+      "native": "Февраль — второй месяц."
+    },
+    {
+      "target": "In febbraio fa freddo.",
+      "native": "В феврале холодно."
+    },
+    {
+      "target": "Febbraio ha San Valentino.",
+      "native": "В феврале День святого Валентина."
+    },
+    {
+      "target": "Il febbraio è grigio.",
+      "native": "Февраль серый."
+    },
+    {
+      "target": "Febbraio è inverno.",
+      "native": "Февраль — зима."
+    },
+    {
+      "target": "Marzo è primavera.",
+      "native": "Март — весна."
+    },
+    {
+      "target": "In marzo arriva la primavera.",
+      "native": "В марте приходит весна."
+    },
+    {
+      "target": "Marzo è il terzo mese.",
+      "native": "Март — третий месяц."
+    },
+    {
+      "target": "Il marzo è bello.",
+      "native": "Март красивый."
+    },
+    {
+      "target": "Mi piace marzo.",
+      "native": "Мне нравится март."
+    },
+    {
+      "target": "Marzo ha trentuno giorni.",
+      "native": "В марте тридцать один день."
+    },
+    {
+      "target": "In marzo fioriscono i fiori.",
+      "native": "В марте цветут цветы."
+    },
+    {
+      "target": "Marzo è un mese fresco.",
+      "native": "Март — прохладный месяц."
+    },
+    {
+      "target": "Il marzo è verde.",
+      "native": "Март зелёный."
+    },
+    {
+      "target": "Marzo fa più caldo.",
+      "native": "В марте становится теплее."
+    },
+    {
+      "target": "Aprile è bello.",
+      "native": "Апрель красивый."
+    },
+    {
+      "target": "In aprile è primavera.",
+      "native": "В апреле весна."
+    },
+    {
+      "target": "Aprile ha trenta giorni.",
+      "native": "В апреле тридцать дней."
+    },
+    {
+      "target": "Il aprile piove spesso.",
+      "native": "В апреле часто идёт дождь."
+    },
+    {
+      "target": "Mi piace aprile.",
+      "native": "Мне нравится апрель."
+    },
+    {
+      "target": "Aprile è il quarto mese.",
+      "native": "Апрель — четвёртый месяц."
+    },
+    {
+      "target": "In aprile è più caldo.",
+      "native": "В апреле теплее."
+    },
+    {
+      "target": "Aprile ha Pasqua.",
+      "native": "В апреле Пасха."
+    },
+    {
+      "target": "Il aprile è fiorito.",
+      "native": "Апрель цветущий."
+    },
+    {
+      "target": "Aprile è primavera.",
+      "native": "Апрель — весна."
+    },
+    {
+      "target": "Maggio è caldo.",
+      "native": "Май тёплый."
+    },
+    {
+      "target": "In maggio è primavera.",
+      "native": "В мае весна."
+    },
+    {
+      "target": "Maggio è il quinto mese.",
+      "native": "Май — пятый месяц."
+    },
+    {
+      "target": "Il maggio è fiorito.",
+      "native": "Май цветущий."
+    },
+    {
+      "target": "Mi piace maggio.",
+      "native": "Мне нравится май."
+    },
+    {
+      "target": "Maggio ha trentuno giorni.",
+      "native": "В мае тридцать один день."
+    },
+    {
+      "target": "In maggio vado al mare.",
+      "native": "В мае я еду на море."
+    },
+    {
+      "target": "Maggio è un bel mese.",
+      "native": "Май — хороший месяц."
+    },
+    {
+      "target": "Il maggio è verde.",
+      "native": "Май зелёный."
+    },
+    {
+      "target": "Maggio fa bello.",
+      "native": "В мае хорошая погода."
+    },
+    {
+      "target": "Giugno è estate.",
+      "native": "Июнь — лето."
+    },
+    {
+      "target": "In giugno inizia l’estate.",
+      "native": "В июне начинается лето."
+    },
+    {
+      "target": "Giugno è il sesto mese.",
+      "native": "Июнь — шестой месяц."
+    },
+    {
+      "target": "Il giugno è caldo.",
+      "native": "Июнь тёплый."
+    },
+    {
+      "target": "Mi piace giugno.",
+      "native": "Мне нравится июнь."
+    },
+    {
+      "target": "Giugno ha trenta giorni.",
+      "native": "В июне тридцать дней."
+    },
+    {
+      "target": "In giugno vado in vacanza.",
+      "native": "В июне я еду в отпуск."
+    },
+    {
+      "target": "Giugno è un mese bello.",
+      "native": "Июнь — красивый месяц."
+    },
+    {
+      "target": "Il giugno è soleggiato.",
+      "native": "Июнь солнечный."
+    },
+    {
+      "target": "Giugno fa caldo.",
+      "native": "В июне жарко."
+    },
+    {
+      "target": "Luglio è caldo.",
+      "native": "Июль жаркий."
+    },
+    {
+      "target": "In luglio è estate.",
+      "native": "В июле лето."
+    },
+    {
+      "target": "Luglio è il settimo mese.",
+      "native": "Июль — седьмой месяц."
+    },
+    {
+      "target": "Il luglio è vacanza.",
+      "native": "Июль — отпуск."
+    },
+    {
+      "target": "Mi piace luglio.",
+      "native": "Мне нравится июль."
+    },
+    {
+      "target": "Luglio ha trentuno giorni.",
+      "native": "В июле тридцать один день."
+    },
+    {
+      "target": "In luglio viaggio molto.",
+      "native": "В июле я много путешествую."
+    },
+    {
+      "target": "Luglio è un mese caldo.",
+      "native": "Июль — жаркий месяц."
+    },
+    {
+      "target": "Il luglio è soleggiato.",
+      "native": "Июль солнечный."
+    },
+    {
+      "target": "Luglio fa molto caldo.",
+      "native": "В июле очень жарко."
+    },
+    {
+      "target": "Agosto è caldo.",
+      "native": "Август жаркий."
+    },
+    {
+      "target": "In agosto è estate.",
+      "native": "В августе лето."
+    },
+    {
+      "target": "Agosto è l’ottavo mese.",
+      "native": "Август — восьмой месяц."
+    },
+    {
+      "target": "Il agosto è vacanza.",
+      "native": "Август — отпуск."
+    },
+    {
+      "target": "Mi piace agosto.",
+      "native": "Мне нравится август."
+    },
+    {
+      "target": "Agosto ha trentuno giorni.",
+      "native": "В августе тридцать один день."
+    },
+    {
+      "target": "In agosto sono in ferie.",
+      "native": "В августе я в отпуске."
+    },
+    {
+      "target": "Agosto è un mese caldo.",
+      "native": "Август — жаркий месяц."
+    },
+    {
+      "target": "Il agosto è bello.",
+      "native": "Август красивый."
+    },
+    {
+      "target": "Agosto fa caldo.",
+      "native": "В августе жарко."
+    },
+    {
+      "target": "Settembre è autunno.",
+      "native": "Сентябрь — осень."
+    },
+    {
+      "target": "In settembre torna la scuola.",
+      "native": "В сентябре возвращается школа."
+    },
+    {
+      "target": "Settembre è il nono mese.",
+      "native": "Сентябрь — девятый месяц."
+    },
+    {
+      "target": "Il settembre è fresco.",
+      "native": "Сентябрь прохладный."
+    },
+    {
+      "target": "Mi piace settembre.",
+      "native": "Мне нравится сентябрь."
+    },
+    {
+      "target": "Settembre ha trenta giorni.",
+      "native": "В сентябре тридцать дней."
+    },
+    {
+      "target": "In settembre inizia l’autunno.",
+      "native": "В сентябре начинается осень."
+    },
+    {
+      "target": "Settembre è un mese bello.",
+      "native": "Сентябрь — хороший месяц."
+    },
+    {
+      "target": "Il settembre è mite.",
+      "native": "Сентябрь мягкий."
+    },
+    {
+      "target": "Settembre fa più fresco.",
+      "native": "В сентябре становится прохладнее."
+    },
+    {
+      "target": "Ottobre è autunno.",
+      "native": "Октябрь — осень."
+    },
+    {
+      "target": "In ottobre le foglie cadono.",
+      "native": "В октябре падают листья."
+    },
+    {
+      "target": "Ottobre è il decimo mese.",
+      "native": "Октябрь — десятый месяц."
+    },
+    {
+      "target": "Il ottobre è bello.",
+      "native": "Октябрь красивый."
+    },
+    {
+      "target": "Mi piace ottobre.",
+      "native": "Мне нравится октябрь."
+    },
+    {
+      "target": "Ottobre ha trentuno giorni.",
+      "native": "В октябре тридцать один день."
+    },
+    {
+      "target": "In ottobre è più fresco.",
+      "native": "В октябре прохладнее."
+    },
+    {
+      "target": "Ottobre è un mese autunnale.",
+      "native": "Октябрь — осенний месяц."
+    },
+    {
+      "target": "Il ottobre è colorato.",
+      "native": "Октябрь цветной."
+    },
+    {
+      "target": "Ottobre fa bello.",
+      "native": "В октябре хорошая погода."
+    },
+    {
+      "target": "Novembre è autunno.",
+      "native": "Ноябрь — осень."
+    },
+    {
+      "target": "In novembre fa freddo.",
+      "native": "В ноябре холодно."
+    },
+    {
+      "target": "Novembre è l’undicesimo mese.",
+      "native": "Ноябрь — одиннадцатый месяц."
+    },
+    {
+      "target": "Il novembre è grigio.",
+      "native": "Ноябрь серый."
+    },
+    {
+      "target": "Mi piace novembre.",
+      "native": "Мне нравится ноябрь."
+    },
+    {
+      "target": "Novembre ha trenta giorni.",
+      "native": "В ноябре тридцать дней."
+    },
+    {
+      "target": "In novembre piove spesso.",
+      "native": "В ноябре часто идёт дождь."
+    },
+    {
+      "target": "Novembre è un mese freddo.",
+      "native": "Ноябрь — холодный месяц."
+    },
+    {
+      "target": "Il novembre è umido.",
+      "native": "Ноябрь влажный."
+    },
+    {
+      "target": "Novembre fa freddo.",
+      "native": "В ноябре холодно."
+    },
+    {
+      "target": "Dicembre è inverno.",
+      "native": "Декабрь — зима."
+    },
+    {
+      "target": "In dicembre è Natale.",
+      "native": "В декабре Рождество."
+    },
+    {
+      "target": "Dicembre è il dodicesimo mese.",
+      "native": "Декабрь — двенадцатый месяц."
+    },
+    {
+      "target": "Il dicembre è freddo.",
+      "native": "Декабрь холодный."
+    },
+    {
+      "target": "Mi piace dicembre.",
+      "native": "Мне нравится декабрь."
+    },
+    {
+      "target": "Dicembre ha trentuno giorni.",
+      "native": "В декабре тридцать один день."
+    },
+    {
+      "target": "In dicembre festeggio Natale.",
+      "native": "В декабре я праздную Рождество."
+    },
+    {
+      "target": "Dicembre è un mese festivo.",
+      "native": "Декабрь — праздничный месяц."
+    },
+    {
+      "target": "Il dicembre è bianco.",
+      "native": "Декабрь белый."
+    },
+    {
+      "target": "Dicembre fa freddo.",
+      "native": "В декабре холодно."
+    }
+  ]
+}

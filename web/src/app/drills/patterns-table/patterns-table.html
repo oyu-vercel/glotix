@@ -5,9 +5,9 @@
       <td mat-cell *matCellDef="let p; let i = index" class="col-n">{{ i + 1 }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="italian">
-      <th mat-header-cell *matHeaderCellDef>Italian phrase</th>
-      <td mat-cell *matCellDef="let p" class="italian-cell">{{ p.italian }}</td>
+    <ng-container matColumnDef="target">
+      <th mat-header-cell *matHeaderCellDef>{{ targetLabel() }} phrase</th>
+      <td mat-cell *matCellDef="let p" class="target-cell">{{ p.target }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="columns; sticky: true"></tr>

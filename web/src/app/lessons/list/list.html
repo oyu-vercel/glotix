@@ -1,4 +1,4 @@
-<app-page-header eyebrow="Lessons" title="Lessons" italicAccent="your" />
+<app-page-header [eyebrow]="targetLabel()" title="Lessons" italicAccent="your" />
 
 @if (rows(); as rows) {
   @if (rows.length > 0) {

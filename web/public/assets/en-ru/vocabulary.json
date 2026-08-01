@@ -1,0 +1,237 @@
+{
+  "categories": [
+    {
+      "key": "noun",
+      "label": "Nouns",
+      "words": [
+        {
+          "n": 1,
+          "target": "sir",
+          "pronunciation": "[сёр]",
+          "translation": "сэр",
+          "examples": "No, sir. Excuse me, sir. Hello, sir. Goodbye, sir. How are you, sir?"
+        },
+        {
+          "n": 2,
+          "target": "English",
+          "pronunciation": "[и́нглиш]",
+          "translation": "английский (язык)",
+          "examples": "I understand English. Do you understand English? I understand English a little. I understand English very well."
+        },
+        {
+          "n": 3,
+          "target": "miss",
+          "pronunciation": "[мис]",
+          "translation": "мисс",
+          "examples": "Yes, miss. Excuse me, miss. Hello, miss. Thanks, miss."
+        },
+        {
+          "n": 4,
+          "target": "ma'am",
+          "pronunciation": "[мэм]",
+          "translation": "мадам, сударыня",
+          "examples": "Hello, ma'am. No, ma'am. Goodbye, ma'am. Are you Russian, ma'am?"
+        }
+      ]
+    },
+    {
+      "key": "verb",
+      "label": "Verbs",
+      "words": [
+        {
+          "n": 1,
+          "target": "understand",
+          "pronunciation": "[андэрстэ́нд]",
+          "translation": "понимать",
+          "examples": "You understand. I understand. Do you understand? I don't understand. I understand English a little."
+        },
+        {
+          "n": 2,
+          "target": "do",
+          "pronunciation": "[ду]",
+          "translation": "вспомогательный глагол для вопроса",
+          "examples": "Do you understand? Do you understand English? Do you understand Russian, sir?"
+        },
+        {
+          "n": 3,
+          "target": "don't",
+          "pronunciation": "[до́унт]",
+          "translation": "не (сокр. do not)",
+          "examples": "I don't understand. I don't understand Russian. I don't understand English."
+        },
+        {
+          "n": 4,
+          "target": "are",
+          "pronunciation": "[ар]",
+          "translation": "есть (форма глагола be при you)",
+          "examples": "You are Russian. Are you Russian? How are you? Yes, you are Russian."
+        }
+      ]
+    },
+    {
+      "key": "adjective",
+      "label": "Adjectives",
+      "words": [
+        {
+          "n": 1,
+          "target": "Russian",
+          "pronunciation": "[ра́шн]",
+          "translation": "русский / по-русски",
+          "examples": "Do you understand Russian? I understand Russian. I don't understand Russian. You are Russian. Are you Russian? I'm Russian."
+        },
+        {
+          "n": 2,
+          "target": "fine",
+          "pronunciation": "[файн]",
+          "translation": "прекрасно, хорошо",
+          "examples": "Fine, thanks. I'm fine. I'm fine, thanks."
+        }
+      ]
+    },
+    {
+      "key": "adverb",
+      "label": "Adverbs",
+      "words": [
+        {
+          "n": 1,
+          "target": "a little",
+          "pronunciation": "[э ли́тл]",
+          "translation": "немного",
+          "examples": "I understand a little. I understand English a little."
+        },
+        {
+          "n": 2,
+          "target": "how",
+          "pronunciation": "[ха́у]",
+          "translation": "как",
+          "examples": "How are you? How are you, sir?"
+        },
+        {
+          "n": 3,
+          "target": "very",
+          "pronunciation": "[вэ́ри]",
+          "translation": "очень",
+          "examples": "Very well. Not very well. I understand very well."
+        },
+        {
+          "n": 4,
+          "target": "well",
+          "pronunciation": "[вэл]",
+          "translation": "хорошо",
+          "examples": "Very well. Not very well. I understand English very well."
+        },
+        {
+          "n": 5,
+          "target": "not",
+          "pronunciation": "[нот]",
+          "translation": "не",
+          "examples": "Not very well."
+        }
+      ]
+    },
+    {
+      "key": "article",
+      "label": "Articles",
+      "words": []
+    },
+    {
+      "key": "conjunction",
+      "label": "Conjunctions",
+      "words": []
+    },
+    {
+      "key": "interjection",
+      "label": "Interjections",
+      "words": [
+        {
+          "n": 1,
+          "target": "excuse me",
+          "pronunciation": "[икскью́з ми]",
+          "translation": "извините",
+          "examples": "Excuse me. Excuse me, sir. Excuse me, miss."
+        },
+        {
+          "n": 2,
+          "target": "no",
+          "pronunciation": "[но́у]",
+          "translation": "нет",
+          "examples": "No, sir. No, I don't understand. No, ma'am."
+        },
+        {
+          "n": 3,
+          "target": "yes",
+          "pronunciation": "[йес]",
+          "translation": "да",
+          "examples": "Yes, miss. Yes, I understand English. Yes, I understand Russian."
+        },
+        {
+          "n": 4,
+          "target": "hello",
+          "pronunciation": "[хэло́у]",
+          "translation": "здравствуйте",
+          "examples": "Hello, miss. Hello, ma'am. Hello, sir."
+        },
+        {
+          "n": 5,
+          "target": "thanks",
+          "pronunciation": "[сэнкс]",
+          "translation": "спасибо",
+          "examples": "Fine, thanks. Thanks, miss. I'm fine, thanks."
+        },
+        {
+          "n": 6,
+          "target": "goodbye",
+          "pronunciation": "[гудба́й]",
+          "translation": "до свидания",
+          "examples": "Goodbye, sir. Goodbye, ma'am."
+        },
+        {
+          "n": 7,
+          "target": "ah",
+          "pronunciation": "[а]",
+          "translation": "а, ах",
+          "examples": "Ah, you understand English."
+        }
+      ]
+    },
+    {
+      "key": "preposition",
+      "label": "Prepositions",
+      "words": []
+    },
+    {
+      "key": "pronoun",
+      "label": "Pronouns",
+      "words": [
+        {
+          "n": 1,
+          "target": "you",
+          "pronunciation": "[ю]",
+          "translation": "вы",
+          "examples": "You understand. Do you understand? You are Russian. How are you?"
+        },
+        {
+          "n": 2,
+          "target": "I",
+          "pronunciation": "[ай]",
+          "translation": "я",
+          "examples": "I understand. I don't understand. I understand a little."
+        },
+        {
+          "n": 3,
+          "target": "you're",
+          "pronunciation": "[ю́эр]",
+          "translation": "вы есть (сокр. you are)",
+          "examples": "You're Russian."
+        },
+        {
+          "n": 4,
+          "target": "I'm",
+          "pronunciation": "[айм]",
+          "translation": "я есть (сокр. I am)",
+          "examples": "I'm Russian. I'm fine. I'm fine, thanks."
+        }
+      ]
+    }
+  ]
+}

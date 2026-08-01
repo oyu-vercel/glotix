@@ -1,17 +1,10 @@
 import { readFile, writeFile, mkdir, readdir, rm } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 import { dirname, resolve, basename, extname } from 'node:path';
 
 import { parseCsv } from './lib/csv.mjs';
 import { splitLines } from './lib/sentences.mjs';
 import { buildHeadwordMap } from './lib/vocab.mjs';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(__dirname, '..', '..');
-const drillsDir = resolve(repoRoot, 'docs', 'drills');
-const vocabFile = resolve(repoRoot, 'web', 'public', 'assets', 'vocabulary.json');
-const outDir = resolve(repoRoot, 'web', 'public', 'assets', 'drills');
-const indexFile = resolve(repoRoot, 'web', 'public', 'assets', 'drills-index.json');
+import { pairPaths, resolvePairs } from './lib/pairs.mjs';
 
 const CSV_HEADER_FIRST_CELL = 'italian phrase';
 const STOP_WORDS = new Set(['of', 'the', 'in', 'a', 'and', 'an', 'on', 'at', 'to', 'for']);
@@ -64,48 +57,47 @@ function buildDrill(slug, csvText, headwordMap) {
     if (r.length < 5) {
       throw new Error(`Row ${rIdx + 1} in drill "${slug}" has ${r.length} cells (expected 5)`);
     }
-    const [italianRaw, , , italianExamplesRaw, russianExamplesRaw] = r;
-    const italian = italianRaw.normalize('NFC').trim();
-    if (italian.toLowerCase() === CSV_HEADER_FIRST_CELL) continue;
-    if (!italian) continue;
+    const [targetRaw, , , targetExamplesRaw, nativeExamplesRaw] = r;
+    const target = targetRaw.normalize('NFC').trim();
+    if (target.toLowerCase() === CSV_HEADER_FIRST_CELL) continue;
+    if (!target) continue;
 
-    const hit = headwordMap.get(italian.toLowerCase());
+    const hit = headwordMap.get(target.toLowerCase());
     if (hit) {
       wordOrder.push({ category: hit.categoryKey, n: hit.n });
     } else {
-      missingWords.push(italian);
+      missingWords.push(target);
     }
 
-    const italianLines = splitLines(italianExamplesRaw);
-    const russianLines = splitLines(russianExamplesRaw);
-    if (italianLines.length !== russianLines.length) {
+    const targetLines = splitLines(targetExamplesRaw);
+    const nativeLines = splitLines(nativeExamplesRaw);
+    if (targetLines.length !== nativeLines.length) {
       throw new Error(
-        `Row ${rIdx + 1} (${italian}) in drill "${slug}": italian/russian example line counts differ (${italianLines.length} vs ${russianLines.length})`,
+        `Row ${rIdx + 1} (${target}) in drill "${slug}": target/native example line counts differ (${targetLines.length} vs ${nativeLines.length})`,
       );
     }
-    for (let i = 0; i < italianLines.length; i++) {
-      patterns.push({ italian: italianLines[i], russian: russianLines[i] });
+    for (let i = 0; i < targetLines.length; i++) {
+      patterns.push({ target: targetLines[i], native: nativeLines[i] });
     }
   }
 
   return { drill: { slug, title, wordOrder, patterns }, missingWords };
 }
 
-async function main() {
+async function buildPair(paths) {
+  const { pair, drillsSrc, vocabFile, drillsOut, drillsIndex } = paths;
+  console.log(`\n=== ${pair} ===`);
+
   const vocab = JSON.parse(await readFile(vocabFile, 'utf8'));
   const headwordMap = buildHeadwordMap(vocab);
 
-  const drills = await discoverDrills(drillsDir);
+  const drills = await discoverDrills(drillsSrc);
 
-  await mkdir(dirname(indexFile), { recursive: true });
+  await mkdir(dirname(drillsIndex), { recursive: true });
 
   if (drills.length === 0) {
-    console.log(`No drill CSVs under ${drillsDir} — nothing to build.`);
-    await writeFile(
-      indexFile,
-      JSON.stringify({ language: vocab.language, level: vocab.level, drills: [] }, null, 2) + '\n',
-      'utf8',
-    );
+    console.log(`No drill CSVs under ${drillsSrc} — nothing to build.`);
+    await writeFile(drillsIndex, JSON.stringify({ drills: [] }, null, 2) + '\n', 'utf8');
     return;
   }
 
@@ -117,12 +109,12 @@ async function main() {
     seen.set(d.slug, d.csvPath);
   }
 
-  await mkdir(outDir, { recursive: true });
+  await mkdir(drillsOut, { recursive: true });
 
-  const existingOut = await readdir(outDir, { withFileTypes: true });
+  const existingOut = await readdir(drillsOut, { withFileTypes: true });
   for (const ent of existingOut) {
     if (ent.isFile() && /\.json$/i.test(ent.name)) {
-      await rm(resolve(outDir, ent.name));
+      await rm(resolve(drillsOut, ent.name));
     }
   }
 
@@ -138,8 +130,7 @@ async function main() {
       );
       continue;
     }
-    const outPath = resolve(outDir, `${slug}.json`);
-    await writeFile(outPath, JSON.stringify(drill, null, 2) + '\n', 'utf8');
+    await writeFile(resolve(drillsOut, `${slug}.json`), JSON.stringify(drill, null, 2) + '\n', 'utf8');
     const wordCount = drill.wordOrder.length;
     indexEntries.push({
       slug,
@@ -157,9 +148,15 @@ async function main() {
     );
   }
 
-  const index = { language: vocab.language, level: vocab.level, drills: indexEntries };
-  await writeFile(indexFile, JSON.stringify(index, null, 2) + '\n', 'utf8');
-  console.log(`\nWrote ${indexFile}`);
+  await writeFile(drillsIndex, JSON.stringify({ drills: indexEntries }, null, 2) + '\n', 'utf8');
+  console.log(`Wrote ${drillsIndex}`);
+}
+
+async function main() {
+  const pairs = await resolvePairs(process.argv[2]);
+  for (const pair of pairs) {
+    await buildPair(pairPaths(pair));
+  }
 }
 
 main().catch((err) => {

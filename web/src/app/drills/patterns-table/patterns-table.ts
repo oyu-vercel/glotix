@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 
 import { PatternPair } from '../drills.types';
+import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-patterns-table',
@@ -13,5 +14,6 @@ import { PatternPair } from '../drills.types';
 export class PatternsTable {
   readonly patterns = input.required<PatternPair[]>();
 
-  readonly columns = ['n', 'italian'];
+  readonly targetLabel = inject(LanguageService).targetLabel;
+  readonly columns = ['n', 'target'];
 }

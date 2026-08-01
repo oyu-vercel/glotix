@@ -8,8 +8,6 @@ export interface StoryIndexEntry {
 }
 
 export interface StoryIndex {
-  language: string;
-  level: string;
   stories: StoryIndexEntry[];
 }
 

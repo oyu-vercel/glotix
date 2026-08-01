@@ -1,11 +1,17 @@
 <mat-toolbar class="app-toolbar">
-  <span class="app-title">Glotix <span class="app-mark">—</span></span>
-  <nav class="app-nav">
-    <a mat-button routerLink="/vocabulary" routerLinkActive="active">Vocabulary</a>
-    <a mat-button routerLink="/stories" routerLinkActive="active">Stories</a>
-    <a mat-button routerLink="/drills" routerLinkActive="active">Drills</a>
-    <a mat-button routerLink="/lessons" routerLinkActive="active">Lessons</a>
-  </nav>
+  <a class="app-title" routerLink="/">Glotix <span class="app-mark">—</span></a>
+  @if (pair(); as pair) {
+    <nav class="app-nav">
+      <a mat-button [routerLink]="['/', pair, 'vocabulary']" routerLinkActive="active"
+        >Vocabulary</a
+      >
+      <a mat-button [routerLink]="['/', pair, 'stories']" routerLinkActive="active">Stories</a>
+      <a mat-button [routerLink]="['/', pair, 'drills']" routerLinkActive="active">Drills</a>
+      <a mat-button [routerLink]="['/', pair, 'lessons']" routerLinkActive="active">Lessons</a>
+    </nav>
+    <span class="app-spacer"></span>
+    <app-language-switcher />
+  }
 </mat-toolbar>
 <main class="app-shell">
   <router-outlet />

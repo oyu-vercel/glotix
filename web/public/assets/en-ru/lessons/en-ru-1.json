@@ -1,0 +1,178 @@
+{
+  "slug": "en-ru-1",
+  "title": "Lesson 1",
+  "words": [
+    {
+      "target": "excuse me",
+      "native": "извините",
+      "category": "interjection"
+    },
+    {
+      "target": "Russian",
+      "native": "русский / по-русски",
+      "category": "adjective"
+    },
+    {
+      "target": "understand",
+      "native": "понимать (понимаю, понимаете)",
+      "category": "verb"
+    },
+    {
+      "target": "you",
+      "native": "вы",
+      "category": "pronoun"
+    },
+    {
+      "target": "do",
+      "native": "вспомогательный глагол для вопроса",
+      "category": "verb"
+    },
+    {
+      "target": "no",
+      "native": "нет",
+      "category": "interjection"
+    },
+    {
+      "target": "sir",
+      "native": "сэр",
+      "category": "noun"
+    },
+    {
+      "target": "I",
+      "native": "я",
+      "category": "pronoun"
+    },
+    {
+      "target": "don't",
+      "native": "не (отрицание, сокр. do not)",
+      "category": "verb"
+    },
+    {
+      "target": "English",
+      "native": "английский (язык)",
+      "category": "noun"
+    },
+    {
+      "target": "a little",
+      "native": "немного",
+      "category": "adverb"
+    },
+    {
+      "target": "are",
+      "native": "есть (форма глагола be при you)",
+      "category": "verb"
+    },
+    {
+      "target": "yes",
+      "native": "да",
+      "category": "interjection"
+    },
+    {
+      "target": "miss",
+      "native": "мисс",
+      "category": "noun"
+    }
+  ],
+  "patterns": [
+    {
+      "target": "You understand.",
+      "native": "Вы понимаете."
+    },
+    {
+      "target": "You understand Russian.",
+      "native": "Вы понимаете по-русски."
+    },
+    {
+      "target": "Do you understand?",
+      "native": "Вы понимаете?"
+    },
+    {
+      "target": "Do you understand Russian?",
+      "native": "Вы понимаете по-русски?"
+    },
+    {
+      "target": "No, sir.",
+      "native": "Нет, сэр."
+    },
+    {
+      "target": "Excuse me, sir.",
+      "native": "Извините, сэр."
+    },
+    {
+      "target": "I understand.",
+      "native": "Я понимаю."
+    },
+    {
+      "target": "I understand Russian.",
+      "native": "Я понимаю по-русски."
+    },
+    {
+      "target": "I don't understand.",
+      "native": "Я не понимаю."
+    },
+    {
+      "target": "I don't understand Russian.",
+      "native": "Я не понимаю по-русски."
+    },
+    {
+      "target": "No, I don't understand.",
+      "native": "Нет, я не понимаю."
+    },
+    {
+      "target": "I understand English.",
+      "native": "Я понимаю по-английски."
+    },
+    {
+      "target": "I don't understand English.",
+      "native": "Я не понимаю по-английски."
+    },
+    {
+      "target": "You understand English.",
+      "native": "Вы понимаете по-английски."
+    },
+    {
+      "target": "Do you understand English?",
+      "native": "Вы понимаете по-английски?"
+    },
+    {
+      "target": "I understand a little.",
+      "native": "Я немного понимаю."
+    },
+    {
+      "target": "I understand English a little.",
+      "native": "Я немного понимаю по-английски."
+    },
+    {
+      "target": "You are Russian.",
+      "native": "Вы русский."
+    },
+    {
+      "target": "Are you Russian?",
+      "native": "Вы русский?"
+    },
+    {
+      "target": "Yes, miss.",
+      "native": "Да, мисс."
+    },
+    {
+      "target": "Excuse me, miss.",
+      "native": "Извините, мисс."
+    },
+    {
+      "target": "Yes, I understand English.",
+      "native": "Да, я понимаю по-английски."
+    },
+    {
+      "target": "Do you understand Russian, sir?",
+      "native": "Вы понимаете по-русски, сэр?"
+    },
+    {
+      "target": "Yes, I understand Russian.",
+      "native": "Да, я понимаю по-русски."
+    },
+    {
+      "target": "Yes, miss, I understand Russian.",
+      "native": "Да, мисс, я понимаю по-русски."
+    }
+  ]
+}

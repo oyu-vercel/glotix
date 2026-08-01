@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { DrillsService } from '../drills.service';
 import { PatternRepeatDeck } from '../../shared/pattern-repeat-deck/pattern-repeat-deck';
+import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-drill-patterns-repeat',
@@ -15,12 +16,13 @@ export class DrillPatternsRepeat {
 
   private readonly service = inject(DrillsService);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   private readonly drill = this.service.getDrillResolvedSignal(this.slug);
 
   protected readonly patterns = computed(() => this.drill()?.patterns ?? []);
 
   protected onExit(): void {
-    this.router.navigate(['/drills', this.slug()]);
+    this.router.navigate(['/', this.language.pair(), 'drills', this.slug()]);
   }
 }

@@ -4,27 +4,27 @@ Per-story reading view + per-story vocabulary, mirroring the A2 vocabulary featu
 
 ## App shell
 
-A `Stories` link sits next to `Vocabulary` in the toolbar ([web/src/app/app.html](../web/src/app/app.html)). Four routes ([web/src/app/app.routes.ts](../web/src/app/app.routes.ts)):
+A `Stories` link sits next to `Vocabulary` in the toolbar ([web/src/app/app.html](../web/src/app/app.html)). Four routes ([web/src/app/app.routes.ts](../web/src/app/app.routes.ts)), each under the `/:pair/` prefix:
 
 | Path                                                       | Component                                                                                 |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------- |
-| `/stories`                                                 | `StoriesSummary` ([summary.ts](../web/src/app/stories/summary/summary.ts))               |
-| `/stories/:slug` (optional `?cat=<key>` or `?tab=vocab`)   | `StoryDetail` ([detail.ts](../web/src/app/stories/detail/detail.ts))                     |
-| `/stories/:slug/category/:key/memorize` (`?direction=russian` for reverse) | [`MemorizeRoute`](../web/src/app/shared/memorize-route/memorize-route.ts) with [`provideStoryDeckSurface()`](../web/src/app/stories/story-deck-surface.ts) |
-| `/stories/:slug/category/:key/repeat`                      | [`RepeatRoute`](../web/src/app/shared/repeat-route/repeat-route.ts) with `provideStoryDeckSurface()` |
+| `/:pair/stories`                                                 | `StoriesSummary` ([summary.ts](../web/src/app/stories/summary/summary.ts))               |
+| `/:pair/stories/:slug` (optional `?cat=<key>` or `?tab=vocab`)   | `StoryDetail` ([detail.ts](../web/src/app/stories/detail/detail.ts))                     |
+| `/:pair/stories/:slug/category/:key/memorize` (`?direction=native` for reverse) | [`MemorizeRoute`](../web/src/app/shared/memorize-route/memorize-route.ts) with [`provideStoryDeckSurface()`](../web/src/app/stories/story-deck-surface.ts) |
+| `/:pair/stories/:slug/category/:key/repeat`                      | [`RepeatRoute`](../web/src/app/shared/repeat-route/repeat-route.ts) with `provideStoryDeckSurface()` |
 
-`StoryDetail`'s `cat` query param drives which category is drilled into and auto-opens the Vocabulary tab. `tab=vocab` (used by the vocabulary index at `/vocabulary` when clicking a story row) opens the Vocabulary tab without pre-selecting a category.
+`StoryDetail`'s `cat` query param drives which category is drilled into and auto-opens the Vocabulary tab. `tab=vocab` (used by the vocabulary index at `/:pair/vocabulary` when clicking a story row) opens the Vocabulary tab without pre-selecting a category.
 
 ## Data flow
 
 ```
-docs/stories/<folder>/<slug>.txt           (story source — one folder per story)
-web/public/assets/vocabulary.json          (single source of truth for words)
+docs/<pair>/stories/<folder>/<slug>.txt           (story source — one folder per story)
+web/public/assets/<pair>/vocabulary.json          (single source of truth for words)
         │
-        ▼   npm run build:stories
+        ▼   npm run build:stories -- <pair>
         │
-web/public/assets/stories-index.json
-web/public/assets/stories/<slug>.json      (refs into vocabulary.json)
+web/public/assets/<pair>/stories-index.json
+web/public/assets/<pair>/stories/<slug>.json      (refs into vocabulary.json)
         │
         ▼   StoriesService.getStoryResolved(slug)
         │   (combines story refs with VocabularyService.resolveStoryVocab)
@@ -32,15 +32,15 @@ web/public/assets/stories/<slug>.json      (refs into vocabulary.json)
 StoriesSummary / StoryDetail / MemorizeRoute / RepeatRoute
 ```
 
-The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.mjs)) does:
+The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.mjs)) does, per pair:
 
-1. **Load** `web/public/assets/vocabulary.json` and derive the category order from it.
-2. **Discover** all `*.txt` files under `docs/stories/` recursively — one folder per story, slug = filename without extension. Duplicate slugs across folders are a build error.
+1. **Load** `web/public/assets/<pair>/vocabulary.json` and derive the category order from it.
+2. **Discover** all `*.txt` files under `docs/<pair>/stories/` recursively — one folder per story, slug = filename without extension. Duplicate slugs across folders are a build error.
 3. **Tokenize** each story: NFC normalize → lowercase → split on `\p{L}\p{N}` complement → drop empty/numeric tokens. Italian apostrophes (`l'aria` → `l`, `aria`) and quotation marks are handled.
 4. **Match tokens against the vocabulary**:
-   - **Direct**: token === `italian` headword (after lowercase + slash-variant split).
+   - **Direct**: token === `target` headword (after lowercase + slash-variant split).
    - **Indirect**: token appears in any vocab entry's example sentences (first-match wins). Catches inflected forms — e.g. `saliamo` resolves to `salire`, `vado`/`vanno` to `andare`, `può` to `potere`.
-5. For each match, record `{ categoryKey, n }` — the global `n` from `vocabulary.json`. Story tokens that don't match any vocab entry are silently dropped (add the missing word to `vocabulary.json` to include it).
+5. For each match, record `{ categoryKey, n }` — the `n` from that pair's `vocabulary.json`. Story tokens that don't match any vocab entry are silently dropped (add the missing word to `vocabulary.json` to include it).
 
 ## JSON shape
 
@@ -48,8 +48,6 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
 
 ```json
 {
-  "language": "italian",
-  "level": "a2",
   "stories": [
     {
       "slug": "benvenute-al-sud",
@@ -82,25 +80,25 @@ The build script ([web/scripts/build-stories.mjs](../web/scripts/build-stories.m
 
 ## UI
 
-- **`/stories`** — `mat-table` of stories with `Story` + `Paragraphs` + `Words` (memorized in story) + `Total` (= `vocabCount` from index) + `Progress` columns and a footer Total row. Per-story memorized counts come from resolving each story (one cached HTTP call per story on first visit). Row click navigates to `/stories/:slug`.
-- **`/stories/:slug`** — header with the title; `mat-tab-group` with two tabs:
+- **`/:pair/stories`** — `mat-table` of stories with `Story` + `Paragraphs` + `Words` (memorized in story) + `Total` (= `vocabCount` from index) + `Progress` columns and a footer Total row. Per-story memorized counts come from resolving each story (one cached HTTP call per story on first visit). Row click navigates to `/:pair/stories/:slug`.
+- **`/:pair/stories/:slug`** — header with the title; `mat-tab-group` with two tabs:
   - **Read** — renders the story text as paragraphs. Short standalone lines ending in `.` (≤ 60 chars, ≤ 6 words, no quote characters) auto-promote to `<h2>` section headers. The title line is skipped (already shown as page header).
-  - **Vocabulary (N)** — `mat-table` of categories (`Category` + `Words` (memorized in story) + `Total` (this story's per-category word count) + `Progress` columns + footer Total row). Row click drills into the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts), the same component used by `/category/:key`, columns: #, Word, Pronunciation, Translation, Examples. The drilldown header carries three buttons — **Italian → Russian**, **Russian → Italian**, **Repeat** — that link to the story-scoped `MemorizeRoute` / `RepeatRoute` for that category's word set.
+  - **Vocabulary (N)** — `mat-table` of categories (`Category` + `Words` (memorized in story) + `Total` (this story's per-category word count) + `Progress` columns + footer Total row). Row click drills into the shared [`WordTable`](../web/src/app/shared/word-table/word-table.ts), the same component used by `/:pair/category/:key`, columns: #, Word, Pronunciation, Translation, Examples. The drilldown header carries three buttons, labeled from `languages.json` — **Target → Native**, **Native → Target** (e.g. "Italian → Russian", "Russian → Italian"), **Repeat** — that link to the story-scoped `MemorizeRoute` / `RepeatRoute` for that category's word set.
     - Category selection is URL-driven via the `cat` query param, so memorize/repeat can exit back to the same drilled-in state.
 
 ## Memorize / Repeat
 
-The story memorize/repeat routes load the shared generic [`MemorizeRoute`](../web/src/app/shared/memorize-route/memorize-route.ts) / [`RepeatRoute`](../web/src/app/shared/repeat-route/repeat-route.ts) components (also used by `/category/:key/memorize` and `/category/:key/repeat`) and supply [`provideStoryDeckSurface()`](../web/src/app/stories/story-deck-surface.ts) via per-route `providers`. The story `DeckSurface` resolves the word set through `StoriesService.getStoryResolved(slug)` (filtered to the requested category), produces a `story:<slug>:<key>` scope for the deck's skip storage, and navigates back to `/stories/<slug>?cat=<key>` on exit (auto-opens the Vocabulary tab on the same drilled-in category). Vocabulary routes use the same generic components but with [`provideVocabularyDeckSurface()`](../web/src/app/vocabulary/vocabulary-deck-surface.ts).
+The story memorize/repeat routes load the shared generic [`MemorizeRoute`](../web/src/app/shared/memorize-route/memorize-route.ts) / [`RepeatRoute`](../web/src/app/shared/repeat-route/repeat-route.ts) components (also used by `/:pair/category/:key/memorize` and `/:pair/category/:key/repeat`) and supply [`provideStoryDeckSurface()`](../web/src/app/stories/story-deck-surface.ts) via per-route `providers`. The story `DeckSurface` resolves the word set through `StoriesService.getStoryResolved(slug)` (filtered to the requested category), produces a `story:<slug>:<key>` scope for the deck's skip storage, and navigates back to `/:pair/stories/<slug>?cat=<key>` on exit (auto-opens the Vocabulary tab on the same drilled-in category). Vocabulary routes use the same generic components but with [`provideVocabularyDeckSurface()`](../web/src/app/vocabulary/vocabulary-deck-surface.ts).
 
-Skip state is stored via the shared [`MemorizeStorage`](../web/src/app/shared/storage/memorize-storage.ts) under a per-surface scope so skipping a word in vocabulary memorize does not hide it in story memorize and vice versa. Comments are stored **once per Italian word** and shared across every memorize view (vocabulary and any story containing that word).
+Skip state is stored via the shared [`MemorizeStorage`](../web/src/app/shared/storage/memorize-storage.ts) under a per-surface scope so skipping a word in vocabulary memorize does not hide it in story memorize and vice versa. Comments are stored **once per target word within a language pair** and shared across every memorize view (vocabulary and any story containing that word).
 
 | Surface                                              | Skip key                                         | Comment key             |
 | ---------------------------------------------------- | ------------------------------------------------ | ----------------------- |
-| `/category/<key>/memorize`                           | `glotix:skip:<key>`                              | `glotix:comment:<italian>` (shared) |
-| `/stories/<slug>/category/<key>/memorize`            | `glotix:skip:story:<slug>:<key>`                 | `glotix:comment:<italian>` (shared) |
+| `/:pair/category/<key>/memorize`                           | `glotix:<pair>:skip:<key>`                              | `glotix:<pair>:comment:<target>` (shared) |
+| `/:pair/stories/<slug>/category/<key>/memorize`            | `glotix:<pair>:skip:story:<slug>:<key>`                 | `glotix:<pair>:comment:<target>` (shared) |
 
 ## Adding a new story
 
 Use the [`add-story` skill](../.claude/skills/add-story/SKILL.md).
 
-If you only have a `.txt` (no CSV), run `npm --prefix web run build:stories` directly — words not in vocabulary.json are silently dropped from the story's refs.
+If you only have a `.txt` (no CSV), run `npm --prefix web run build:stories -- <pair>` directly — words not in that pair's vocabulary.json are silently dropped from the story's refs.

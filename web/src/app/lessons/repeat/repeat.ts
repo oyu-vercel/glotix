@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 
 import { LessonsService } from '../lessons.service';
 import { RepeatDeck } from '../../shared/repeat-deck/repeat-deck';
+import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-lesson-repeat',
@@ -19,10 +20,11 @@ export class LessonRepeat {
 
   private readonly service = inject(LessonsService);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   protected readonly category = this.service.getLessonCategorySignal(this.slug);
 
   protected onExit(): void {
-    this.router.navigate(['/lessons', this.slug()]);
+    this.router.navigate(['/', this.language.pair(), 'lessons', this.slug()]);
   }
 }

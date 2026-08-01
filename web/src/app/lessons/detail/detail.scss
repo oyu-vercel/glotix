@@ -25,4 +25,24 @@
 
 .loading {
   color: var(--mat-sys-on-surface-variant);
+  margin-top: 24px;
+}
+
+.lesson-text {
+  display: block;
+  max-width: 68ch;
+  margin: 28px auto 40px;
+  color: var(--mat-sys-on-surface);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+
+  p {
+    /* Source line breaks are kept as-is — the text itself is never reflowed. */
+    white-space: pre-line;
+    margin: 0 0 1.4em;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }

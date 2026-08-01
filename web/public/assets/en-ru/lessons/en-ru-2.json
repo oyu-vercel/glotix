@@ -1,0 +1,216 @@
+{
+  "slug": "en-ru-2",
+  "title": "Lesson 2",
+  "words": [
+    {
+      "target": "you're",
+      "native": "вы есть (сокр. you are)",
+      "category": "pronoun"
+    },
+    {
+      "target": "I'm",
+      "native": "я есть (сокр. I am)",
+      "category": "pronoun"
+    },
+    {
+      "target": "hello",
+      "native": "здравствуйте",
+      "category": "interjection"
+    },
+    {
+      "target": "ma'am",
+      "native": "мадам, сударыня",
+      "category": "noun"
+    },
+    {
+      "target": "how",
+      "native": "как",
+      "category": "adverb"
+    },
+    {
+      "target": "fine",
+      "native": "прекрасно, хорошо",
+      "category": "adjective"
+    },
+    {
+      "target": "thanks",
+      "native": "спасибо",
+      "category": "interjection"
+    },
+    {
+      "target": "goodbye",
+      "native": "до свидания",
+      "category": "interjection"
+    },
+    {
+      "target": "ah",
+      "native": "а, ах",
+      "category": "interjection"
+    },
+    {
+      "target": "very",
+      "native": "очень",
+      "category": "adverb"
+    },
+    {
+      "target": "well",
+      "native": "хорошо",
+      "category": "adverb"
+    },
+    {
+      "target": "not",
+      "native": "не",
+      "category": "adverb"
+    }
+  ],
+  "patterns": [
+    {
+      "target": "I understand.",
+      "native": "Я понимаю."
+    },
+    {
+      "target": "I understand English.",
+      "native": "Я понимаю по-английски."
+    },
+    {
+      "target": "Do you understand?",
+      "native": "Вы понимаете?"
+    },
+    {
+      "target": "Do you understand English?",
+      "native": "Вы понимаете по-английски?"
+    },
+    {
+      "target": "Do you understand Russian?",
+      "native": "Вы понимаете по-русски?"
+    },
+    {
+      "target": "No, sir.",
+      "native": "Нет, сэр."
+    },
+    {
+      "target": "I don't understand.",
+      "native": "Я не понимаю."
+    },
+    {
+      "target": "I don't understand Russian.",
+      "native": "Я не понимаю по-русски."
+    },
+    {
+      "target": "I don't understand English.",
+      "native": "Я не понимаю по-английски."
+    },
+    {
+      "target": "I understand a little.",
+      "native": "Я немного понимаю."
+    },
+    {
+      "target": "Excuse me, miss.",
+      "native": "Извините, мисс."
+    },
+    {
+      "target": "I understand English a little.",
+      "native": "Я немного понимаю по-английски."
+    },
+    {
+      "target": "Are you Russian?",
+      "native": "Вы русский?"
+    },
+    {
+      "target": "Yes, you are Russian.",
+      "native": "Да, вы русский."
+    },
+    {
+      "target": "You're Russian.",
+      "native": "Вы русский."
+    },
+    {
+      "target": "I'm Russian.",
+      "native": "Я русский."
+    },
+    {
+      "target": "Hello, miss.",
+      "native": "Здравствуйте, мисс."
+    },
+    {
+      "target": "Hello, ma'am.",
+      "native": "Здравствуйте, мадам."
+    },
+    {
+      "target": "Hello, sir.",
+      "native": "Здравствуйте, сэр."
+    },
+    {
+      "target": "How are you?",
+      "native": "Как вы поживаете?"
+    },
+    {
+      "target": "Are you Russian, ma'am?",
+      "native": "Вы русская, мадам?"
+    },
+    {
+      "target": "Fine, thanks.",
+      "native": "Прекрасно, спасибо."
+    },
+    {
+      "target": "How are you, sir?",
+      "native": "Как вы поживаете, сэр?"
+    },
+    {
+      "target": "I'm fine.",
+      "native": "Я чувствую себя прекрасно."
+    },
+    {
+      "target": "I'm fine, thanks.",
+      "native": "Прекрасно, спасибо."
+    },
+    {
+      "target": "No, ma'am.",
+      "native": "Нет, мадам."
+    },
+    {
+      "target": "Goodbye, ma'am.",
+      "native": "До свидания, мадам."
+    },
+    {
+      "target": "Ah, you understand English.",
+      "native": "А, вы понимаете по-английски."
+    },
+    {
+      "target": "Yes, I understand English.",
+      "native": "Да, я понимаю по-английски."
+    },
+    {
+      "target": "Very well.",
+      "native": "Очень хорошо."
+    },
+    {
+      "target": "I understand English very well.",
+      "native": "Я очень хорошо понимаю по-английски."
+    },
+    {
+      "target": "I understand very well.",
+      "native": "Я очень хорошо понимаю."
+    },
+    {
+      "target": "Yes, I understand Russian.",
+      "native": "Да, я понимаю по-русски."
+    },
+    {
+      "target": "Not very well.",
+      "native": "Не очень хорошо."
+    },
+    {
+      "target": "You understand English very well.",
+      "native": "Вы очень хорошо понимаете по-английски."
+    },
+    {
+      "target": "Thanks, miss.",
+      "native": "Спасибо, мисс."
+    },
+    {
+      "target": "Goodbye, sir.",
+      "native": "До свидания, сэр."
+    }
+  ]
+}

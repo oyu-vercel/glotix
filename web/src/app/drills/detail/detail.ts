@@ -7,6 +7,7 @@ import { DrillsService } from '../drills.service';
 import { WordTable } from '../../shared/word-table/word-table';
 import { PatternsTable } from '../patterns-table/patterns-table';
 import { PageHeader } from '../../shared/page-header/page-header';
+import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-drill-detail',
@@ -19,6 +20,11 @@ export class DrillDetail {
   readonly slug = input.required<string>();
 
   private readonly service = inject(DrillsService);
+  private readonly language = inject(LanguageService);
+
+  readonly pair = this.language.pair;
+  readonly targetLabel = this.language.targetLabel;
+  readonly nativeLabel = this.language.nativeLabel;
 
   readonly drill = this.service.getDrillResolvedSignal(this.slug);
 }

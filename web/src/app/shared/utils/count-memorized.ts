@@ -4,7 +4,7 @@ export function countMemorizedInVocabulary(vocab: Vocabulary, memorized: Set<str
   let n = 0;
   for (const c of vocab.categories) {
     for (const w of c.words) {
-      if (memorized.has(w.italian)) n++;
+      if (memorized.has(w.target)) n++;
     }
   }
   return n;

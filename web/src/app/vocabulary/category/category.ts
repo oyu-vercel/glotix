@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 
 import { VocabularyService } from '../vocabulary.service';
 import { WordTable } from '../../shared/word-table/word-table';
+import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-category',
@@ -15,4 +16,9 @@ import { WordTable } from '../../shared/word-table/word-table';
 export class Category {
   readonly key = input.required<string>();
   readonly category = inject(VocabularyService).getCategorySignal(this.key);
+
+  private readonly language = inject(LanguageService);
+  readonly pair = this.language.pair;
+  readonly targetLabel = this.language.targetLabel;
+  readonly nativeLabel = this.language.nativeLabel;
 }

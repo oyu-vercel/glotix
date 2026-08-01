@@ -7,6 +7,7 @@ import { map } from 'rxjs';
 import { LessonsService } from '../lessons.service';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
+import { LanguageService } from '../../shared/language/language.service';
 
 interface LessonRow {
   slug: string;
@@ -23,16 +24,18 @@ interface LessonRow {
 export class LessonsList {
   private readonly service = inject(LessonsService);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   readonly columns = ['title'];
+  readonly targetLabel = this.language.targetLabel;
 
   readonly rows = toSignal(
-    this.service.index$.pipe(
-      map((idx): LessonRow[] => idx.lessons.map((l) => ({ slug: l.slug, title: l.title }))),
+    this.service.lessons$.pipe(
+      map((lessons): LessonRow[] => lessons.map((l) => ({ slug: l.slug, title: l.title }))),
     ),
   );
 
   navigate(slug: string): void {
-    this.router.navigate(['/lessons', slug]);
+    this.router.navigate(['/', this.language.pair(), 'lessons', slug]);
   }
 }

@@ -1,14 +1,10 @@
 import { readFile, writeFile, readdir } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
+import { resolve } from 'node:path';
 
 import { parseCsv } from './lib/csv.mjs';
 import { splitSentences, dedupKey } from './lib/sentences.mjs';
 import { buildHeadwordMap, findWord } from './lib/vocab.mjs';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const repoRoot = resolve(__dirname, '..', '..');
-const vocabFile = resolve(repoRoot, 'web', 'public', 'assets', 'vocabulary.json');
+import { pairPaths, resolvePairs } from './lib/pairs.mjs';
 
 const MAX_EXAMPLES = 10;
 const CSV_HEADER_FIRST_CELL_PREFIX = 'Итальянская';
@@ -28,12 +24,15 @@ async function discoverWordsCsv(storyDir) {
 }
 
 async function main() {
-  const arg = process.argv[2];
-  if (!arg) {
-    console.error('Usage: node web/scripts/merge-words.mjs <storyFolder>');
+  const [pairArg, folderArg] = process.argv.slice(2);
+  if (!pairArg || !folderArg) {
+    console.error('Usage: node web/scripts/merge-words.mjs <pair> <storyFolder>');
     process.exit(2);
   }
-  const storyDir = resolve(process.cwd(), arg);
+  const [pair] = await resolvePairs(pairArg);
+  const { vocabFile } = pairPaths(pair);
+
+  const storyDir = resolve(process.cwd(), folderArg);
   const csvPath = await discoverWordsCsv(storyDir);
 
   const csvText = await readFile(csvPath, 'utf8');
@@ -55,13 +54,12 @@ async function main() {
         `Row ${rIdx + 1} in ${csvPath} has ${r.length} cells (expected 4): ${JSON.stringify(r)}`,
       );
     }
-    const [italianRaw, pronunciation, translation, examplesRaw] = r;
-    const italian = italianRaw.normalize('NFC').trim();
-    if (italian.startsWith(CSV_HEADER_FIRST_CELL_PREFIX)) continue;
-    if (!italian) continue;
+    const [targetRaw, pronunciation, translation, examplesRaw] = r;
+    const target = targetRaw.normalize('NFC').trim();
+    if (target.startsWith(CSV_HEADER_FIRST_CELL_PREFIX)) continue;
+    if (!target) continue;
 
-    const key = italian.toLowerCase();
-    const hit = headwordIndex.get(key);
+    const hit = headwordIndex.get(target.toLowerCase());
 
     if (hit) {
       const word = findWord(vocab, hit.categoryKey, hit.n);
@@ -93,7 +91,7 @@ async function main() {
       matched += 1;
     } else {
       unmatched.push({
-        italian,
+        target,
         pronunciation: pronunciation.normalize('NFC').trim(),
         translation: translation.normalize('NFC').trim(),
         examples: examplesRaw.normalize('NFC').trim(),
@@ -109,6 +107,7 @@ async function main() {
   }
 
   const dataRowCount = matched + unmatched.length;
+  console.log(`Pair:              ${pair}`);
   console.log(`CSV:               ${csvPath}`);
   console.log(`Data rows:         ${dataRowCount}`);
   console.log(`Matched:           ${matched}`);

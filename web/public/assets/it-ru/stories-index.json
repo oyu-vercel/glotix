@@ -1,18 +1,16 @@
 {
-  "language": "italian",
-  "level": "a2",
   "stories": [
     {
       "slug": "benvenute-al-sud",
       "title": "Benvenute al Sud",
       "paragraphs": 130,
-      "vocabCount": 480
+      "vocabCount": 481
     },
     {
       "slug": "tra-le-stelle-di-roma",
       "title": "Tra le stelle di Roma",
       "paragraphs": 78,
-      "vocabCount": 431
+      "vocabCount": 432
     },
     {
       "slug": "un-avventura-tra-i-canali",

@@ -1,4 +1,4 @@
-<app-page-header eyebrow="Vocabulary" title="Categories" italicAccent="all" />
+<app-page-header [eyebrow]="'Vocabulary · ' + level()" title="Categories" italicAccent="all" />
 
 @if (vocabulary(); as vocabulary) {
   <app-progress-table>

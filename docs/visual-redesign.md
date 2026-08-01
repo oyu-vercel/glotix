@@ -74,7 +74,7 @@ Patterns still inlined (below the threshold, or visually divergent enough that o
 | [web/src/app/vocabulary/category/category.scss](../web/src/app/vocabulary/category/category.scss) | Cat-header (eyebrow + H1 + count-pill) + memorize-actions pills. |
 | [web/src/app/vocabulary/memorized/memorized.scss](../web/src/app/vocabulary/memorized/memorized.scss) | Empty-state card only. |
 | [web/src/app/vocabulary/memorized/category/category.scss](../web/src/app/vocabulary/memorized/category/category.scss) | Inner memorized category cat-header. |
-| [web/src/app/shared/word-table/word-table.scss](../web/src/app/shared/word-table/word-table.scss) | Card-shell .table-wrap; all three text cells (`.italian-cell`, `.pron-cell`, `.translation-cell`) at 15.5px ink. Italian cell is weight 600, the other two are 400. |
+| [web/src/app/shared/word-table/word-table.scss](../web/src/app/shared/word-table/word-table.scss) | Card-shell .table-wrap; all three text cells (`.target-cell`, `.pron-cell`, `.translation-cell`) at 15.5px ink. The target-language cell is weight 600, the other two are 400. |
 | [web/src/app/stories/summary/summary.scss](../web/src/app/stories/summary/summary.scss) | Loading/empty-state copy only. |
 | [web/src/app/stories/detail/detail.scss](../web/src/app/stories/detail/detail.scss) | Reading card with Fraunces italic terracotta H2; vocab tab with cat-actions. |
 | [web/src/app/shared/memorize-deck/memorize-deck.scss](../web/src/app/shared/memorize-deck/memorize-deck.scss) | Focal practice card; Inter 700 terracotta front word; rounded comment input and pill action buttons. |
@@ -82,7 +82,7 @@ Patterns still inlined (below the threshold, or visually divergent enough that o
 
 ## UI language
 
-UI navigation, headers, buttons, and descriptions are in **English** — the interface speaks to the learner in their non-target language so navigation stays effortless. The learning content (Italian words, examples, story bodies, story titles) stays in Italian. `.accent-italic` accent words ("your", "all") and the Fraunces italic decorative em-dash in the wordmark are typographic devices, not Italian copy.
+UI navigation, headers, buttons, and descriptions are in **English** — the interface speaks to the learner in their non-target language so navigation stays effortless. The learning content (target-language words, examples, story bodies, story titles) stays in the language being learned. Language names that do appear in the UI — the picker, the toolbar switcher, the deck direction buttons — come from `languages.json`, never from hardcoded copy. `.accent-italic` accent words ("your", "all") and the Fraunces italic decorative em-dash in the wordmark are typographic devices, not learning copy.
 
 ## Constraints
 

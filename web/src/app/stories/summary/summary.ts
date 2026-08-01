@@ -9,6 +9,7 @@ import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
 import { countMemorizedInVocabulary } from '../../shared/utils/count-memorized';
+import { LanguageService } from '../../shared/language/language.service';
 
 interface StoryProgressRow {
   slug: string;
@@ -37,6 +38,7 @@ export class StoriesSummary {
   private readonly service = inject(StoriesService);
   private readonly storage = inject(MemorizeStorage);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   readonly columns = ['title', 'paragraphs', 'count', 'total', 'percent'];
 
@@ -84,6 +86,6 @@ export class StoriesSummary {
   );
 
   navigate(slug: string): void {
-    this.router.navigate(['/stories', slug]);
+    this.router.navigate(['/', this.language.pair(), 'stories', slug]);
   }
 }

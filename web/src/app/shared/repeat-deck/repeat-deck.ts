@@ -37,7 +37,7 @@ export class RepeatDeck {
   private readonly fullShuffled = signal<Word[]>([]);
   readonly memorized = signal<Set<string>>(new Set());
   readonly cards = computed(() =>
-    this.fullShuffled().filter((w) => !this.memorized().has(w.italian)),
+    this.fullShuffled().filter((w) => !this.memorized().has(w.target)),
   );
   readonly index = signal(0);
 
@@ -65,8 +65,8 @@ export class RepeatDeck {
     if (!this.hasCards()) return;
     const card = this.current();
     if (!card) return;
-    this.storage.addMemorized(card.italian);
-    this.memorized.update((s) => new Set([...s, card.italian]));
+    this.storage.addMemorized(card.target);
+    this.memorized.update((s) => new Set([...s, card.target]));
     if (this.index() >= this.cards().length) {
       this.index.set(0);
     }

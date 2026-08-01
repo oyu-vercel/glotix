@@ -7,6 +7,7 @@ import { map } from 'rxjs';
 import { DrillsService } from '../drills.service';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
+import { LanguageService } from '../../shared/language/language.service';
 
 interface DrillRow {
   slug: string;
@@ -23,6 +24,7 @@ interface DrillRow {
 export class DrillsList {
   private readonly service = inject(DrillsService);
   private readonly router = inject(Router);
+  private readonly language = inject(LanguageService);
 
   readonly columns = ['title'];
 
@@ -33,6 +35,6 @@ export class DrillsList {
   );
 
   navigate(slug: string): void {
-    this.router.navigate(['/drills', slug]);
+    this.router.navigate(['/', this.language.pair(), 'drills', slug]);
   }
 }
