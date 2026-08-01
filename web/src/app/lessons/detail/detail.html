@@ -6,6 +6,24 @@
   <app-page-header eyebrow="Lesson" [title]="l.title" />
 
   <mat-tab-group class="lesson-tabs" animationDuration="120ms">
+    <mat-tab label="Listen">
+      <div class="audio-row">
+        <app-audio-player [src]="audioSrc()" />
+      </div>
+
+      @if (text() === undefined) {
+        <p class="loading">Loading...</p>
+      } @else if (text() === null) {
+        <p class="loading">No text for this lesson.</p>
+      } @else {
+        <article class="lesson-text">
+          @for (p of paragraphs(); track $index) {
+            <p>{{ p }}</p>
+          }
+        </article>
+      }
+    </mat-tab>
+
     <mat-tab [label]="'Words (' + l.words.length + ')'">
       <div class="actions-row">
         <a
@@ -41,20 +59,6 @@
         >
       </div>
       <app-patterns-table [patterns]="l.patterns" />
-    </mat-tab>
-
-    <mat-tab label="Text">
-      @if (text() === undefined) {
-        <p class="loading">Loading...</p>
-      } @else if (text() === null) {
-        <p class="loading">No text for this lesson.</p>
-      } @else {
-        <article class="lesson-text">
-          @for (p of paragraphs(); track $index) {
-            <p>{{ p }}</p>
-          }
-        </article>
-      }
     </mat-tab>
   </mat-tab-group>
 } @else {

@@ -7,11 +7,20 @@ import { LessonsService } from '../lessons.service';
 import { WordTable } from '../../shared/word-table/word-table';
 import { PatternsTable } from '../../drills/patterns-table/patterns-table';
 import { PageHeader } from '../../shared/page-header/page-header';
+import { AudioPlayer } from '../../shared/audio-player/audio-player';
 import { LanguageService } from '../../shared/language/language.service';
 
 @Component({
   selector: 'app-lesson-detail',
-  imports: [MatTabsModule, MatButtonModule, RouterLink, WordTable, PatternsTable, PageHeader],
+  imports: [
+    MatTabsModule,
+    MatButtonModule,
+    RouterLink,
+    WordTable,
+    PatternsTable,
+    PageHeader,
+    AudioPlayer,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
   styleUrl: './detail.scss',
@@ -28,6 +37,9 @@ export class LessonDetail {
   readonly nativeLabel = this.language.nativeLabel;
 
   readonly text = this.service.getLessonTextSignal(this.slug);
+
+  /** Derived from the slug, exactly like the transcript — no index entry points at the audio. */
+  readonly audioSrc = computed(() => `/assets/${this.pair()}/lessons/audio/${this.slug()}.mp3`);
 
   /**
    * Blank lines split the transcript into paragraphs; nothing else is touched. Line breaks inside a

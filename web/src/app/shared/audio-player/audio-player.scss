@@ -1,0 +1,133 @@
+:host {
+  display: block;
+}
+
+audio {
+  display: none;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 18px 10px 12px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 999px;
+  background: var(--mat-sys-surface-container);
+}
+
+.play {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--mat-sys-primary);
+  color: var(--mat-sys-on-primary);
+  cursor: pointer;
+  transition: filter 120ms ease;
+
+  &:hover {
+    filter: brightness(1.08);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--mat-sys-primary);
+    outline-offset: 2px;
+  }
+
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+}
+
+/*
+ * The visible track is the .rail / .fill pair; the native range sits transparently on top so
+ * keyboard and touch seeking keep working without restyling every vendor pseudo-element.
+ */
+.bar {
+  position: relative;
+  flex: 1 1 auto;
+  height: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.rail,
+.fill {
+  position: absolute;
+  left: 0;
+  height: 4px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+.rail {
+  right: 0;
+  background: var(--mat-sys-outline-variant);
+}
+
+.fill {
+  background: var(--mat-sys-primary);
+}
+
+.range {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 20px;
+    background: transparent;
+  }
+
+  &::-moz-range-track {
+    height: 20px;
+    background: transparent;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    margin-top: 3.5px;
+    border: none;
+    border-radius: 50%;
+    background: var(--mat-sys-primary);
+  }
+
+  &::-moz-range-thumb {
+    width: 13px;
+    height: 13px;
+    border: none;
+    border-radius: 50%;
+    background: var(--mat-sys-primary);
+  }
+
+  &:focus-visible::-webkit-slider-thumb {
+    box-shadow: 0 0 0 3px var(--mat-sys-primary-container);
+  }
+
+  &:focus-visible::-moz-range-thumb {
+    box-shadow: 0 0 0 3px var(--mat-sys-primary-container);
+  }
+}
+
+.time {
+  flex: 0 0 auto;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--mat-sys-on-surface-variant);
+}

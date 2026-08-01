@@ -13,6 +13,21 @@
 
 .lesson-tabs {
   margin-top: 8px;
+
+  /*
+   * Material's tab body chain is `overflow: hidden`, which makes it the nearest scrollport and
+   * pins any `position: sticky` descendant to the top of the tab instead of the viewport. Opening
+   * the chain up lets the audio player stick to the page. `overflow-x: clip` still contains the
+   * horizontal tab-switch animation — unlike `hidden`, `clip` does not create a scrollport, so
+   * vertical stickiness survives it.
+   */
+  overflow-x: clip;
+
+  ::ng-deep .mat-mdc-tab-body-wrapper,
+  ::ng-deep .mat-mdc-tab-body,
+  ::ng-deep .mat-mdc-tab-body-content {
+    overflow: visible;
+  }
 }
 
 .actions-row {
@@ -28,10 +43,35 @@
   margin-top: 24px;
 }
 
+/*
+ * Pinned so the transcript scrolls under the player. The backdrop runs the full width of the tab —
+ * a 68ch-wide one would let transcript lines show through beside the pill.
+ */
+.audio-row {
+  position: sticky;
+  /*
+   * The fixed app toolbar ends at 72px (top: 16px + 56px min-height). Sticking 2px under that
+   * rather than below it means no sliver of transcript can show in between — the toolbar's higher
+   * z-index paints over the overlap.
+   */
+  top: 70px;
+  z-index: 1;
+  padding: 20px 0 12px;
+  background: var(--mat-sys-surface);
+
+  app-audio-player {
+    display: block;
+    max-width: 68ch;
+    margin: 0 auto;
+    /* Matches .lesson-text so both measures resolve `ch` against the same font size. */
+    font-size: 1.0625rem;
+  }
+}
+
 .lesson-text {
   display: block;
   max-width: 68ch;
-  margin: 28px auto 40px;
+  margin: 8px auto 40px;
   color: var(--mat-sys-on-surface);
   font-size: 1.0625rem;
   line-height: 1.75;

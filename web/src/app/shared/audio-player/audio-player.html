@@ -1,0 +1,51 @@
+@if (!failed()) {
+  <div class="player">
+    <button
+      type="button"
+      class="play"
+      (click)="toggle()"
+      [attr.aria-label]="playing() ? 'Pause' : 'Play'"
+    >
+      @if (playing()) {
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="6.5" y="5" width="3.5" height="14" rx="1" />
+          <rect x="14" y="5" width="3.5" height="14" rx="1" />
+        </svg>
+      } @else {
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5.5v13a1 1 0 0 0 1.53.85l10.2-6.5a1 1 0 0 0 0-1.7L9.53 4.65A1 1 0 0 0 8 5.5Z" />
+        </svg>
+      }
+    </button>
+
+    <div class="bar">
+      <div class="rail"></div>
+      <div class="fill" [style.width.%]="progress()"></div>
+      <input
+        type="range"
+        class="range"
+        min="0"
+        step="any"
+        aria-label="Seek"
+        [max]="duration()"
+        [value]="currentTime()"
+        (input)="onSeek($event)"
+        (change)="onSeekEnd()"
+      />
+    </div>
+
+    <span class="time">{{ display() }}</span>
+  </div>
+}
+
+<audio
+  #audio
+  preload="metadata"
+  [src]="src()"
+  (loadedmetadata)="onMetadata()"
+  (timeupdate)="onTimeUpdate()"
+  (play)="playing.set(true)"
+  (pause)="playing.set(false)"
+  (ended)="playing.set(false)"
+  (error)="failed.set(true)"
+></audio>

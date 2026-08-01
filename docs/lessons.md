@@ -1,6 +1,6 @@
 # Lessons
 
-**Status: Steps 1–8 implemented. Later steps not yet defined.**
+**Status: Steps 1–9 implemented. Later steps not yet defined.**
 
 Top-level feature alongside Vocabulary, Stories and Drills: **Lessons** — conversation-based lessons
 derived from audio-course transcripts. Each lesson goes through the same onboarding process,
@@ -140,7 +140,7 @@ decks are reused as-is — no new shared components, and no changes to the Drill
 | Path | Component | Purpose |
 | --- | --- | --- |
 | `/:pair/lessons` | `LessonsList` | Title-only table of lessons, row click → detail. |
-| `/:pair/lessons/:slug` | `LessonDetail` | Tabs: **Words** (word table + 3 deck buttons), **Patterns** (phrase table + Repeat), **Text** (Step 7). |
+| `/:pair/lessons/:slug` | `LessonDetail` | Tabs: **Listen** (audio + transcript), **Words** (word table + 3 deck buttons), **Patterns** (phrase table + Repeat). |
 | `/:pair/lessons/:slug/memorize` | `LessonMemorize` | Words memorize deck. Default direction `target`; `?direction=native` for the reverse. |
 | `/:pair/lessons/:slug/repeat` | `LessonRepeat` | Words repeat deck. |
 | `/:pair/lessons/:slug/patterns/repeat` | `LessonPatternsRepeat` | Pattern repeat — target + native shown together. |
@@ -176,7 +176,7 @@ Step 8 generalised all of that to the whole app, so none of those specifics surv
 route segment now, not a slug derivation, and the language choice happens once at `/` rather than
 per feature. The lesson-facing outcome is unchanged: one folder and one index per pair.
 
-### Step 7 — lesson Text tab ✅
+### Step 7 — lesson Text tab ✅ (renamed and moved first in Step 9)
 
 A third tab, **Text**, on the lesson detail screen, showing that lesson's full transcript.
 
@@ -234,7 +234,77 @@ The pair layer moved out of Lessons and became the app's top-level axis. See
 `LessonsService` keeps the same public surface apart from `getLanguage()` / `lessonsFor(pair)`,
 which collapse into a single `lessons$` for the active pair.
 
-### Step 9 — not yet defined
+### Step 9 — lesson audio, and the Listen tab ✅
+
+The transcript tab gained the lesson's recording, pinned above the text — and with audio on it, the
+tab became the lesson itself rather than an appendix to it. So it was **renamed `Text` → `Listen`**
+and **moved to the front**, ahead of Words and Patterns. Tab order is now
+**Listen · Words · Patterns**, and Listen is what opens by default.
+
+**Asset naming** — the audio sits in an `audio/` subfolder next to the lesson JSON, same stem as the
+slug, so the URL is derived rather than declared (no index entry, no lesson-JSON field):
+
+```
+web/public/assets/en-ru/lessons/en-ru-1.json
+web/public/assets/en-ru/lessons/en-ru-1.txt
+web/public/assets/en-ru/lessons/audio/en-ru-1.mp3
+```
+
+All five shipping lessons have one. A missing file is not an error — the `<audio>` element's
+`error` event hides the player and the transcript renders alone, mirroring the `.txt` → "No text
+for this lesson." behaviour.
+
+**Player** — `app/shared/audio-player/`, standalone and `OnPush`, in `shared/` because nothing
+about it is lesson-specific. Takes a single `src` input. Themed to the app rather than using
+`<audio controls>`: a terracotta round play/pause button, a seek bar, and a `m:ss / m:ss` readout in
+a rounded `--mat-sys-surface-container` pill.
+
+- The play/pause glyphs are **inline SVG**. No component in the app imports `MatIconModule` and
+  this one does not change that.
+- The seek bar is a native `<input type="range">` made transparent and laid over a `.rail` / `.fill`
+  pair — keyboard and touch seeking keep working without restyling every vendor pseudo-element.
+- A `seeking` flag set on `input` and cleared on `change` keeps `timeupdate` from yanking the thumb
+  back mid-drag.
+- An effect on `src` resets position, duration and error state, so switching lessons cannot inherit
+  the previous one's state.
+
+**Two layout couplings worth knowing about**, both in `detail.scss`:
+
+- Material's tab body chain (`.mat-mdc-tab-body-wrapper`, `.mat-mdc-tab-body`,
+  `.mat-mdc-tab-body-content`) is `overflow: hidden`, which makes it the nearest scrollport and pins
+  any `position: sticky` descendant to the top of the tab instead of the viewport. `.lesson-tabs`
+  overrides all three to `overflow: visible` and contains the horizontal tab-switch animation with
+  `overflow-x: clip` — unlike `hidden`, `clip` does not create a scrollport, so vertical stickiness
+  survives it.
+- `.audio-row` sticks at `top: 70px`, just under the fixed app toolbar (`top: 16px` + `56px`
+  min-height = 72px). Sticking 2px *under* it rather than below leaves no gap for a sliver of
+  transcript to show through; the toolbar's higher `z-index` paints over the overlap. **If the
+  toolbar's height or offset changes in `app.scss`, this value has to follow.**
+- The backdrop runs the full width of the tab, not the 68ch text measure — a 68ch backdrop let
+  transcript lines show through beside the pill, because `ch` resolves against each element's own
+  font size and the player's differed from `.lesson-text`'s.
+
+The player renders regardless of the transcript's state; audio and text are independent. Playback
+continues across tab switches, since `mat-tab` content stays in the DOM.
+
+**Files**
+
+| File | Change |
+| --- | --- |
+| `app/shared/audio-player/audio-player.ts` \| `.html` \| `.scss` | New component |
+| `app/lessons/detail/detail.ts` | `audioSrc` computed; `AudioPlayer` import |
+| `app/lessons/detail/detail.html` | `<app-audio-player>` atop the tab; tab renamed to `Listen` and moved first |
+| `app/lessons/detail/detail.scss` | Sticky `.audio-row`, tab-overflow overrides |
+
+**Verified** — `npm --prefix web run build` clean. In the browser: `/en-ru/lessons/en-ru-1` and
+`/it-ru/lessons/it-ru-3` both load durations (29:32 / 28:08); play toggles the glyph and advances
+the bar and readout; clicking the bar seeks; the player stays pinned under the toolbar with no
+transcript showing through, and no other tab bleeds in through the relaxed overflow. The `.mp3`
+serves `206 Partial Content`. After the reorder, Listen opens by default and all three tabs still
+render. The missing-audio path is code-verified only — every shipping lesson has a file, so it was
+not exercised in the browser.
+
+### Step 10 — not yet defined
 
 ## Lesson log
 
