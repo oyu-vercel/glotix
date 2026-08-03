@@ -1,0 +1,149 @@
+<div class="back-row">
+  <a mat-button [routerLink]="['/', pair(), 'books', book()]">← Chapters</a>
+</div>
+
+@if (chapter(); as c) {
+  <app-page-header eyebrow="Chapter" [title]="c.name" />
+
+  <mat-tab-group
+    class="chapter-tabs"
+    animationDuration="120ms"
+    [selectedIndex]="selectedTab()"
+    (selectedIndexChange)="selectedTab.set($event)"
+  >
+    <mat-tab label="Read">
+      <article class="chapter-text">
+        @for (node of nodes(); track $index) {
+          @switch (node.type) {
+            @case ('h2') {
+              <h2>{{ node.text }}</h2>
+            }
+            @case ('p') {
+              <p>{{ node.text }}</p>
+            }
+          }
+        }
+      </article>
+    </mat-tab>
+
+    <mat-tab [label]="'Vocabulary (' + totalVocab() + ')'">
+      @if (!selectedCategory()) {
+        @if (vocabRows().length > 0) {
+          <app-progress-table>
+            <table mat-table [dataSource]="vocabRows()" class="summary-table">
+              <ng-container matColumnDef="label">
+                <th mat-header-cell *matHeaderCellDef>Category</th>
+                <td mat-cell *matCellDef="let r">{{ r.label }}</td>
+                <td mat-footer-cell *matFooterCellDef class="footer-label">
+                  <span class="accent-italic">Total</span>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="count">
+                <th mat-header-cell *matHeaderCellDef class="num-col">Words</th>
+                <td mat-cell *matCellDef="let r" class="num-col">{{ r.count }}</td>
+                <td mat-footer-cell *matFooterCellDef class="num-col footer-total">
+                  {{ vocabMemorizedTotal() }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef class="num-col">Total</th>
+                <td mat-cell *matCellDef="let r" class="num-col">{{ r.total }}</td>
+                <td mat-footer-cell *matFooterCellDef class="num-col footer-total">
+                  {{ totalVocab() }}
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="percent">
+                <th mat-header-cell *matHeaderCellDef class="progress-col">Progress</th>
+                <td mat-cell *matCellDef="let r" class="progress-col">
+                  <div class="progress-cell">
+                    <div class="progress-track">
+                      <div class="progress-fill" [style.width.%]="r.percent"></div>
+                    </div>
+                    <span class="progress-num">{{ r.percent.toFixed(0) }}%</span>
+                  </div>
+                </td>
+                <td mat-footer-cell *matFooterCellDef class="progress-col footer-total">
+                  <div class="progress-cell">
+                    <div class="progress-track">
+                      <div class="progress-fill" [style.width.%]="vocabPercent()"></div>
+                    </div>
+                    <span class="progress-num">{{ vocabPercent().toFixed(1) }}%</span>
+                  </div>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="summaryColumns"></tr>
+              <tr
+                mat-row
+                *matRowDef="let row; columns: summaryColumns"
+                class="clickable-row"
+                tabindex="0"
+                (click)="openCategory(row.key)"
+                (keyup.enter)="openCategory(row.key)"
+              ></tr>
+              <tr mat-footer-row *matFooterRowDef="summaryColumns" class="totals-row"></tr>
+            </table>
+          </app-progress-table>
+        } @else {
+          <p class="empty">
+            No {{ level() ? level() + ' ' : '' }}vocabulary matched in this chapter.
+          </p>
+        }
+      } @else {
+        @if (selectedCategory(); as cat) {
+          <div class="cat-actions">
+            <button mat-button (click)="closeCategory()">← All categories</button>
+            <span class="cat-title">{{ cat.label }}</span>
+            <span class="count-pill">{{ cat.words.length }}</span>
+            <span class="spacer"></span>
+            <span class="memorize-actions">
+              <a
+                mat-flat-button
+                color="primary"
+                [routerLink]="[
+                  '/',
+                  pair(),
+                  'books',
+                  book(),
+                  slug(),
+                  'category',
+                  cat.key,
+                  'memorize',
+                ]"
+                >{{ targetLabel() }} → {{ nativeLabel() }}</a
+              >
+              <a
+                mat-stroked-button
+                color="primary"
+                [routerLink]="[
+                  '/',
+                  pair(),
+                  'books',
+                  book(),
+                  slug(),
+                  'category',
+                  cat.key,
+                  'memorize',
+                ]"
+                [queryParams]="{ direction: 'native' }"
+                >{{ nativeLabel() }} → {{ targetLabel() }}</a
+              >
+              <a
+                mat-stroked-button
+                color="primary"
+                [routerLink]="['/', pair(), 'books', book(), slug(), 'category', cat.key, 'repeat']"
+                >Repeat</a
+              >
+            </span>
+          </div>
+          <app-word-table [words]="cat.words" />
+        }
+      }
+    </mat-tab>
+  </mat-tab-group>
+} @else {
+  <p class="loading">Loading...</p>
+}
