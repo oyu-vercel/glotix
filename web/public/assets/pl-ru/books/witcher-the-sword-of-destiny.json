@@ -1,0 +1,12 @@
+{
+  "slug": "witcher-the-sword-of-destiny",
+  "name": "Wiedzmin Miecz Przeznaczenia",
+  "chapters": [
+    {
+      "slug": "ch-1",
+      "name": "Granica Możliwości",
+      "file": "ch-1.txt",
+      "vocabCount": 4124
+    }
+  ]
+}

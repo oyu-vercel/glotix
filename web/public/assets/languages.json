@@ -15,6 +15,14 @@
       "targetLabel": "English",
       "nativeLabel": "Russian",
       "level": "a2"
+    },
+    {
+      "pair": "pl-ru",
+      "target": "pl",
+      "native": "ru",
+      "targetLabel": "Polish",
+      "nativeLabel": "Russian",
+      "level": ""
     }
   ]
 }

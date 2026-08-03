@@ -88,7 +88,9 @@
             </table>
           </app-progress-table>
         } @else {
-          <p class="empty">No {{ level() }} vocabulary matched in this story.</p>
+          <p class="empty">
+            No {{ level() ? level() + ' ' : '' }}vocabulary matched in this story.
+          </p>
         }
       } @else {
         @if (selectedCategory(); as cat) {

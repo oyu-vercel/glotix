@@ -5,8 +5,8 @@ native language, written `<target>-<native>` — `it-ru` is Italian for Russian 
 the first URL segment, the asset folder name, and the namespace for saved progress. Vocabulary,
 stories, drills and lessons all live inside one.
 
-Shipping pairs: `it-ru` (A2, populated) and `en-ru` (A2, two lessons and their vocabulary; no
-stories or drills yet).
+Shipping pairs: `it-ru` (A2, populated), `en-ru` (A2, two lessons and their vocabulary; no stories
+or drills yet) and `pl-ru` (no level, no content yet — index stubs only).
 
 ```
 Glotix
@@ -42,6 +42,13 @@ is `native`, and every visible language name is read from `languages.json` at ru
 `level` lives here rather than in each index file, which is why the vocabulary summary route is
 `/:pair/vocabulary/summary` and not `/vocabulary/a2`.
 
+A pair may set `level` to `""` when it should carry no CEFR label. Every place that renders it
+guards on the empty string: the picker drops the chip
+([picker.html](../web/src/app/shared/language/picker/picker.html)), the vocabulary summary eyebrow
+falls back to plain `Vocabulary` ([summary.html](../web/src/app/vocabulary/summary/summary.html)),
+and the story empty state reads "No vocabulary matched…"
+([detail.html](../web/src/app/stories/detail/detail.html)). `pl-ru` ships this way.
+
 ## Asset layout
 
 ```
@@ -58,6 +65,8 @@ web/public/assets/
     lessons/<slug>.txt
   en-ru/
     …same files; lessons and vocabulary populated, stories and drills still empty
+  pl-ru/
+    …same files; all four are empty stubs
 ```
 
 Sources mirror it:
@@ -72,7 +81,12 @@ docs/
 
 A pair with no content still needs its four index files, or its screens error instead of showing an
 empty state. `en-ru` still ships `{ "stories": [] }` and `{ "drills": [] }`; its `vocabulary.json`
-and `lessons-index.json` are populated.
+and `lessons-index.json` are populated. `pl-ru` ships all four empty.
+
+Stories, drills and lessons each render their own "No … yet." empty state, but the vocabulary
+summary has none — an empty `categories` array leaves a bare table header. So a content-free pair's
+`vocabulary.json` lists all nine categories with `"words": []`, which renders as a full table of
+zeroes instead.
 
 ## Routes
 
@@ -167,9 +181,10 @@ node web/scripts/append-words.mjs it-ru docs/it-ru/drills/d2/unmatched.json
 
 ## Adding a pair
 
-1. Add an entry to `languages.json`.
-2. Create `web/public/assets/<pair>/` with `vocabulary.json` (`{ "categories": [] }` or a real one),
-   `stories-index.json`, `drills-index.json` and `lessons-index.json` stubs.
+1. Add an entry to `languages.json` (`level: ""` if it should carry no CEFR label).
+2. Create `web/public/assets/<pair>/` with `vocabulary.json` (the nine categories with empty `words`
+   arrays, or a real one) plus `stories-index.json`, `drills-index.json` and `lessons-index.json`
+   stubs. Copy `pl-ru/` for a blank starting point.
 3. Create `docs/<pair>/` folders as content arrives, then run the `add-story`, `add-drill` or
    `add-lesson` skill with the pair.
 

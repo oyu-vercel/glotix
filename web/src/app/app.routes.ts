@@ -70,6 +70,26 @@ export const routes: Routes = [
         providers: [provideStoryDeckSurface()],
       },
       {
+        path: 'books',
+        loadComponent: () => import('./books/list/list').then((m) => m.BooksList),
+      },
+      {
+        path: 'books/:slug',
+        loadComponent: () => import('./books/detail/detail').then((m) => m.BookDetail),
+      },
+      {
+        path: 'books/:book/:slug',
+        loadComponent: () => import('./books/chapter/chapter').then((m) => m.BookChapter),
+      },
+      {
+        path: 'books/:book/:slug/category/:key/memorize',
+        loadComponent: () => import('./books/memorize/memorize').then((m) => m.BookMemorize),
+      },
+      {
+        path: 'books/:book/:slug/category/:key/repeat',
+        loadComponent: () => import('./books/repeat/repeat').then((m) => m.BookRepeat),
+      },
+      {
         path: 'drills',
         loadComponent: () => import('./drills/list/list').then((m) => m.DrillsList),
       },

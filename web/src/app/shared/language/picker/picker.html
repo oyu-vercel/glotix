@@ -23,7 +23,9 @@
       @for (t of targets(); track t.pair) {
         <button mat-flat-button type="button" class="option" (click)="chooseTarget(t.pair)">
           {{ t.targetLabel }}
-          <span class="option-level">{{ t.level.toUpperCase() }}</span>
+          @if (t.level) {
+            <span class="option-level">{{ t.level.toUpperCase() }}</span>
+          }
         </button>
       }
     </div>
