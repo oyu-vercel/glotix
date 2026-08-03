@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { LanguageService } from './shared/language/language.service';
 import { LanguageSwitcher } from './shared/language/switcher/switcher';
+import { FEATURES } from './shared/features/feature-registry';
 
 @Component({
   selector: 'app-root',
@@ -22,4 +23,6 @@ import { LanguageSwitcher } from './shared/language/switcher/switcher';
 export class App {
   /** Empty while the picker is showing — the nav has nothing to point at yet. */
   readonly pair = inject(LanguageService).pair;
+
+  readonly features = FEATURES;
 }

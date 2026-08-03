@@ -1,0 +1,26 @@
+<div class="deck-shell">
+  <div class="deck-topbar">
+    <button mat-button type="button" (click)="exit.emit()">← Exit</button>
+    <span class="topbar-right">
+      @if (hasCards()) {
+        <span class="progress">{{ progress() }}</span>
+      }
+      <ng-content select="[topbar]" />
+    </span>
+  </div>
+
+  @if (hasCards()) {
+    <article class="card" tabindex="0" (click)="cardClick.emit()">
+      <ng-content select="[card]" />
+    </article>
+    <ng-content select="[below]" />
+  } @else if (isEmpty()) {
+    @if (emptyMessage(); as message) {
+      <p class="loading">{{ message }}</p>
+    } @else {
+      <ng-content select="[empty]" />
+    }
+  } @else {
+    <p class="loading">Loading...</p>
+  }
+</div>

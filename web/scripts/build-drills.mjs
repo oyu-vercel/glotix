@@ -1,12 +1,11 @@
 import { readFile, writeFile, mkdir, readdir, rm } from 'node:fs/promises';
 import { dirname, resolve, basename, extname } from 'node:path';
 
-import { parseCsv } from './lib/csv.mjs';
+import { dataRows, parseCsv } from './lib/csv.mjs';
 import { splitLines } from './lib/sentences.mjs';
 import { buildHeadwordMap } from './lib/vocab.mjs';
 import { pairPaths, resolvePairs } from './lib/pairs.mjs';
 
-const CSV_HEADER_FIRST_CELL = 'italian phrase';
 const STOP_WORDS = new Set(['of', 'the', 'in', 'a', 'and', 'an', 'on', 'at', 'to', 'for']);
 
 function deriveTitle(slug) {
@@ -45,22 +44,17 @@ async function discoverDrills(rootDir) {
 }
 
 function buildDrill(slug, csvText, headwordMap) {
-  const rows = parseCsv(csvText);
+  const rows = dataRows(parseCsv(csvText), headwordMap, `drill "${slug}"`);
   const title = deriveTitle(slug);
   const wordOrder = [];
   const patterns = [];
   const missingWords = [];
 
-  for (let rIdx = 0; rIdx < rows.length; rIdx++) {
-    const r = rows[rIdx];
-    if (r.length === 0 || (r.length === 1 && r[0] === '')) continue;
-    if (r.length < 5) {
-      throw new Error(`Row ${rIdx + 1} in drill "${slug}" has ${r.length} cells (expected 5)`);
+  for (const { cells, target, rowNumber } of rows) {
+    if (cells.length < 5) {
+      throw new Error(`Row ${rowNumber} in drill "${slug}" has ${cells.length} cells (expected 5)`);
     }
-    const [targetRaw, , , targetExamplesRaw, nativeExamplesRaw] = r;
-    const target = targetRaw.normalize('NFC').trim();
-    if (target.toLowerCase() === CSV_HEADER_FIRST_CELL) continue;
-    if (!target) continue;
+    const [, , , targetExamplesRaw, nativeExamplesRaw] = cells;
 
     const hit = headwordMap.get(target.toLowerCase());
     if (hit) {
@@ -73,7 +67,7 @@ function buildDrill(slug, csvText, headwordMap) {
     const nativeLines = splitLines(nativeExamplesRaw);
     if (targetLines.length !== nativeLines.length) {
       throw new Error(
-        `Row ${rIdx + 1} (${target}) in drill "${slug}": target/native example line counts differ (${targetLines.length} vs ${nativeLines.length})`,
+        `Row ${rowNumber} (${target}) in drill "${slug}": target/native example line counts differ (${targetLines.length} vs ${nativeLines.length})`,
       );
     }
     for (let i = 0; i < targetLines.length; i++) {
@@ -130,7 +124,11 @@ async function buildPair(paths) {
       );
       continue;
     }
-    await writeFile(resolve(drillsOut, `${slug}.json`), JSON.stringify(drill, null, 2) + '\n', 'utf8');
+    await writeFile(
+      resolve(drillsOut, `${slug}.json`),
+      JSON.stringify(drill, null, 2) + '\n',
+      'utf8',
+    );
     const wordCount = drill.wordOrder.length;
     indexEntries.push({
       slug,
@@ -144,7 +142,7 @@ async function buildPair(paths) {
   }
   if (skipped.length > 0) {
     console.warn(
-      `\n${skipped.length} drill(s) skipped — run merge-drill-words.mjs + append-words.mjs first.`,
+      `\n${skipped.length} drill(s) skipped — run merge-csv-words.mjs + append-words.mjs first.`,
     );
   }
 

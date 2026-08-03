@@ -1,26 +1,22 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 
 import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
+import {
+  ProgressColumn,
+  ProgressRow,
+  ProgressTotals,
+} from '../../shared/progress-table/progress-table.types';
 import { countWords } from '../../shared/utils/count-words';
 import { VocabularyService } from '../vocabulary.service';
 import { LanguageService } from '../../shared/language/language.service';
 
-interface MemorizedCategoryRow {
-  key: string;
-  label: string;
-  count: number;
-  total: number;
-  percent: number;
-}
-
 @Component({
   selector: 'app-memorized',
-  imports: [MatTableModule, PageHeader, ProgressTable],
+  imports: [PageHeader, ProgressTable],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './memorized.html',
   styleUrl: './memorized.scss',
@@ -33,33 +29,43 @@ export class Memorized {
 
   readonly vocabulary = toSignal(this.vocabularyService.vocabulary$);
 
-  readonly columns = ['label', 'count', 'total', 'percent'];
+  readonly columns: readonly ProgressColumn[] = [
+    { kind: 'title', header: 'Category' },
+    { kind: 'count', header: 'Words' },
+    { kind: 'total', header: 'Total' },
+    { kind: 'percent', header: 'Progress' },
+  ];
 
-  readonly rows = computed<MemorizedCategoryRow[]>(() => {
+  /** Only categories with at least one memorized word — this screen is the un-memorize view. */
+  readonly rows = computed<ProgressRow[]>(() => {
     const vocab = this.vocabulary();
     if (!vocab) return [];
     const memorized = this.storage.memorized();
-    const out: MemorizedCategoryRow[] = [];
+    const out: ProgressRow[] = [];
     for (const category of vocab.categories) {
       const count = category.words.reduce((n, w) => n + (memorized.has(w.target) ? 1 : 0), 0);
       if (count === 0) continue;
       const total = category.words.length;
-      const percent = total > 0 ? (count / total) * 100 : 0;
-      out.push({ key: category.key, label: category.label, count, total, percent });
+      out.push({
+        id: category.key,
+        title: category.label,
+        count,
+        total,
+        percent: total > 0 ? (count / total) * 100 : 0,
+      });
     }
     return out;
   });
 
-  readonly total = computed(() => this.rows().reduce((n, r) => n + r.count, 0));
-
-  readonly grandTotal = computed(() => {
+  /**
+   * Deliberately not `sumRows`: the footer measures progress against the *whole* vocabulary, not
+   * just the categories that happen to have a memorized word in them.
+   */
+  readonly totals = computed<ProgressTotals>(() => {
+    const count = this.rows().reduce((n, r) => n + (r.count ?? 0), 0);
     const vocab = this.vocabulary();
-    return vocab ? countWords(vocab.categories) : 0;
-  });
-
-  readonly grandPercent = computed(() => {
-    const g = this.grandTotal();
-    return g > 0 ? (this.total() / g) * 100 : 0;
+    const total = vocab ? countWords(vocab.categories) : 0;
+    return { count, total, percent: total > 0 ? (count / total) * 100 : 0 };
   });
 
   navigate(key: string): void {

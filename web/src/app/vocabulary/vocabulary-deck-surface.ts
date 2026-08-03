@@ -1,8 +1,8 @@
-import { Injectable, Provider, Signal, inject } from '@angular/core';
+import { Injectable, Provider, Signal, computed, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Category } from './vocabulary.types';
-import { DECK_SURFACE, DeckSurface } from '../shared/deck-surface/deck-surface';
+import { DECK_SURFACE, DeckParams, DeckSurface } from '../shared/deck-surface/deck-surface';
 import { VocabularyService } from './vocabulary.service';
 import { LanguageService } from '../shared/language/language.service';
 
@@ -12,16 +12,18 @@ class VocabularyDeckSurface implements DeckSurface {
   private readonly vocab = inject(VocabularyService);
   private readonly language = inject(LanguageService);
 
-  resolveCategory(_slug: Signal<string>, key: Signal<string>): Signal<Category | undefined> {
-    return this.vocab.getCategorySignal(key);
+  readonly emptyMessage = 'No words in this category.';
+
+  resolveCategory(params: Signal<DeckParams>): Signal<Category | undefined> {
+    return this.vocab.getCategorySignal(computed(() => params()['key'] ?? ''));
   }
 
-  resolveScope(_slug: Signal<string>, key: Signal<string>): Signal<string> {
-    return key;
+  resolveScope(params: Signal<DeckParams>): Signal<string> {
+    return computed(() => params()['key'] ?? '');
   }
 
-  exit(_slug: string, key: string): void {
-    this.router.navigate(['/', this.language.pair(), 'category', key]);
+  exit(params: DeckParams): void {
+    this.router.navigate(['/', this.language.pair(), 'category', params['key']]);
   }
 }
 

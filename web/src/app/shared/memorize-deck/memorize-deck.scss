@@ -1,75 +1,4 @@
-:host {
-  display: block;
-}
-
-.memorize-shell {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 64px - 48px);
-  gap: 16px;
-}
-
-.memorize-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  a {
-    color: var(--mat-sys-on-surface-variant);
-    font-weight: 500;
-  }
-}
-
-.topbar-right {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.progress {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--mat-sys-on-surface-variant);
-  font-variant-numeric: tabular-nums;
-}
-
-.card {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  padding: 64px 32px 56px;
-  background: var(--mat-sys-surface-container);
-  border: none;
-  border-radius: 28px;
-  cursor: pointer;
-  outline: none;
-  text-align: center;
-  box-shadow:
-    0 1px 0 rgba(43, 42, 38, 0.05),
-    0 30px 60px -32px rgba(43, 42, 38, 0.25);
-
-  &:focus-visible {
-    outline: 2px solid var(--mat-sys-primary);
-    outline-offset: 2px;
-  }
-}
-
-.card-actions {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  display: flex;
-  gap: 8px;
-
-  button {
-    border-radius: 999px;
-  }
-}
+// Card contents only — the shell, card frame, topbar, actions and hint come from <app-deck-shell>.
 
 .front {
   display: flex;
@@ -143,13 +72,6 @@
   }
 }
 
-.hint {
-  margin-top: auto;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--mat-sys-on-surface-variant);
-}
-
 .comment-area {
   display: flex;
   flex-direction: column;
@@ -207,10 +129,6 @@
   text-align: center;
 }
 
-.loading {
-  color: var(--mat-sys-on-surface-variant);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -223,11 +141,6 @@
 }
 
 @media (max-width: 600px) {
-  .card {
-    padding: 40px 20px 36px;
-    border-radius: 22px;
-  }
-
   .front .target,
   .front .translation {
     font-size: clamp(36px, 12vw, 48px);
@@ -244,4 +157,9 @@
   .back .translation {
     font-size: 20px;
   }
+}
+
+// Projection wrapper: keeps its children participating in the card frame's flex layout.
+.slot {
+  display: contents;
 }

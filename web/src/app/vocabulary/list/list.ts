@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { MatTableModule } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { combineLatest, map, of, switchMap } from 'rxjs';
 
@@ -11,27 +10,28 @@ import { countWords } from '../../shared/utils/count-words';
 import { countMemorizedInVocabulary } from '../../shared/utils/count-memorized';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
+import {
+  ProgressColumn,
+  ProgressRow,
+  ProgressTotals,
+  sumRows,
+} from '../../shared/progress-table/progress-table.types';
 import { LanguageService } from '../../shared/language/language.service';
 
-interface ProgressRow {
-  name: string;
-  count: number;
-  total: number;
-  percent: number;
-  route: readonly [string, ...string[]];
-  queryParams?: Readonly<Record<string, string>>;
+/** A row that also knows where clicking it should go. */
+interface NavRow extends ProgressRow {
+  readonly route: readonly [string, ...string[]];
+  readonly queryParams?: Readonly<Record<string, string>>;
 }
 
 interface ProgressSection {
-  rows: ProgressRow[];
-  totalCount: number;
-  grandTotal: number;
-  grandPercent: number;
+  rows: NavRow[];
+  totals: ProgressTotals;
 }
 
 @Component({
   selector: 'app-vocabulary-list',
-  imports: [MatTableModule, PageHeader, ProgressTable],
+  imports: [PageHeader, ProgressTable],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './list.html',
   styleUrl: './list.scss',
@@ -43,39 +43,48 @@ export class List {
   private readonly router = inject(Router);
   private readonly language = inject(LanguageService);
 
-  readonly columns = ['name', 'count', 'total', 'percent'];
+  readonly globalColumns: readonly ProgressColumn[] = [
+    { kind: 'title', header: 'Source' },
+    { kind: 'count', header: 'Words' },
+    { kind: 'total', header: 'Total' },
+    { kind: 'percent', header: 'Progress' },
+  ];
+
+  readonly storyColumns: readonly ProgressColumn[] = [
+    { kind: 'title', header: 'Story' },
+    { kind: 'count', header: 'Words' },
+    { kind: 'total', header: 'Total' },
+    { kind: 'percent', header: 'Progress' },
+  ];
 
   readonly globalSection = toSignal(
     this.vocabularyService.vocabulary$.pipe(
       map((vocabulary): ProgressSection => {
-        const memorized = this.storage.getMemorized();
+        const memorized = this.storage.memorized();
         const total = countWords(vocabulary.categories);
-        const memorizedInVocab = countMemorizedInVocabulary(vocabulary, memorized);
-        const percent = total > 0 ? (memorizedInVocab / total) * 100 : 0;
+        const count = countMemorizedInVocabulary(vocabulary, memorized);
+        const percent = total > 0 ? (count / total) * 100 : 0;
 
-        const rows: ProgressRow[] = [
+        const rows: NavRow[] = [
           {
-            name: 'Global Vocabulary',
-            count: memorizedInVocab,
+            id: 'summary',
+            title: 'Global Vocabulary',
+            count,
             total,
             percent,
             route: ['vocabulary', 'summary'],
           },
           {
-            name: 'Memorized Words',
-            count: memorizedInVocab,
+            id: 'memorized',
+            title: 'Memorized Words',
+            count,
             total,
             percent,
             route: ['vocabulary', 'memorized'],
           },
         ];
 
-        return {
-          rows,
-          totalCount: rows.reduce((n, r) => n + r.count, 0),
-          grandTotal: rows.reduce((n, r) => n + r.total, 0),
-          grandPercent: percent,
-        };
+        return { rows, totals: sumRows(rows) };
       }),
     ),
   );
@@ -84,34 +93,31 @@ export class List {
     this.storiesService.index$.pipe(
       switchMap((index) => {
         if (index.stories.length === 0) {
-          return of<ProgressSection>({ rows: [], totalCount: 0, grandTotal: 0, grandPercent: 0 });
+          return of<ProgressSection>({ rows: [], totals: sumRows([]) });
         }
-        const memorized = this.storage.getMemorized();
+        const memorized = this.storage.memorized();
         const resolved$ = combineLatest(
           index.stories.map((s) => this.storiesService.getStoryResolved(s.slug)),
         );
         return resolved$.pipe(
           map((resolvedList): ProgressSection => {
-            const rows: ProgressRow[] = index.stories.map((s, i) => {
+            const rows: NavRow[] = index.stories.map((s, i) => {
               const resolved = resolvedList[i];
               const total = s.vocabCount;
               const count = resolved
                 ? countMemorizedInVocabulary(resolved.vocabulary, memorized)
                 : 0;
-              const percent = total > 0 ? (count / total) * 100 : 0;
               return {
-                name: s.title,
+                id: s.slug,
+                title: s.title,
                 count,
                 total,
-                percent,
+                percent: total > 0 ? (count / total) * 100 : 0,
                 route: ['stories', s.slug] as const,
                 queryParams: { tab: 'vocab' },
               };
             });
-            const totalCount = rows.reduce((n, r) => n + r.count, 0);
-            const grandTotal = rows.reduce((n, r) => n + r.total, 0);
-            const grandPercent = grandTotal > 0 ? (totalCount / grandTotal) * 100 : 0;
-            return { rows, totalCount, grandTotal, grandPercent };
+            return { rows, totals: sumRows(rows) };
           }),
         );
       }),
@@ -121,8 +127,13 @@ export class List {
   navigate(row: ProgressRow): void {
     // Rows carry pair-less segments; the active pair is prefixed here so the row builders above
     // stay free of it.
-    this.router.navigate(['/', this.language.pair(), ...row.route], {
-      queryParams: row.queryParams,
+    const nav = [
+      ...(this.globalSection()?.rows ?? []),
+      ...(this.storiesSection()?.rows ?? []),
+    ].find((r) => r.id === row.id);
+    if (!nav) return;
+    this.router.navigate(['/', this.language.pair(), ...nav.route], {
+      queryParams: nav.queryParams,
     });
   }
 }

@@ -2,8 +2,8 @@ import { Injectable, Provider, Signal, computed, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Category } from '../vocabulary/vocabulary.types';
-import { DECK_SURFACE, DeckSurface } from '../shared/deck-surface/deck-surface';
 import { StoriesService } from './stories.service';
+import { DECK_SURFACE, DeckParams, DeckSurface } from '../shared/deck-surface/deck-surface';
 import { LanguageService } from '../shared/language/language.service';
 
 @Injectable()
@@ -12,17 +12,22 @@ class StoryDeckSurface implements DeckSurface {
   private readonly stories = inject(StoriesService);
   private readonly language = inject(LanguageService);
 
-  resolveCategory(slug: Signal<string>, key: Signal<string>): Signal<Category | undefined> {
-    return this.stories.getStoryCategorySignal(slug, key);
+  readonly emptyMessage = 'No words in this category.';
+
+  resolveCategory(params: Signal<DeckParams>): Signal<Category | undefined> {
+    return this.stories.getStoryCategorySignal(
+      computed(() => params()['slug'] ?? ''),
+      computed(() => params()['key'] ?? ''),
+    );
   }
 
-  resolveScope(slug: Signal<string>, key: Signal<string>): Signal<string> {
-    return computed(() => `story:${slug()}:${key()}`);
+  resolveScope(params: Signal<DeckParams>): Signal<string> {
+    return computed(() => `story:${params()['slug']}:${params()['key']}`);
   }
 
-  exit(slug: string, key: string): void {
-    this.router.navigate(['/', this.language.pair(), 'stories', slug], {
-      queryParams: { cat: key },
+  exit(params: DeckParams): void {
+    this.router.navigate(['/', this.language.pair(), 'stories', params['slug']], {
+      queryParams: { cat: params['key'] },
     });
   }
 }

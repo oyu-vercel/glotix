@@ -1,6 +1,4 @@
-<div class="back-row">
-  <a mat-button [routerLink]="['/', pair(), 'drills']">← Drills</a>
-</div>
+<app-back-link to="drills" />
 
 @if (drill(); as d) {
   <app-page-header eyebrow="Drill" [title]="d.title" />

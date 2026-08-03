@@ -1,26 +1,20 @@
-<div class="repeat-shell">
-  <div class="repeat-topbar">
-    <button mat-button type="button" (click)="exit.emit()">← Exit</button>
-    @if (hasCards()) {
-      <span class="progress">{{ progress() }}</span>
-    }
-  </div>
-
-  @if (current(); as card) {
-    <article class="card" tabindex="0" (click)="advance()">
+<app-deck-shell
+  [progress]="cursor.progress()"
+  [hasCards]="cursor.hasCards()"
+  [isEmpty]="!!category()"
+  [emptyMessage]="emptyMessage()"
+  (exit)="exit.emit()"
+  (cardClick)="cursor.advance()"
+>
+  <div card class="slot">
+    @if (cursor.current(); as card) {
       <div class="card-actions" (click)="$event.stopPropagation()">
-        <button mat-stroked-button type="button" class="memorized-btn" (click)="markMemorized()">
-          Memorized
-        </button>
+        <button mat-stroked-button type="button" (click)="markMemorized()">Memorized</button>
       </div>
       <div class="front">
         <div class="translation">{{ card.translation }}</div>
       </div>
       <div class="hint">Click or press Space for next word</div>
-    </article>
-  } @else if (category()) {
-    <p class="loading">{{ emptyMessage() }}</p>
-  } @else {
-    <p class="loading">Loading...</p>
-  }
-</div>
+    }
+  </div>
+</app-deck-shell>

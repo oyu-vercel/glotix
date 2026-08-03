@@ -1,28 +1,25 @@
-<div class="memorize-shell">
-  <div class="memorize-topbar">
-    <button mat-button type="button" (click)="exit.emit()">← Exit</button>
-    <span class="topbar-right">
-      @if (hasCards()) {
-        <span class="progress">{{ progress() }}</span>
-      }
-      <button
-        mat-stroked-button
-        type="button"
-        [disabled]="skipCount() === 0"
-        (click)="resetSkips()"
-      >
-        Reset Skips ({{ skipCount() }})
-      </button>
-    </span>
-  </div>
+<app-deck-shell
+  [progress]="cursor.progress()"
+  [hasCards]="cursor.hasCards()"
+  [isEmpty]="!!category()"
+  (exit)="exit.emit()"
+  (cardClick)="advance()"
+>
+  <button
+    topbar
+    mat-stroked-button
+    type="button"
+    [disabled]="skipCount() === 0"
+    (click)="resetSkips()"
+  >
+    Reset Skips ({{ skipCount() }})
+  </button>
 
-  @if (current(); as card) {
-    <article class="card" tabindex="0" (click)="advance()" (contextmenu)="onContextMenu($event)">
+  <div card class="slot">
+    @if (cursor.current(); as card) {
       <div class="card-actions" (click)="$event.stopPropagation()">
-        <button mat-stroked-button type="button" class="memorized-btn" (click)="markMemorized()">
-          Memorized
-        </button>
-        <button mat-stroked-button type="button" class="skip-btn" (click)="skip()">Skip</button>
+        <button mat-stroked-button type="button" (click)="markMemorized()">Memorized</button>
+        <button mat-stroked-button type="button" (click)="skip()">Skip</button>
       </div>
 
       <div class="front">
@@ -33,6 +30,7 @@
           <div class="pron">{{ card.pronunciation }}</div>
         }
       </div>
+
       @if (stage() === 'back') {
         <div class="back">
           @if (isReverse()) {
@@ -48,6 +46,7 @@
           </ol>
         </div>
       }
+
       <div class="hint">
         {{
           stage() === 'front'
@@ -55,43 +54,45 @@
             : 'Click or press Space for next word'
         }}
       </div>
-    </article>
+    }
+  </div>
 
-    <section class="comment-area" (click)="$event.stopPropagation()">
-      <label class="comment-label" for="memorize-comment">Comment</label>
-      <textarea
-        id="memorize-comment"
-        class="comment-input"
-        rows="3"
-        [value]="commentDraft()"
-        (input)="onCommentInput($event)"
-        placeholder="Your notes for this word"
-      ></textarea>
-      <div class="comment-actions">
-        <button
-          mat-flat-button
-          color="primary"
-          type="button"
-          [disabled]="!commentDirty()"
-          (click)="saveComment()"
-        >
-          Save
-        </button>
-        <button
-          mat-stroked-button
-          type="button"
-          [disabled]="!commentDirty()"
-          (click)="cancelComment()"
-        >
-          Cancel
-        </button>
-      </div>
-    </section>
-  } @else if (category()) {
-    <div class="empty-state">
-      <p>All cards skipped — press <strong>Reset Skips</strong> to start over.</p>
-    </div>
-  } @else {
-    <p class="loading">Loading...</p>
-  }
-</div>
+  <div below class="slot">
+    @if (cursor.current()) {
+      <section class="comment-area" (click)="$event.stopPropagation()">
+        <label class="comment-label" [attr.for]="commentId">Comment</label>
+        <textarea
+          [id]="commentId"
+          class="comment-input"
+          rows="3"
+          [value]="commentDraft()"
+          (input)="onCommentInput($event)"
+          placeholder="Your notes for this word"
+        ></textarea>
+        <div class="comment-actions">
+          <button
+            mat-flat-button
+            color="primary"
+            type="button"
+            [disabled]="!commentDirty()"
+            (click)="saveComment()"
+          >
+            Save
+          </button>
+          <button
+            mat-stroked-button
+            type="button"
+            [disabled]="!commentDirty()"
+            (click)="cancelComment()"
+          >
+            Cancel
+          </button>
+        </div>
+      </section>
+    }
+  </div>
+
+  <div empty class="empty-state">
+    <p>All cards skipped — press <strong>Reset Skips</strong> to start over.</p>
+  </div>
+</app-deck-shell>

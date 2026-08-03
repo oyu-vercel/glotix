@@ -2,15 +2,6 @@
   display: block;
 }
 
-.back-row {
-  margin-bottom: 8px;
-
-  a {
-    color: var(--mat-sys-on-surface-variant);
-    font-weight: 500;
-  }
-}
-
 .chapter-tabs {
   background: transparent;
 }
@@ -25,9 +16,7 @@
   font-size: 17px;
   line-height: 1.75;
   color: var(--mat-sys-on-surface);
-  box-shadow:
-    0 1px 0 rgba(43, 42, 38, 0.05),
-    0 18px 40px -22px rgba(43, 42, 38, 0.18);
+  box-shadow: var(--glotix-shadow-card);
 
   h2 {
     font-family: 'Fraunces', 'Inter', serif;

@@ -1,12 +1,21 @@
 import { Injectable, Signal, inject } from '@angular/core';
-import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map, of, shareReplay, switchMap } from 'rxjs';
+import { Observable, map, of, switchMap } from 'rxjs';
 
-import { Drill, DrillIndex, DrillResolved } from './drills.types';
-import { Category, Word } from '../vocabulary/vocabulary.types';
+import { HttpClient } from '@angular/common/http';
+
+import { Drill, DrillIndex } from './drills.types';
+import { PracticeResolved } from '../shared/types/practice';
+import { Category } from '../vocabulary/vocabulary.types';
 import { VocabularyService } from '../vocabulary/vocabulary.service';
 import { LanguageService } from '../shared/language/language.service';
+import {
+  KeyedCache,
+  forActivePair,
+  forActivePairItem,
+  ifListed,
+  pairKey,
+  slugSignal,
+} from '../shared/data/pair-resource';
 
 @Injectable({ providedIn: 'root' })
 export class DrillsService {
@@ -14,100 +23,70 @@ export class DrillsService {
   private readonly vocabularyService = inject(VocabularyService);
   private readonly language = inject(LanguageService);
 
-  private readonly indexCache = new Map<string, Observable<DrillIndex>>();
-  private readonly drillCache = new Map<string, Observable<Drill | undefined>>();
-  private readonly resolvedCache = new Map<string, Observable<DrillResolved | undefined>>();
+  private readonly indexCache = new KeyedCache<DrillIndex>();
+  private readonly drillCache = new KeyedCache<Drill | undefined>();
+  private readonly resolvedCache = new KeyedCache<PracticeResolved | undefined>();
 
   /** The drill index of the pair currently in the URL. */
-  readonly index$: Observable<DrillIndex> = this.language.pair$.pipe(
-    switchMap((pair) => this.indexFor(pair)),
-    shareReplay({ bufferSize: 1, refCount: false }),
+  readonly index$: Observable<DrillIndex> = forActivePair(this.language.pair$, (pair) =>
+    this.indexFor(pair),
   );
 
   private indexFor(pair: string): Observable<DrillIndex> {
-    let cached = this.indexCache.get(pair);
-    if (!cached) {
-      cached = this.http
-        .get<DrillIndex>(`/assets/${pair}/drills-index.json`)
-        .pipe(shareReplay({ bufferSize: 1, refCount: false }));
-      this.indexCache.set(pair, cached);
-    }
-    return cached;
+    return this.indexCache.get(pair, () =>
+      this.http.get<DrillIndex>(`/assets/${pair}/drills-index.json`),
+    );
   }
 
   getDrill(slug: string): Observable<Drill | undefined> {
-    return this.language.pair$.pipe(switchMap((pair) => this.drillFor(pair, slug)));
+    return forActivePairItem(this.language.pair$, (pair) => this.drillFor(pair, slug));
   }
 
   private drillFor(pair: string, slug: string): Observable<Drill | undefined> {
-    const key = `${pair}:${slug}`;
-    let cached = this.drillCache.get(key);
-    if (!cached) {
-      cached = this.indexFor(pair).pipe(
-        switchMap((idx) => {
-          const exists = idx.drills.some((d) => d.slug === slug);
-          if (!exists) return of(undefined);
-          return this.http.get<Drill>(`/assets/${pair}/drills/${slug}.json`);
-        }),
-        shareReplay({ bufferSize: 1, refCount: false }),
-      );
-      this.drillCache.set(key, cached);
-    }
-    return cached;
+    return this.drillCache.get(pairKey(pair, slug), () =>
+      this.indexFor(pair).pipe(
+        switchMap((idx) =>
+          ifListed(
+            idx.drills.some((d) => d.slug === slug),
+            () => this.http.get<Drill>(`/assets/${pair}/drills/${slug}.json`),
+          ),
+        ),
+      ),
+    );
   }
 
-  getDrillResolved(slug: string): Observable<DrillResolved | undefined> {
-    return this.language.pair$.pipe(switchMap((pair) => this.resolvedFor(pair, slug)));
+  getDrillResolved(slug: string): Observable<PracticeResolved | undefined> {
+    return forActivePairItem(this.language.pair$, (pair) => this.resolvedFor(pair, slug));
   }
 
-  private resolvedFor(pair: string, slug: string): Observable<DrillResolved | undefined> {
-    const key = `${pair}:${slug}`;
-    let cached = this.resolvedCache.get(key);
-    if (!cached) {
-      cached = this.drillFor(pair, slug).pipe(
+  private resolvedFor(pair: string, slug: string): Observable<PracticeResolved | undefined> {
+    return this.resolvedCache.get(pairKey(pair, slug), () =>
+      this.drillFor(pair, slug).pipe(
         switchMap((drill) => {
           if (!drill) return of(undefined);
-          return this.vocabularyService.vocabularyFor(pair).pipe(
-            map((vocab) => {
-              const wordsByCat = new Map<string, Map<number, Word>>();
-              for (const c of vocab.categories) {
-                const inner = new Map<number, Word>();
-                for (const w of c.words) inner.set(w.n, w);
-                wordsByCat.set(c.key, inner);
-              }
-              const words: Word[] = [];
-              for (const ref of drill.wordOrder) {
-                const w = wordsByCat.get(ref.category)?.get(ref.n);
-                if (w) words.push(w);
-              }
-              return {
-                slug: drill.slug,
-                title: drill.title,
-                words,
-                patterns: drill.patterns,
-              };
-            }),
+          // `wordOrder` is the drill's own sequence, so the resolved words keep that order rather
+          // than the vocabulary's. A reference that matches no word is dropped.
+          return this.vocabularyService.resolveWordRefs(pair, drill.wordOrder).pipe(
+            map((words) => ({
+              slug: drill.slug,
+              title: drill.title,
+              words,
+              patterns: drill.patterns,
+            })),
           );
         }),
-        shareReplay({ bufferSize: 1, refCount: false }),
-      );
-      this.resolvedCache.set(key, cached);
-    }
-    return cached;
+      ),
+    );
   }
 
-  getDrillResolvedSignal(slug: Signal<string>): Signal<DrillResolved | undefined> {
-    return toSignal(toObservable(slug).pipe(switchMap((s) => this.getDrillResolved(s))));
+  getDrillResolvedSignal(slug: Signal<string>): Signal<PracticeResolved | undefined> {
+    return slugSignal(slug, (s) => this.getDrillResolved(s));
   }
 
   getDrillCategorySignal(slug: Signal<string>): Signal<Category | undefined> {
-    return toSignal(
-      toObservable(slug).pipe(
-        switchMap((s) =>
-          this.getDrillResolved(s).pipe(
-            map((d) => (d ? { key: 'drill', label: d.title, words: d.words } : undefined)),
-          ),
-        ),
+    return slugSignal(slug, (s) =>
+      this.getDrillResolved(s).pipe(
+        map((d) => (d ? { key: 'drill', label: d.title, words: d.words } : undefined)),
       ),
     );
   }

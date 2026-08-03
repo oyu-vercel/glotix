@@ -2,6 +2,9 @@ import { Routes } from '@angular/router';
 
 import { provideStoryDeckSurface } from './stories/story-deck-surface';
 import { provideVocabularyDeckSurface } from './vocabulary/vocabulary-deck-surface';
+import { provideBookDeckSurface } from './books/book-deck-surface';
+import { provideDrillDeckSurface } from './drills/drill-deck-surface';
+import { provideLessonDeckSurface } from './lessons/lesson-deck-surface';
 import { pairMatch } from './shared/language/pair-match-guard';
 
 export const routes: Routes = [
@@ -83,11 +86,15 @@ export const routes: Routes = [
       },
       {
         path: 'books/:book/:slug/category/:key/memorize',
-        loadComponent: () => import('./books/memorize/memorize').then((m) => m.BookMemorize),
+        loadComponent: () =>
+          import('./shared/memorize-route/memorize-route').then((m) => m.MemorizeRoute),
+        providers: [provideBookDeckSurface()],
       },
       {
         path: 'books/:book/:slug/category/:key/repeat',
-        loadComponent: () => import('./books/repeat/repeat').then((m) => m.BookRepeat),
+        loadComponent: () =>
+          import('./shared/repeat-route/repeat-route').then((m) => m.RepeatRoute),
+        providers: [provideBookDeckSurface()],
       },
       {
         path: 'drills',
@@ -99,16 +106,23 @@ export const routes: Routes = [
       },
       {
         path: 'drills/:slug/memorize',
-        loadComponent: () => import('./drills/memorize/memorize').then((m) => m.DrillMemorize),
+        loadComponent: () =>
+          import('./shared/memorize-route/memorize-route').then((m) => m.MemorizeRoute),
+        providers: [provideDrillDeckSurface()],
       },
       {
         path: 'drills/:slug/repeat',
-        loadComponent: () => import('./drills/repeat/repeat').then((m) => m.DrillRepeat),
+        loadComponent: () =>
+          import('./shared/repeat-route/repeat-route').then((m) => m.RepeatRoute),
+        providers: [provideDrillDeckSurface()],
       },
       {
         path: 'drills/:slug/patterns/repeat',
         loadComponent: () =>
-          import('./drills/patterns-repeat/patterns-repeat').then((m) => m.DrillPatternsRepeat),
+          import('./shared/patterns-repeat-route/patterns-repeat-route').then(
+            (m) => m.PatternsRepeatRoute,
+          ),
+        providers: [provideDrillDeckSurface()],
       },
       {
         path: 'lessons',
@@ -120,16 +134,23 @@ export const routes: Routes = [
       },
       {
         path: 'lessons/:slug/memorize',
-        loadComponent: () => import('./lessons/memorize/memorize').then((m) => m.LessonMemorize),
+        loadComponent: () =>
+          import('./shared/memorize-route/memorize-route').then((m) => m.MemorizeRoute),
+        providers: [provideLessonDeckSurface()],
       },
       {
         path: 'lessons/:slug/repeat',
-        loadComponent: () => import('./lessons/repeat/repeat').then((m) => m.LessonRepeat),
+        loadComponent: () =>
+          import('./shared/repeat-route/repeat-route').then((m) => m.RepeatRoute),
+        providers: [provideLessonDeckSurface()],
       },
       {
         path: 'lessons/:slug/patterns/repeat',
         loadComponent: () =>
-          import('./lessons/patterns-repeat/patterns-repeat').then((m) => m.LessonPatternsRepeat),
+          import('./shared/patterns-repeat-route/patterns-repeat-route').then(
+            (m) => m.PatternsRepeatRoute,
+          ),
+        providers: [provideLessonDeckSurface()],
       },
     ],
   },

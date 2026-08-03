@@ -1,33 +1,26 @@
 import { Injectable, Signal, inject } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 import { HttpClient } from '@angular/common/http';
-import { Observable, combineLatest, map, shareReplay, switchMap } from 'rxjs';
+import { Observable, combineLatest, map, switchMap } from 'rxjs';
 
-import { Category, Vocabulary } from './vocabulary.types';
+import { Category, VocabRefs, Vocabulary, Word } from './vocabulary.types';
 import { LanguageService } from '../shared/language/language.service';
+import { KeyedCache, forActivePair } from '../shared/data/pair-resource';
 
 @Injectable({ providedIn: 'root' })
 export class VocabularyService {
   private readonly http = inject(HttpClient);
   private readonly language = inject(LanguageService);
 
-  private readonly cache = new Map<string, Observable<Vocabulary>>();
+  private readonly cache = new KeyedCache<Vocabulary>();
 
   /** The vocabulary of the pair currently in the URL. */
-  readonly vocabulary$: Observable<Vocabulary> = this.language.pair$.pipe(
-    switchMap((pair) => this.vocabularyFor(pair)),
-    shareReplay({ bufferSize: 1, refCount: false }),
+  readonly vocabulary$: Observable<Vocabulary> = forActivePair(this.language.pair$, (pair) =>
+    this.vocabularyFor(pair),
   );
 
   vocabularyFor(pair: string): Observable<Vocabulary> {
-    let cached = this.cache.get(pair);
-    if (!cached) {
-      cached = this.http
-        .get<Vocabulary>(`/assets/${pair}/vocabulary.json`)
-        .pipe(shareReplay({ bufferSize: 1, refCount: false }));
-      this.cache.set(pair, cached);
-    }
-    return cached;
+    return this.cache.get(pair, () => this.http.get<Vocabulary>(`/assets/${pair}/vocabulary.json`));
   }
 
   private getCategory(key: string): Observable<Category | undefined> {
@@ -42,8 +35,12 @@ export class VocabularyService {
     );
   }
 
-  resolveStoryVocab(refs: Record<string, number[]>): Observable<Vocabulary> {
-    return this.vocabulary$.pipe(
+  /**
+   * Narrows a pair's vocabulary to the words a story or chapter references, keeping the category
+   * grouping and dropping categories that end up empty.
+   */
+  resolveVocabRefs(pair: string, refs: VocabRefs): Observable<Vocabulary> {
+    return this.vocabularyFor(pair).pipe(
       map((v) => ({
         categories: v.categories
           .map((c) => {
@@ -52,6 +49,41 @@ export class VocabularyService {
           })
           .filter((c) => c.words.length > 0),
       })),
+    );
+  }
+
+  /**
+   * Resolves an ordered list of `{ category, n }` references, preserving the order given.
+   * A reference that matches no word is dropped.
+   */
+  resolveWordRefs(
+    pair: string,
+    refs: readonly { category: string; n: number }[],
+  ): Observable<Word[]> {
+    return this.vocabularyFor(pair).pipe(
+      map((vocab) => {
+        const byCategory = new Map(
+          vocab.categories.map((c) => [c.key, new Map(c.words.map((w) => [w.n, w]))]),
+        );
+        return refs
+          .map((ref) => byCategory.get(ref.category)?.get(ref.n))
+          .filter((w): w is Word => w !== undefined);
+      }),
+    );
+  }
+
+  /** The same index as `resolveWordRefs`, but keyed by lowercased headword. */
+  wordsByHeadword(pair: string): Observable<Map<string, Map<string, Word>>> {
+    return this.vocabularyFor(pair).pipe(
+      map(
+        (vocab) =>
+          new Map(
+            vocab.categories.map((c) => [
+              c.key,
+              new Map(c.words.map((w) => [w.target.toLowerCase(), w])),
+            ]),
+          ),
+      ),
     );
   }
 }

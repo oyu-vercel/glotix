@@ -39,6 +39,11 @@ html {
   // Secondary — warm muted (used by count-pill / footer-total)
   --mat-sys-secondary-container: #ece0c8;
   --mat-sys-on-secondary-container: #4a3f2e;
+
+  // Elevation — every raised surface uses one of these two, so the depth stays consistent.
+  // `card` is the resting surface (tables, panels, prose); `deck` is the lifted flashcard.
+  --glotix-shadow-card: 0 1px 0 rgba(43, 42, 38, 0.05), 0 18px 40px -22px rgba(43, 42, 38, 0.18);
+  --glotix-shadow-deck: 0 1px 0 rgba(43, 42, 38, 0.05), 0 30px 60px -32px rgba(43, 42, 38, 0.25);
 }
 
 body {

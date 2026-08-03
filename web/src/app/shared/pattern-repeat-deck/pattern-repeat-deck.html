@@ -1,23 +1,19 @@
-<div class="repeat-shell">
-  <div class="repeat-topbar">
-    <button mat-button type="button" (click)="exit.emit()">← Exit</button>
-    @if (hasCards()) {
-      <span class="progress">{{ progress() }}</span>
-    }
-  </div>
-
-  @if (current(); as card) {
-    <article class="card" tabindex="0" (click)="advance()">
+<app-deck-shell
+  [progress]="cursor.progress()"
+  [hasCards]="cursor.hasCards()"
+  [isEmpty]="patterns().length === 0"
+  emptyMessage="No patterns to practise."
+  (exit)="exit.emit()"
+  (cardClick)="cursor.advance()"
+>
+  <div card class="slot">
+    @if (cursor.current(); as card) {
       <div class="face">
         <div class="target">{{ card.target }}</div>
         <div class="divider"></div>
         <div class="native">{{ card.native }}</div>
       </div>
       <div class="hint">Click or press Space for next pattern</div>
-    </article>
-  } @else if (patterns().length === 0) {
-    <p class="loading">No patterns in this drill.</p>
-  } @else {
-    <p class="loading">Loading...</p>
-  }
-</div>
+    }
+  </div>
+</app-deck-shell>

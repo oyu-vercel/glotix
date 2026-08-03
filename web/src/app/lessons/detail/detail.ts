@@ -9,6 +9,7 @@ import { PatternsTable } from '../../drills/patterns-table/patterns-table';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { AudioPlayer } from '../../shared/audio-player/audio-player';
 import { LanguageService } from '../../shared/language/language.service';
+import { BackLink } from '../../shared/back-link/back-link';
 
 @Component({
   selector: 'app-lesson-detail',
@@ -20,6 +21,7 @@ import { LanguageService } from '../../shared/language/language.service';
     PatternsTable,
     PageHeader,
     AudioPlayer,
+    BackLink,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',

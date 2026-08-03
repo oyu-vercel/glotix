@@ -1,21 +1,14 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  computed,
-  effect,
-  input,
-  output,
-  signal,
-} from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
+import { ChangeDetectionStrategy, Component, effect, input, output, signal } from '@angular/core';
 
-import { PatternPair } from '../../drills/drills.types';
+import { PatternPair } from '../types/practice';
+import { DeckShell } from '../deck/deck-shell';
+import { deckCursor } from '../deck/deck-cursor';
 import { shuffle } from '../utils/shuffle';
 import { isFormField } from '../utils/is-form-field';
 
 @Component({
   selector: 'app-pattern-repeat-deck',
-  imports: [MatButtonModule],
+  imports: [DeckShell],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './pattern-repeat-deck.html',
   styleUrl: './pattern-repeat-deck.scss',
@@ -30,33 +23,23 @@ export class PatternRepeatDeck {
   readonly exit = output<void>();
 
   private readonly shuffled = signal<PatternPair[]>([]);
-  readonly index = signal(0);
-
-  readonly current = computed(() => this.shuffled()[this.index()]);
-  readonly progress = computed(() => `${this.index() + 1} / ${this.shuffled().length}`);
-  readonly hasCards = computed(() => this.shuffled().length > 0);
+  protected readonly cursor = deckCursor(this.shuffled);
 
   constructor() {
     effect(() => {
-      const p = this.patterns();
-      this.shuffled.set(shuffle(p));
-      this.index.set(0);
+      this.shuffled.set(shuffle(this.patterns()));
+      this.cursor.reset();
     });
-  }
-
-  advance(): void {
-    if (!this.hasCards()) return;
-    this.index.update((i) => (i + 1) % this.shuffled().length);
   }
 
   onSpace(event: Event): void {
     if (isFormField(event)) return;
     event.preventDefault();
-    this.advance();
+    this.cursor.advance();
   }
 
   onEnter(event: Event): void {
     if (isFormField(event)) return;
-    this.advance();
+    this.cursor.advance();
   }
 }

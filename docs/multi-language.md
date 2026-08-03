@@ -171,8 +171,8 @@ npm --prefix web run build:stories -- it-ru
 The merge and append helpers take the pair as their first argument:
 
 ```bash
-node web/scripts/merge-words.mjs it-ru docs/it-ru/stories/s3
-node web/scripts/merge-drill-words.mjs it-ru docs/it-ru/drills/d2
+node web/scripts/merge-csv-words.mjs story it-ru docs/it-ru/stories/s3
+node web/scripts/merge-csv-words.mjs drill it-ru docs/it-ru/drills/d2
 node web/scripts/append-words.mjs it-ru docs/it-ru/drills/d2/unmatched.json
 ```
 

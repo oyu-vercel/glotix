@@ -1,4 +1,4 @@
-import { Vocabulary } from '../vocabulary/vocabulary.types';
+import { VocabRefs, Vocabulary } from '../vocabulary/vocabulary.types';
 
 export interface StoryIndexEntry {
   slug: string;
@@ -11,13 +11,11 @@ export interface StoryIndex {
   stories: StoryIndexEntry[];
 }
 
-export type StoryVocabRefs = Record<string, number[]>;
-
 export interface Story {
   slug: string;
   title: string;
   text: string;
-  vocabulary: StoryVocabRefs;
+  vocabulary: VocabRefs;
 }
 
 export interface StoryResolved {

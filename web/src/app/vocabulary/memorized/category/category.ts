@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component, computed, inject, input } from '@angular/core';
-import { toSignal } from '@angular/core/rxjs-interop';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 
@@ -8,10 +7,11 @@ import { WordTable } from '../../../shared/word-table/word-table';
 import { Word } from '../../vocabulary.types';
 import { VocabularyService } from '../../vocabulary.service';
 import { LanguageService } from '../../../shared/language/language.service';
+import { BackLink } from '../../../shared/back-link/back-link';
 
 @Component({
   selector: 'app-memorized-category',
-  imports: [MatButtonModule, RouterLink, WordTable],
+  imports: [MatButtonModule, RouterLink, WordTable, BackLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './category.html',
   styleUrl: './category.scss',
@@ -20,16 +20,9 @@ export class MemorizedCategory {
   readonly key = input.required<string>();
 
   private readonly storage = inject(MemorizeStorage);
-  private readonly vocabularyService = inject(VocabularyService);
 
   readonly pair = inject(LanguageService).pair;
-  readonly vocabulary = toSignal(this.vocabularyService.vocabulary$);
-
-  readonly category = computed(() => {
-    const v = this.vocabulary();
-    if (!v) return undefined;
-    return v.categories.find((c) => c.key === this.key());
-  });
+  readonly category = inject(VocabularyService).getCategorySignal(this.key);
 
   readonly words = computed<Word[]>(() => {
     const cat = this.category();

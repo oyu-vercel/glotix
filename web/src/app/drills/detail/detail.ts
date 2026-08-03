@@ -8,10 +8,19 @@ import { WordTable } from '../../shared/word-table/word-table';
 import { PatternsTable } from '../patterns-table/patterns-table';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { LanguageService } from '../../shared/language/language.service';
+import { BackLink } from '../../shared/back-link/back-link';
 
 @Component({
   selector: 'app-drill-detail',
-  imports: [MatTabsModule, MatButtonModule, RouterLink, WordTable, PatternsTable, PageHeader],
+  imports: [
+    MatTabsModule,
+    MatButtonModule,
+    RouterLink,
+    WordTable,
+    PatternsTable,
+    PageHeader,
+    BackLink,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
   styleUrl: './detail.scss',

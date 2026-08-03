@@ -41,10 +41,6 @@ export class MemorizeStorage {
     this.remove(this.key(`skip:${scope}`));
   }
 
-  getMemorized(): Set<string> {
-    return this.memorized();
-  }
-
   addMemorized(word: string): void {
     const current = this.memorized();
     if (current.has(word)) return;

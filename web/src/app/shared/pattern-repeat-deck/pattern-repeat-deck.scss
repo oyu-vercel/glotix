@@ -1,70 +1,16 @@
-:host {
-  display: block;
-}
-
-.repeat-shell {
-  display: flex;
-  flex-direction: column;
-  min-height: calc(100vh - 64px - 48px);
-  gap: 16px;
-}
-
-.repeat-topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  a {
-    color: var(--mat-sys-on-surface-variant);
-    font-weight: 500;
-  }
-}
-
-.progress {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: var(--mat-sys-on-surface-variant);
-  font-variant-numeric: tabular-nums;
-}
-
-.card {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 28px;
-  padding: 64px 32px 56px;
-  background: var(--mat-sys-surface-container);
-  border: none;
-  border-radius: 28px;
-  cursor: pointer;
-  outline: none;
-  text-align: center;
-  box-shadow:
-    0 1px 0 rgba(43, 42, 38, 0.05),
-    0 30px 60px -32px rgba(43, 42, 38, 0.25);
-
-  &:focus-visible {
-    outline: 2px solid var(--mat-sys-primary);
-    outline-offset: 2px;
-  }
-}
+// Only the card face — the shell, card frame, topbar and hint come from <app-deck-shell>.
 
 .face {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 24px;
-  max-width: 100%;
 
   .target {
     font-weight: 700;
     font-size: clamp(28px, 5vw, 44px);
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: var(--mat-sys-primary);
     word-break: break-word;
   }
@@ -76,7 +22,7 @@
     border-radius: 999px;
   }
 
-  .russian {
+  .native {
     font-weight: 500;
     font-size: clamp(20px, 3.5vw, 28px);
     line-height: 1.3;
@@ -85,23 +31,7 @@
   }
 }
 
-.hint {
-  margin-top: auto;
-  font-size: 12px;
-  letter-spacing: 0.04em;
-  color: var(--mat-sys-on-surface-variant);
-}
-
-.loading {
-  color: var(--mat-sys-on-surface-variant);
-}
-
 @media (max-width: 600px) {
-  .card {
-    padding: 40px 20px 36px;
-    border-radius: 22px;
-  }
-
   .face {
     gap: 16px;
 
@@ -109,8 +39,13 @@
       font-size: clamp(22px, 8vw, 30px);
     }
 
-    .russian {
+    .native {
       font-size: clamp(16px, 6vw, 20px);
     }
   }
+}
+
+// Projection wrapper: keeps its children participating in the card frame's flex layout.
+.slot {
+  display: contents;
 }

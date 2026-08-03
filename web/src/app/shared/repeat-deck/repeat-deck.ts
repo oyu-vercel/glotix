@@ -13,12 +13,14 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { Category, Word } from '../../vocabulary/vocabulary.types';
 import { MemorizeStorage } from '../storage/memorize-storage';
+import { DeckShell } from '../deck/deck-shell';
+import { deckCursor } from '../deck/deck-cursor';
 import { shuffle } from '../utils/shuffle';
 import { isFormField } from '../utils/is-form-field';
 
 @Component({
   selector: 'app-repeat-deck',
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, DeckShell],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './repeat-deck.html',
   styleUrl: './repeat-deck.scss',
@@ -29,61 +31,46 @@ import { isFormField } from '../utils/is-form-field';
 })
 export class RepeatDeck {
   readonly category = input<Category | undefined>(undefined);
-  readonly emptyMessage = input<string>('No words to practice.');
+  readonly emptyMessage = input.required<string>();
 
   readonly exit = output<void>();
 
   private readonly storage = inject(MemorizeStorage);
 
   private readonly fullShuffled = signal<Word[]>([]);
-  readonly memorized = signal<Set<string>>(new Set());
-  readonly cards = computed(() =>
-    this.fullShuffled().filter((w) => !this.memorized().has(w.target)),
+  private readonly cards = computed(() =>
+    this.fullShuffled().filter((w) => !this.storage.memorized().has(w.target)),
   );
-  readonly index = signal(0);
-
-  readonly current = computed(() => this.cards()[this.index()]);
-  readonly progress = computed(() => `${this.index() + 1} / ${this.cards().length}`);
-  readonly hasCards = computed(() => this.cards().length > 0);
+  protected readonly cursor = deckCursor(this.cards);
 
   constructor() {
-    // Only a new category may reset the deck — reading storage tracked would make every
-    // `addMemorized` write re-run this effect and throw away the reader's place in the deck.
+    // Only a new category may reset the deck. `cards` filters against the storage signal directly,
+    // so a memorized word disappears from the deck without the deck being rebuilt.
     effect(() => {
       const cat = this.category();
       if (!cat) return;
       untracked(() => {
         this.fullShuffled.set(shuffle(cat.words));
-        this.memorized.set(this.storage.getMemorized());
-        this.index.set(0);
+        this.cursor.reset();
       });
     });
   }
 
-  advance(): void {
-    if (!this.hasCards()) return;
-    this.index.update((i) => (i + 1) % this.cards().length);
-  }
-
   markMemorized(): void {
-    if (!this.hasCards()) return;
-    const card = this.current();
+    const card = this.cursor.current();
     if (!card) return;
     this.storage.addMemorized(card.target);
-    this.memorized.update((s) => new Set([...s, card.target]));
-    if (this.index() >= this.cards().length) {
-      this.index.set(0);
-    }
+    this.cursor.clamp();
   }
 
   onSpace(event: Event): void {
     if (isFormField(event)) return;
     event.preventDefault();
-    this.advance();
+    this.cursor.advance();
   }
 
   onEnter(event: Event): void {
     if (isFormField(event)) return;
-    this.advance();
+    this.cursor.advance();
   }
 }

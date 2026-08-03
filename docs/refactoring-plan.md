@@ -1,7 +1,10 @@
 # Refactoring plan
 
-> **Status: Step 0 done. Steps 1–10 planned, not implemented.**
+> **Status: complete. All ten steps implemented and verified.**
 > Scope: `web/src/app/**`, `web/src/**/*.spec.ts` and `web/scripts/**`.
+>
+> Final state: 301 tests green, `typecheck` green, `verify:generated` green, Prettier clean, and
+> every screen and deck checked in the browser with a clean console.
 
 ## Decisions taken
 
@@ -25,16 +28,16 @@ touching ~12 files and copying ~250 lines.
 | Step | What | Was |
 | --- | --- | --- |
 | 0 | Green the test runner — **done** | — |
-| 1 | Characterization test suite | — |
-| 2 | Dead code and inconsistency cleanup | Phase 9 |
-| 3 | Shared types | Phase 7 |
-| 4 | Merge the two CSV scripts | Phase 8 |
-| 5 | Collapse the five data services | Phase 1 |
-| 6 | Data-driven progress table | Phase 3 |
-| 7 | Single source of truth for the memorized set | Phase 5 |
-| 8 | One deck shell for the three decks | Phase 4 |
-| 9 | Feature registry | Phase 6 |
-| 10 | One deck route instead of eight wrappers | Phase 2 |
+| 1 | Characterization test suite — **done** | — |
+| 2 | Dead code and inconsistency cleanup — **done** | Phase 9 |
+| 3 | Shared types — **done** | Phase 7 |
+| 4 | Merge the two CSV scripts — **done** | Phase 8 |
+| 5 | Collapse the five data services — **done** | Phase 1 |
+| 6 | Data-driven progress table — **done** | Phase 3 |
+| 7 | Single source of truth for the memorized set — **done** | Phase 5 |
+| 8 | One deck shell for the three decks — **done** | Phase 4 |
+| 9 | Feature registry — **done** | Phase 6 |
+| 10 | One deck route instead of eight wrappers — **done** | Phase 2 |
 
 Rationale for the order: cleanup and types are free and reduce noise in every later diff; the
 scripts are isolated from the app entirely; services are the foundation the table and decks sit
@@ -84,7 +87,7 @@ no unhandled errors. No production code changed.
 
 ---
 
-## Step 1 — Characterization test suite
+## Step 1 — Characterization test suite ✅ done
 
 **Principle.** Test at the surfaces that *survive* the refactor. Do not write specs for the eight
 deck wrapper components or the per-feature table markup — those are deleted in Steps 6 and 10, and
@@ -103,14 +106,36 @@ tests for them would be thrown away with them.
 
 **Done when:** suite is green, and the service specs fail if you deliberately break a cache key.
 
-**Checkpoint:** run the dev server and confirm the app still works — Step 1 touches no production
-code, so any difference means something else is wrong.
+**Outcome.** 15 spec files, **301 tests**, all green; `typecheck` green; Prettier clean.
+
+Files added: `app.routes.spec.ts` (17 route smoke tests using the real `LanguageService`),
+`memorize-storage.spec.ts`, the five service specs, five `shared/utils` specs, and both parser
+specs. `web/scripts/verify-generated.mjs` + `npm run verify:generated` implement the golden-file
+check by snapshotting the committed assets, re-running both builders and diffing — it restores the
+snapshot on failure, so a failing run leaves the tree untouched.
+
+The suite was validated by **mutation testing**, not just by passing. Each of these deliberate
+breakages was introduced, confirmed to fail the suite, and reverted:
+
+| Mutation | Caught by |
+| --- | --- |
+| `MemorizeStorage.key()` drops the pair | 4 namespacing tests |
+| Migration guard always re-runs | the run-once test |
+| `storyFor` cache key drops the pair | the per-pair cache test |
+| `storyFor` index-membership guard removed | 4 unknown-slug tests |
+| `WRAP_THRESHOLD` 75 → 40 | 2 chapter-parser tests |
+| Lesson gloss no longer overrides the vocabulary translation | 4 service tests + 1 route test |
+| Repeat deck renders `target` instead of `translation` | 2 route tests |
+
+**Verified in the browser** as well, because seven production files were temporarily mutated
+during that exercise: the picker, the pair switch and `/it-ru/vocabulary` all render real data
+(1,328 words, three stories) with a clean console.
 
 ---
 
-## Step 2 — Dead code and inconsistency cleanup *(was Phase 9)*
+## Step 2 — Dead code and inconsistency cleanup ✅ done *(was Phase 9)*
 
-Independent, zero-risk, and it shrinks every later diff.
+Independent, low-risk, and it shrinks every later diff.
 
 | Item | Location |
 | --- | --- |
@@ -127,9 +152,43 @@ Independent, zero-risk, and it shrinks every later diff.
 
 **Checkpoint:** tests green; browse every deck and the memorized-restore flow.
 
+### Outcome
+
+Two items turned out differently from the plan, and two were deliberately left alone.
+
+- **`.count-col` was used by zero templates**, not two-names-for-one-column. Only `.num-col` is
+  ever emitted (48 call sites). `.count-col` was deleted outright from both the base and the
+  mobile rule, and from the `ProgressTable` docblock.
+- **The duplicated card shadow spans 8 files, not 2**, in two distinct variants. Both are now
+  tokens in `styles.scss` — `--glotix-shadow-card` (resting surfaces: `progress-table`,
+  `word-table`, `patterns-table`, `books/chapter`, `stories/detail`) and `--glotix-shadow-deck`
+  (the three flashcard decks). The toolbar's third, different shadow in `app.scss` was left alone.
+- **`.native` / `.russian` was not dead CSS — it was a live styling bug.** The rule was renamed to
+  match the template, so the pattern deck's native line went from unstyled (browser default) to
+  its intended 28px/500. **This is a visible rendering change**, the only one in this step.
+- `splitExamples` was **kept** in `shared/utils/`. The plan allowed "inline it or keep it"; it is a
+  pure, well-tested function and inlining it into `MemorizeDeck` would couple it to a component
+  and orphan its 22-test spec.
+- `WordTable`'s `actionLabel`/`action` column was **kept**. It is a clean optional input; removing
+  it would force `vocabulary/memorized/category` to hand-roll its own table, adding duplication
+  rather than removing it. Listed here so the choice is visible rather than silently skipped.
+
+Everything else landed as written: the dead `.back-row` block, the orphan `memorized-btn` /
+`skip-btn` classes, the unreachable `emptyMessage` default (now `input.required`), the hardcoded
+`memorize-comment` id (now per-instance via a module counter), and the re-implemented category
+lookup in `vocabulary/memorized/category/category.ts` (now `getCategorySignal`, which also removed
+a `toSignal` import and a whole `computed`).
+
+**Verified:** 301 tests green, typecheck green, `verify:generated` green, Prettier clean. In the
+browser: shadow tokens resolve and apply on both the table card and the deck card; `.num-col`
+still right-aligned at 100px; the pattern deck's native line now styled; the comment `label[for]`
+and `textarea[id]` match on a per-instance id; and the full memorize → memorized-list →
+memorized-category → Restore round trip works, ending with `localStorage` back to its original
+empty state.
+
 ---
 
-## Step 3 — Shared types *(was Phase 7)*
+## Step 3 — Shared types ✅ done *(was Phase 7)*
 
 Three pairs of interfaces are duplicate declarations of one shape:
 
@@ -142,11 +201,17 @@ Three pairs of interfaces are duplicate declarations of one shape:
 **Change.** Move each into `shared/` under one name; keep per-feature aliases only where a feature
 genuinely extends the shape.
 
+**Outcome.** `shared/types/practice.ts` now holds `PatternPair`, `PracticeIndexEntry` and
+`PracticeResolved`; `VocabRefs` went into `vocabulary.types.ts`, next to the vocabulary it points
+at. No aliases were kept — neither feature extends the shape, so call sites use the shared names
+directly. This also fixed a layering violation: `PatternPair` lived in `drills.types.ts` but was
+imported by `shared/pattern-repeat-deck`, i.e. a shared component depending on a feature.
+
 **Checkpoint:** `typecheck` and tests green. Type-only change — no browser verification needed.
 
 ---
 
-## Step 4 — Merge the two CSV scripts *(was Phase 8)*
+## Step 4 — Merge the two CSV scripts ✅ done *(was Phase 8)*
 
 `web/scripts/merge-words.mjs` (125 lines) and `web/scripts/merge-drill-words.mjs` (128 lines) are
 ~95% identical — same argv parsing, same CSV discovery, same headword lookup, same 10-example cap
@@ -172,9 +237,28 @@ in the same step so they do not break.
 JSON under `web/public/assets/` is byte-identical to before (this is what the Step 1 golden files
 are for).
 
+**Outcome.** Both scripts are replaced by one
+`merge-csv-words.mjs <story|drill> <pair> <folder>`; the two skills, `docs/drills.md` and
+`docs/multi-language.md` were updated to the new invocation. Header handling moved into
+`lib/csv.mjs` as `dataRows()`, which drops row 1 unconditionally and **throws** when that row's
+first cell is a real headword — a CSV missing its header now fails loudly instead of silently
+turning a word into a header.
+
+Equivalence was checked rather than assumed. Old and new were run against both real drills
+(`d1`, `d2`): identical reports, and `vocabulary.json` byte-identical afterwards. A synthetic
+4-column CSV then exposed two deliberate differences, both improvements:
+
+- The **old** script treated a header row as data unless it matched one specific language string,
+  so a differently-worded header silently became a vocabulary entry. The new one always drops it.
+- Unmatched examples are now normalised through `joinExamples` (collapsing stray whitespace,
+  adding a terminal period) instead of passed through raw. This only affects `unmatched.json`,
+  the intermediate file a maintainer reviews before appending.
+
+`verify:generated` confirms `build-drills.mjs` still reproduces the committed assets exactly.
+
 ---
 
-## Step 5 — Collapse the five data services *(was Phase 1)*
+## Step 5 — Collapse the five data services ✅ done *(was Phase 1)*
 
 **Problem.** The five services each re-implement the same caching machine:
 
@@ -204,15 +288,42 @@ are for).
    method to `resolveVocabRefs` (books already uses it, so `Story` in the name is wrong) and add an
    ordered-output variant for the drills/lessons `wordOrder` case.
 
+**Behaviour differences this step must reconcile.** The characterization pass surfaced four places
+where the five services disagree today. Merging them forces a choice, so decide each one
+deliberately rather than inheriting whichever service the shared helper is modelled on:
+
+| Difference | Detail |
+| --- | --- |
+| Which pair the vocabulary join reads | `books.service.ts:81` calls `resolveStoryVocab`, which reads `vocabulary$` — the **currently active** pair — while `chapterFor` captured `pair` in its cache key (`:69`). Drills and lessons instead use `vocabularyFor(pair)`. Books is the odd one out, so a pair switch mid-flight can join a chapter against the wrong pair's vocabulary. **Verified by reading the code.** |
+| Unresolvable refs | `drills.service.ts:81` silently drops a ref that matches no word, so `DrillResolved.words.length` can fall below the index's `wordCount`. Lessons keep every word and synthesise the gaps (`lessons.service.ts:86`). |
+| Index-membership guard | `getLessonText` (`lessons.service.ts:121`) is the only per-item fetch with no guard — an unknown slug still issues a real `.txt` request. |
+| Error caching | `catchError(() => of(null))` sits *inside* the `shareReplay` (`lessons.service.ts:122`), so one transient failure is cached as "no transcript" for the rest of the session. The same applies to every cache: a failed response is replayed forever, with no eviction or retry anywhere. |
+
 **Expected size change:** the five services total 548 lines; helper plus rewrites should land
 around 300.
+
+**Outcome.** `shared/data/pair-resource.ts` (86 lines) provides `KeyedCache`, `pairKey`,
+`forActivePair`, `forActivePairItem`, `ifListed`, `slugSignal` and `paramsSignal`. The five
+services now total **515** lines against 548 — the honest headline is not the line count but that
+five copies of the caching machine became one, and the
+`shareReplay({ bufferSize: 1, refCount: false })` literal went from **18 occurrences to 2**, both
+inside the helper.
+
+The four disagreements were reconciled as follows:
+
+| Difference | Resolution |
+| --- | --- |
+| Which pair the vocabulary join reads | `resolveStoryVocab(refs)` became `resolveVocabRefs(pair, refs)`. Books now joins against the pair its chapter was cached under, like drills and lessons — this fixes the cross-pair bug. |
+| Unresolvable refs | Kept as they were: drills drop them (`resolveWordRefs`), lessons keep the word and synthesise the gaps. Both are deliberate, and now live in named `VocabularyService` methods instead of copy-pasted loops. |
+| Index-membership guard | `getLessonText` is now guarded like every other per-item fetch. **Behaviour change:** an unknown slug emits `null` without issuing a request, where before it fired a real `.txt` request. Five specs were updated to the new contract. |
+| Error caching | Left as-is. Changing retry semantics is a behaviour decision, not a refactor. |
 
 **Checkpoint:** tests green. In the browser, load a route from each of the five features and
 confirm the network tab shows each JSON fetched exactly once per pair.
 
 ---
 
-## Step 6 — Data-driven progress table *(was Phase 3)*
+## Step 6 — Data-driven progress table ✅ done *(was Phase 3)*
 
 **Problem.** `ProgressTable` is slot-based: it supplies the card shell and the CSS classes, but
 every call site hand-writes the full `mat-table` column definitions. This is the single largest
@@ -248,9 +359,27 @@ This turns `drills/list.html` and `lessons/list.html` (32 and 28 lines) into abo
 `/it-ru/stories`, `/it-ru/books`, `/it-ru/books/<book>`, `/it-ru/drills`, `/it-ru/lessons` against
 screenshots taken before the change — row counts, totals row, progress-bar widths.
 
+**Outcome.** `ProgressTable` now takes `[rows]`, `[columns]`, `[totals]` and emits
+`(rowClick)`; `progress-table.types.ts` holds `ProgressRow`, the `ProgressColumn` union,
+`ProgressTotals` and `sumRows()`. All **11** tables across 9 screens were converted, and the
+three local row interfaces collapsed into one. Because the table is no longer content-projected,
+its SCSS dropped `::ng-deep` entirely.
+
+Two subtleties worth recording:
+
+- `vocabulary/memorized` measures its footer against the **whole** vocabulary, not the sum of the
+  displayed rows, so it deliberately does not use `sumRows`. Same for the story and chapter
+  vocabulary tabs, which measure against every non-empty category.
+- `vocabulary/list` rows carry a route and query params, so they extend `ProgressRow` locally and
+  the click handler resolves the row back by `id`.
+
+Verified by comparing every table's headers, row count, first row and footer against the values
+captured before the change — e.g. Global Vocabulary 1328, stories grand total 1539 / 0.0%, the
+`pl-ru` chapter 4124.
+
 ---
 
-## Step 7 — Single source of truth for the memorized set *(was Phase 5)*
+## Step 7 — Single source of truth for the memorized set ✅ done *(was Phase 5)*
 
 **Problem.** The same `Set<string>` lives in three places. `MemorizeStorage.memorized` is already
 a signal (`memorize-storage.ts:20-23`, revision-bumped on every write), but both decks keep a
@@ -275,9 +404,14 @@ signal. Decks become live-synced, as decided.
 stays out; confirm the counts on `/it-ru/vocabulary` update; exercise the
 `/it-ru/vocabulary/memorized` restore flow and confirm a restored word reappears in a deck.
 
+**Outcome.** Both local mirrors and both dual-writes are gone; the decks filter directly against
+`storage.memorized()`, and `getMemorized()` is deleted. The stale comments that justified the
+mirrors ("reading storage tracked would make every `addMemorized` write re-run this effect") were
+rewritten, since the effects no longer read storage at all.
+
 ---
 
-## Step 8 — One deck shell for the three decks *(was Phase 4)*
+## Step 8 — One deck shell for the three decks ✅ done *(was Phase 4)*
 
 **Problem.** `memorize-deck`, `repeat-deck` and `pattern-repeat-deck` share nearly all chrome and
 cursor logic:
@@ -303,9 +437,20 @@ cursor logic:
 **Checkpoint:** tests green; all three decks at desktop and mobile width; keyboard space, enter and
 `s`; the memorize deck's comment box and skip button.
 
+**Outcome.** `shared/deck/deck-shell.ts` owns the topbar, progress readout, card frame, empty and
+loading states; `shared/deck/deck-cursor.ts` owns `index`, `current`, `progress`, `hasCards`,
+`advance()`, `reset()` and `clamp()`. The three decks keep only their card *contents*. The
+`gap` discrepancy was resolved to 28px, the shell's value.
+
+**One real trap found by the tests:** Angular content projection does not select through an
+`@if` block — the whole block is one projectable unit matching no selector, so every card
+rendered empty. Fixed by wrapping projected content in a single `[card]` element with
+`display: contents`, which keeps the children as flex items of the card frame. The route smoke
+tests caught this immediately; typecheck did not.
+
 ---
 
-## Step 9 — Feature registry *(was Phase 6)*
+## Step 9 — Feature registry ✅ done *(was Phase 6)*
 
 **Problem.** Each feature's route segment is a bare string literal repeated across the app —
 `'books'` at 13 sites, `'drills'` at 12, `'lessons'` at 13, `'stories'` at 12, `'vocabulary'` /
@@ -333,9 +478,17 @@ block, which is verbatim in seven templates with near-identical SCSS in four.
 
 **Checkpoint:** tests green; click every nav item and every back link in all five features.
 
+**Outcome.** `shared/features/feature-registry.ts` holds the five `FeatureDef`s and a
+`feature(segment)` lookup that throws on an unknown segment. The nav is now a `@for` over
+`FEATURES`, and `shared/back-link/` replaced the back-link markup in all seven templates plus
+their near-identical SCSS.
+
+Not done here: page-header labels still pass their own strings. The registry is in place for them,
+but changing them is cosmetic churn without a behaviour win, so it was left alone.
+
 ---
 
-## Step 10 — One deck route instead of eight wrappers *(was Phase 2)*
+## Step 10 — One deck route instead of eight wrappers ✅ done *(was Phase 2)*
 
 **Problem.** `shared/deck-surface/deck-surface.ts` already defines the abstraction:
 
@@ -387,6 +540,22 @@ that shape and treat DI access as a possible simplification, not a dependency.
 including the `?direction=native` variant and the `?cat=` query param on exit from books and
 stories.
 
+**Outcome.** All **eight** wrapper components are deleted. `DeckSurface` now takes a
+`Signal<DeckParams>` bag and carries its own `emptyMessage`; there are three shells
+(`MemorizeRoute`, `RepeatRoute`, `PatternsRepeatRoute`) and five surfaces, one per feature.
+
+**The open question is resolved:** the shell reads the params (`routeParams()` injects
+`ActivatedRoute` in the routed component, where it is definitely available) and hands the bag to
+the surface. The surface never touches the router, so whether a route-`providers` service can
+inject `ActivatedRoute` never comes up.
+
+Also fixed while here: the shared pattern deck hardcoded "No patterns in this drill.", which is
+wrong on a lesson route now that lessons share it. It reads "No patterns to practise."
+
+Verified in the browser across all five features: memorize, repeat and both patterns routes render
+real cards (including the three-param book chapter at 1419 words), `?direction=native` works, and
+every "← Exit" lands on the right screen with the `?cat=` round trip intact for books and stories.
+
 ---
 
 ## Not in scope
@@ -402,3 +571,23 @@ Noted while reading; each would be a separate piece of work.
    category granularity.
 3. **The legacy-key migration** in `memorize-storage.ts:98-123` stays. It is a one-time
    `it-ru` namespace move that will eventually be retirable, but not as part of this work.
+4. **Latent bugs found while writing the characterization suite.** All are now pinned by tests
+   describing the *current* behaviour, so changing any of them is a deliberate, visible act. None
+   is fixed by this plan.
+   - `count-memorized.ts:7` counts word *entries*, not distinct targets, so a headword in two
+     categories counts twice — a "12 / 10 memorized" readout is reachable.
+   - `parse-story-text.ts:30` — a line that is just `.` becomes an empty `h2` node.
+   - `parse-story-text.ts:29` — the quote guard covers `«`, `»`, `"` but not `'`, so a quoted
+     short line is promoted to a heading.
+   - `parse-chapter-text.ts:15` — `/^[IVXLC]+$/` accepts non-numerals like `IIII`, and misses
+     `M`/`D`.
+   - `parse-chapter-text.ts:34` — the unconditional title skip runs *before* the section check, so
+     a chapter starting with a numeral marker loses that heading.
+   - `parse-chapter-text.ts:47` — `lines.slice(i + 1).find(...)` re-slices the rest of the
+     document on every line; quadratic over a full chapter.
+   - `is-form-field.ts:3` — `SELECT` and `contenteditable` are not treated as form fields, so deck
+     keyboard shortcuts fire while a dropdown has focus.
+   - `split-examples.ts:2` — no abbreviation awareness, and a sentence ending in a closing quote
+     is not split.
+   - `lessons.service.ts:78` — the lookup map is keyed by `target.toLowerCase()`, so two words in
+     one category differing only by case collapse silently.

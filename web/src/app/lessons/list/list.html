@@ -2,24 +2,7 @@
 
 @if (rows(); as rows) {
   @if (rows.length > 0) {
-    <app-progress-table>
-      <table mat-table [dataSource]="rows" class="summary-table">
-        <ng-container matColumnDef="title">
-          <th mat-header-cell *matHeaderCellDef>Lesson</th>
-          <td mat-cell *matCellDef="let r" class="title-cell">{{ r.title }}</td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columns"></tr>
-        <tr
-          mat-row
-          *matRowDef="let row; columns: columns"
-          class="clickable-row"
-          tabindex="0"
-          (click)="navigate(row.slug)"
-          (keyup.enter)="navigate(row.slug)"
-        ></tr>
-      </table>
-    </app-progress-table>
+    <app-progress-table [rows]="rows" [columns]="columns" (rowClick)="navigate($event.id)" />
   } @else {
     <p class="empty">No lessons yet.</p>
   }

@@ -117,7 +117,11 @@ async function buildPair(paths) {
   for (const { slug, txtPath } of stories) {
     const raw = await readFile(txtPath, 'utf8');
     const story = buildStory(slug, raw, categoryKeys, headwordMap, indirectMap);
-    await writeFile(resolve(storiesOut, `${slug}.json`), JSON.stringify(story, null, 2) + '\n', 'utf8');
+    await writeFile(
+      resolve(storiesOut, `${slug}.json`),
+      JSON.stringify(story, null, 2) + '\n',
+      'utf8',
+    );
     const vocabCount = Object.values(story.vocabulary).reduce((s, ns) => s + ns.length, 0);
     indexEntries.push({
       slug,

@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 
 import { DECK_SURFACE } from '../deck-surface/deck-surface';
+import { routeParams } from '../deck-surface/deck-params';
 import { MemorizeDeck } from '../memorize-deck/memorize-deck';
 import { Direction } from '../utils/direction';
 
+/** The memorize deck for whichever feature provided a `DECK_SURFACE` on its route. */
 @Component({
   selector: 'app-memorize-route',
   imports: [MemorizeDeck],
@@ -16,15 +18,16 @@ import { Direction } from '../utils/direction';
   />`,
 })
 export class MemorizeRoute {
-  readonly slug = input<string>('');
-  readonly key = input.required<string>();
+  /** Bound from the `?direction=` query param. */
   readonly direction = input<Direction>('target');
 
   private readonly surface = inject(DECK_SURFACE);
-  protected readonly category = this.surface.resolveCategory(this.slug, this.key);
-  protected readonly scope = this.surface.resolveScope(this.slug, this.key);
+  protected readonly params = routeParams();
+
+  protected readonly category = this.surface.resolveCategory(this.params);
+  protected readonly scope = this.surface.resolveScope(this.params);
 
   protected onExit(): void {
-    this.surface.exit(this.slug(), this.key());
+    this.surface.exit(this.params());
   }
 }

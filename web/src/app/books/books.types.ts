@@ -1,4 +1,4 @@
-import { Vocabulary } from '../vocabulary/vocabulary.types';
+import { VocabRefs, Vocabulary } from '../vocabulary/vocabulary.types';
 
 export interface BookIndexEntry {
   slug: string;
@@ -25,11 +25,8 @@ export interface Book {
   chapters: ChapterEntry[];
 }
 
-/** References into the pair's vocabulary.json, same shape stories use. */
-export type ChapterVocabRefs = Record<string, number[]>;
-
 export interface ChapterVocabFile {
-  vocabulary: ChapterVocabRefs;
+  vocabulary: VocabRefs;
 }
 
 export interface ChapterResolved {

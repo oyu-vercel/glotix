@@ -1,30 +1,8 @@
 <app-page-header eyebrow="Books" title="Books" italicAccent="your" />
 
-@if (index(); as index) {
-  @if (index.books.length > 0) {
-    <app-progress-table>
-      <table mat-table [dataSource]="index.books" class="summary-table">
-        <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef>Book</th>
-          <td mat-cell *matCellDef="let b" class="title-cell">{{ b.name }}</td>
-        </ng-container>
-
-        <ng-container matColumnDef="chapters">
-          <th mat-header-cell *matHeaderCellDef class="num-col">Chapters</th>
-          <td mat-cell *matCellDef="let b" class="num-col">{{ b.chapters }}</td>
-        </ng-container>
-
-        <tr mat-header-row *matHeaderRowDef="columns"></tr>
-        <tr
-          mat-row
-          *matRowDef="let row; columns: columns"
-          class="clickable-row"
-          tabindex="0"
-          (click)="navigate(row.slug)"
-          (keyup.enter)="navigate(row.slug)"
-        ></tr>
-      </table>
-    </app-progress-table>
+@if (rows(); as rows) {
+  @if (rows.length > 0) {
+    <app-progress-table [rows]="rows" [columns]="columns" (rowClick)="navigate($event.id)" />
   } @else {
     <p class="empty">No books for this language yet.</p>
   }

@@ -17,18 +17,16 @@ import { Category } from '../../vocabulary/vocabulary.types';
 import { WordTable } from '../../shared/word-table/word-table';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
+import {
+  ProgressColumn,
+  ProgressRow,
+  ProgressTotals,
+} from '../../shared/progress-table/progress-table.types';
 import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { countWords } from '../../shared/utils/count-words';
 import { TextNode, parseStoryText } from '../utils/parse-story-text';
 import { LanguageService } from '../../shared/language/language.service';
-
-interface VocabProgressRow {
-  key: string;
-  label: string;
-  count: number;
-  total: number;
-  percent: number;
-}
+import { BackLink } from '../../shared/back-link/back-link';
 
 @Component({
   selector: 'app-story-detail',
@@ -40,6 +38,7 @@ interface VocabProgressRow {
     WordTable,
     PageHeader,
     ProgressTable,
+    BackLink,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
@@ -76,21 +75,21 @@ export class StoryDetail {
 
   readonly totalVocab = computed(() => countWords(this.nonEmptyCategories()));
 
-  readonly vocabRows = computed<VocabProgressRow[]>(() => {
+  readonly vocabRows = computed<ProgressRow[]>(() => {
     const memorized = this.storage.memorized();
     return this.nonEmptyCategories().map((category) => {
       const count = category.words.reduce((n, w) => n + (memorized.has(w.target) ? 1 : 0), 0);
       const total = category.words.length;
       const percent = total > 0 ? (count / total) * 100 : 0;
-      return { key: category.key, label: category.label, count, total, percent };
+      return { id: category.key, title: category.label, count, total, percent };
     });
   });
 
-  readonly vocabMemorizedTotal = computed(() => this.vocabRows().reduce((n, r) => n + r.count, 0));
-
-  readonly vocabPercent = computed(() => {
+  /** Footer measures against every non-empty category of this story. */
+  readonly vocabTotals = computed<ProgressTotals>(() => {
+    const count = this.vocabRows().reduce((n, r) => n + (r.count ?? 0), 0);
     const total = this.totalVocab();
-    return total > 0 ? (this.vocabMemorizedTotal() / total) * 100 : 0;
+    return { count, total, percent: total > 0 ? (count / total) * 100 : 0 };
   });
 
   readonly selectedCategory = computed<Category | undefined>(() => {
@@ -99,7 +98,12 @@ export class StoryDetail {
     return this.nonEmptyCategories().find((c) => c.key === key);
   });
 
-  readonly summaryColumns = ['label', 'count', 'total', 'percent'];
+  readonly summaryColumns: readonly ProgressColumn[] = [
+    { kind: 'title', header: 'Category' },
+    { kind: 'count', header: 'Words' },
+    { kind: 'total', header: 'Total' },
+    { kind: 'percent', header: 'Progress' },
+  ];
 
   readonly selectedTab = signal(0);
 

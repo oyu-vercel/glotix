@@ -1,6 +1,4 @@
-<div class="back-row">
-  <a mat-button [routerLink]="['/', pair(), 'vocabulary', 'summary']">← Back</a>
-</div>
+<app-back-link to="vocabulary" [extraSegments]="['summary']" labelOverride="Back" />
 
 @if (category(); as category) {
   <header class="cat-header">

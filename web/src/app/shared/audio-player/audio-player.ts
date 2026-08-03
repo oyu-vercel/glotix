@@ -57,7 +57,9 @@ export class AudioPlayer {
     return d > 0 ? (this.currentTime() / d) * 100 : 0;
   });
 
-  readonly display = computed(() => `${formatTime(this.currentTime())} / ${formatTime(this.duration())}`);
+  readonly display = computed(
+    () => `${formatTime(this.currentTime())} / ${formatTime(this.duration())}`,
+  );
 
   toggle(): void {
     const el = this.audio().nativeElement;

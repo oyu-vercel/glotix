@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
-import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink } from '@angular/router';
 import { combineLatest, map, of, switchMap } from 'rxjs';
@@ -9,28 +8,25 @@ import { BooksService } from '../books.service';
 import { MemorizeStorage } from '../../shared/storage/memorize-storage';
 import { PageHeader } from '../../shared/page-header/page-header';
 import { ProgressTable } from '../../shared/progress-table/progress-table';
+import {
+  ProgressColumn,
+  ProgressRow,
+  ProgressTotals,
+  sumRows,
+} from '../../shared/progress-table/progress-table.types';
 import { countMemorizedInVocabulary } from '../../shared/utils/count-memorized';
 import { LanguageService } from '../../shared/language/language.service';
-
-interface ChapterRow {
-  slug: string;
-  name: string;
-  count: number;
-  total: number;
-  percent: number;
-}
+import { BackLink } from '../../shared/back-link/back-link';
 
 interface BookView {
   name: string;
-  rows: ChapterRow[];
-  totalCount: number;
-  grandTotal: number;
-  grandPercent: number;
+  rows: ProgressRow[];
+  totals: ProgressTotals;
 }
 
 @Component({
   selector: 'app-book-detail',
-  imports: [MatTableModule, MatButtonModule, RouterLink, PageHeader, ProgressTable],
+  imports: [MatButtonModule, RouterLink, PageHeader, ProgressTable, BackLink],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './detail.html',
   styleUrl: './detail.scss',
@@ -44,7 +40,13 @@ export class BookDetail {
   private readonly language = inject(LanguageService);
 
   readonly pair = this.language.pair;
-  readonly columns = ['name', 'count', 'total', 'percent'];
+
+  readonly columns: readonly ProgressColumn[] = [
+    { kind: 'title', header: 'Chapter' },
+    { kind: 'count', header: 'Words' },
+    { kind: 'total', header: 'Total' },
+    { kind: 'percent', header: 'Progress' },
+  ];
 
   readonly view = toSignal(
     toObservable(this.slug).pipe(
@@ -52,42 +54,28 @@ export class BookDetail {
       switchMap((book) => {
         if (!book) return of(undefined);
         if (book.chapters.length === 0) {
-          return of<BookView>({
-            name: book.name,
-            rows: [],
-            totalCount: 0,
-            grandTotal: 0,
-            grandPercent: 0,
-          });
+          return of<BookView>({ name: book.name, rows: [], totals: sumRows([]) });
         }
-        const memorized = this.storage.getMemorized();
+        const memorized = this.storage.memorized();
         return combineLatest(
           book.chapters.map((c) => this.service.getChapter(book.slug, c.slug)),
         ).pipe(
           map((resolvedList): BookView => {
-            const rows: ChapterRow[] = book.chapters.map((c, i) => {
+            const rows: ProgressRow[] = book.chapters.map((c, i) => {
               const resolved = resolvedList[i];
               const total = c.vocabCount;
               const count = resolved
                 ? countMemorizedInVocabulary(resolved.vocabulary, memorized)
                 : 0;
               return {
-                slug: c.slug,
-                name: c.name,
+                id: c.slug,
+                title: c.name,
                 count,
                 total,
                 percent: total > 0 ? (count / total) * 100 : 0,
               };
             });
-            const totalCount = rows.reduce((n, r) => n + r.count, 0);
-            const grandTotal = rows.reduce((n, r) => n + r.total, 0);
-            return {
-              name: book.name,
-              rows,
-              totalCount,
-              grandTotal,
-              grandPercent: grandTotal > 0 ? (totalCount / grandTotal) * 100 : 0,
-            };
+            return { name: book.name, rows, totals: sumRows(rows) };
           }),
         );
       }),

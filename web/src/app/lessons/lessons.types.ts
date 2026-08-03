@@ -1,15 +1,7 @@
-import { PatternPair } from '../drills/drills.types';
-import { Word } from '../vocabulary/vocabulary.types';
-
-export interface LessonIndexEntry {
-  slug: string;
-  title: string;
-  wordCount: number;
-  patternCount: number;
-}
+import { PatternPair, PracticeIndexEntry } from '../shared/types/practice';
 
 export interface LessonIndex {
-  lessons: LessonIndexEntry[];
+  lessons: PracticeIndexEntry[];
 }
 
 /**
@@ -27,12 +19,5 @@ export interface Lesson {
   slug: string;
   title: string;
   words: LessonWordRef[];
-  patterns: PatternPair[];
-}
-
-export interface LessonResolved {
-  slug: string;
-  title: string;
-  words: Word[];
   patterns: PatternPair[];
 }

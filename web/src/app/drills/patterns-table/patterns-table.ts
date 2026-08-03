@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, input } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 
-import { PatternPair } from '../drills.types';
+import { PatternPair } from '../../shared/types/practice';
 import { LanguageService } from '../../shared/language/language.service';
 
 @Component({

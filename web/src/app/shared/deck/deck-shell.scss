@@ -1,0 +1,94 @@
+// Chrome shared by every deck. Card *contents* are projected, so their styling stays with the
+// deck that owns them — but the frame, topbar, progress readout and hint line live here.
+
+:host {
+  display: block;
+}
+
+.deck-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 64px - 48px);
+  gap: 16px;
+}
+
+.deck-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: var(--mat-sys-on-surface-variant);
+    font-weight: 500;
+  }
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--mat-sys-on-surface-variant);
+  font-variant-numeric: tabular-nums;
+}
+
+.card {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  padding: 64px 32px 56px;
+  background: var(--mat-sys-surface-container);
+  border: none;
+  border-radius: 28px;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+  box-shadow: var(--glotix-shadow-deck);
+
+  &:focus-visible {
+    outline: 2px solid var(--mat-sys-primary);
+    outline-offset: 2px;
+  }
+}
+
+.loading {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+// Projected content lives in the parent's view, so these reach across the boundary.
+:host ::ng-deep {
+  .card-actions {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    display: flex;
+    gap: 8px;
+
+    button {
+      border-radius: 999px;
+    }
+  }
+
+  .hint {
+    margin-top: auto;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--mat-sys-on-surface-variant);
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 40px 20px 36px;
+    border-radius: 22px;
+  }
+}
