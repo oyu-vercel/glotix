@@ -7,6 +7,7 @@ import {
   input,
   output,
   signal,
+  untracked,
 } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 
@@ -46,13 +47,16 @@ export class RepeatDeck {
   readonly hasCards = computed(() => this.cards().length > 0);
 
   constructor() {
+    // Only a new category may reset the deck — reading storage tracked would make every
+    // `addMemorized` write re-run this effect and throw away the reader's place in the deck.
     effect(() => {
       const cat = this.category();
-      if (cat) {
+      if (!cat) return;
+      untracked(() => {
         this.fullShuffled.set(shuffle(cat.words));
         this.memorized.set(this.storage.getMemorized());
         this.index.set(0);
-      }
+      });
     });
   }
 
